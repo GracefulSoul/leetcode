@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
+	// https://leetcode.com/submissions/detail/478726995/
 	public static void main(String[] args) {
 		System.out.println(lengthOfLongestSubstring("abcabcbb"));
 		System.out.println(lengthOfLongestSubstring("bbbbb"));
 		System.out.println(lengthOfLongestSubstring("pwwkew"));
 	}
 
-	// https://leetcode.com/submissions/detail/478726995/
 	public static int lengthOfLongestSubstring(String s) {
 		int result = 0;
 		Map<Character, Integer> map = new HashMap<>();
