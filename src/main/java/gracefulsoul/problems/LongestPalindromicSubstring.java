@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestPalindromicSubstring {
 
-	// https://leetcode.com/submissions/detail/479642462/
+	// https://leetcode.com/submissions/detail/480056605/
 	public static void main(String[] args) {
 		System.out.println(longestPalindrome("babad"));
 		System.out.println(longestPalindrome("cbbd"));
@@ -25,13 +25,11 @@ public class LongestPalindromicSubstring {
 	}
 
 	private static int expandAroundCenter(String s, int left, int right) {
-		int l = left;
-		int r = right;
-		while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
-			l--;
-			r++;
+		while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+			left--;
+			right++;
 		}
-		return r - l - 1;
+		return right - left - 1;
 	}
 
 }
