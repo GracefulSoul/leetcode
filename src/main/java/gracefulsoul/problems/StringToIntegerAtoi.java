@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class StringToIntegerAtoi {
 
-	// https://leetcode.com/submissions/detail/481299519/
+	// https://leetcode.com/submissions/detail/481300277/
 	public static void main(String[] args) {
 		System.out.println(myAtoi("42"));
 		System.out.println(myAtoi("   -42"));
@@ -14,9 +14,12 @@ public class StringToIntegerAtoi {
 
 	public static int myAtoi(String s) {
 		int result = 0;
+		if (s.length() == 0) {
+			return result;
+		}
 		int idx = getBeginning(s);
 		int sign = 1;
-		if (s.length() == 0 || idx == s.length()) {
+		if (idx == s.length()) {
 			return result;
 		}
 		if (s.charAt(idx) == '+' || s.charAt(idx) == '-') {
