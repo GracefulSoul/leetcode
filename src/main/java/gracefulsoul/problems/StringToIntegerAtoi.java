@@ -18,10 +18,10 @@ public class StringToIntegerAtoi {
 			return result;
 		}
 		int idx = getBeginning(s);
-		int sign = 1;
 		if (idx == s.length()) {
 			return result;
 		}
+		int sign = 1;
 		if (s.charAt(idx) == '+' || s.charAt(idx) == '-') {
 			sign = s.charAt(idx++) == '-' ? -1 : 1;
 		}
