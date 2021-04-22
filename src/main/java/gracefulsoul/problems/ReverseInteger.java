@@ -4,15 +4,16 @@ public class ReverseInteger {
 
 	// https://leetcode.com/submissions/detail/480942023/
 	public static void main(String[] args) {
-		System.out.println(321);
-		System.out.println(-321);
-		System.out.println(120);
-		System.out.println(0);
-//		System.out.println(reverse(Integer.MAX_VALUE));
-//		System.out.println(reverse(Integer.MIN_VALUE));
+		ReverseInteger test = new ReverseInteger();
+		System.out.println(test.reverse(321));
+		System.out.println(test.reverse(-321));
+		System.out.println(test.reverse(120));
+		System.out.println(test.reverse(0));
+//		System.out.println(test.reverse(Integer.MAX_VALUE));
+//		System.out.println(test.reverse(Integer.MIN_VALUE));
 	}
 
-	public static int reverse(int x) {
+	public int reverse(int x) {
 		int result = 0;
 		while (x != 0) {
 			int temp = result * 10 + x % 10;

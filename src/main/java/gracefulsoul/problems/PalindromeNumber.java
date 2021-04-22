@@ -3,14 +3,15 @@ package gracefulsoul.problems;
 public class PalindromeNumber {
 
 	public static void main(String[] args) {
-		System.out.println(isPalindrome(121));
-		System.out.println(isPalindrome(-121));
-		System.out.println(isPalindrome(10));
-		System.out.println(isPalindrome(-101));
+		PalindromeNumber test = new PalindromeNumber();
+		System.out.println(test.isPalindrome(121));
+		System.out.println(test.isPalindrome(-121));
+		System.out.println(test.isPalindrome(10));
+		System.out.println(test.isPalindrome(-101));
 	}
 
 	// https://leetcode.com/submissions/detail/481574918/
-	public static boolean isPalindrome(int x) {
+	public boolean isPalindrome(int x) {
 		if (x < 0 || (x != 0 && x % 10 == 0)) {
 			return false;
 		} else {
@@ -24,7 +25,7 @@ public class PalindromeNumber {
 	}
 
 	// https://leetcode.com/submissions/detail/481576427/
-//	public static boolean isPalindrome(int x) {
+//	public boolean isPalindrome(int x) {
 //		if (x < 0) {
 //			return false;
 //		} else {

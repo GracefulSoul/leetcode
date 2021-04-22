@@ -4,20 +4,21 @@ public class StringToIntegerAtoi {
 
 	// https://leetcode.com/submissions/detail/481300277/
 	public static void main(String[] args) {
-		System.out.println(myAtoi("42"));
-		System.out.println(myAtoi("   -42"));
-		System.out.println(myAtoi("4193 with words"));
-		System.out.println(myAtoi("words and 987"));
-		System.out.println(myAtoi("-91283472332"));
-		System.out.println(myAtoi("91283472332"));
+		StringToIntegerAtoi test = new StringToIntegerAtoi();
+		System.out.println(test.myAtoi("42"));
+		System.out.println(test.myAtoi("   -42"));
+		System.out.println(test.myAtoi("4193 with words"));
+		System.out.println(test.myAtoi("words and 987"));
+		System.out.println(test.myAtoi("-91283472332"));
+		System.out.println(test.myAtoi("91283472332"));
 	}
 
-	public static int myAtoi(String s) {
+	public int myAtoi(String s) {
 		int result = 0;
 		if (s.length() == 0) {
 			return result;
 		}
-		int idx = getBeginning(s);
+		int idx = this.getBeginning(s);
 		if (idx == s.length()) {
 			return result;
 		}
@@ -26,7 +27,7 @@ public class StringToIntegerAtoi {
 			sign = s.charAt(idx++) == '-' ? -1 : 1;
 		}
 		while (idx < s.length() && s.charAt(idx) >= '0' && s.charAt(idx) <= '9') {
-			if (isOverflow(result, s.charAt(idx))) {
+			if (this.isOverflow(result, s.charAt(idx))) {
 				return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
 			}
 			result = result * 10 + s.charAt(idx++) - '0';
@@ -34,7 +35,7 @@ public class StringToIntegerAtoi {
 		return result * sign;
 	}
 
-	private static int getBeginning(String s) {
+	private int getBeginning(String s) {
 		int idx = 0;
 		while (idx < s.length() && s.charAt(idx) == ' ') {
 			idx++;
@@ -42,7 +43,7 @@ public class StringToIntegerAtoi {
 		return idx;
 	}
 
-	private static boolean isOverflow(int result, char c) {
+	private boolean isOverflow(int result, char c) {
 		return result > Integer.MAX_VALUE / 10
 				|| (result == Integer.MAX_VALUE / 10 && c - '0' > Integer.MAX_VALUE % 10);
 	}
