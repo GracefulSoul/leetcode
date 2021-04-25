@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ThreeSum {
 
+	// https://leetcode.com/submissions/detail/484797660/
 	public static void main(String[] args) {
 		ThreeSum test = new ThreeSum();
 		print(test.threeSum(new int[] { -1, 0, 1, 2, -1, -4 }));
@@ -42,9 +43,9 @@ public class ThreeSum {
 		}
 		return result;
 	}
-	
+
 	private static void print(List<List<Integer>> list) {
 		list.forEach(System.out::println);
 	}
-	
+
 }
