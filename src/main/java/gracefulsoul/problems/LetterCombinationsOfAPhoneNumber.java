@@ -30,11 +30,11 @@ public class LetterCombinationsOfAPhoneNumber {
 		}
 		String letters = MAPPING[(digits.charAt(prefix.length()) - '0')];
 		for (int i = 0; i < letters.length(); i++) {
-			this.combination(this.add(prefix, letters.charAt(i)), digits, result);
+			this.combination(this.addCharToString(prefix, letters.charAt(i)), digits, result);
 		}
 	}
 
-	private String add(String s, Character c) {
+	private String addCharToString(String s, Character c) {
 		StringBuilder sb = new StringBuilder(s);
 		sb.append(c);
 		return sb.toString();
