@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LetterCombinationsOfAPhoneNumber {
 
-	// https://leetcode.com/submissions/detail/485797600/
+	// https://leetcode.com/submissions/detail/485815987/
 	public static void main(String[] args) {
 		LetterCombinationsOfAPhoneNumber test = new LetterCombinationsOfAPhoneNumber();
 		print(test.letterCombinations("23"));
@@ -13,25 +13,32 @@ public class LetterCombinationsOfAPhoneNumber {
 		print(test.letterCombinations("2"));
 	}
 
+	private static final String[] MAPPING = new String[] { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+
 	public List<String> letterCombinations(String digits) {
 		List<String> result = new LinkedList<String>();
 		if (digits.length() == 0) {
 			return result;
 		}
-		this.combination("", digits, 0, result);
+		this.combination("", digits, result);
 		return result;
 	}
 
-	private void combination(String prefix, String digits, int offset, List<String> result) {
-		if (offset >= digits.length()) {
+	private void combination(String prefix, String digits, List<String> result) {
+		if (prefix.length() >= digits.length()) {
 			result.add(prefix);
 			return;
 		}
-		String[] mapping = new String[] { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
-		String letters = mapping[(digits.charAt(offset) - '0')];
+		String letters = MAPPING[(digits.charAt(prefix.length()) - '0')];
 		for (int i = 0; i < letters.length(); i++) {
-			combination(prefix + letters.charAt(i), digits, offset + 1, result);
+			this.combination(this.add(prefix, letters.charAt(i)), digits, result);
 		}
+	}
+
+	private String add(String s, Character c) {
+		StringBuilder sb = new StringBuilder(s);
+		sb.append(c);
+		return sb.toString();
 	}
 
 	private static void print(List<String> list) {
