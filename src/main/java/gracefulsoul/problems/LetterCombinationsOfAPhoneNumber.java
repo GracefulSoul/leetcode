@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LetterCombinationsOfAPhoneNumber {
 
-	// https://leetcode.com/submissions/detail/485815987/
+	// https://leetcode.com/submissions/detail/485817328/
 	public static void main(String[] args) {
 		LetterCombinationsOfAPhoneNumber test = new LetterCombinationsOfAPhoneNumber();
 		print(test.letterCombinations("23"));
@@ -17,15 +17,14 @@ public class LetterCombinationsOfAPhoneNumber {
 
 	public List<String> letterCombinations(String digits) {
 		List<String> result = new LinkedList<String>();
-		if (digits.length() == 0) {
-			return result;
+		if (!digits.isEmpty()) {
+			this.combination("", digits, result);
 		}
-		this.combination("", digits, result);
 		return result;
 	}
 
 	private void combination(String prefix, String digits, List<String> result) {
-		if (prefix.length() >= digits.length()) {
+		if (prefix.length() == digits.length()) {
 			result.add(prefix);
 			return;
 		}
