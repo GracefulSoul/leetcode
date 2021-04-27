@@ -18,7 +18,7 @@ public class LetterCombinationsOfAPhoneNumber {
 		if (digits.length() == 0) {
 			return result;
 		}
-		combination("", digits, 0, result);
+		this.combination("", digits, 0, result);
 		return result;
 	}
 
