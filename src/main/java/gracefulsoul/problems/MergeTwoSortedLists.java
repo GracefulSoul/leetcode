@@ -4,7 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class MergeTwoSortedLists {
 
-	// https://leetcode.com/submissions/detail/487336661/
+	// https://leetcode.com/submissions/detail/487337839/
 	public static void main(String[] args) {
 		MergeTwoSortedLists test = new MergeTwoSortedLists();
 		ListNode node1 = null;
