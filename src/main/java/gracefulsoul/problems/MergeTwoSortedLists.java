@@ -7,10 +7,9 @@ public class MergeTwoSortedLists {
 	// https://leetcode.com/submissions/detail/487337839/
 	public static void main(String[] args) {
 		MergeTwoSortedLists test = new MergeTwoSortedLists();
-		ListNode node1 = null;
-		ListNode node2 = new ListNode(0, null);
-		test.mergeTwoLists(node1, node2);
-
+		print(test.mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4, null))), new ListNode(1, new ListNode(3, new ListNode(4, null)))));
+		print(test.mergeTwoLists(new ListNode(), new ListNode()));
+		print(test.mergeTwoLists(new ListNode(), new ListNode(0)));
 	}
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -27,6 +26,17 @@ public class MergeTwoSortedLists {
 				return l2;
 			}
 		}
+	}
+
+	private static void print(ListNode listNode) {
+		while (listNode != null) {
+			System.out.print(listNode.val);
+			if (listNode.next != null) {
+				System.out.print(",");
+			}
+			listNode = listNode.next;
+		}
+		System.out.println();
 	}
 
 }
