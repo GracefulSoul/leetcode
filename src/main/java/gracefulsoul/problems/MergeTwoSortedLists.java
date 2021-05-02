@@ -8,8 +8,8 @@ public class MergeTwoSortedLists {
 	public static void main(String[] args) {
 		MergeTwoSortedLists test = new MergeTwoSortedLists();
 		print(test.mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4, null))), new ListNode(1, new ListNode(3, new ListNode(4, null)))));
-		print(test.mergeTwoLists(new ListNode(), new ListNode()));
-		print(test.mergeTwoLists(new ListNode(), new ListNode(0)));
+//		print(test.mergeTwoLists(new ListNode(), new ListNode()));
+//		print(test.mergeTwoLists(new ListNode(), new ListNode(0)));
 	}
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
