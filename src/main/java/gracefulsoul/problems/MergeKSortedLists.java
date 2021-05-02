@@ -19,15 +19,13 @@ public class MergeKSortedLists {
 	private ListNode mergeListsRecursion(ListNode[] lists, int start, int end) {
 		if (start == end) {
 			return lists[start];
+		} else if (start < end) {
+			int half = (start + end) / 2;
+			ListNode l1 = this.mergeListsRecursion(lists, start, half);
+			ListNode l2 = this.mergeListsRecursion(lists, half + 1, end);
+			return this.mergeTwoLists(l1, l2);
 		} else {
-			if (start < end) {
-				int half = (start + end) / 2;
-				ListNode l1 = this.mergeListsRecursion(lists, start, half);
-				ListNode l2 = this.mergeListsRecursion(lists, half + 1, end);
-				return this.mergeTwoLists(l1, l2);
-			} else {
-				return null;
-			}
+			return null;
 		}
 	}
 
