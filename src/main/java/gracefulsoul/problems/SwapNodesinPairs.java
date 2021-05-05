@@ -1,5 +1,8 @@
 package gracefulsoul.problems;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import gracefulsoul.object.ListNode;
 
 public class SwapNodesinPairs {
@@ -14,10 +17,23 @@ public class SwapNodesinPairs {
 		if (head == null || head.next == null) {
 			return head;
 		}
-		ListNode n = head.next;
-		head.next = swapPairs(head.next.next);
-		n.next = head;
-		return n;
+		List<Integer> list = new ArrayList<>();
+		while (head != null) {
+			if (head.next == null) {
+				list.add(head.val);
+				head = head.next;
+			} else {
+				ListNode temp = head.next;
+				list.add(temp.val);
+				list.add(head.val);
+				head = head.next.next;
+			}
+		}
+		ListNode ln = null;
+		for (int idx = list.size(); idx > 0; idx--) {
+			ln = new ListNode(list.get(idx - 1), ln);
+		}
+		return ln;
 	}
 
 	private static void print(ListNode listNode) {
