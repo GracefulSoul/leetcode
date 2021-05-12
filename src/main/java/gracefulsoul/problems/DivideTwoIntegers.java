@@ -11,13 +11,13 @@ public class DivideTwoIntegers {
 		System.out.println(test.divide(1, 1));
 		System.out.println(test.divide(-2147483648, -1));
 	}
-	
+
 	public int divide(int dividend, int divisor) {
-    	if (dividend == Integer.MIN_VALUE && divisor == -1) {
-    		return Integer.MAX_VALUE;
-    	} else {
-    		return dividend / divisor;
-    	}
-    }
+		if (dividend == Integer.MIN_VALUE && divisor == -1) {
+			return Integer.MAX_VALUE;
+		} else {
+			return dividend / divisor;
+		}
+	}
 
 }
