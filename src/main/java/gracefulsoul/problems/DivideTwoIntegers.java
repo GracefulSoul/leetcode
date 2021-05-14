@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DivideTwoIntegers {
 
-	// https://leetcode.com/submissions/detail/492012279/
+	// https://leetcode.com/submissions/detail/491571524/
 	public static void main(String[] args) {
 		DivideTwoIntegers test = new DivideTwoIntegers();
 		System.out.println(test.divide(10, 3));
