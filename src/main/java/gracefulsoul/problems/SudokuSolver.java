@@ -7,7 +7,7 @@ public class SudokuSolver {
 	// https://leetcode.com/submissions/detail/495130327/
 	public static void main(String[] args) {
 		SudokuSolver test = new SudokuSolver();
-		test.solveSudoku(new char[][] {
+		char[][] board = new char[][] {
 			new char[] { '5', '3', '.', '.', '7', '.', '.', '.', '.' },
 			new char[] { '6', '.', '.', '1', '9', '5', '.', '.', '.' },
 			new char[] { '.', '9', '8', '.', '.', '.', '.', '6', '.' },
@@ -17,7 +17,9 @@ public class SudokuSolver {
 			new char[] { '.', '6', '.', '.', '.', '.', '2', '8', '.' },
 			new char[] { '.', '.', '.', '4', '1', '9', '.', '.', '5' },
 			new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
-		});
+		};
+		test.solveSudoku(board);
+		print(board);
 	}
 
 	public void solveSudoku(char[][] board) {
@@ -25,7 +27,6 @@ public class SudokuSolver {
 			return;
 		}
 		this.solve(board);
-		print(board);
 	}
 
 	private boolean solve(char[][] board) {
