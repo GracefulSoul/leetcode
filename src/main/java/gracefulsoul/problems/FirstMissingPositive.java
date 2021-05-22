@@ -14,7 +14,7 @@ public class FirstMissingPositive {
 		int idx = 0;
 		while (idx < nums.length) {
 			if (nums[idx] >= 1 && nums[idx] <= nums.length && nums[nums[idx] - 1] != nums[idx]) {
-				swap(nums, idx, nums[idx] - 1);
+				this.swap(nums, idx, nums[idx] - 1);
 			} else {
 				idx++;
 			}
