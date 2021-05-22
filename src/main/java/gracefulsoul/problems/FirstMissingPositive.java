@@ -5,8 +5,8 @@ public class FirstMissingPositive {
 	// https://leetcode.com/submissions/detail/496465405/
 	public static void main(String[] args) {
 		FirstMissingPositive test = new FirstMissingPositive();
-//		System.out.println(test.firstMissingPositive(new int[] { 1, 2, 0 }));
-//		System.out.println(test.firstMissingPositive(new int[] { 3, 4, -1, 1 }));
+		System.out.println(test.firstMissingPositive(new int[] { 1, 2, 0 }));
+		System.out.println(test.firstMissingPositive(new int[] { 3, 4, -1, 1 }));
 		System.out.println(test.firstMissingPositive(new int[] { 7, 8, 9, 11, 12 }));
 	}
 
