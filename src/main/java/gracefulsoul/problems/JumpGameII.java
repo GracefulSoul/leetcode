@@ -11,15 +11,15 @@ public class JumpGameII {
 
 	public int jump(int[] nums) {
 		int count = 0;
-		int position = 0;
 		int target = 0;
+		int max = 0;
 		for (int idx = 0; idx < nums.length - 1; idx++) {
-			target = Math.max(target, idx + nums[idx]);
-			if (idx == position) {
+			max = Math.max(max, idx + nums[idx]);
+			if (idx == target) {
 				count++;
-				position = target;
+				target = max;
 			}
-			if (position == nums.length - 1) {
+			if (target == nums.length - 1) {
 				break;
 			}
 		}
