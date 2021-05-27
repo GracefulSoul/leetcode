@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class JumpGameII {
 
+	// https://leetcode.com/submissions/detail/498893061/
 	public static void main(String[] args) {
 		JumpGameII test = new JumpGameII();
 		System.out.println(test.jump(new int[] { 2, 3, 1, 1, 4 }));
