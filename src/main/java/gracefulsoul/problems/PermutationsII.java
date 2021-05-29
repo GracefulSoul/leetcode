@@ -19,18 +19,18 @@ public class PermutationsII {
 		return result;
 	}
 
-	private void getPermutations(List<List<Integer>> result, List<Integer> list, int[] nums, boolean[] usable) {
+	private void getPermutations(List<List<Integer>> result, List<Integer> list, int[] nums, boolean[] used) {
 		if (list.size() == nums.length) {
 			result.add(new ArrayList<Integer>(list));
 		} else {
 			for (int idx = 0; idx < nums.length; idx++) {
-				if (usable[idx] || (idx > 0 && nums[idx - 1] == nums[idx] && !usable[idx - 1])) {
+				if (used[idx] || (idx > 0 && nums[idx - 1] == nums[idx] && !used[idx - 1])) {
 					continue;
 				}
 				list.add(nums[idx]);
-				usable[idx] = true;
-				this.getPermutations(result, list, nums, usable);
-				usable[idx] = false;
+				used[idx] = true;
+				this.getPermutations(result, list, nums, used);
+				used[idx] = false;
 				list.remove(list.size() - 1);
 			}
 		}
