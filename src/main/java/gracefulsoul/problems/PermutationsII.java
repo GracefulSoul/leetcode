@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PermutationsII {
 
-	// https://leetcode.com/submissions/detail/499636002/
+	// https://leetcode.com/submissions/detail/499650179/
 	public static void main(String[] args) {
 		PermutationsII test = new PermutationsII();
 		print(test.permuteUnique(new int[] { 1, 1, 2 }));
