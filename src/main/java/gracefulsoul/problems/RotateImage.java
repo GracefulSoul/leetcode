@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RotateImage {
 
-	// https://leetcode.com/submissions/detail/500292244/
+	// https://leetcode.com/submissions/detail/500297400/
 	public static void main(String[] args) {
 		RotateImage test = new RotateImage();
 		int[][] matrix1 = new int[][] {
