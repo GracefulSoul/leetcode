@@ -33,7 +33,6 @@ public class MergeIntervals {
 			if (temp[1] >= interval[0]) {
 				temp[1] = Math.max(temp[1], interval[1]);
 			} else {
-				temp = interval;
 				result.add(temp);
 			}
 		}
