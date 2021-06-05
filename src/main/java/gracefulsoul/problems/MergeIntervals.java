@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MergeIntervals {
 
-	// https://leetcode.com/submissions/detail/503302199/
+	// https://leetcode.com/submissions/detail/503310440/
 	public static void main(String[] args) {
 		MergeIntervals test = new MergeIntervals();
 		print(test.merge(new int[][] {
@@ -33,7 +33,7 @@ public class MergeIntervals {
 			if (temp[1] >= interval[0]) {
 				temp[1] = Math.max(temp[1], interval[1]);
 			} else {
-				result.add(temp);
+				result.add(interval);
 			}
 		}
 		return result.toArray(new int[result.size()][]);
