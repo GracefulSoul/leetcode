@@ -27,9 +27,9 @@ public class MergeIntervals {
 		}
 		Arrays.sort(intervals, (i1, i2) -> i1[0] - i2[0]);
 		List<int[]> result = new ArrayList<>();
-		int[] temp = intervals[0];
-		result.add(temp);
+		result.add(intervals[0]);
 		for (int[] interval : intervals) {
+			int[] temp = result.get(result.size() - 1);
 			if (temp[1] >= interval[0]) {
 				temp[1] = Math.max(temp[1], interval[1]);
 			} else {
