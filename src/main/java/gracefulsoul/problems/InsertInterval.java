@@ -6,7 +6,7 @@ import java.util.List;
 
 public class InsertInterval {
 
-	// https://leetcode.com/submissions/detail/503746870/
+	// https://leetcode.com/submissions/detail/503763321/
 	public static void main(String[] args) {
 		InsertInterval test  = new InsertInterval();
 		print(test.insert(new int[][] {
