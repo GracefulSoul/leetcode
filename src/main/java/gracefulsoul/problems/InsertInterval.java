@@ -42,18 +42,17 @@ public class InsertInterval {
 	
 	public int[][] insert(int[][] intervals, int[] newInterval) {
 		List<int[]> result = new ArrayList<>();
-		int[] temp = newInterval;
 		for (int i = 0; i < intervals.length; i++) {
-			if (intervals[i][0] > temp[1]) {
-				result.add(temp);
-				temp = intervals[i];
-			} else if (intervals[i][1] >= temp[0]) {
-				temp = new int[] { Math.min(intervals[i][0], temp[0]), Math.max(intervals[i][1], temp[1]) };
+			if (intervals[i][0] > newInterval[1]) {
+				result.add(newInterval);
+				newInterval = intervals[i];
+			} else if (intervals[i][1] >= newInterval[0]) {
+				newInterval = new int[] { Math.min(intervals[i][0], newInterval[0]), Math.max(intervals[i][1], newInterval[1]) };
 			} else {
 				result.add(intervals[i]);
 			}
 		}
-		result.add(temp);
+		result.add(newInterval);
 		return result.toArray(new int[result.size()][]);
 	}
 	
