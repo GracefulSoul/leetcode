@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class SpiralMatrixII {
 
+	// https://leetcode.com/submissions/detail/504715101/
 	public static void main(String[] args) {
 		SpiralMatrixII test = new SpiralMatrixII();
 		print(test.generateMatrix(3));
 		print(test.generateMatrix(1));
 	}
 
-	// https://leetcode.com/submissions/detail/504715101/
 	public int[][] generateMatrix(int n) {
 		int[][] result = new int[n][n];
 		int row = 0;
