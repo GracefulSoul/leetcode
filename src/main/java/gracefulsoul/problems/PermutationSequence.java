@@ -9,8 +9,8 @@ public class PermutationSequence {
 	public static void main(String[] args) {
 		PermutationSequence test = new PermutationSequence();
 		System.out.println(test.getPermutation(3, 3));
-		System.out.println(test.getPermutation(4, 9));
-		System.out.println(test.getPermutation(3, 1));
+//		System.out.println(test.getPermutation(4, 9));
+//		System.out.println(test.getPermutation(3, 1));
 	}
 
 	private List<Integer> nums = new ArrayList<>();
