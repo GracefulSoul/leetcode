@@ -8,7 +8,7 @@ public class RotateList {
 	public static void main(String[] args) {
 		RotateList test = new RotateList();
 		print(test.rotateRight(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2));
-		print(test.rotateRight(new ListNode(0, new ListNode(1, new ListNode(2))), 4));
+//		print(test.rotateRight(new ListNode(0, new ListNode(1, new ListNode(2))), 4));
 	}
 
 	public ListNode rotateRight(ListNode head, int k) {
