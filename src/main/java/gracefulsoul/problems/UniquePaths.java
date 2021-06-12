@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class UniquePaths {
 
-	// https://leetcode.com/submissions/detail/506592903/
+	// https://leetcode.com/submissions/detail/506596475/
 	public static void main(String[] args) {
 		UniquePaths test = new UniquePaths();
 		System.out.println(test.uniquePaths(3, 7));
