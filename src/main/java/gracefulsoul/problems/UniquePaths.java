@@ -12,18 +12,16 @@ public class UniquePaths {
 	}
 
 	public int uniquePaths(int m, int n) {
-		return this.recursiveUniquePaths(m - 1, n - 1, new int[m][n]);
+		return this.recursiveUniquePaths(m - 1, n - 1, new int[n][m]);
 	}
 
 	private int recursiveUniquePaths(int m, int n, int[][] path) {
-		if (m < 0 || n < 0) {
-			return 0;
-		} else if (m == 0 || n == 0) {
+		if (m == 0 || n == 0) {
 			return 1;
-		} else if (path[m][n] > 0) {
-			return path[m][n];
+		} else if (path[n][m] > 0) {
+			return path[n][m];
 		} else {
-			return path[m][n] = this.recursiveUniquePaths(m - 1, n, path) + this.recursiveUniquePaths(m, n - 1, path);
+			return path[n][m] = this.recursiveUniquePaths(m - 1, n, path) + this.recursiveUniquePaths(m, n - 1, path);
 		}
 	}
 
