@@ -2,13 +2,13 @@ package gracefulsoul.problems;
 
 public class UniquePaths {
 
-	// https://leetcode.com/submissions/detail/506596475/
+	// https://leetcode.com/submissions/detail/506597064/
 	public static void main(String[] args) {
 		UniquePaths test = new UniquePaths();
 		System.out.println(test.uniquePaths(3, 7));
-		System.out.println(test.uniquePaths(3, 2));
-		System.out.println(test.uniquePaths(7, 3));
-		System.out.println(test.uniquePaths(3, 3));
+//		System.out.println(test.uniquePaths(3, 2));
+//		System.out.println(test.uniquePaths(7, 3));
+//		System.out.println(test.uniquePaths(3, 3));
 	}
 
 	public int uniquePaths(int m, int n) {
@@ -21,7 +21,8 @@ public class UniquePaths {
 		} else if (path[n][m] > 0) {
 			return path[n][m];
 		} else {
-			return path[n][m] = this.recursiveUniquePaths(m - 1, n, path) + this.recursiveUniquePaths(m, n - 1, path);
+			path[n][m] = this.recursiveUniquePaths(m - 1, n, path) + this.recursiveUniquePaths(m, n - 1, path);
+			return path[n][m];
 		}
 	}
 
