@@ -14,7 +14,7 @@ public class AddBinary {
 		int aIdx = a.length() - 1;
 		int bIdx = b.length() - 1;
 		int carry = 0;
-		while(aIdx >= 0 || bIdx >= 0) {
+		while (aIdx >= 0 || bIdx >= 0) {
 			int sum = carry;
 			if (aIdx >= 0) {
 				sum += a.charAt(aIdx--) - '0';
