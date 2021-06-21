@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class EditDistance {
 
+	// https://leetcode.com/submissions/detail/510925821/
 	public static void main(String[] args) {
 		EditDistance test = new EditDistance();
 		System.out.println(test.minDistance("horse", "ros"));
