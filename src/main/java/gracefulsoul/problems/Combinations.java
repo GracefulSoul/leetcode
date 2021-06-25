@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Combinations {
 
-	// https://leetcode.com/submissions/detail/513189707/
+	// https://leetcode.com/submissions/detail/513194431/
 	public static void main(String[] args) {
 		Combinations test = new Combinations();
 		System.out.println(test.combine(4, 2));
@@ -17,7 +17,7 @@ public class Combinations {
 		if (k == 0) {
 			result.add(new ArrayList<Integer>());
 			return result;
-		} else if (k > n || k < 0) {
+		} else if (k > n) {
 			return result;
 		} else {
 			result = this.combine(n - 1, k - 1);
