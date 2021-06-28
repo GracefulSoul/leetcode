@@ -26,7 +26,7 @@ public class WordSearch {
 		char[] charArray = word.toCharArray();
 		for (int row = 0; row < board.length; row++) {
 			for (int col = 0; col < board[row].length; col++) {
-				if (this.exist(board, row, col, charArray, 0)) {
+				if (this.check(board, row, col, charArray, 0)) {
 					return true;
 				}
 			}
@@ -34,7 +34,7 @@ public class WordSearch {
 		return false;
 	}
 
-	private boolean exist(char[][] board, int row, int col, char[] charArray, int idx) {
+	private boolean check(char[][] board, int row, int col, char[] charArray, int idx) {
 		if (idx == charArray.length) {
 			return true;
 		} else if (row < 0 || col < 0 || row == board.length || col == board[row].length
@@ -42,10 +42,10 @@ public class WordSearch {
 			return false;
 		} else {
 			board[row][col] = 0;
-			boolean exist = this.exist(board, row, col + 1, charArray, idx + 1)
-					|| this.exist(board, row + 1, col, charArray, idx + 1)
-					|| this.exist(board, row, col - 1, charArray, idx + 1)
-					|| this.exist(board, row - 1, col, charArray, idx + 1);
+			boolean exist = this.check(board, row, col + 1, charArray, idx + 1)
+					|| this.check(board, row + 1, col, charArray, idx + 1)
+					|| this.check(board, row, col - 1, charArray, idx + 1)
+					|| this.check(board, row - 1, col, charArray, idx + 1);
 			board[row][col] = charArray[idx];
 			return exist;
 		}
