@@ -4,6 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class RemoveDuplicatesFromSortedListII {
 
+	// https://leetcode.com/submissions/detail/515851866/
 	public static void main(String[] args) {
 		RemoveDuplicatesFromSortedListII test = new RemoveDuplicatesFromSortedListII();
 		print(test.deleteDuplicates(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(4, new ListNode(4, new ListNode(5)))))))));
@@ -18,7 +19,7 @@ public class RemoveDuplicatesFromSortedListII {
 		if (head == null) {
 			return null;
 		} else {
-			if (head.next != null && head.val == head.next.val || previous != null && head.val == previous.val) {
+			if ((head.next != null && head.val == head.next.val) || (previous != null && head.val == previous.val)) {
 				return this.recursive(head.next, head);
 			} else {
 				head.next = this.recursive(head.next, head);
