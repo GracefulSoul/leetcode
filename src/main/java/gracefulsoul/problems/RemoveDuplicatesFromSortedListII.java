@@ -4,11 +4,11 @@ import gracefulsoul.object.ListNode;
 
 public class RemoveDuplicatesFromSortedListII {
 
-	// https://leetcode.com/submissions/detail/515851866/
+	// https://leetcode.com/submissions/detail/515857149/
 	public static void main(String[] args) {
 		RemoveDuplicatesFromSortedListII test = new RemoveDuplicatesFromSortedListII();
 		print(test.deleteDuplicates(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3, new ListNode(4, new ListNode(4, new ListNode(5)))))))));
-		print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3)))))));
+//		print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3)))))));
 	}
 
 	public ListNode deleteDuplicates(ListNode head) {
