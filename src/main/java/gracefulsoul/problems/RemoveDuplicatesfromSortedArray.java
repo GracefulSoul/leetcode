@@ -1,10 +1,10 @@
 package gracefulsoul.problems;
 
-public class RemoveDuplicatesfromSortedArray {
+public class RemoveDuplicatesFromSortedArray {
 
 	// https://leetcode.com/submissions/detail/490416459/
 	public static void main(String[] args) {
-		RemoveDuplicatesfromSortedArray test = new RemoveDuplicatesfromSortedArray();
+		RemoveDuplicatesFromSortedArray test = new RemoveDuplicatesFromSortedArray();
 		System.out.println(test.removeDuplicates(new int[] { 1, 1, 2 }));
 		System.out.println(test.removeDuplicates(new int[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 }));
 	}
