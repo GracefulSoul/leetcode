@@ -48,7 +48,7 @@ public class MaximalRectangle {
 	public int getMaxArea(int[] heights, Stack<Integer> stack) {
 		int maxArea = 0;
 		for (int idx = 0; idx <= heights.length; idx++) {
-			while (!stack.isEmpty() && (idx == heights.length || heights[stack.peek()] > heights[idx])) {
+			while (!stack.isEmpty() && (idx == heights.length || heights[idx] < heights[stack.peek()])) {
 				int height = heights[stack.pop()];
 				int start = stack.isEmpty() ? -1 : stack.peek();
 				maxArea = Math.max(maxArea, height * (idx - start - 1));
