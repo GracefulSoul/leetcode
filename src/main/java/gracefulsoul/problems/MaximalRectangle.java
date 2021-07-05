@@ -33,11 +33,11 @@ public class MaximalRectangle {
 		int maxArea = 0;
 		int[] heights = new int[matrix[0].length];
 		for (char[] row : matrix) {
-			for (int i = 0; i < row.length; i++) {
-				if (row[i] == '1') {
-					heights[i]++;
+			for (int idx = 0; idx < row.length; idx++) {
+				if (row[idx] == '1') {
+					heights[idx]++;
 				} else {
-					heights[i] = 0;
+					heights[idx] = 0;
                 }
 			}
 			maxArea = Math.max(maxArea, this.getMaxArea(heights, new Stack<>()));
