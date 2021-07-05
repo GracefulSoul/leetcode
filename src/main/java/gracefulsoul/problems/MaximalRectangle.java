@@ -22,7 +22,7 @@ public class MaximalRectangle {
 			new char[] {'1'}
 		}));
 		System.out.println(test.maximalRectangle(new char[][] {
-			new char[] {'0', '0'}
+			new char[] { '0', '0'}
 		}));
 	}
 
