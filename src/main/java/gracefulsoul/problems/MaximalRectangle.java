@@ -49,9 +49,9 @@ public class MaximalRectangle {
 		int maxArea = 0;
 		for (int idx = 0; idx <= heights.length; idx++) {
 			while (!stack.isEmpty() && (idx == heights.length || heights[stack.peek()] > heights[idx])) {
-				int index = stack.pop();
+				int height = heights[stack.pop()];
 				int start = stack.isEmpty() ? -1 : stack.peek();
-				maxArea = Math.max(maxArea, heights[index] * (idx - start - 1));
+				maxArea = Math.max(maxArea, height * (idx - start - 1));
 			}
 			stack.push(idx);
 		}
