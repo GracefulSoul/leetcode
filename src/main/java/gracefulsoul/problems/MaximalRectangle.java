@@ -38,7 +38,7 @@ public class MaximalRectangle {
 					heights[idx]++;
 				} else {
 					heights[idx] = 0;
-                }
+				}
 			}
 			maxArea = Math.max(maxArea, this.getMaxArea(heights, new Stack<>()));
 		}
