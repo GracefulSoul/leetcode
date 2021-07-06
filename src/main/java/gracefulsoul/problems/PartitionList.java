@@ -11,8 +11,7 @@ public class PartitionList {
 	}
 
 	public ListNode partition(ListNode head, int x) {
-		ListNode result = new ListNode();
-		result.next = head;
+		ListNode result = new ListNode(0, head);
 		ListNode temp = result;
 		ListNode pointer = result;
 		while (pointer.next != null) {
