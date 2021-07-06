@@ -4,7 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class PartitionList {
 
-	// https://leetcode.com/submissions/detail/518055175/
+	// https://leetcode.com/submissions/detail/518146184/
 	public static void main(String[] args) {
 		PartitionList test = new PartitionList();
 		print(test.partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3));
@@ -30,11 +30,10 @@ public class PartitionList {
 	}
 
 	private void swap(ListNode ln1, ListNode ln2) {
-		ListNode ln1Next = ln1.next;
-		ListNode ln2Next = ln2.next;
-		ln2.next = ln2Next.next;
-		ln2Next.next = ln1Next;
-		ln1.next = ln2Next;
+		ListNode temp = ln2.next;
+		ln2.next = temp.next;
+		temp.next = ln1.next;
+		ln1.next = temp;
 	}
 
 	private static void print(ListNode listNode) {
