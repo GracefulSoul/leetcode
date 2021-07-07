@@ -20,8 +20,7 @@ public class MergeSortedArray {
 
 	public void merge(int[] nums1, int m, int[] nums2, int n) {
 		int length = m + n - 1;
-		m--;
-		n--;
+		m--; n--;
 		while (n >= 0) {
 			nums1[length--] = m < 0 || nums1[m] < nums2[n] ? nums2[n--] : nums1[m--];
 		}
