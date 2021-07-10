@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DecodeWays {
 
-	// https://leetcode.com/submissions/detail/520116082/
+	// https://leetcode.com/submissions/detail/520154233/
 	public static void main(String[] args) {
 		DecodeWays test = new DecodeWays();
 		System.out.println(test.numDecodings("12"));
