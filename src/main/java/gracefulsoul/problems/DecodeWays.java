@@ -15,9 +15,9 @@ public class DecodeWays {
 		int[] dp = new int[s.length() + 1];
 		dp[s.length()] = 1;
 		dp[s.length() - 1] = s.charAt(s.length() - 1) != '0' ? 1 : 0;
-		for (int i = s.length() - 2; i >= 0; i--) {
-			if (s.charAt(i) != '0') {
-				dp[i] = dp[i + 1] + (Integer.parseInt(s.substring(i, i + 2)) <= 26 ? dp[i + 2] : 0);
+		for (int idx = s.length() - 2; idx >= 0; idx--) {
+			if (s.charAt(idx) != '0') {
+				dp[idx] = dp[idx + 1] + (Integer.parseInt(s.substring(idx, idx + 2)) <= 26 ? dp[idx + 2] : 0);
 			}
 		}
 		return dp[0];
