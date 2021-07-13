@@ -8,7 +8,7 @@ public class ReverseLinkedListII {
 	public static void main(String[] args) {
 		ReverseLinkedListII test = new ReverseLinkedListII();
 		print(test.reverseBetween(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2, 4));
-		print(test.reverseBetween(new ListNode(5), 1, 1));
+//		print(test.reverseBetween(new ListNode(5), 1, 1));
 	}
 
 	public ListNode reverseBetween(ListNode head, int left, int right) {
