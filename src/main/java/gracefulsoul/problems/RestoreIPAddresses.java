@@ -8,8 +8,11 @@ public class RestoreIPAddresses {
 	// https://leetcode.com/submissions/detail/521632318/
 	public static void main(String[] args) {
 		RestoreIPAddresses test = new RestoreIPAddresses();
+		System.out.println(test.restoreIpAddresses("25525511135"));
+		System.out.println(test.restoreIpAddresses("0000"));
+		System.out.println(test.restoreIpAddresses("1111"));
+		System.out.println(test.restoreIpAddresses("010010"));
 		System.out.println(test.restoreIpAddresses("101023"));
-
 	}
 
 	public List<String> restoreIpAddresses(String s) {
@@ -30,8 +33,7 @@ public class RestoreIPAddresses {
 					break;
 				}
 				int num = Integer.valueOf(s.substring(index, index + length));
-				if (length == 1 || (length == 2 && num >= 10 && num <= 99)
-						|| (length == 3 && num >= 100 && num <= 255)) {
+				if (length == 1 || (length == 2 && num >= 10 && num <= 99) || (length == 3 && num >= 100 && num <= 255)) {
 					sb.append(num);
 					if (part < 3) {
 						sb.append(".");
