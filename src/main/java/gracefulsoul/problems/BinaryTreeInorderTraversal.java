@@ -11,7 +11,10 @@ public class BinaryTreeInorderTraversal {
 	public static void main(String[] args) {
 		BinaryTreeInorderTraversal test = new BinaryTreeInorderTraversal();
 		System.out.println(test.inorderTraversal(new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null))));
+		System.out.println(test.inorderTraversal(new TreeNode()));
+		System.out.println(test.inorderTraversal(new TreeNode(1)));
 		System.out.println(test.inorderTraversal(new TreeNode(1, new TreeNode(2), null)));
+		System.out.println(test.inorderTraversal(new TreeNode(1, null, new TreeNode(2))));
 	}
 
 	public List<Integer> inorderTraversal(TreeNode root) {
