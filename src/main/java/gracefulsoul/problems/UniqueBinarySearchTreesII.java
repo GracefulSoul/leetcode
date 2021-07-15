@@ -11,7 +11,7 @@ public class UniqueBinarySearchTreesII {
 	public static void main(String[] args) {
 		UniqueBinarySearchTreesII test = new UniqueBinarySearchTreesII();
 		print(test.generateTrees(3));
-
+		print(test.generateTrees(1));
 	}
 
 	public List<TreeNode> generateTrees(int n) {
