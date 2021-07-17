@@ -6,7 +6,7 @@ public class UniqueBinarySearchTrees {
 	public static void main(String[] args) {
 		UniqueBinarySearchTrees test = new UniqueBinarySearchTrees();
 		System.out.println(test.numTrees(3));
-		System.out.println(test.numTrees(1));
+//		System.out.println(test.numTrees(1));
 	}
 
 	public int numTrees(int n) {
