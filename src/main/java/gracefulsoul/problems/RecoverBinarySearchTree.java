@@ -4,7 +4,7 @@ import gracefulsoul.object.TreeNode;
 
 public class RecoverBinarySearchTree {
 
-	// https://leetcode.com/submissions/detail/524787785/
+	// https://leetcode.com/submissions/detail/524830104/
 	public static void main(String[] args) {
 		RecoverBinarySearchTree test = new RecoverBinarySearchTree();
 		TreeNode treeNode1 = new TreeNode(1, new TreeNode(3, null, new TreeNode(2)), null);
@@ -54,9 +54,9 @@ public class RecoverBinarySearchTree {
 			}
 		}
 		if (first != null && second != null) {
-			int t = first.val;
+			int tempVal = first.val;
 			first.val = second.val;
-			second.val = t;
+			second.val = tempVal;
 		}
 	}
 
