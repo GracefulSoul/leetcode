@@ -7,7 +7,7 @@ import gracefulsoul.object.TreeNode;
 
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
-	// https://leetcode.com/submissions/detail/528464920/
+	// https://leetcode.com/submissions/detail/528473265/
 	public static void main(String[] args) {
 		ConstructBinaryTreeFromPreorderAndInorderTraversal test = new ConstructBinaryTreeFromPreorderAndInorderTraversal();
 		print(test.buildTree(new int[] { 3, 9, 20, 15, 7 }, new int[] { 9, 3, 15, 20, 7 }), true, false);
@@ -19,18 +19,18 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
 		for (int idx = 0; idx < inorder.length; idx++) {
 			inorderMap.put(inorder[idx], idx);
 		}
-		return this.recursive(preorder, inorderMap, 0, preorder.length - 1, 0, inorder.length - 1);
+		return this.recursive(preorder, inorderMap, 0, preorder.length - 1, 0);
 	}
 
-	public TreeNode recursive(int[] preorder, Map<Integer, Integer> inorderMap, int preStart, int preEnd, int inStart, int inEnd) {
-		if (preStart > preEnd || inStart > inEnd) {
+	public TreeNode recursive(int[] preorder, Map<Integer, Integer> inorderMap, int preStart, int preEnd, int inStart) {
+		if (preStart > preEnd) {
 			return null;
 		}
 		TreeNode treeNode = new TreeNode(preorder[preStart]);
 		int inOrderIndex = inorderMap.get(treeNode.val);
 		int numsLeft = inOrderIndex - inStart;
-		treeNode.left = this.recursive(preorder, inorderMap, preStart + 1, preStart + numsLeft, inStart, inOrderIndex - 1);
-		treeNode.right = this.recursive(preorder, inorderMap, preStart + numsLeft + 1, preEnd, inOrderIndex + 1, inEnd);
+		treeNode.left = this.recursive(preorder, inorderMap, preStart + 1, preStart + numsLeft, inStart);
+		treeNode.right = this.recursive(preorder, inorderMap, preStart + numsLeft + 1, preEnd, inOrderIndex + 1);
 		return treeNode;
 	}
 
