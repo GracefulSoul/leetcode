@@ -22,7 +22,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 		return this.recursive(postorder, inorderMap, 0, inorder.length - 1, 0, postorder.length - 1);
 	}
 
-	public TreeNode recursive(int[] postorder, Map<Integer, Integer> inorderMap, int inStart, int inEnd, int postStart, int postEnd) {
+	private TreeNode recursive(int[] postorder, Map<Integer, Integer> inorderMap, int inStart, int inEnd, int postStart, int postEnd) {
 		if (inStart > inEnd) {
 			return null;
 		}

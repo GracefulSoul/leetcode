@@ -25,7 +25,7 @@ public class PlusOne {
 		return digits;
 	}
 
-	public static void print(int[] array) {
+	private static void print(int[] array) {
 		System.out.println(Arrays.toString(array));
 	}
 
