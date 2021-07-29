@@ -20,10 +20,10 @@ public class ConvertSortedArrayToBinarySearchTree {
 			return null;
 		}
 		int mid = (low + high) / 2;
-		TreeNode node = new TreeNode(nums[mid]);
-		node.left = this.recursive(nums, low, mid - 1);
-		node.right = this.recursive(nums, mid + 1, high);
-		return node;
+		TreeNode treeNode = new TreeNode(nums[mid]);
+		treeNode.left = this.recursive(nums, low, mid - 1);
+		treeNode.right = this.recursive(nums, mid + 1, high);
+		return treeNode;
 	}
 
 	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
