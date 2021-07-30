@@ -5,7 +5,7 @@ import gracefulsoul.object.TreeNode;
 
 public class ConvertSortedListToBinarySearchTree {
 
-	// https://leetcode.com/submissions/detail/530467502/
+	// https://leetcode.com/submissions/detail/530469999/
 	public static void main(String[] args) {
 		ConvertSortedListToBinarySearchTree test = new ConvertSortedListToBinarySearchTree();
 		print(test.sortedListToBST(new ListNode(-10, new ListNode(-3, new ListNode(0, new ListNode(5, new ListNode(9)))))), true, false);
