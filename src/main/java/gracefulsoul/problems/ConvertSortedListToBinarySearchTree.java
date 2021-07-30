@@ -22,7 +22,7 @@ public class ConvertSortedListToBinarySearchTree {
 		}
 	}
 
-	public TreeNode recursive(ListNode head, ListNode tail) {
+	private TreeNode recursive(ListNode head, ListNode tail) {
 		if (head == tail) {
 			return null;
 		}
