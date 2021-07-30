@@ -22,8 +22,8 @@ public class ConvertSortedListToBinarySearchTree {
 		if (head == null || head == tail) {
 			return null;
 		}
-		ListNode slow = head;
 		ListNode fast = head;
+		ListNode slow = head;
 		while (fast != tail && fast.next != tail) {
 			fast = fast.next.next;
 			slow = slow.next;
