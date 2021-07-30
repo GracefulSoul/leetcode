@@ -28,10 +28,10 @@ public class ConvertSortedListToBinarySearchTree {
 			fast = fast.next.next;
 			slow = slow.next;
 		}
-		TreeNode teeNode = new TreeNode(slow.val);
-		teeNode.left = this.recursive(head, slow);
-		teeNode.right = this.recursive(slow.next, tail);
-		return teeNode;
+		TreeNode treeNode = new TreeNode(slow.val);
+		treeNode.left = this.recursive(head, slow);
+		treeNode.right = this.recursive(slow.next, tail);
+		return treeNode;
 	}
 
 	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
