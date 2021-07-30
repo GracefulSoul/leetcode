@@ -15,15 +15,11 @@ public class ConvertSortedListToBinarySearchTree {
 	}
 
 	public TreeNode sortedListToBST(ListNode head) {
-		if (head == null) {
-			return null;
-		} else {
-			return this.recursive(head, null);
-		}
+		return this.recursive(head, null);
 	}
 
 	private TreeNode recursive(ListNode head, ListNode tail) {
-		if (head == tail) {
+		if (head == null || head == tail) {
 			return null;
 		}
 		ListNode slow = head;
