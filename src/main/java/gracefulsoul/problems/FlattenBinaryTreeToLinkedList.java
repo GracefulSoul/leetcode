@@ -20,7 +20,6 @@ public class FlattenBinaryTreeToLinkedList {
 
 	public void flatten(TreeNode root) {
 		this.recursive(root, null);
-
 	}
 
 	private TreeNode recursive(TreeNode treeNode, TreeNode temp) {
