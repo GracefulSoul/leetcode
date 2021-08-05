@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class DistinctSubsequences {
 
+	// https://leetcode.com/submissions/detail/533736857/
 	public static void main(String[] args) {
 		DistinctSubsequences test = new DistinctSubsequences();
 		System.out.println(test.numDistinct("rabbbit", "rabbit"));
