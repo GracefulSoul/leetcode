@@ -10,11 +10,7 @@ public class PopulatingNextRightPointersInEachNode {
 	// https://leetcode.com/submissions/detail/534076549/
 	public static void main(String[] args) {
 		PopulatingNextRightPointersInEachNode test = new PopulatingNextRightPointersInEachNode();
-		Node nextNode1 = new Node(7);
-		Node nextNode2 = new Node(6, null, null, nextNode1);
-		Node nextNode3 = new Node(5, null, null, nextNode2);
-		Node nextNode4 = new Node(3, new Node(6, null, null, nextNode1), nextNode1, null);
-		print(test.connect(new Node(1, new Node(2, new Node(4, null, null, nextNode3), nextNode3, nextNode4), nextNode4, null)));
+		print(test.connect(new Node(1, new Node(2, new Node(4), new Node(5), null),  new Node(3, new Node(6), new Node(7), null), null)));
 	}
 
 	public Node connect(Node root) {
@@ -32,27 +28,22 @@ public class PopulatingNextRightPointersInEachNode {
 	}
 
 	private static void print(Node node) {
-		List<List<Object>> levelNums = new ArrayList<>();
-		setLevelGruops(node, levelNums, 0);
-		for (int idx = 1; idx < levelNums.size(); idx++) {
-			List<Object> list = levelNums.get(0);
-			list.add("#");
-			list.addAll(levelNums.get(idx));
-		}
-		levelNums.get(0).add("#");
-		System.out.println(levelNums.get(0));
+		List<Object> list = new ArrayList<>();
+		getConnectedNodeValues(node, node, list);
+		System.out.println(list);
 	}
-
-	private static void setLevelGruops(Node node, List<List<Object>> levelNums, int level) {
-		if (node == null) {
+	
+	private static void getConnectedNodeValues(Node start, Node temp, List<Object> list) {
+		if (temp == null) {
 			return;
 		}
-		if (levelNums.size() <= level) {
-			levelNums.add(new ArrayList<>());
+		list.add(temp.val);
+		if (temp.next == null) {
+			list.add("#");
+			getConnectedNodeValues(start.left, start.left, list);
+		} else {
+			getConnectedNodeValues(start, temp.next, list);
 		}
-		levelNums.get(level).add(node.val);
-		setLevelGruops(node.left, levelNums, level + 1);
-		setLevelGruops(node.right, levelNums, level + 1);
 	}
 
 }
