@@ -27,7 +27,7 @@ public class PascalsTriangle {
 				list.add(pre.get(i - 1) + pre.get(i));
 			}
 		}
-		if ((result.size() + 1) / 2 > 0) {
+		if (result.size() > 0) {
 			list.add(1);
 		}
 		result.add(list);
