@@ -19,7 +19,7 @@ public class PascalsTriangle {
 	}
 
 	private void recursive(List<List<Integer>> result, int numRows) {
-		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<>();
 		list.add(1);
 		if (result.size() > 1) {
 			List<Integer> pre = result.get(result.size() - 1);
