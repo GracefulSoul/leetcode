@@ -15,9 +15,9 @@ public class PascalsTriangleII {
 	public List<Integer> getRow(int rowIndex) {
 		List<Integer> list = new ArrayList<>();
 		long num = 1;
-		for (int i = 0; i <= rowIndex; i++) {
+		for (int idx = 0; idx <= rowIndex; idx++) {
 			list.add((int)num);
-			num = num * (rowIndex - i) / (i + 1);
+			num = num * (rowIndex - idx) / (idx + 1);
 		}
 		return list;
 	}
