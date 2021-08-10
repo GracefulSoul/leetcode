@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Triangle {
 
-	// https://leetcode.com/submissions/detail/536043195/
+	// https://leetcode.com/submissions/detail/536044081/
 	public static void main(String[] args) {
 		Triangle test = new Triangle();
 		List<List<Integer>> list1 = new ArrayList<>();
