@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PascalsTriangleII {
 
-	// https://leetcode.com/submissions/detail/535578320/
+	// https://leetcode.com/submissions/detail/535581977/
 	public static void main(String[] args) {
 		PascalsTriangleII test = new PascalsTriangleII();
 		System.out.println(test.getRow(3));
