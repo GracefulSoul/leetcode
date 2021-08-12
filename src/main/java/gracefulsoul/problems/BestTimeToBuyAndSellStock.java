@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BestTimeToBuyAndSellStock {
 
-	// https://leetcode.com/submissions/detail/536593819/
+	// https://leetcode.com/submissions/detail/536595288/
 	public static void main(String[] args) {
 		BestTimeToBuyAndSellStock test = new BestTimeToBuyAndSellStock();
 		System.out.println(test.maxProfit(new int[] { 7, 1, 5, 3, 6, 4 }));
@@ -10,7 +10,7 @@ public class BestTimeToBuyAndSellStock {
 	}
 
 	public int maxProfit(int[] prices) {
-		int min = Integer.MAX_VALUE;
+		int min = prices[0];
 		int max = 0;
 		for (int idx = 0; idx < prices.length; idx++) {
 			if (prices[idx] < min) {
