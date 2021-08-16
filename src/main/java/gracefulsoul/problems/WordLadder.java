@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class WordLadder {
 
-	// https://leetcode.com/submissions/detail/539221823/
+	// https://leetcode.com/submissions/detail/539226086/
 	public static void main(String[] args) {
 		WordLadder test = new WordLadder();
 		System.out.println(test.ladderLength("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog")));
