@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LongestConsecutiveSequence {
 
-	// https://leetcode.com/submissions/detail/539660120/
+	// https://leetcode.com/submissions/detail/539682680/
 	public static void main(String[] args) {
 		LongestConsecutiveSequence test = new LongestConsecutiveSequence();
 		System.out.println(test.longestConsecutive(new int[] { 100, 4, 200, 1, 3, 2 }));
