@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SurroundedRegions {
 
-	// https://leetcode.com/submissions/detail/540706564/
+	// https://leetcode.com/submissions/detail/540708633/
 	public static void main(String[] args) {
 		SurroundedRegions test = new SurroundedRegions();
 		char[][] board1 = new char[][] {
@@ -49,7 +49,7 @@ public class SurroundedRegions {
 	}
 
 	private void dfs(int i, int j, char[][] board) {
-		if (i <= 0 || j <= 0 || i >= board.length - 1 || j >= board[0].length - 1 || board[i][j] == 'X' || board[i][j] == 'o') {
+		if (i == 0 || j == 0 || i == board.length - 1 || j == board[0].length - 1 || board[i][j] == 'X' || board[i][j] == 'o') {
 			return;
 		}
 		if (board[i][j] == 'O') {
