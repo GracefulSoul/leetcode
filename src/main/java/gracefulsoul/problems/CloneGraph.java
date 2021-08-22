@@ -67,8 +67,6 @@ public class CloneGraph {
 				map.put(neighbor.val, true);
 				System.out.print(neighbor.neighbors.stream().map(nd -> nd.val).collect(Collectors.toList()));
 				print(neighbor);
-			} else {
-				return;
 			}
 		}
 	}
