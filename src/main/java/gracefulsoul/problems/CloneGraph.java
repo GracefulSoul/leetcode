@@ -50,7 +50,7 @@ public class CloneGraph {
 		} else if (map.containsKey(node.val)) {
 			return map.get(node.val);
 		} else {
-			Node temp = new Node(node.val, new ArrayList<>());
+			Node temp = new Node(node.val);
 			map.put(temp.val, temp);
 			for (Node neighbor : node.neighbors) {
 				temp.neighbors.add(this.recursive(neighbor, map));
