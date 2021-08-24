@@ -12,7 +12,7 @@ public class Candy {
 	}
 
 	public int candy(int[] ratings) {
-		int candies[] = new int[ratings.length];
+		int[] candies = new int[ratings.length];
 		Arrays.fill(candies, 1);
 		for (int idx = 1; idx < candies.length; idx++) {
 			if (ratings[idx - 1] < ratings[idx]) {
