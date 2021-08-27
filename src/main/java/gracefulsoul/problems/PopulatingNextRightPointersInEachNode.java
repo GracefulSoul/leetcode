@@ -3,7 +3,7 @@ package gracefulsoul.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-import gracefulsoul.object.Node;
+import gracefulsoul.object.node.Node;
 
 public class PopulatingNextRightPointersInEachNode {
 

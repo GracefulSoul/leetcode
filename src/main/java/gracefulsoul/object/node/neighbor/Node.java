@@ -1,4 +1,4 @@
-package gracefulsoul.object2;
+package gracefulsoul.object.node.neighbor;
 
 import java.util.ArrayList;
 import java.util.List;

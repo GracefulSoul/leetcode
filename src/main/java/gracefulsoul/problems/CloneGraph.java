@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import gracefulsoul.object2.Node;
+import gracefulsoul.object.node.neighbor.Node;
 
 public class CloneGraph {
 
