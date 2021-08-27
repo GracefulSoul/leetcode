@@ -7,7 +7,7 @@ import gracefulsoul.object.node.random.Node;
 
 public class CopyListWithRandomPointer {
 
-	// https://leetcode.com/submissions/detail/544833316/
+	// https://leetcode.com/submissions/detail/544972809/
 	public static void main(String[] args) {
 		CopyListWithRandomPointer test = new CopyListWithRandomPointer();
 		Node node1 = new Node(7);
