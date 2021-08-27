@@ -31,8 +31,7 @@ public class CopyListWithRandomPointer {
 	}
 
 	public Node copyRandomList(Node head) {
-		Map<Node, Node> map = new HashMap<>();
-		return this.recursive(head, map);
+		return this.recursive(head, new HashMap<>());
 	}
 
 	private Node recursive(Node head, Map<Node, Node> map) {
@@ -48,7 +47,7 @@ public class CopyListWithRandomPointer {
 			return temp;
 		}
 	}
-	
+
 	private static void print(Node node) {
 		if (node != null) {
 			System.out.printf("[%s,%s]", node.val, node.random == null ? "null" : node.random.val);
