@@ -34,16 +34,16 @@ public class CopyListWithRandomPointer {
 		return this.recursive(head, new HashMap<>());
 	}
 
-	private Node recursive(Node head, Map<Node, Node> map) {
-		if (head == null) {
+	private Node recursive(Node node, Map<Node, Node> map) {
+		if (node == null) {
 			return null;
-		} else if (map.containsKey(head)) {
-			return map.get(head);
+		} else if (map.containsKey(node)) {
+			return map.get(node);
 		} else {
-			Node temp = new Node(head.val);
-			map.put(head, temp);
-			temp.next = this.recursive(head.next, map);
-			temp.random = this.recursive(head.random, map);
+			Node temp = new Node(node.val);
+			map.put(node, temp);
+			temp.next = this.recursive(node.next, map);
+			temp.random = this.recursive(node.random, map);
 			return temp;
 		}
 	}
