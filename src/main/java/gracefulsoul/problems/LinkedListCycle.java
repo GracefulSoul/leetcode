@@ -4,7 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class LinkedListCycle {
 
-	// https://leetcode.com/submissions/detail/546453516/
+	// https://leetcode.com/submissions/detail/546457252/
 	public static void main(String[] args) {
 		LinkedListCycle test = new LinkedListCycle();
 		ListNode listNode1 = new ListNode(2);
@@ -25,7 +25,7 @@ public class LinkedListCycle {
 		while (fast.next != null && fast.next.next != null) {
 			fast = fast.next.next;
 			slow = slow.next;
-			if (slow == fast) {
+			if (fast == slow) {
 				return true;
 			}
 		}
