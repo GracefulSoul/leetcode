@@ -14,7 +14,7 @@ public class InsertionSortList {
 	public ListNode insertionSortList(ListNode head) {
 		ListNode curr = head;
 		ListNode next = null;
-		ListNode result = new ListNode(0);
+		ListNode result = new ListNode();
 		ListNode temp = null;
 		while (curr != null) {
 			next = curr.next;
