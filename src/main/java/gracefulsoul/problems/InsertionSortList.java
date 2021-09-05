@@ -10,7 +10,7 @@ public class InsertionSortList {
 		print(test.insertionSortList(new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))))));
 	}
 
-	// https://leetcode.com/submissions/detail/549718733/
+	// https://leetcode.com/submissions/detail/549720352/
 	public ListNode insertionSortList(ListNode head) {
 		ListNode curr = head;
 		ListNode next = null;
