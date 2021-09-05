@@ -12,9 +12,9 @@ public class InsertionSortList {
 
 	// https://leetcode.com/submissions/detail/549720352/
 	public ListNode insertionSortList(ListNode head) {
+		ListNode result = new ListNode();
 		ListNode curr = head;
 		ListNode next = null;
-		ListNode result = new ListNode();
 		ListNode temp = null;
 		while (curr != null) {
 			next = curr.next;
