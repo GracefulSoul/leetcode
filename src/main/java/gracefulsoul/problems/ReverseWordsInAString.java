@@ -5,11 +5,11 @@ public class ReverseWordsInAString {
 	// https://leetcode.com/submissions/detail/551262482/
 	public static void main(String[] args) {
 		ReverseWordsInAString test = new ReverseWordsInAString();
-		System.out.println(test.reverseWords("the sky is blue"));
-		System.out.println(test.reverseWords("  hello world  "));
-		System.out.println(test.reverseWords("a good   example"));
+//		System.out.println(test.reverseWords("the sky is blue"));
+//		System.out.println(test.reverseWords("  hello world  "));
+//		System.out.println(test.reverseWords("a good   example"));
 		System.out.println(test.reverseWords("  Bob    Loves  Alice   "));
-		System.out.println(test.reverseWords("Alice does not even like bob"));
+//		System.out.println(test.reverseWords("Alice does not even like bob"));
 	}
 
 	public String reverseWords(String s) {
