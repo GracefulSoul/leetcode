@@ -12,8 +12,8 @@ public class MaximumProductSubarray {
 	public int maxProduct(int[] nums) {
 		int max = nums[0];
 		int length = nums.length;
-		int left = 0;
-		int right = 0;
+		int left = 1;
+		int right = 1;
 		for (int idx = 0; idx < length; idx++) {
 			left = (left == 0 ? 1 : left) * nums[idx];
 			right = (right == 0 ? 1 : right) * nums[length - 1 - idx];
