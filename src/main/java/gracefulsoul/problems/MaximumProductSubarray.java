@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumProductSubarray {
 
-	// https://leetcode.com/submissions/detail/551793601/
+	// https://leetcode.com/submissions/detail/551796642/
 	public static void main(String[] args) {
 		MaximumProductSubarray test = new MaximumProductSubarray();
 		System.out.println(test.maxProduct(new int[] { 2, 3, -2, 4 }));
