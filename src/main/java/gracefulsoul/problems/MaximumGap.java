@@ -9,6 +9,7 @@ public class MaximumGap {
 		MaximumGap test = new MaximumGap();
 		System.out.println(test.maximumGap(new int[] { 3, 6, 9, 1 }));
 		System.out.println(test.maximumGap(new int[] { 10 }));
+		System.out.println(test.maximumGap(new int[] { 1, 2, 1, 2 }));
 	}
 
 	public int maximumGap(int[] nums) {
