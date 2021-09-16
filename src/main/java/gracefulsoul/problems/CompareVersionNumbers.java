@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CompareVersionNumbers {
 
-	// https://leetcode.com/submissions/detail/555656630/
+	// https://leetcode.com/submissions/detail/555661062/
 	public static void main(String[] args) {
 		CompareVersionNumbers test = new CompareVersionNumbers();
 		System.out.println(test.compareVersion("1.01", "1.001"));
