@@ -14,9 +14,9 @@ public class CompareVersionNumbers {
 	public int compareVersion(String version1, String version2) {
 		String[] splitVersion1 = version1.split("\\.");
 		String[] splitVersion2 = version2.split("\\.");
-		for (int i = 0; i < splitVersion1.length || i < splitVersion2.length; i++) {
-			int int1 = i < splitVersion1.length ? Integer.parseInt(splitVersion1[i]) : 0;
-			int int2 = i < splitVersion2.length ? Integer.parseInt(splitVersion2[i]) : 0;
+		for (int idx = 0; idx < splitVersion1.length || idx < splitVersion2.length; idx++) {
+			int int1 = idx < splitVersion1.length ? Integer.parseInt(splitVersion1[idx]) : 0;
+			int int2 = idx < splitVersion2.length ? Integer.parseInt(splitVersion2[idx]) : 0;
 			if (int1 > int2) {
 				return 1;
 			} else if (int1 < int2) {
