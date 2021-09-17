@@ -2,11 +2,11 @@ package gracefulsoul.problems;
 
 import java.util.Arrays;
 
-public class TwoSumII {
+public class TwoSumII_InputArrayIsSorted {
 
 	// https://leetcode.com/submissions/detail/556821729/
 	public static void main(String[] args) {
-		TwoSumII test = new TwoSumII();
+		TwoSumII_InputArrayIsSorted test = new TwoSumII_InputArrayIsSorted();
 		System.out.println(Arrays.toString(test.twoSum(new int[] { 2, 7, 11, 15 }, 9)));
 		System.out.println(Arrays.toString(test.twoSum(new int[] { 2, 3, 4 }, 6)));
 		System.out.println(Arrays.toString(test.twoSum(new int[] { -1, 0 }, -1)));
