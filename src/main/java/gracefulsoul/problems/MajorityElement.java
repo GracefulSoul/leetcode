@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class MajorityElement {
 
+	// https://leetcode.com/submissions/detail/557737861/
 	public static void main(String[] args) {
 		MajorityElement test = new MajorityElement();
 		System.out.println(test.majorityElement(new int[] { 3, 2, 3 }));
