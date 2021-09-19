@@ -10,18 +10,18 @@ public class ExcelSheetColumnTitle {
 		System.out.println(test.convertToTitle(701));
 		System.out.println(test.convertToTitle(2147483647));
 	}
-	
+
 	public String convertToTitle(int columnNumber) {
 		StringBuilder result = new StringBuilder();
-        while (columnNumber > 0) {
-        	columnNumber--;
-        	result.append((char)('A' + (columnNumber % 26)));
-        	columnNumber /= 26;
-        }
-        if (result.length() > 1) {
-        	result.reverse();
-        }
+		while (columnNumber > 0) {
+			columnNumber--;
+			result.append((char) ('A' + (columnNumber % 26)));
+			columnNumber /= 26;
+		}
+		if (result.length() > 1) {
+			result.reverse();
+		}
 		return result.toString();
-    }
+	}
 
 }
