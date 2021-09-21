@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class FactorialTrailingZeroes {
 
+	// https://leetcode.com/submissions/detail/558846506/
 	public static void main(String[] args) {
 		FactorialTrailingZeroes test = new FactorialTrailingZeroes();
 		System.out.println(test.trailingZeroes(3));
