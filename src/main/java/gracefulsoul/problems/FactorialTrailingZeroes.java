@@ -6,7 +6,7 @@ public class FactorialTrailingZeroes {
 	public static void main(String[] args) {
 		FactorialTrailingZeroes test = new FactorialTrailingZeroes();
 		System.out.println(test.trailingZeroes(3));
-		System.out.println(test.trailingZeroes(1));
+		System.out.println(test.trailingZeroes(5));
 		System.out.println(test.trailingZeroes(0));
 	}
 
