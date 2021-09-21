@@ -13,9 +13,8 @@ public class FactorialTrailingZeroes {
 	public int trailingZeroes(int n) {
 		int count = 0;
 		while (n != 0) {
-			int temp = n / 5;
-			count += temp;
-			n = temp;
+			n /= 5;
+			count += n;
 		}
 		return count;
 	}
