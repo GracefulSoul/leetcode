@@ -18,9 +18,9 @@ public class RepeatedDNASequences {
 		Set<String> result = new HashSet<>();
 		Set<String> temp = new HashSet<>();
 		for (int idx = 0; idx + 9 < s.length(); idx++) {
-			String sequences = s.substring(idx, idx + 10);
-			if (!temp.add(sequences)) {
-				result.add(sequences);
+			String sequence = s.substring(idx, idx + 10);
+			if (!temp.add(sequence)) {
+				result.add(sequence);
 			}
 		}
 		return new ArrayList<>(result);
