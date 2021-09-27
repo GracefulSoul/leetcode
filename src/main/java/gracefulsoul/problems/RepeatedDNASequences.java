@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class RepeatedDNASequences {
 
-	// https://leetcode.com/submissions/detail/561605294/
+	// https://leetcode.com/submissions/detail/561619480/
 	public static void main(String[] args) {
 		RepeatedDNASequences test = new RepeatedDNASequences();
 		System.out.println(test.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
