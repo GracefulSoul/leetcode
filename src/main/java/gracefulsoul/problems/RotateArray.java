@@ -11,7 +11,7 @@ public class RotateArray {
 		test.rotate(nums1, 3);
 		System.out.println(Arrays.toString(nums1));
 		int[] nums2 = new int[] { -1, -100, 3, 99 };
-		test.rotate(nums2, 3);
+		test.rotate(nums2, 2);
 		System.out.println(Arrays.toString(nums2));
 	}
 
