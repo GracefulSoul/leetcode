@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReverseBits {
 
-	// https://leetcode.com/submissions/detail/563239602/
+	// https://leetcode.com/submissions/detail/563240768/
 	public static void main(String[] args) {
 		ReverseBits test = new ReverseBits();
 		System.out.println(test.reverseBits(43261596));
