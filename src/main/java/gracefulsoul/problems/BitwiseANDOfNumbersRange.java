@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BitwiseANDOfNumbersRange {
 
-	// https://leetcode.com/submissions/detail/566002947/
+	// https://leetcode.com/submissions/detail/566009758/
 	public static void main(String[] args) {
 		BitwiseANDOfNumbersRange test = new BitwiseANDOfNumbersRange();
 		System.out.println(test.rangeBitwiseAnd(5, 7));
@@ -11,13 +11,13 @@ public class BitwiseANDOfNumbersRange {
 	}
 
 	public int rangeBitwiseAnd(int left, int right) {
-		int result = 0;
+		int count = 0;
 		while (left != right) {
 			left >>= 1;
 			right >>= 1;
-			result++;
+			count++;
 		}
-		return left << result;
+		return left << count;
 	}
 
 }
