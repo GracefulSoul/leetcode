@@ -6,7 +6,7 @@ public class CountPrimes {
 	public static void main(String[] args) {
 		CountPrimes test = new CountPrimes();
 		System.out.println(test.countPrimes(10));
-		System.out.println(test.countPrimes(0));
+		System.out.println(test.countPrimes(2));
 		System.out.println(test.countPrimes(1));
 	}
 
