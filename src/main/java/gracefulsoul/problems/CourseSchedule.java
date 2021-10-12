@@ -19,6 +19,7 @@ public class CourseSchedule {
 		}));
 	}
 
+	@SuppressWarnings("unchecked")
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
 		List<Integer>[] graph = new List[numCourses];
 		int[] degree = new int[numCourses];
