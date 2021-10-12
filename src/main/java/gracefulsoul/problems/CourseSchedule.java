@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CourseSchedule {
 
-	// https://leetcode.com/submissions/detail/569803163/
+	// https://leetcode.com/submissions/detail/569808495/
 	public static void main(String[] args) {
 		CourseSchedule test = new CourseSchedule();
 		System.out.println(test.canFinish(2, new int[][] {
@@ -20,28 +20,28 @@ public class CourseSchedule {
 	@SuppressWarnings("unchecked")
 	public boolean canFinish(int numCourses, int[][] prerequisites) {
 		List<Integer>[] graph = new List[numCourses];
-		int[] degree = new int[numCourses];
+		int[] courses = new int[numCourses];
 		for (int i = 0; i < numCourses; i++) {
 			graph[i] = new ArrayList<>();
 		}
 		for (int[] req : prerequisites) {
 			graph[req[1]].add(req[0]);
-			degree[req[0]]++;
+			courses[req[0]]++;
 		}
-		ArrayList<Integer> bfs = new ArrayList<>();
+		ArrayList<Integer> result = new ArrayList<>();
 		for (int i = 0; i < numCourses; i++) {
-			if (degree[i] == 0) {
-				bfs.add(i);
+			if (courses[i] == 0) {
+				result.add(i);
 			}
 		}
-		for (int i = 0; i < bfs.size(); i++) {
-			for (int high : graph[bfs.get(i)]) {
-				if (--degree[high] == 0) {
-					bfs.add(high);
+		for (int i = 0; i < result.size(); i++) {
+			for (int course : graph[result.get(i)]) {
+				if (--courses[course] == 0) {
+					result.add(course);
 				}
 			}
 		}
-		return bfs.size() == numCourses;
+		return result.size() == numCourses;
 	}
 
 }
