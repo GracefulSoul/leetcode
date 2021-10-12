@@ -1,13 +1,11 @@
 package gracefulsoul.problems;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class CourseSchedule {
 
-	// https://leetcode.com/submissions/detail/569784227/
+	// https://leetcode.com/submissions/detail/569803163/
 	public static void main(String[] args) {
 		CourseSchedule test = new CourseSchedule();
 		System.out.println(test.canFinish(2, new int[][] {
@@ -30,22 +28,20 @@ public class CourseSchedule {
 			graph[req[1]].add(req[0]);
 			degree[req[0]]++;
 		}
-		Queue<Integer> queue = new LinkedList<>();
+		ArrayList<Integer> bfs = new ArrayList<>();
 		for (int i = 0; i < numCourses; i++) {
 			if (degree[i] == 0) {
-				queue.add(i);
+				bfs.add(i);
 			}
 		}
-		int cnt = 0;
-		while (!queue.isEmpty()) {
-			for (int high : graph[queue.poll()]) {
+		for (int i = 0; i < bfs.size(); i++) {
+			for (int high : graph[bfs.get(i)]) {
 				if (--degree[high] == 0) {
-					queue.add(high);
+					bfs.add(high);
 				}
 			}
-			cnt++;
 		}
-		return cnt == numCourses;
+		return bfs.size() == numCourses;
 	}
 
 }
