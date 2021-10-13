@@ -4,7 +4,7 @@ import gracefulsoul.object.TrieNode;
 
 public class ImplementTrie {
 
-	// https://leetcode.com/submissions/detail/570393844/
+	// https://leetcode.com/submissions/detail/570408607/
 	public static void main(String[] args) {
 		Trie trie = new Trie();
 		trie.insert("apple");
@@ -38,27 +38,23 @@ class Trie {
 	}
 
 	public boolean search(String word) {
-		TrieNode node = root;
-		for (int idx = 0; idx < word.length(); idx++) {
-			int num = word.charAt(idx) - 'a';
-			if (node.children[num] == null) {
-				return false;
-			}
-			node = node.children[num];
-		}
-		return node.isWord;
+		return this.match(word, true);
 	}
 
 	public boolean startsWith(String prefix) {
+		return this.match(prefix, false);
+	}
+
+	private boolean match(String str, boolean isWord) {
 		TrieNode node = root;
-		for (int idx = 0; idx < prefix.length(); idx++) {
-			int num = prefix.charAt(idx) - 'a';
+		for (int idx = 0; idx < str.length(); idx++) {
+			int num = str.charAt(idx) - 'a';
 			if (node.children[num] == null) {
 				return false;
 			}
 			node = node.children[num];
 		}
-		return true;
+		return isWord ? node.isWord : true;
 	}
 
 }
