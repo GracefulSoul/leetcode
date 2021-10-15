@@ -28,7 +28,7 @@ public class CourseSchedule {
 			graph[req[1]].add(req[0]);
 			courses[req[0]]++;
 		}
-		ArrayList<Integer> result = new ArrayList<>();
+		List<Integer> result = new ArrayList<>();
 		for (int i = 0; i < numCourses; i++) {
 			if (courses[i] == 0) {
 				result.add(i);
