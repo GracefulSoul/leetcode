@@ -42,8 +42,8 @@ public class CourseScheduleII {
 			}
 		}
 		while (!queue.isEmpty()) {
-			int cur = queue.poll();
-			for (int course : graph[cur]) {
+			List<Integer> courseNubmers = graph[queue.poll()];
+			for (int course : courseNubmers) {
 				if (--courses[course] == 0) {
 					queue.add(course);
 					result[index++] = course;
