@@ -19,39 +19,38 @@ public class CourseScheduleII {
 			new int[] { 3, 1 },
 			new int[] { 3, 2 }
 		});
-
 	}
 
 	@SuppressWarnings("unchecked")
 	public int[] findOrder(int numCourses, int[][] prerequisites) {
-        List<Integer>[] graph = new ArrayList[numCourses];
-        int[] courses = new int[numCourses];
-        for (int i = 0; i < numCourses; i++) {
-        	graph[i] = new ArrayList<>();
-        }
-        for (int[] req : prerequisites) {
-            courses[req[0]]++;
-            graph[req[1]].add(req[0]);
-        }
-        int index = 0;
-        int[] result = new int[numCourses];
-        Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < numCourses; i++) {
-            if (courses[i] == 0) {
-            	queue.add(i);
-                result[index++] = i;
-            }
-        }
-        while (!queue.isEmpty()) {
-            int cur = queue.poll();
-            for (int course : graph[cur]) {
-                if (--courses[course] == 0) {
-                	queue.add(course);
-                    result[index++] = course;
-                }
-            }
-        }
-        return index == numCourses ? result : new int[0];
+		List<Integer>[] graph = new ArrayList[numCourses];
+		int[] courses = new int[numCourses];
+		for (int i = 0; i < numCourses; i++) {
+			graph[i] = new ArrayList<>();
+		}
+		for (int[] req : prerequisites) {
+			courses[req[0]]++;
+			graph[req[1]].add(req[0]);
+		}
+		int index = 0;
+		int[] result = new int[numCourses];
+		Queue<Integer> queue = new LinkedList<>();
+		for (int i = 0; i < numCourses; i++) {
+			if (courses[i] == 0) {
+				queue.add(i);
+				result[index++] = i;
+			}
+		}
+		while (!queue.isEmpty()) {
+			int cur = queue.poll();
+			for (int course : graph[cur]) {
+				if (--courses[course] == 0) {
+					queue.add(course);
+					result[index++] = course;
+				}
+			}
+		}
+		return index == numCourses ? result : new int[0];
 	}
 
 }
