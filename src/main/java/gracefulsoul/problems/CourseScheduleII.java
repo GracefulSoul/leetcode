@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class CourseScheduleII {
 
-	// https://leetcode.com/submissions/detail/571367795/
+	// https://leetcode.com/submissions/detail/571375615/
 	public static void main(String[] args) {
 		CourseScheduleII test = new CourseScheduleII();
 		test.findOrder(2, new int[][] {
