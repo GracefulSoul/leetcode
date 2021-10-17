@@ -1,8 +1,8 @@
-package gracefulsoul.object;
+package gracefulsoul.object.trie.word;
 
 public class TrieNode {
 
-	public boolean isWord;
+	public String word;
 	public TrieNode[] children;
 
 	public TrieNode() {
