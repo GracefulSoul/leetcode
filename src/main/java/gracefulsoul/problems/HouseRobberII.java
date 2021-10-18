@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class HouseRobberII {
 
-	// https://leetcode.com/submissions/detail/573008820/
+	// https://leetcode.com/submissions/detail/573012065/
 	public static void main(String[] args) {
 		HouseRobberII test = new HouseRobberII();
 		System.out.println(test.rob(new int[] { 2, 3, 2 }));
