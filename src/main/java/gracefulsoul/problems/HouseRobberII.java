@@ -18,7 +18,7 @@ public class HouseRobberII {
 		}
 	}
 
-	public int getMax(int[] nums, int start) {
+	private int getMax(int[] nums, int start) {
 		int pre = 0;
 		int cur = 0;
 		for (int i = start; i < nums.length + start - 1; i++) {
