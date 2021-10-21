@@ -9,8 +9,8 @@ public class CombinationSumII {
 	// https://leetcode.com/submissions/detail/496056832/
 	public static void main(String[] args) {
 		CombinationSumII test = new CombinationSumII();
-		print(test.combinationSum2(new int[] { 10, 1, 2, 7, 6, 1, 5 }, 8));
-		print(test.combinationSum2(new int[] { 2, 5, 2, 1, 2 }, 5));
+		System.out.println((test.combinationSum2(new int[] { 10, 1, 2, 7, 6, 1, 5 }, 8)));
+		System.out.println((test.combinationSum2(new int[] { 2, 5, 2, 1, 2 }, 5)));
 	}
 
 	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -32,12 +32,6 @@ public class CombinationSumII {
 				this.getCombination(result, list, candidates, target - candidates[idx], idx + 1);
 				list.remove(list.size() - 1);
 			}
-		}
-	}
-
-	private static void print(List<List<Integer>> list) {
-		for (List<Integer> data : list) {
-			System.out.println(data.toString());
 		}
 	}
 
