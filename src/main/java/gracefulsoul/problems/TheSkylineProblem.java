@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class TheSkylineProblem {
 
-	// https://leetcode.com/submissions/detail/576201565/
+	// https://leetcode.com/submissions/detail/576209137/
 	public static void main(String[] args) {
 		TheSkylineProblem test = new TheSkylineProblem();
 		System.out.println(test.getSkyline(new int[][] {
@@ -62,10 +62,10 @@ public class TheSkylineProblem {
 		return result;
 	}
 
-	private void addPoint(List<List<Integer>> result, int p, int h) {
+	private void addPoint(List<List<Integer>> result, int point, int height) {
 		List<Integer> temp = new ArrayList<>();
-		temp.add(p);
-		temp.add(h);
+		temp.add(point);
+		temp.add(height);
 		result.add(temp);
 	}
 
