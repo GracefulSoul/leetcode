@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class TheSkylineProblem {
 
-	// https://leetcode.com/submissions/detail/576209137/
+	// https://leetcode.com/submissions/detail/576218395/
 	public static void main(String[] args) {
 		TheSkylineProblem test = new TheSkylineProblem();
 		System.out.println(test.getSkyline(new int[][] {
@@ -26,26 +26,26 @@ public class TheSkylineProblem {
 	public List<List<Integer>> getSkyline(int[][] buildings) {
 		List<List<Integer>> result = new ArrayList<>();
 		Queue<int[]> queue = new PriorityQueue<>((a, b) -> b[2] - a[2]);
-		int next = 0;
+		int index = 0;
 		int[] point = null;
-		while (point != null || next < buildings.length) {
+		while (point != null || index < buildings.length) {
 			if (point == null) {
-				point = buildings[next];
+				point = buildings[index];
 				this.addPoint(result, point[0], point[2]);
-			} else if (next < buildings.length && buildings[next][0] <= point[1]) {
-				if (buildings[next][2] > point[2]) {
-					if (buildings[next][0] == point[0]) {
+			} else if (index < buildings.length && buildings[index][0] <= point[1]) {
+				if (buildings[index][2] > point[2]) {
+					if (buildings[index][0] == point[0]) {
 						result.remove(result.size() - 1);
 					}
-					if (buildings[next][1] <= point[1]) {
+					if (buildings[index][1] <= point[1]) {
 						queue.add(point);
 					}
-					point = buildings[next];
+					point = buildings[index];
 					this.addPoint(result, point[0], point[2]);
-				} else if (buildings[next][1] > point[1]) {
-					queue.add(buildings[next]);
+				} else if (buildings[index][1] > point[1]) {
+					queue.add(buildings[index]);
 				}
-				next++;
+				index++;
 			} else {
 				int[] lower = queue.poll();
 				while (lower != null && lower[1] <= point[1]) {
