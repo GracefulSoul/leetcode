@@ -14,7 +14,7 @@ public class ContainsDuplicateII {
 	}
 
 	public boolean containsNearbyDuplicate(int[] nums, int k) {
-		Set<Integer> set = new HashSet<Integer>();
+		Set<Integer> set = new HashSet<>();
 		for (int idx = 0; idx < nums.length; idx++) {
 			if (idx > k) {
 				set.remove(nums[idx - k - 1]);
