@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class ContainsDuplicateII {
 
-	// https://leetcode.com/submissions/detail/576780150/
+	// https://leetcode.com/submissions/detail/576785901/
 	public static void main(String[] args) {
 		ContainsDuplicateII test = new ContainsDuplicateII();
 		System.out.println(test.containsNearbyDuplicate(new int[] { 1, 2, 3, 1 }, 3));
