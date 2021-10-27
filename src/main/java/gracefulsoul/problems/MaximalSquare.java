@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximalSquare {
 
-	// https://leetcode.com/submissions/detail/577730709/
+	// https://leetcode.com/submissions/detail/577742027/
 	public static void main(String[] args) {
 		MaximalSquare test = new MaximalSquare();
 		System.out.println(test.maximalSquare(new char[][] {
@@ -22,11 +22,11 @@ public class MaximalSquare {
 		int row = matrix.length;
 		int col = matrix[0].length;
 		int[][] dp = new int[row + 1][col + 1];
-		for (int i = 1; i <= row; i++) {
-			for (int j = 1; j <= col; j++) {
-				if (matrix[i - 1][j - 1] == '1') {
-					dp[i][j] = Math.min(dp[i - 1][j - 1], Math.min(dp[i - 1][j], dp[i][j - 1])) + 1;
-					max = Math.max(max, dp[i][j]);
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				if (matrix[i][j] == '1') {
+					dp[i + 1][j + 1] = Math.min(dp[i][j], Math.min(dp[i][j + 1], dp[i + 1][j])) + 1;
+					max = Math.max(max, dp[i + 1][j + 1]);
 				}
 			}
 		}
