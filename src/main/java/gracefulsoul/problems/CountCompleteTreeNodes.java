@@ -18,11 +18,11 @@ public class CountCompleteTreeNodes {
 //	}
 
 	public int countNodes(TreeNode root) {
-		int depth = this.getHeight(root);
+		int depth = this.getDepth(root);
 		if (depth == 0) {
 			return 0;
 		} else {
-			if (this.getHeight(root.right) == depth - 1) {
+			if (this.getDepth(root.right) == depth - 1) {
 				return (1 << depth - 1) + this.countNodes(root.right);
 			} else {
 				return (1 << depth - 2) + this.countNodes(root.left);
@@ -30,8 +30,8 @@ public class CountCompleteTreeNodes {
 		}
 	}
 
-	private int getHeight(TreeNode root) {
-		return root == null ? 0 : 1 + this.getHeight(root.left);
+	private int getDepth(TreeNode root) {
+		return root == null ? 0 : 1 + this.getDepth(root.left);
 	}
 
 }
