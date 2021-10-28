@@ -4,7 +4,7 @@ import gracefulsoul.object.TreeNode;
 
 public class CountCompleteTreeNodes {
 
-	// https://leetcode.com/submissions/detail/578340056/
+	// https://leetcode.com/submissions/detail/578342881/
 	public static void main(String[] args) {
 		CountCompleteTreeNodes test = new CountCompleteTreeNodes();
 		System.out.println(test.countNodes(new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3, new TreeNode(6), null))));
