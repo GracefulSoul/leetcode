@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RectangleArea {
 
-	// https://leetcode.com/submissions/detail/578779691/
+	// https://leetcode.com/submissions/detail/578782003/
 	public static void main(String[] args) {
 		RectangleArea test = new RectangleArea();
 		System.out.println(test.computeArea(-3, 0, 3, 4, 0, -1, 9, 2));
