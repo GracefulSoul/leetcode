@@ -39,7 +39,7 @@ public class BasicCalculator {
 					break;
 				default:
 					int sum = c - '0';
-					while (idx + 1 < length && Character.isDigit(s.charAt(idx + 1))) {
+					while (idx < length - 1 && Character.isDigit(s.charAt(idx + 1))) {
 						sum = sum * 10 + s.charAt(idx + 1) - '0';
 						idx++;
 					}
