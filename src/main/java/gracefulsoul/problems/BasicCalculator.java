@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class BasicCalculator {
 
-	// https://leetcode.com/submissions/detail/579285282/
+	// https://leetcode.com/submissions/detail/579299079/
 	public static void main(String[] args) {
 		BasicCalculator test = new BasicCalculator();
 		System.out.println(test.calculate("1 + 1"));
