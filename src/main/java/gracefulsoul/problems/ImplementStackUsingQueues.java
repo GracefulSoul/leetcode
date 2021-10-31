@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class ImplementStackUsingQueues {
 
-	// https://leetcode.com/submissions/detail/579761924/
+	// https://leetcode.com/submissions/detail/579774253/
 	public static void main(String[] args) {
 		MyStack myStack = new MyStack();
 		myStack.push(1);
@@ -19,25 +19,35 @@ public class ImplementStackUsingQueues {
 
 class MyStack {
 
-	private Queue<Integer> queue = new LinkedList<>();
+	Queue<Integer> main;
+	Queue<Integer> sub;
+
+	public MyStack() {
+		this.main = new LinkedList<Integer>();
+		this.sub = new LinkedList<Integer>();
+	}
 
 	public void push(int x) {
-		queue.add(x);
-		for (int i = 0; i < queue.size() - 1; i++) {
-			queue.add(queue.remove());
+		while (!this.main.isEmpty()) {
+			this.sub.add(this.main.poll());
 		}
+		this.main.add(x);
+		while (!this.sub.isEmpty()) {
+			this.main.add(this.sub.poll());
+		}
+
 	}
 
 	public int pop() {
-		return queue.remove();
+		return this.main.poll();
 	}
 
 	public int top() {
-		return queue.peek();
+		return this.main.peek();
 	}
 
 	public boolean empty() {
-		return queue.isEmpty();
+		return this.main.isEmpty();
 	}
 
 }
