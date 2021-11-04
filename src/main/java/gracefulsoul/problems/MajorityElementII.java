@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MajorityElementII {
 
-	// https://leetcode.com/submissions/detail/581799347/
+	// https://leetcode.com/submissions/detail/581806411/
 	public static void main(String[] args) {
 		MajorityElementII test = new MajorityElementII();
 		System.out.println(test.majorityElement(new int[] { 3, 2, 3 }));
@@ -23,10 +23,10 @@ public class MajorityElementII {
 				count[1]++;
 			} else if (count[0] == 0) {
 				element[0] = num;
-				count[0] = 1;
+				count[0]++;
 			} else if (count[1] == 0) {
 				element[1] = num;
-				count[1] = 1;
+				count[1]++;
 			} else {
 				count[0]--;
 				count[1]--;
