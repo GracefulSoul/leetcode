@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MajorityElementII {
 
-	// https://leetcode.com/submissions/detail/581794768/
+	// https://leetcode.com/submissions/detail/581799347/
 	public static void main(String[] args) {
 		MajorityElementII test = new MajorityElementII();
 		System.out.println(test.majorityElement(new int[] { 3, 2, 3 }));
@@ -41,12 +41,10 @@ public class MajorityElementII {
 				count[1]++;
 			}
 		}
-		int constraints = nums.length / 3;
-		if (count[0] > constraints) {
-			result.add(element[0]);
-		}
-		if (count[1] > constraints) {
-			result.add(element[1]);
+		for (int idx = 0; idx < count.length; idx++) {
+			if (count[idx] > nums.length / 3) {
+				result.add(element[idx]);
+			}
 		}
 		return result;
 	}
