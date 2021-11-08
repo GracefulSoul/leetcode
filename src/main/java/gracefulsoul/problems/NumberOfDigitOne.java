@@ -6,7 +6,7 @@ public class NumberOfDigitOne {
 	public static void main(String[] args) {
 		NumberOfDigitOne test = new NumberOfDigitOne();
 		System.out.println(test.countDigitOne(13));
-//		System.out.println(test.countDigitOne(0));
+		System.out.println(test.countDigitOne(0));
 	}
 
 	public int countDigitOne(int n) {
