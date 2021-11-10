@@ -4,7 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class PalindromeLinkedList {
 
-	// https://leetcode.com/submissions/detail/584756564/
+	// https://leetcode.com/submissions/detail/584758469/
 	public static void main(String[] args) {
 		PalindromeLinkedList test = new PalindromeLinkedList();
 		System.out.println(test.isPalindrome(new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))))));
@@ -12,9 +12,6 @@ public class PalindromeLinkedList {
 	}
 
 	public boolean isPalindrome(ListNode head) {
-		if (head == null) {
-			return true;
-		}
 		ListNode fast = head;
 		ListNode slow = head;
 		ListNode prev = null;
