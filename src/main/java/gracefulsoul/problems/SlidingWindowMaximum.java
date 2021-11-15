@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SlidingWindowMaximum {
 
-	// https://leetcode.com/submissions/detail/587453762/
+	// https://leetcode.com/submissions/detail/587459227/
 	public static void main(String[] args) {
 		SlidingWindowMaximum test = new SlidingWindowMaximum();
 		print(test.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
