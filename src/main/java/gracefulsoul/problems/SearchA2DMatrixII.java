@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SearchA2DMatrixII {
 
-	// https://leetcode.com/submissions/detail/588101792/
+	// https://leetcode.com/submissions/detail/588106201/
 	public static void main(String[] args) {
 		SearchA2DMatrixII test = new SearchA2DMatrixII();
 		int[][] matrix = new int[][] {
@@ -17,9 +17,9 @@ public class SearchA2DMatrixII {
 	}
 
 	public boolean searchMatrix(int[][] matrix, int target) {
-		int col = 0;
 		int row = matrix.length - 1;
-		while (col <= matrix[0].length - 1 && row >= 0) {
+		int col = 0;
+		while (row >= 0 && col <= matrix[0].length - 1) {
 			if (target == matrix[row][col]) {
 				return true;
 			} else if (target < matrix[row][col]) {
