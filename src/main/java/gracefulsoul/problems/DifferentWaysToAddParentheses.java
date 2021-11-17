@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DifferentWaysToAddParentheses {
 
-	// https://leetcode.com/submissions/detail/588290652/
+	// https://leetcode.com/submissions/detail/588402797/
 	public static void main(String[] args) {
 		DifferentWaysToAddParentheses test = new DifferentWaysToAddParentheses();
 		System.out.println(test.diffWaysToCompute("2-1-1"));
@@ -17,12 +17,10 @@ public class DifferentWaysToAddParentheses {
 		for (int idx = 0; idx < expression.length(); idx++) {
 			char c = expression.charAt(idx);
 			if (c == '-' || c == '+' || c == '*') {
-				String first = expression.substring(0, idx);
-				String second = expression.substring(idx + 1);
-				List<Integer> firstResult = this.diffWaysToCompute(first);
-				List<Integer> secondResult = this.diffWaysToCompute(second);
-				for (int num1 : firstResult) {
-					for (int num2 : secondResult) {
+				List<Integer> first = this.diffWaysToCompute(expression.substring(0, idx));
+				List<Integer> second = this.diffWaysToCompute(expression.substring(idx + 1));
+				for (int num1 : first) {
+					for (int num2 : second) {
 						switch (c) {
 						case '-':
 							result.add(num1 - num2);
