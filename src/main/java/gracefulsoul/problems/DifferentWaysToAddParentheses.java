@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DifferentWaysToAddParentheses {
 
-	// https://leetcode.com/submissions/detail/588402797/
+	// https://leetcode.com/submissions/detail/588415909/
 	public static void main(String[] args) {
 		DifferentWaysToAddParentheses test = new DifferentWaysToAddParentheses();
 		System.out.println(test.diffWaysToCompute("2-1-1"));
