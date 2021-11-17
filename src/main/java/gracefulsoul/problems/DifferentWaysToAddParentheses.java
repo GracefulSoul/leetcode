@@ -22,15 +22,15 @@ public class DifferentWaysToAddParentheses {
 				for (int num1 : first) {
 					for (int num2 : second) {
 						switch (c) {
-						case '-':
-							result.add(num1 - num2);
-							break;
-						case '+':
-							result.add(num1 + num2);
-							break;
-						case '*':
-							result.add(num1 * num2);
-							break;
+							case '-':
+								result.add(num1 - num2);
+								break;
+							case '+':
+								result.add(num1 + num2);
+								break;
+							case '*':
+								result.add(num1 * num2);
+								break;
 						}
 					}
 				}
