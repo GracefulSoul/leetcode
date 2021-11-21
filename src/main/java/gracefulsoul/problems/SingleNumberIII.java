@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class SingleNumberIII {
 
+	// https://leetcode.com/submissions/detail/590226313/
 	public static void main(String[] args) {
 		SingleNumberIII test = new SingleNumberIII();
 		print(test.singleNumber(new int[] { 1, 2, 1, 3, 2, 5 }));
@@ -10,20 +11,18 @@ public class SingleNumberIII {
 	}
 
 	public int[] singleNumber(int[] nums) {
-		int diff = 0;
+		int bit = 0;
 		for (int num : nums) {
-			diff ^= num;
+			bit ^= num;
 		}
-		diff &= -diff;
-		int[] result = new int[2];
+		int diff = bit & -bit;
+		int x = 0;
 		for (int num : nums) {
-			if ((num & diff) == 0) {
-				result[0] ^= num;
-			} else {
-				result[1] ^= num;
+			if ((diff & num) != 0) {
+				x ^= num;
 			}
 		}
-		return result;
+		return new int[] { x, bit ^ x };
 	}
 
 	private static void print(int[] nums) {
