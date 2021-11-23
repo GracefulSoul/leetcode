@@ -12,9 +12,9 @@ public class UglyNumber {
 	}
 
 	public boolean isUgly(int n) {
-		for (int i = 2; i < 6 && n > 0; i++) {
-			while (i != 4 && n % i == 0) {
-				n /= i;
+		for (int idx = 2; idx < 6 && n > 0; idx++) {
+			while (idx != 4 && n % idx == 0) {
+				n /= idx;
 			}
 		}
 		return n == 1;
