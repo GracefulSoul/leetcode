@@ -56,15 +56,13 @@ public class IntegerToEnglishWords {
 	private void hundredsToWord(int num, StringBuilder sb) {
 		int tens = num % 100;
 		num /= 100;
-		int hundreds = num;
-		if (hundreds > 0) {
-			this.tensToWord(hundreds, sb);
+		if (num > 0) {
+			this.tensToWord(num, sb);
 			sb.append(" Hundred ");
 		}
 		if (tens > 0) {
 			this.tensToWord(tens, sb);
 		}
-
 	}
 
 	private void tensToWord(int num, StringBuilder sb) {
