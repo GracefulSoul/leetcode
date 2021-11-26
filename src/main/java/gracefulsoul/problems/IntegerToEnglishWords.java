@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class IntegerToEnglishWords {
 
-	// https://leetcode.com/submissions/detail/592694764/
+	// https://leetcode.com/submissions/detail/592700027/
 	public static void main(String[] args) {
 		IntegerToEnglishWords test = new IntegerToEnglishWords();
 		System.out.println(test.numberToWords(123));
@@ -10,6 +10,9 @@ public class IntegerToEnglishWords {
 		System.out.println(test.numberToWords(1234567));
 		System.out.println(test.numberToWords(1234567891));
 	}
+
+	private static String[] LOWER_THAN_20_WORDS = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+	private static String[] TEN_WORDS = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
 
 	public String numberToWords(int num) {
 		if (num == 0) {
@@ -65,18 +68,16 @@ public class IntegerToEnglishWords {
 	}
 
 	private void tensToWord(int num, StringBuilder sb) {
-		String[] lowerThan20Words = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-		String[] tenWords = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
 		if (num < 20) {
-			sb.append(lowerThan20Words[num]);
+			sb.append(LOWER_THAN_20_WORDS[num]);
 		} else {
 			int tens = num / 10;
 			if (tens > 0) {
-				sb.append(tenWords[tens]).append(" ");
+				sb.append(TEN_WORDS[tens]).append(" ");
 			}
 			num %= 10;
 			if (num > 0) {
-				sb.append(lowerThan20Words[num]);
+				sb.append(LOWER_THAN_20_WORDS[num]);
 			}
 		}
 	}
