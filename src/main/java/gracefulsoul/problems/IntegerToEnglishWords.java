@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class IntegerToEnglishWords {
 
-	// https://leetcode.com/submissions/detail/592700027/
+	// https://leetcode.com/submissions/detail/592702170/
 	public static void main(String[] args) {
 		IntegerToEnglishWords test = new IntegerToEnglishWords();
 		System.out.println(test.numberToWords(123));
