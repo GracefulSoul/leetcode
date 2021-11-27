@@ -12,14 +12,14 @@ public class HIndex {
 	}
 
 	public int hIndex(int[] citations) {
-        Arrays.sort(citations);
-        int idx = citations.length - 1;
-        int count = 0;
-        while (idx >= 0 && citations[idx] > count) {
-        	count++;
-            idx--;
-        }
-        return count;
+		Arrays.sort(citations);
+		int idx = citations.length - 1;
+		int count = 0;
+		while (idx >= 0 && citations[idx] > count) {
+			count++;
+			idx--;
+		}
+		return count;
 	}
 
 }
