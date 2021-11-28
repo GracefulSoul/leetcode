@@ -14,7 +14,7 @@ public class HIndexII {
 		int left = 0;
 		int right = length - 1;
 		while (left <= right) {
-			int mid = (right + left) / 2;
+			int mid = (left + right) / 2;
 			int diff = length - mid;
 			if (citations[mid] == diff) {
 				return diff;
