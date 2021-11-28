@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class HIndexII {
 
-	// https://leetcode.com/submissions/detail/593779212/
+	// https://leetcode.com/submissions/detail/593780299/
 	public static void main(String[] args) {
 		HIndexII test = new HIndexII();
 		System.out.println(test.hIndex(new int[] { 0, 1, 3, 5, 6 }));
