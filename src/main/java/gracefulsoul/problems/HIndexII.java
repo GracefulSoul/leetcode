@@ -14,14 +14,14 @@ public class HIndexII {
 		int left = 0;
 		int right = length - 1;
 		while (left <= right) {
-			int med = (right + left) / 2;
-			int diff = length - med;
-			if (citations[med] == diff) {
+			int mid = (right + left) / 2;
+			int diff = length - mid;
+			if (citations[mid] == diff) {
 				return diff;
-			} else if (citations[med] < diff) {
-				left = med + 1;
+			} else if (citations[mid] < diff) {
+				left = mid + 1;
 			} else {
-				right = med - 1;
+				right = mid - 1;
 			}
 		}
 		return length - left;
