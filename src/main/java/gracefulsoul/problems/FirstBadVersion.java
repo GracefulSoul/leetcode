@@ -29,6 +29,7 @@ public class FirstBadVersion extends VersionControl {
 /* The isBadVersion API is defined in the parent class VersionControl.
 boolean isBadVersion(int version); */
 class VersionControl {
+	// We don't know source about VersionControl.
 	boolean isBadVersion(int version) {
 		return false;
 	}
