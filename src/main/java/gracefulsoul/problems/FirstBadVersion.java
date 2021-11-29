@@ -1,7 +1,5 @@
 package gracefulsoul.problems;
 
-/* The isBadVersion API is defined in the parent class VersionControl.
-boolean isBadVersion(int version); */
 public class FirstBadVersion extends VersionControl {
 
 	// https://leetcode.com/submissions/detail/594394246/
@@ -28,6 +26,8 @@ public class FirstBadVersion extends VersionControl {
 
 }
 
+/* The isBadVersion API is defined in the parent class VersionControl.
+boolean isBadVersion(int version); */
 class VersionControl {
 	boolean isBadVersion(int version) {
 		return false;
