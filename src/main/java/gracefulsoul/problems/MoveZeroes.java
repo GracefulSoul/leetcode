@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MoveZeroes {
 
-	// https://leetcode.com/submissions/detail/596639075/
+	// https://leetcode.com/submissions/detail/596640346/
 	public static void main(String[] args) {
 		MoveZeroes test = new MoveZeroes();
 		int[] arr1 = new int[] { 0, 1, 0, 3, 12 };
