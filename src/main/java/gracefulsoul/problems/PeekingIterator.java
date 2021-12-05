@@ -47,16 +47,18 @@ public class PeekingIterator implements Iterator<Integer> {
 		if (this.cached) {
 			this.cached = false;
 			return this.peekVal;
+		} else {
+			return this.iterator.next();
 		}
-		return this.iterator.next();
 	}
 
 	@Override
 	public boolean hasNext() {
 		if (this.cached) {
 			return true;
+		} else {
+			return this.iterator.hasNext();
 		}
-		return this.iterator.hasNext();
 	}
 
 }
