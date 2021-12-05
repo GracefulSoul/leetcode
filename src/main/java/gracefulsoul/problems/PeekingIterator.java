@@ -8,7 +8,7 @@ import java.util.List;
 //https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 public class PeekingIterator implements Iterator<Integer> {
 
-	// https://leetcode.com/submissions/detail/597040579/
+	// https://leetcode.com/submissions/detail/597046082/
 	public static void main(String[] args) {
 		List<Integer> list = new ArrayList<>();
 		list.add(1);
