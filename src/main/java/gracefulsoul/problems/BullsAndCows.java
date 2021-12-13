@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BullsAndCows {
 
-	// https://leetcode.com/submissions/detail/600486030/
+	// https://leetcode.com/submissions/detail/600493562/
 	public static void main(String[] args) {
 		BullsAndCows test = new BullsAndCows();
 		System.out.println(test.getHint("1807", "7810"));
@@ -15,9 +15,9 @@ public class BullsAndCows {
 		int bulls = 0;
 		int cows = 0;
 		int[] count = new int[10];
-		for (int i = 0; i < secret.length(); i++) {
-			char secretChar = secret.charAt(i);
-			char guessChar = guess.charAt(i);
+		for (int idx = 0; idx < secret.length(); idx++) {
+			char secretChar = secret.charAt(idx);
+			char guessChar = guess.charAt(idx);
 			if (secretChar == guessChar) {
 				bulls++;
 			} else {
