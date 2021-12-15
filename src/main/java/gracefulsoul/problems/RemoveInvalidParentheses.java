@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RemoveInvalidParentheses {
 
-	// https://leetcode.com/submissions/detail/602087905/
+	// https://leetcode.com/submissions/detail/602094511/
 	public static void main(String[] args) {
 		RemoveInvalidParentheses test = new RemoveInvalidParentheses();
 		System.out.println(test.removeInvalidParentheses("()())()"));
