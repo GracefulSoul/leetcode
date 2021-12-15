@@ -39,7 +39,7 @@ public class RemoveInvalidParentheses {
 				result.add(reversed);
 			}
 		} else {
-			i = i - 1;
+			i--;
 			for (int j = y; j <= i; j++) {
 				if (s.charAt(j) == check[1] && (j == y || s.charAt(j - 1) != check[1])) {
 					this.recursive(s.substring(0, j) + s.substring(j + 1, s.length()), result, check, i, j);
