@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RemoveInvalidParentheses {
 
-	// https://leetcode.com/submissions/detail/602094511/
+	// https://leetcode.com/submissions/detail/602098345/
 	public static void main(String[] args) {
 		RemoveInvalidParentheses test = new RemoveInvalidParentheses();
 		System.out.println(test.removeInvalidParentheses("()())()"));
@@ -32,11 +32,11 @@ public class RemoveInvalidParentheses {
 			i++;
 		}
 		if (count >= 0) {
-			String reversed = new StringBuilder(s).reverse().toString();
+			String reverse = new StringBuilder(s).reverse().toString();
 			if (check[0] == '(') {
-				this.recursive(reversed, result, new char[] { ')', '(' }, 0, 0);
+				this.recursive(reverse, result, new char[] { ')', '(' }, 0, 0);
 			} else {
-				result.add(reversed);
+				result.add(reverse);
 			}
 		} else {
 			i--;
