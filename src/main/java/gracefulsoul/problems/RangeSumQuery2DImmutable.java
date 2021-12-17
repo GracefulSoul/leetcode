@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RangeSumQuery2DImmutable {
 
-	// https://leetcode.com/submissions/detail/603082951/
+	// https://leetcode.com/submissions/detail/603086157/
 	public static void main(String[] args) {
 		NumMatrix numMatrix = new NumMatrix(new int[][] {
 			new int[] { 3, 0, 1, 4, 2 },
