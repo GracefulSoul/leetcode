@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RangeSumQueryMutable {
 
-	// https://leetcode.com/submissions/detail/603837015/
+	// https://leetcode.com/submissions/detail/603888213/
 	public static void main(String[] args) {
 		NumArray2 numArray = new NumArray2(new int[] {1, 3, 5});
 		System.out.println(numArray.sumRange(0, 2)); // return 1 + 3 + 5 = 9
