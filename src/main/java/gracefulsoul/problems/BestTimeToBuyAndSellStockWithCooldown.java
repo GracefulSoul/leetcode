@@ -14,10 +14,9 @@ public class BestTimeToBuyAndSellStockWithCooldown {
 		int hold = Integer.MIN_VALUE;
 		int rest = 0;
 		for (int price : prices) {
-			int pre = sold;
-			sold = hold + price;
 			hold = Math.max(hold, rest - price);
-			rest = Math.max(rest, pre);
+			rest = Math.max(rest, sold);
+			sold = hold + price;
 		}
 		return Math.max(sold, rest);
 	}
