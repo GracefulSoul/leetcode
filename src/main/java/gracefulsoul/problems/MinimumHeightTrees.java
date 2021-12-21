@@ -7,7 +7,7 @@ import java.util.List;
 
 public class MinimumHeightTrees {
 
-	// https://leetcode.com/submissions/detail/604860103/
+	// https://leetcode.com/submissions/detail/604893522/
 	public static void main(String[] args) {
 		MinimumHeightTrees test = new MinimumHeightTrees();
 		System.out.println(test.findMinHeightTrees(4, new int[][] {
