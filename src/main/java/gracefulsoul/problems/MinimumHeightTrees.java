@@ -7,6 +7,7 @@ import java.util.List;
 
 public class MinimumHeightTrees {
 
+	// https://leetcode.com/submissions/detail/604860103/
 	public static void main(String[] args) {
 		MinimumHeightTrees test = new MinimumHeightTrees();
 		System.out.println(test.findMinHeightTrees(4, new int[][] {
@@ -23,6 +24,7 @@ public class MinimumHeightTrees {
 		}));
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Integer> findMinHeightTrees(int n, int[][] edges) {
 		List<Integer> result = new ArrayList<>();
 		if (n == 1) {
@@ -38,9 +40,9 @@ public class MinimumHeightTrees {
 		for (int idx = 0; idx < n; idx++) {
 			graph[idx] = new ArrayList<>();
 		}
-		for (int idx = 0; idx < edges.length; idx++) {
-			int v1 = edges[idx][0];
-			int v2 = edges[idx][1];
+		for (int[] edge : edges) {
+			int v1 = edge[0];
+			int v2 = edge[1];
 			degree[v1]++;
 			degree[v2]++;
 			graph[v1].add(v2);
