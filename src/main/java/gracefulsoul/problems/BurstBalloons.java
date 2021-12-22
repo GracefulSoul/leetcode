@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BurstBalloons {
 
-	// https://leetcode.com/submissions/detail/605359987/
+	// https://leetcode.com/submissions/detail/605377106/
 	public static void main(String[] args) {
 		BurstBalloons test = new BurstBalloons();
 		System.out.println(test.maxCoins(new int[] { 3, 1, 5, 8 }));
@@ -12,13 +12,13 @@ public class BurstBalloons {
 
 	public int maxCoins(int[] nums) {
 		int length = nums.length;
-		int[][] dp = new int[length + 2][length + 2];
 		int[] numbers = new int[length + 2];
 		numbers[0] = 1;
 		numbers[length + 1] = 1;
 		for (int idx = 0; idx < length; idx++) {
 			numbers[idx + 1] = nums[idx];
 		}
+		int[][] dp = new int[length + 2][length + 2];
 		for (int j = 2; j < numbers.length; j++) {
 			for (int i = j - 1; i > 0; i--) {
 				int max = 0;
