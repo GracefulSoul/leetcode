@@ -12,27 +12,27 @@ public class SuperUglyNumber {
 	}
 
 	public int nthSuperUglyNumber(int n, int[] primes) {
-        int[] nums = new int[n];
-        nums[0] = 1;
-        int length = primes.length;
-        int pre = 1;
-        int min = 1;
-        int[] idx = new int[length];
-        int[] prePrimes = new int[length];
-        Arrays.fill(prePrimes, 1);
-        for(int i = 0; i < n; i++){
-        	nums[i] = min;
-            min = Integer.MAX_VALUE;
-            for(int j = 0; j < length; j++){
-                if(prePrimes[j] == pre){
-                	prePrimes[j] = primes[j] * nums[idx[j]];
-                    idx[j]++;
-                }
-                min = Math.min(prePrimes[j], min);
-            }
-            pre = min;
-        }
-        return nums[n - 1];
+		int[] nums = new int[n];
+		nums[0] = 1;
+		int length = primes.length;
+		int pre = 1;
+		int min = 1;
+		int[] idx = new int[length];
+		int[] prePrimes = new int[length];
+		Arrays.fill(prePrimes, 1);
+		for (int i = 0; i < n; i++) {
+			nums[i] = min;
+			min = Integer.MAX_VALUE;
+			for (int j = 0; j < length; j++) {
+				if (prePrimes[j] == pre) {
+					prePrimes[j] = primes[j] * nums[idx[j]];
+					idx[j]++;
+				}
+				min = Math.min(prePrimes[j], min);
+			}
+			pre = min;
+		}
+		return nums[n - 1];
 	}
 
 }
