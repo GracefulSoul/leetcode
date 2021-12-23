@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SuperUglyNumber {
 
-	// https://leetcode.com/submissions/detail/605791954/
+	// https://leetcode.com/submissions/detail/605792815/
 	public static void main(String[] args) {
 		SuperUglyNumber test = new SuperUglyNumber();
 		System.out.println(test.nthSuperUglyNumber(12, new int[] { 2, 7, 13, 19 }));
@@ -14,9 +14,9 @@ public class SuperUglyNumber {
 	public int nthSuperUglyNumber(int n, int[] primes) {
 		int[] nums = new int[n];
 		nums[0] = 1;
-		int length = primes.length;
 		int pre = 1;
 		int min = 1;
+		int length = primes.length;
 		int[] idx = new int[length];
 		int[] prePrimes = new int[length];
 		Arrays.fill(prePrimes, 1);
