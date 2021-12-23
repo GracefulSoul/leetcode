@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SuperUglyNumber {
 
-	// https://leetcode.com/submissions/detail/605788055/
+	// https://leetcode.com/submissions/detail/605791954/
 	public static void main(String[] args) {
 		SuperUglyNumber test = new SuperUglyNumber();
 		System.out.println(test.nthSuperUglyNumber(12, new int[] { 2, 7, 13, 19 }));
