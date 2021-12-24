@@ -5,6 +5,7 @@ import java.util.List;
 
 public class CountOfSmallerNumbersAfterSelf {
 
+	// https://leetcode.com/submissions/detail/606262252/
 	public static void main(String[] args) {
 		CountOfSmallerNumbersAfterSelf test = new CountOfSmallerNumbersAfterSelf();
 		System.out.println(test.countSmaller(new int[] { 5, 2, 6, 1 }));
