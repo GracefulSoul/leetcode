@@ -12,8 +12,8 @@ public class CountOfRangeSum {
 	public int countRangeSum(int[] nums, int lower, int upper) {
 		int length = nums.length;
 		long[] sum = new long[length + 1];
-		for (int idx = 1; idx <= length; idx++) {
-			sum[idx] = sum[idx - 1] + nums[idx - 1];
+		for (int idx = 0; idx < length; idx++) {
+			sum[idx + 1] = sum[idx] + nums[idx];
 		}
 		return this.recursive(sum, new long[length + 1], 0, length, lower, upper);
 	}
