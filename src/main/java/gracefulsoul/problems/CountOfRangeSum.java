@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountOfRangeSum {
 
-	// https://leetcode.com/submissions/detail/611890121/
+	// https://leetcode.com/submissions/detail/611895239/
 	public static void main(String[] args) {
 		CountOfRangeSum test = new CountOfRangeSum();
 		System.out.println(test.countRangeSum(new int[] { -2, 5, -1 }, -2, 2));
