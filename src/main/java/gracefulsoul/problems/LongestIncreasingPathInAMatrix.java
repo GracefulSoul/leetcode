@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestIncreasingPathInAMatrix {
 
-	// https://leetcode.com/submissions/detail/613482140/
+	// https://leetcode.com/submissions/detail/613487541/
 	public static void main(String[] args) {
 		LongestIncreasingPathInAMatrix test = new LongestIncreasingPathInAMatrix();
 		System.out.println(test.longestIncreasingPath(new int[][] {
@@ -39,13 +39,13 @@ public class LongestIncreasingPathInAMatrix {
 		}
 		int num = matrix[i][j];
 		int result = 0;
-		if (i - 1 >= 0 && matrix[i - 1][j] > num) {
+		if (i > 0 && matrix[i - 1][j] > num) {
 			result = Math.max(result, this.recursive(matrix, memory, i - 1, j, row, col));
 		}
 		if (i + 1 < row && matrix[i + 1][j] > num) {
 			result = Math.max(result, this.recursive(matrix, memory, i + 1, j, row, col));
 		}
-		if (j - 1 >= 0 && matrix[i][j - 1] > num) {
+		if (j > 0 && matrix[i][j - 1] > num) {
 			result = Math.max(result, this.recursive(matrix, memory, i, j - 1, row, col));
 		}
 		if (j + 1 < col && matrix[i][j + 1] > num) {
