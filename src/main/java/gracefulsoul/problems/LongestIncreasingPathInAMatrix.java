@@ -23,35 +23,35 @@ public class LongestIncreasingPathInAMatrix {
 	public int longestIncreasingPath(int[][] matrix) {
 		int row = matrix.length;
 		int col = matrix[0].length;
-		int[][] table = new int[row][col];
-		int result = Integer.MIN_VALUE;
+		int[][] memory = new int[row][col];
+		int result = 0;
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				result = Math.max(result, this.recursive(matrix, table, i, j, row, col));
+				result = Math.max(result, this.recursive(matrix, memory, i, j, row, col));
 			}
 		}
 		return result;
 	}
 
-	private int recursive(int[][] matrix, int[][] table, int i, int j, int row, int col) {
-		if (table[i][j] > 0) {
-			return table[i][j];
+	private int recursive(int[][] matrix, int[][] memory, int i, int j, int row, int col) {
+		if (memory[i][j] > 0) {
+			return memory[i][j];
 		}
 		int num = matrix[i][j];
 		int result = 0;
 		if (i - 1 >= 0 && matrix[i - 1][j] > num) {
-			result = Math.max(result, this.recursive(matrix, table, i - 1, j, row, col));
+			result = Math.max(result, this.recursive(matrix, memory, i - 1, j, row, col));
 		}
 		if (i + 1 < row && matrix[i + 1][j] > num) {
-			result = Math.max(result, this.recursive(matrix, table, i + 1, j, row, col));
+			result = Math.max(result, this.recursive(matrix, memory, i + 1, j, row, col));
 		}
 		if (j - 1 >= 0 && matrix[i][j - 1] > num) {
-			result = Math.max(result, this.recursive(matrix, table, i, j - 1, row, col));
+			result = Math.max(result, this.recursive(matrix, memory, i, j - 1, row, col));
 		}
 		if (j + 1 < col && matrix[i][j + 1] > num) {
-			result = Math.max(result, this.recursive(matrix, table, i, j + 1, row, col));
+			result = Math.max(result, this.recursive(matrix, memory, i, j + 1, row, col));
 		}
-		table[i][j] = ++result;
+		memory[i][j] = ++result;
 		return result;
 	}
 
