@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestIncreasingPathInAMatrix {
 
-	// https://leetcode.com/submissions/detail/613476659/
+	// https://leetcode.com/submissions/detail/613482140/
 	public static void main(String[] args) {
 		LongestIncreasingPathInAMatrix test = new LongestIncreasingPathInAMatrix();
 		System.out.println(test.longestIncreasingPath(new int[][] {
