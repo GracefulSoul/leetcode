@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class VerifyPreorderSerializationOfABinaryTree {
 
-	// https://leetcode.com/submissions/detail/615319571/
+	// https://leetcode.com/submissions/detail/615325214/
 	public static void main(String[] args) {
 		VerifyPreorderSerializationOfABinaryTree test = new VerifyPreorderSerializationOfABinaryTree();
 		System.out.println(test.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
@@ -13,7 +13,7 @@ public class VerifyPreorderSerializationOfABinaryTree {
 	public boolean isValidSerialization(String preorder) {
 		char[] nodes = preorder.toCharArray();
 		int slots = 1;
-		for (int idx = 0; idx < preorder.length(); idx++) {
+		for (int idx = 0; idx < nodes.length; idx++) {
 			if (nodes[idx] == ',') {
 				--slots;
 				if (slots < 0) {
