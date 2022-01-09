@@ -2,7 +2,6 @@ package gracefulsoul.problems;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -10,7 +9,7 @@ import java.util.Queue;
 
 public class ReconstructItinerary {
 
-	// https://leetcode.com/submissions/detail/616167048/
+	// https://leetcode.com/submissions/detail/616168461/
 	public static void main(String[] args) {
 		ReconstructItinerary test = new ReconstructItinerary();
 		List<List<String>> tickets1 = new ArrayList<>();
@@ -57,7 +56,7 @@ public class ReconstructItinerary {
 	}
 
 	private Map<String, Queue<String>> targets = new HashMap<>();
-	private List<String> result = new LinkedList<>();
+	private List<String> result = new ArrayList<>();
 
 	public List<String> findItinerary(List<List<String>> tickets) {
 		for (List<String> ticket : tickets) {
