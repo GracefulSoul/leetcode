@@ -10,7 +10,7 @@ import java.util.Queue;
 
 public class ReconstructItinerary {
 
-	// https://leetcode.com/submissions/detail/616163322/
+	// https://leetcode.com/submissions/detail/616167048/
 	public static void main(String[] args) {
 		ReconstructItinerary test = new ReconstructItinerary();
 		List<List<String>> tickets1 = new ArrayList<>();
@@ -60,9 +60,9 @@ public class ReconstructItinerary {
 	private List<String> result = new LinkedList<>();
 
 	public List<String> findItinerary(List<List<String>> tickets) {
-		for (List<String> t : tickets) {
-			this.targets.putIfAbsent(t.get(0), new PriorityQueue<>());
-			this.targets.get(t.get(0)).add(t.get(1));
+		for (List<String> ticket : tickets) {
+			this.targets.putIfAbsent(ticket.get(0), new PriorityQueue<>());
+			this.targets.get(ticket.get(0)).add(ticket.get(1));
 		}
 		this.recursive("JFK");
 		return this.result;
