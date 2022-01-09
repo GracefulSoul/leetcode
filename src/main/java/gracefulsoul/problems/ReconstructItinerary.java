@@ -6,10 +6,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class ReconstructItinerary {
 
-	// https://leetcode.com/submissions/detail/616155980/
+	// https://leetcode.com/submissions/detail/616163322/
 	public static void main(String[] args) {
 		ReconstructItinerary test = new ReconstructItinerary();
 		List<List<String>> tickets1 = new ArrayList<>();
@@ -55,7 +56,7 @@ public class ReconstructItinerary {
 		System.out.println(test.findItinerary(tickets2));
 	}
 
-	private Map<String, PriorityQueue<String>> targets = new HashMap<>();
+	private Map<String, Queue<String>> targets = new HashMap<>();
 	private List<String> result = new LinkedList<>();
 
 	public List<String> findItinerary(List<List<String>> tickets) {
