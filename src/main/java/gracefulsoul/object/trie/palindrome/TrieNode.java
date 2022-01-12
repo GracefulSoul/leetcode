@@ -5,13 +5,14 @@ import java.util.List;
 
 public class TrieNode {
 
-	public TrieNode[] children;
-	public int wordIndex = -1;
+	public int wordIndex;
 	public List<Integer> palindromeWordIndexes;
+	public TrieNode[] children;
 
 	public TrieNode() {
-		this.children = new TrieNode[26];
+		this.wordIndex = -1;
 		this.palindromeWordIndexes = new ArrayList<>();
+		this.children = new TrieNode[26];
 	}
 
 }

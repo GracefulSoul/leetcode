@@ -8,7 +8,7 @@ import gracefulsoul.object.trie.palindrome.TrieNode;
 
 public class PalindromePairs {
 
-	// https://leetcode.com/submissions/detail/617997565/
+	// https://leetcode.com/submissions/detail/618001128/
 	public static void main(String[] args) {
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "abcd", "dcba", "lls", "s", "sssll" }));
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "bat", "tab", "cat" }));
