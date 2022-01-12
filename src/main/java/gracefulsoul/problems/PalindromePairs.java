@@ -8,7 +8,7 @@ import gracefulsoul.object.trie.palindrome.TrieNode;
 
 public class PalindromePairs {
 
-	// https://leetcode.com/submissions/detail/618001128/
+	// https://leetcode.com/submissions/detail/618053235/
 	public static void main(String[] args) {
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "abcd", "dcba", "lls", "s", "sssll" }));
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "bat", "tab", "cat" }));
@@ -27,6 +27,31 @@ public class PalindromePairs {
 			this.search(result, words[idx], idx);
 		}
 		return result;
+	}
+
+	private void add(String word, int wordIndex) {
+		TrieNode temp = root;
+		char[] charArray = word.toCharArray();
+		for (int idx = charArray.length - 1; idx >= 0; idx--) {
+			int num = charArray[idx] - 'a';
+			if (this.isPalindrome(charArray, 0, idx)) {
+				temp.palindromeWordIndexes.add(wordIndex);
+			}
+			if (temp.children[num] == null) {
+				temp.children[num] = new TrieNode();
+			}
+			temp = temp.children[num];
+		}
+		temp.wordIndex = wordIndex;
+	}
+
+	private boolean isPalindrome(char[] charArray, int start, int end) {
+		while (start < end) {
+			if (charArray[start++] != charArray[end--]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private void search(List<List<Integer>> result, String word, int wordIndex) {
@@ -48,31 +73,6 @@ public class PalindromePairs {
 		for (int palindromeWordIndex : temp.palindromeWordIndexes) {
 			result.add(Arrays.asList(wordIndex, palindromeWordIndex));
 		}
-	}
-
-	private void add(String word, int wordIndex) {
-		TrieNode temp = root;
-		char[] charArray = word.toCharArray();
-		for (int idx = charArray.length - 1; idx >= 0; idx--) {
-			int num = charArray[idx] - 'a';
-			if (this.isPalindrome(charArray, 0, idx)) {
-				temp.palindromeWordIndexes.add(wordIndex);
-			}
-			if (temp.children[num] == null) {
-				temp.children[num] = new TrieNode();
-			}
-			temp = temp.children[num];
-		}
-		temp.wordIndex = wordIndex;
-	}
-
-	private boolean isPalindrome(char[] chs, int i, int j) {
-		while (i < j) {
-			if (chs[i++] != chs[j--]) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 }
