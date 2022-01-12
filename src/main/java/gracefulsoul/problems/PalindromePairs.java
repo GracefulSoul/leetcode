@@ -8,7 +8,7 @@ import gracefulsoul.object.trie.palindrome.TrieNode;
 
 public class PalindromePairs {
 
-	// https://leetcode.com/submissions/detail/617933895/
+	// https://leetcode.com/submissions/detail/617997565/
 	public static void main(String[] args) {
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "abcd", "dcba", "lls", "s", "sssll" }));
 		System.out.println(new PalindromePairs().palindromePairs(new String[] { "bat", "tab", "cat" }));
@@ -51,19 +51,19 @@ public class PalindromePairs {
 	}
 
 	private void add(String word, int wordIndex) {
-		TrieNode cur = root;
+		TrieNode temp = root;
 		char[] charArray = word.toCharArray();
 		for (int idx = charArray.length - 1; idx >= 0; idx--) {
 			int num = charArray[idx] - 'a';
 			if (this.isPalindrome(charArray, 0, idx)) {
-				cur.palindromeWordIndexes.add(wordIndex);
+				temp.palindromeWordIndexes.add(wordIndex);
 			}
-			if (cur.children[num] == null) {
-				cur.children[num] = new TrieNode();
+			if (temp.children[num] == null) {
+				temp.children[num] = new TrieNode();
 			}
-			cur = cur.children[num];
+			temp = temp.children[num];
 		}
-		cur.wordIndex = wordIndex;
+		temp.wordIndex = wordIndex;
 	}
 
 	private boolean isPalindrome(char[] chs, int i, int j) {
