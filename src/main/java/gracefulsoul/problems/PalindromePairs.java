@@ -29,6 +29,15 @@ public class PalindromePairs {
 		return result;
 	}
 
+	private boolean isPalindrome(char[] charArray, int start, int end) {
+		while (start < end) {
+			if (charArray[start++] != charArray[end--]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
 	private void add(String word, int wordIndex) {
 		TrieNode temp = root;
 		char[] charArray = word.toCharArray();
@@ -43,15 +52,6 @@ public class PalindromePairs {
 			temp = temp.children[num];
 		}
 		temp.wordIndex = wordIndex;
-	}
-
-	private boolean isPalindrome(char[] charArray, int start, int end) {
-		while (start < end) {
-			if (charArray[start++] != charArray[end--]) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 	private void search(List<List<Integer>> result, String word, int wordIndex) {
