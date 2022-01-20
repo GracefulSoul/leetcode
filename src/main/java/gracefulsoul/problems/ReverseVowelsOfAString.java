@@ -36,11 +36,8 @@ public class ReverseVowelsOfAString {
 	}
 
 	private boolean isConsonant(char c) {
-		return !(c == 'A' || c == 'a' ||
-				 c == 'E' || c == 'e' ||
-				 c == 'I' || c == 'i' ||
-				 c == 'O' || c == 'o' ||
-				 c == 'U' || c == 'u');
+		return !(c == 'A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || c == 'i' || c == 'O' || c == 'o'
+				|| c == 'U' || c == 'u');
 	}
 
 }
