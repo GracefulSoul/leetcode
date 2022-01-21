@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class TopKFrequentElements {
 
-	// https://leetcode.com/submissions/detail/624595612/
+	// https://leetcode.com/submissions/detail/624597696/
 	public static void main(String[] args) {
 		TopKFrequentElements test = new TopKFrequentElements();
 		print(test.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
@@ -27,7 +27,7 @@ public class TopKFrequentElements {
 			if (array[num - min] == null) {
 				array[num - min] = new Num(num);
 			} else {
-				array[num - min].addCount();
+				array[num - min].count++;
 			}
 		}
 		Arrays.sort(array, new Comparator<Num>() {
@@ -69,10 +69,6 @@ class Num {
 	public Num(int value) {
 		this.value = value;
 		this.count = 1;
-	}
-
-	public void addCount() {
-		this.count++;
 	}
 
 }
