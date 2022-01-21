@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReverseVowelsOfAString {
 
-	// https://leetcode.com/submissions/detail/623890325/
+	// https://leetcode.com/submissions/detail/624590953/
 	public static void main(String[] args) {
 		ReverseVowelsOfAString test = new ReverseVowelsOfAString();
 		System.out.println(test.reverseVowels("hello"));

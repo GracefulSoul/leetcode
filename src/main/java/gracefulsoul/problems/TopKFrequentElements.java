@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class TopKFrequentElements {
 
-	// https://leetcode.com/submissions/detail/624589443/
+	// https://leetcode.com/submissions/detail/624595612/
 	public static void main(String[] args) {
 		TopKFrequentElements test = new TopKFrequentElements();
 		print(test.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
@@ -22,23 +22,23 @@ public class TopKFrequentElements {
 				max = num;
 			}
 		}
-		Pair[] array = new Pair[max - min + 1];
+		Num[] array = new Num[max - min + 1];
 		for (int num : nums) {
 			if (array[num - min] == null) {
-				array[num - min] = new Pair(num);
+				array[num - min] = new Num(num);
 			} else {
-				array[num - min].increment();
+				array[num - min].addCount();
 			}
 		}
-		Arrays.sort(array, new Comparator<Pair>() {
+		Arrays.sort(array, new Comparator<Num>() {
 			@Override
-			public int compare(Pair o1, Pair o2) {
+			public int compare(Num o1, Num o2) {
 				if (o1 == null) {
 					return 1;
 				} else if (o2 == null) {
 					return -1;
 				} else {
-					return o2.freq - o1.freq;
+					return o2.count - o1.count;
 				}
 			}
 		});
@@ -61,17 +61,18 @@ public class TopKFrequentElements {
 
 }
 
-class Pair {
+class Num {
 
-	int value;
-	int freq;
+	public int value;
+	public int count;
 
-	Pair(int value) {
+	public Num(int value) {
 		this.value = value;
-		this.freq = 1;
+		this.count = 1;
 	}
 
-	void increment() {
-		freq++;
+	public void addCount() {
+		this.count++;
 	}
+
 }
