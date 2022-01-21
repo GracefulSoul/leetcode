@@ -10,34 +10,37 @@ public class ReverseVowelsOfAString {
 	}
 
 	public String reverseVowels(String s) {
-		char[] sArr = s.toCharArray();
+		char[] charArray = s.toCharArray();
 		int start = 0;
 		int end = s.length() - 1;
 		while (start < end) {
-			while (this.isConsonant(sArr[start])) {
+			while (this.isConsonant(charArray[start])) {
 				if (start >= end) {
 					break;
 				}
 				start++;
 			}
-			while (this.isConsonant(sArr[end]) && start < end) {
+			while (this.isConsonant(charArray[end]) && start < end) {
 				if (start >= end) {
 					break;
 				}
 				end--;
 			}
-			char temp = sArr[start];
-			sArr[start] = sArr[end];
-			sArr[end] = temp;
+			char temp = charArray[start];
+			charArray[start] = charArray[end];
+			charArray[end] = temp;
 			start++;
 			end--;
 		}
-		return new String(sArr);
+		return new String(charArray);
 	}
 
 	private boolean isConsonant(char c) {
-		return !(c == 'A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || c == 'i' || c == 'O' || c == 'o'
-				|| c == 'U' || c == 'u');
+		return !(c == 'A' || c == 'a' ||
+				c == 'E' || c == 'e' ||
+				c == 'I' || c == 'i' ||
+				c == 'O' || c == 'o' ||
+				c == 'U' || c == 'u');
 	}
 
 }
