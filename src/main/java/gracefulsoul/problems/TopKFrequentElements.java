@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 public class TopKFrequentElements {
 
-	// https://leetcode.com/submissions/detail/624441415/
+	// https://leetcode.com/submissions/detail/624589443/
 	public static void main(String[] args) {
 		TopKFrequentElements test = new TopKFrequentElements();
 		print(test.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
