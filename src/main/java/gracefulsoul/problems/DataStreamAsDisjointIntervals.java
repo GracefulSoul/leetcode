@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DataStreamAsDisjointIntervals {
 
-	// https://leetcode.com/submissions/detail/626632266/
+	// https://leetcode.com/submissions/detail/626638928/
 	public static void main(String[] args) {
 		SummaryRanges2 summaryRanges = new SummaryRanges2();
 		summaryRanges.addNum(1);      		 // arr = [1]
@@ -78,10 +78,10 @@ class SummaryRanges2 {
 			int mid = left + (right - left) / 2;
 			if (num < this.list.get(mid)[0]) {
 				right = mid - 1;
-			} else if (num == list.get(mid)[0]) {
-				return mid;
-			} else {
+			} else if (num > list.get(mid)[0]) {
 				left = mid + 1;
+			} else {
+				return mid;
 			}
 		}
 		return right;
