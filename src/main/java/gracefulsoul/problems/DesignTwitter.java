@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-// https://leetcode.com/submissions/detail/627977322/
+// https://leetcode.com/submissions/detail/627990146/
 public class DesignTwitter {
 
 	public static void main(String[] args) {
@@ -54,8 +54,8 @@ class Twitter {
 		if (followees == null) {
 			followees = new HashSet<>();
 		}
-		this.relation.put(followerId, followees);
 		followees.add(followeeId);
+		this.relation.put(followerId, followees);
 	}
 
 	public void unfollow(int followerId, int followeeId) {
