@@ -34,7 +34,7 @@ class Twitter {
 	}
 
 	public void postTweet(int userId, int tweetId) {
-		this.posts.add(new Integer[] {userId, tweetId});
+		this.posts.add(new Integer[] { userId, tweetId });
 	}
 
 	public List<Integer> getNewsFeed(int userId) {
