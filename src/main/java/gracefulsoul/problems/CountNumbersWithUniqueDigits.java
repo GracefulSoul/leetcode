@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountNumbersWithUniqueDigits {
 
-	// https://leetcode.com/submissions/detail/628744530/
+	// https://leetcode.com/submissions/detail/628883641/
 	public static void main(String[] args) {
 		CountNumbersWithUniqueDigits test = new CountNumbersWithUniqueDigits();
 		System.out.println(test.countNumbersWithUniqueDigits(2));
