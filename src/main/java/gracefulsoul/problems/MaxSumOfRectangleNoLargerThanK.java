@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaxSumOfRectangleNoLargerThanK {
 
-	// https://leetcode.com/submissions/detail/629353823/
+	// https://leetcode.com/submissions/detail/629365987/
 	public static void main(String[] args) {
 		MaxSumOfRectangleNoLargerThanK test = new MaxSumOfRectangleNoLargerThanK();
 		System.out.println(test.maxSumSubmatrix(new int[][] {
@@ -24,7 +24,7 @@ public class MaxSumOfRectangleNoLargerThanK {
 				for (int l = 0; l < row; l++) {
 					nums[l] += matrix[l][j];
 				}
-				max = Math.max(max, this.getMaxSubSum(nums, k));
+				max = Math.max(max, this.getMaxSubSum(nums, row, k));
 				if (max == k) {
 					return k;
 				}
@@ -33,11 +33,10 @@ public class MaxSumOfRectangleNoLargerThanK {
 		return max;
 	}
 
-	private int getMaxSubSum(int[] nums, int k) {
+	private int getMaxSubSum(int[] nums, int row, int k) {
 		int curr = nums[0];
 		int max = curr;
-		int length = nums.length;
-		for (int idx = 1; idx < length; idx++) {
+		for (int idx = 1; idx < row; idx++) {
 			curr = Math.max(curr + nums[idx], nums[idx]);
 			if (curr > max) {
 				max = curr;
@@ -47,9 +46,9 @@ public class MaxSumOfRectangleNoLargerThanK {
 			return max;
 		}
 		max = Integer.MIN_VALUE;
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < row; i++) {
 			curr = 0;
-			for (int j = i; j < length; j++) {
+			for (int j = i; j < row; j++) {
 				curr += nums[j];
 				if (curr > max && curr <= k) {
 					max = curr;
