@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class SumOfTwoIntegers {
 
+	// https://leetcode.com/submissions/detail/632198200/
 	public static void main(String[] args) {
 		SumOfTwoIntegers test = new SumOfTwoIntegers();
 		System.out.println(test.getSum(1, 2));
