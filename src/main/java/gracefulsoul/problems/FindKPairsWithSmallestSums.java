@@ -30,7 +30,7 @@ public class FindKPairsWithSmallestSums {
 			if (curr[2] == nums2.length - 1) {
 				continue;
 			}
-			queue.offer(new int[] { curr[0], nums2[curr[2] + 1], curr[2] + 1 });
+			queue.add(new int[] { curr[0], nums2[curr[2] + 1], curr[2] + 1 });
 		}
 		return result;
 	}
