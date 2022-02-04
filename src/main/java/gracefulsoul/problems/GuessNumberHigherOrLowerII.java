@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class GuessNumberHigherOrLowerII {
 
-	// https://leetcode.com/submissions/detail/634106744/
+	// https://leetcode.com/submissions/detail/634125882/
 	public static void main(String[] args) {
 		GuessNumberHigherOrLowerII test = new GuessNumberHigherOrLowerII();
 		System.out.println(test.getMoneyAmount(10));
@@ -11,28 +11,27 @@ public class GuessNumberHigherOrLowerII {
 	}
 
 	public int getMoneyAmount(int n) {
-		int[][] dp = new int[n + 1][n + 1];
-		return this.recursive(dp, 1, n);
+		return this.recursive(new int[n + 1][n + 1], 1, n);
 	}
 
-	private int recursive(int[][] dp, int i, int j) {
-		if (i >= j) {
+	private int recursive(int[][] dp, int low, int high) {
+		if (low >= high) {
 			return 0;
-		}
-		if (dp[i][j] > 0) {
-			return dp[i][j];
-		}
-		dp[i][j] = Integer.MAX_VALUE;
-		int init = (i + j) / 2;
-		for (int k = init; k < j; ++k) {
-			int low = this.recursive(dp, i, k - 1);
-			int high = this.recursive(dp, k + 1, j);
-			dp[i][j] = Math.min(dp[i][j], k + Math.max(low, high));
-			if (low >= high) {
-				break;
+		} else if (dp[low][high] > 0) {
+			return dp[low][high];
+		} else {
+			dp[low][high] = Integer.MAX_VALUE;
+			int init = (low + high) / 2;
+			for (int idx = init; idx < high; ++idx) {
+				int left = this.recursive(dp, low, idx - 1);
+				int right = this.recursive(dp, idx + 1, high);
+				dp[low][high] = Math.min(dp[low][high], idx + Math.max(left, right));
+				if (left >= right) {
+					break;
+				}
 			}
 		}
-		return dp[i][j];
+		return dp[low][high];
 	}
 
 }
