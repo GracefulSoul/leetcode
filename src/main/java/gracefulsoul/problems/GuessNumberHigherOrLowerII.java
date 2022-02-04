@@ -21,8 +21,8 @@ public class GuessNumberHigherOrLowerII {
 			return dp[low][high];
 		} else {
 			dp[low][high] = Integer.MAX_VALUE;
-			int init = (low + high) / 2;
-			for (int idx = init; idx < high; ++idx) {
+			int mid = (low + high) / 2;
+			for (int idx = mid; idx < high; ++idx) {
 				int left = this.recursive(dp, low, idx - 1);
 				int right = this.recursive(dp, idx + 1, high);
 				dp[low][high] = Math.min(dp[low][high], idx + Math.max(left, right));
