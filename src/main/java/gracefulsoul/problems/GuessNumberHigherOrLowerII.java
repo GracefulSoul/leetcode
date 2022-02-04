@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class GuessNumberHigherOrLowerII {
 
-	// https://leetcode.com/submissions/detail/634128039/
+	// https://leetcode.com/submissions/detail/634129102/
 	public static void main(String[] args) {
 		GuessNumberHigherOrLowerII test = new GuessNumberHigherOrLowerII();
 		System.out.println(test.getMoneyAmount(10));
@@ -22,7 +22,7 @@ public class GuessNumberHigherOrLowerII {
 		} else {
 			dp[low][high] = Integer.MAX_VALUE;
 			int mid = (low + high) / 2;
-			for (int idx = mid; idx < high; ++idx) {
+			for (int idx = mid; idx < high; idx++) {
 				int left = this.recursive(dp, low, idx - 1);
 				int right = this.recursive(dp, idx + 1, high);
 				dp[low][high] = Math.min(dp[low][high], idx + Math.max(left, right));
