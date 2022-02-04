@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class GuessNumberHigherOrLowerII {
 
-	// https://leetcode.com/submissions/detail/634125882/
+	// https://leetcode.com/submissions/detail/634128039/
 	public static void main(String[] args) {
 		GuessNumberHigherOrLowerII test = new GuessNumberHigherOrLowerII();
 		System.out.println(test.getMoneyAmount(10));
