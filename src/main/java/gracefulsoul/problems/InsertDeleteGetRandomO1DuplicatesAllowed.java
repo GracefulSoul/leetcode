@@ -68,9 +68,9 @@ class RandomizedCollection {
 			this.map.get(num).add(index);
 			this.map.get(num).remove(lastIndex);
 			this.list.remove(lastIndex);
-	        if (this.map.get(val).isEmpty()) {
-	        	this.map.remove(val);
-	        }
+			if (this.map.get(val).isEmpty()) {
+				this.map.remove(val);
+			}
 		}
 		return isContains;
 	}
