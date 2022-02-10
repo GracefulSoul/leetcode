@@ -44,7 +44,7 @@ class Solution {
 
 	public int getRandom() {
 		int num = this.random.nextInt(this.size);
-		ListNode curr = listNode;
+		ListNode curr = this.listNode;
 		while (num > 0) {
 			curr = curr.next;
 			num--;
