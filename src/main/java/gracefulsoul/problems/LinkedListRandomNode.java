@@ -43,11 +43,11 @@ class Solution {
 	}
 
 	public int getRandom() {
-		int n = this.random.nextInt(this.size);
+		int num = this.random.nextInt(this.size);
 		ListNode curr = listNode;
-		while (n > 0) {
+		while (num > 0) {
 			curr = curr.next;
-			n--;
+			num--;
 		}
 		return curr.val;
 	}
