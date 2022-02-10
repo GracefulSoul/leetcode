@@ -6,7 +6,7 @@ import gracefulsoul.object.ListNode;
 
 public class LinkedListRandomNode {
 
-	// https://leetcode.com/submissions/detail/638373358/
+	// https://leetcode.com/submissions/detail/638387842/
 	public static void main(String[] args) {
 		Solution solution = new Solution(new ListNode(1, new ListNode(2, new ListNode(3))));
 		System.out.println(solution.getRandom()); // return 1
