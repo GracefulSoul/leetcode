@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RansomNote {
 
-	// https://leetcode.com/submissions/detail/638973923/
+	// https://leetcode.com/submissions/detail/638979205/
 	public static void main(String[] args) {
 		RansomNote test = new RansomNote();
 		System.out.println(test.canConstruct("a", "b"));
