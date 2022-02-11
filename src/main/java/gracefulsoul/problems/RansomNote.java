@@ -19,7 +19,7 @@ public class RansomNote {
             if(index == -1) {
                 return false;
             }
-            count[ransomNoteChar - 'a'] = index + 1;
+            count[num] = index + 1;
         }
         return true;
 	}
