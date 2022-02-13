@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import gracefulsoul.object.nested.NestedInteger;
+
 public class FlattenNestedListIterator {
 
 	// https://leetcode.com/submissions/detail/620004661/
@@ -69,21 +71,5 @@ class NestedIterator implements Iterator<Integer> {
 		this.currentIterator = nextInteger.getList().iterator();
 		return this.getNext();
 	}
-
-}
-
-/**
- * Your NestedIterator object will be instantiated and called as such:
- * NestedIterator i = new NestedIterator(nestedList);
- * while (i.hasNext()) v[f()] = i.next();
- */
-
-interface NestedInteger {
-
-	public boolean isInteger();
-
-	public Integer getInteger();
-
-	public List<NestedInteger> getList();
 
 }
