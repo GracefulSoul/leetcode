@@ -40,15 +40,15 @@ class Solution2 {
 	}
 
 	public int[] reset() {
-		this.copy = Arrays.copyOf(nums, nums.length);
+		this.copy = Arrays.copyOf(this.nums, this.nums.length);
 		return this.copy;
 	}
 
 	public int[] shuffle() {
 		for (int idx = this.copy.length - 1; idx >= 0; idx--) {
-			int rand = this.random.nextInt(idx + 1);
-			int temp = this.copy[rand];
-			this.copy[rand] = this.copy[idx];
+			int num = this.random.nextInt(idx + 1);
+			int temp = this.copy[num];
+			this.copy[num] = this.copy[idx];
 			this.copy[idx] = temp;
 		}
 		return this.copy;
