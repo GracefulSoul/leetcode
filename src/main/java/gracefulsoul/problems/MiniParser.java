@@ -1,8 +1,7 @@
 package gracefulsoul.problems;
 
-import java.util.Stack;
-
 import gracefulsoul.object.nested.NestedInteger;
+import gracefulsoul.object.nested.SimpleNestedInteger;
 
 /**
  * // This is the interface that allows for creating nested lists. // You should
@@ -33,8 +32,19 @@ public class MiniParser {
 
 	// https://leetcode.com/submissions/detail/640405550/
 	public static void main(String[] args) {
-		System.out.println(new MiniParser().deserialize("324"));
-		System.out.println(new MiniParser().deserialize("[123,[456,[789]]]"));
+		print(new MiniParser().deserialize("324"));
+		System.out.println();
+		print(new MiniParser().deserialize("[123,[456,[789]]]"));
+		System.out.println();
+	}
+
+	private static void print(NestedInteger nestedInteger) {
+		if (nestedInteger.isInteger()) {
+			System.out.print(nestedInteger.getInteger());
+		}
+		for (NestedInteger child : nestedInteger.getList()) {
+			print(child);
+		}
 	}
 
 	private int start;
@@ -47,7 +57,7 @@ public class MiniParser {
 	}
 
 	private NestedInteger recursive() {
-		NestedInteger result = new NestedInteger();
+		NestedInteger result = new SimpleNestedInteger();
 		if (this.charArray[this.start] == '[') {
 			this.start++;
 			this.dfs(result);
@@ -58,7 +68,8 @@ public class MiniParser {
 				posistion = -1;
 				this.start++;
 			}
-			while (this.start < this.charArray.length && this.charArray[this.start] <= '9' && this.charArray[this.start] >= '0') {
+			while (this.start < this.charArray.length && this.charArray[this.start] <= '9'
+					&& this.charArray[this.start] >= '0') {
 				num = (num * 10) + (this.charArray[this.start++] - '0');
 			}
 			result.setInteger(num * posistion);
