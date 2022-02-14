@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LexicographicalNumbers {
 
-	// https://leetcode.com/submissions/detail/640979957/
+	// https://leetcode.com/submissions/detail/640983194/
 	public static void main(String[] args) {
 		LexicographicalNumbers test = new LexicographicalNumbers();
 		System.out.println(test.lexicalOrder(13));
@@ -15,22 +15,21 @@ public class LexicographicalNumbers {
 	public List<Integer> lexicalOrder(int n) {
 		List<Integer> result = new ArrayList<>();
 		for (int idx = 1; idx < 10; idx++) {
-			this.dfs(idx, n, result);
+			this.dfs(result, n, idx);
 		}
 		return result;
 	}
 
-	private void dfs(int cur, int n, List<Integer> res) {
-		if (cur > n) {
+	private void dfs(List<Integer> result, int n, int curr) {
+		if (curr > n) {
 			return;
 		}
-		res.add(cur);
+		result.add(curr);
 		for (int idx = 0; idx < 10; idx++) {
-			int num = (10 * cur) + idx;
-			if (num > n) {
+			if ((10 * curr) + idx > n) {
 				return;
 			}
-			this.dfs(num, n, res);
+			this.dfs(result, n, (10 * curr) + idx);
 		}
 	}
 
