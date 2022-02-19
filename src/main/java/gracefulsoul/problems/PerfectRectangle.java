@@ -41,20 +41,20 @@ public class PerfectRectangle {
 				return 0;
 			}
 		});
-		int left = Integer.MAX_VALUE;
-		int bottom = Integer.MAX_VALUE;
-		int right = Integer.MIN_VALUE;
 		int top = Integer.MIN_VALUE;
+		int bottom = Integer.MAX_VALUE;
+		int left = Integer.MAX_VALUE;
+		int right = Integer.MIN_VALUE;
 		int area = 0;
 		for (int[] rectangle : rectangles) {
 			if (!rectangleSet.add(rectangle)) {
 				return false;
 			}
 			area += (rectangle[2] - rectangle[0]) * (rectangle[3] - rectangle[1]);
-			right = Math.max(right, rectangle[2]);
-			left = Math.min(left, rectangle[0]);
 			top = Math.max(top, rectangle[3]);
 			bottom = Math.min(bottom, rectangle[1]);
+			left = Math.min(left, rectangle[0]);
+			right = Math.max(right, rectangle[2]);
 		}
 		return (right - left) * (top - bottom) == area;
 	}
