@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 public class PerfectRectangle {
 
-	// https://leetcode.com/submissions/detail/644390095/
+	// https://leetcode.com/submissions/detail/644396729/
 	public static void main(String[] args) {
 		PerfectRectangle test = new PerfectRectangle();
 		System.out.println(test.isRectangleCover(new int[][] {
