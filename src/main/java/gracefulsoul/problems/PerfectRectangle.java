@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 public class PerfectRectangle {
 
-	// https://leetcode.com/submissions/detail/644396729/
+	// https://leetcode.com/submissions/detail/644407568/
 	public static void main(String[] args) {
 		PerfectRectangle test = new PerfectRectangle();
 		System.out.println(test.isRectangleCover(new int[][] {
@@ -31,12 +31,10 @@ public class PerfectRectangle {
 
 	public boolean isRectangleCover(int[][] rectangles) {
 		Set<int[]> rectangleSet = new TreeSet<>((r1, r2) -> {
-			if (r1[1] >= r2[3]) {
+			if (r1[1] >= r2[3] || r1[0] >= r2[2]) {
 				return 1;
 			} else if (r1[3] <= r2[1] || r1[2] <= r2[0]) {
 				return -1;
-			} else if (r1[0] >= r2[2]) {
-				return 1;
 			} else {
 				return 0;
 			}
