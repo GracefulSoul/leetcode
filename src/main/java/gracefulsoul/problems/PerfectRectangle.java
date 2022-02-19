@@ -30,7 +30,7 @@ public class PerfectRectangle {
 	}
 
 	public boolean isRectangleCover(int[][] rectangles) {
-		Set<int[]> rectSet = new TreeSet<>((r1, r2) -> {
+		Set<int[]> rectangleSet = new TreeSet<>((r1, r2) -> {
 			if (r1[1] >= r2[3]) {
 				return 1;
 			} else if (r1[3] <= r2[1] || r1[2] <= r2[0]) {
@@ -47,7 +47,7 @@ public class PerfectRectangle {
 		int top = Integer.MIN_VALUE;
 		int area = 0;
 		for (int[] rectangle : rectangles) {
-			if (!rectSet.add(rectangle)) {
+			if (!rectangleSet.add(rectangle)) {
 				return false;
 			}
 			area += (rectangle[2] - rectangle[0]) * (rectangle[3] - rectangle[1]);
