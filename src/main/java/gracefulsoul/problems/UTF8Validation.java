@@ -12,8 +12,8 @@ public class UTF8Validation {
 	public boolean validUtf8(int[] data) {
 		int bytes = 0;
 		for (int num : data) {
+			int mask = 128;
 			if (bytes == 0) {
-				int mask = 128;
 				while ((mask & num) != 0) {
 					bytes++;
 					mask >>= 1;
@@ -22,12 +22,12 @@ public class UTF8Validation {
 					return false;
 				}
 			} else {
-				if ((num & 128) == 0 || (num & 64) != 0) {
+				if ((num & mask) == 0 || (num & (mask >> 1)) != 0) {
 					return false;
 				}
 			}
 			if (bytes != 0) {
-				bytes -= 1;
+				bytes--;
 			}
 		}
 		return bytes == 0;
