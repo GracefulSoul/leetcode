@@ -10,27 +10,27 @@ public class UTF8Validation {
 	}
 
 	public boolean validUtf8(int[] data) {
-        int bytes = 0;
-        for (int num : data) {
-            if (bytes == 0) {
-                int mask = 128;
-                while ((mask & num) != 0) {
-                    bytes++;
-                    mask >>= 1;
-                }
-                if (bytes == 0) {
-                    continue;
-                } else if (bytes > 4 || bytes == 1) {
-                    return false;
-                }
-            } else {
-                if ((num & 128) == 0 || (num & 64) != 0) {
-                    return false;
-                }
-            }
-            bytes -= 1;
-        }
-        return bytes == 0;
+		int bytes = 0;
+		for (int num : data) {
+			if (bytes == 0) {
+				int mask = 128;
+				while ((mask & num) != 0) {
+					bytes++;
+					mask >>= 1;
+				}
+				if (bytes == 0) {
+					continue;
+				} else if (bytes > 4 || bytes == 1) {
+					return false;
+				}
+			} else {
+				if ((num & 128) == 0 || (num & 64) != 0) {
+					return false;
+				}
+			}
+			bytes -= 1;
+		}
+		return bytes == 0;
 	}
 
 }
