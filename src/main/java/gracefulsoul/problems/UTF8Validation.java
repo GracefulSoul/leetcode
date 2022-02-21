@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class UTF8Validation {
 
-	// https://leetcode.com/submissions/detail/645865119/
+	// https://leetcode.com/submissions/detail/645870882/
 	public static void main(String[] args) {
 		UTF8Validation test = new UTF8Validation();
 		System.out.println(test.validUtf8(new int[] { 197, 130, 1 }));
@@ -18,9 +18,7 @@ public class UTF8Validation {
 					bytes++;
 					mask >>= 1;
 				}
-				if (bytes == 0) {
-					continue;
-				} else if (bytes > 4 || bytes == 1) {
+				if (bytes > 4 || bytes == 1) {
 					return false;
 				}
 			} else {
@@ -28,7 +26,9 @@ public class UTF8Validation {
 					return false;
 				}
 			}
-			bytes -= 1;
+			if (bytes != 0) {
+				bytes -= 1;
+			}
 		}
 		return bytes == 0;
 	}
