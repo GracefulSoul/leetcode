@@ -16,8 +16,8 @@ public class RandomPickIndex {
 
 class Solution1 {
 
-	int[] nums;
-	Random random;
+	private int[] nums;
+	private Random random;
 
 	public Solution1(int[] nums) {
 		this.nums = nums;
