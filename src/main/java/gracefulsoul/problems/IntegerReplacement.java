@@ -5,9 +5,9 @@ public class IntegerReplacement {
 	// https://leetcode.com/submissions/detail/648436492/
 	public static void main(String[] args) {
 		IntegerReplacement test = new IntegerReplacement();
-		System.out.println(test.integerReplacement(8));
-		System.out.println(test.integerReplacement(7));
-		System.out.println(test.integerReplacement(4));
+//		System.out.println(test.integerReplacement(8));
+//		System.out.println(test.integerReplacement(7));
+		System.out.println(test.integerReplacement(5));
 	}
 
 	public int integerReplacement(int n) {
