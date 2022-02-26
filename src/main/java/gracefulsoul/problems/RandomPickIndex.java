@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomPickIndex {
 
-	// https://leetcode.com/submissions/detail/649030173/
+	// https://leetcode.com/submissions/detail/649035501/
 	public static void main(String[] args) {
 		Solution1 solution = new Solution1(new int[] { 1, 2, 3, 3, 3 });
 		System.out.println(solution.pick(3)); // It should return either index 2, 3, or 4 randomly. Each index should have equal probability of returning.
@@ -25,13 +25,14 @@ class Solution1 {
 	}
 
 	public int pick(int target) {
-		int result = -1;
-		int range = 0;
-		for (int idx = 0; idx < nums.length; idx++)
-			if (nums[idx] == target && random.nextInt(++range) == 0) {
-				result = idx;
+		int index = -1;
+		int max = 1;
+		for (int idx = 0; idx < nums.length; idx++) {
+			if (nums[idx] == target && random.nextInt(max++) == 0) {
+				index = idx;
 			}
-		return result;
+		}
+		return index;
 	}
 
 }
