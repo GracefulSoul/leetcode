@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class EvaluateDivision {
 
-	// https://leetcode.com/submissions/detail/649555553/
+	// https://leetcode.com/submissions/detail/649564514/
 	public static void main(String[] args) {
 		EvaluateDivision test = new EvaluateDivision();
 		List<List<String>> equations1 = new ArrayList<>();
@@ -52,20 +52,20 @@ public class EvaluateDivision {
 		double[] result = new double[queries.size()];
 		for (int idx = 0; idx < queries.size(); idx++) {
 			List<String> query = queries.get(idx);
-			result[idx] = this.dfs(query.get(0), query.get(1), 1, map, new HashSet<>());
+			result[idx] = this.dfs(map, new HashSet<>(), query.get(0), query.get(1), 1);
 		}
 		return result;
 	}
 
-	private double dfs(String s, String t, double num, Map<String, Map<String, Double>> map, Set<String> set) {
-		if (!map.containsKey(s) || !set.add(s)) {
+	private double dfs(Map<String, Map<String, Double>> map, Set<String> set, String q1, String q2, double num) {
+		if (!map.containsKey(q1) || !set.add(q1)) {
 			return -1;
-		} else if (s.equals(t)) {
+		} else if (q1.equals(q2)) {
 			return num;
 		} else {
-			Map<String, Double> next = map.get(s);
+			Map<String, Double> next = map.get(q1);
 			for (String str : next.keySet()) {
-				double result = this.dfs(str, t, num * next.get(str), map, set);
+				double result = this.dfs(map, set, str, q2, num * next.get(str));
 				if (result != -1) {
 					return result;
 				}
