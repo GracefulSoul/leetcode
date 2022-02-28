@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NthDigit {
 
-	// https://leetcode.com/submissions/detail/650211613/
+	// https://leetcode.com/submissions/detail/650219323/
 	public static void main(String[] args) {
 		NthDigit test = new NthDigit();
 		System.out.println(test.findNthDigit(3));
@@ -10,7 +10,8 @@ public class NthDigit {
 	}
 
 	public int findNthDigit(int n) {
-		int length = 1, base = 1;
+		int length = 1;
+		int base = 1;
 		while (n > 9L * base * length) {
 			n -= 9 * base * length;
 			length++;
@@ -18,7 +19,7 @@ public class NthDigit {
 		}
 		int result = 0;
 		int num = (n - 1) / length + base;
-		for (int i = (n - 1) % length; i < length; i++) {
+		for (int idx = (n - 1) % length; idx < length; idx++) {
 			result = num % 10;
 			num /= 10;
 		}
