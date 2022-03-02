@@ -5,11 +5,11 @@ import java.util.List;
 
 public class BinaryWatch {
 
-	// https://leetcode.com/submissions/detail/651040839/
+	// https://leetcode.com/submissions/detail/651045172/
 	public static void main(String[] args) {
 		BinaryWatch test = new BinaryWatch();
 		System.out.println(test.readBinaryWatch(1));
-		System.out.println(test.readBinaryWatch(9));
+//		System.out.println(test.readBinaryWatch(9));
 	}
 
 	public List<String> readBinaryWatch(int turnedOn) {
