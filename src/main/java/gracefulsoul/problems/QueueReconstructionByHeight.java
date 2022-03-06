@@ -2,12 +2,11 @@ package gracefulsoul.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class QueueReconstructionByHeight {
 
-	// https://leetcode.com/submissions/detail/654379068/
+	// https://leetcode.com/submissions/detail/654385559/
 	public static void main(String[] args) {
 		QueueReconstructionByHeight test = new QueueReconstructionByHeight();
 		print(test.reconstructQueue(new int[][] {
@@ -29,14 +28,12 @@ public class QueueReconstructionByHeight {
 	}
 
 	public int[][] reconstructQueue(int[][] people) {
-		Arrays.sort(people, new Comparator<int[]>() {
-			public int compare(int[] p1, int[] p2) {
-                int val = p2[0] - p1[0];
-                if (val == 0) {
-                	val = p1[1] - p2[1];
-                }
-                return val;
-			}
+		Arrays.sort(people, (p1, p2) -> {
+            int val = p2[0] - p1[0];
+            if (val == 0) {
+            	val = p1[1] - p2[1];
+            }
+            return val;
 		});
         List<int[]> result = new ArrayList<>();
         for (int[] p : people) {
