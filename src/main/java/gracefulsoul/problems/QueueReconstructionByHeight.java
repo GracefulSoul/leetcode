@@ -29,17 +29,17 @@ public class QueueReconstructionByHeight {
 
 	public int[][] reconstructQueue(int[][] people) {
 		Arrays.sort(people, (p1, p2) -> {
-            int val = p2[0] - p1[0];
-            if (val == 0) {
-            	val = p1[1] - p2[1];
-            }
-            return val;
+			int val = p2[0] - p1[0];
+			if (val == 0) {
+				val = p1[1] - p2[1];
+			}
+			return val;
 		});
-        List<int[]> result = new ArrayList<>();
-        for (int[] p : people) {
-        	result.add(p[1], p);
-        }
-        return result.toArray(new int[0][]);
+		List<int[]> result = new ArrayList<>();
+		for (int[] p : people) {
+			result.add(p[1], p);
+		}
+		return result.toArray(new int[0][]);
 	}
 
 	private static void print(int[][] array) {
