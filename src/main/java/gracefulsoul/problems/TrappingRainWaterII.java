@@ -22,10 +22,10 @@ public class TrappingRainWaterII {
 	public int trapRainWater(int[][] heightMap) {
 		int row = heightMap.length;
 		int col = heightMap[0].length;
-		int[][] vol = new int[row][col];
+		int[][] volume = new int[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				vol[i][j] = heightMap[i][j];
+				volume[i][j] = heightMap[i][j];
 			}
 		}
 		boolean update = true;
@@ -34,9 +34,9 @@ public class TrappingRainWaterII {
 			update = false;
 			for (int i = 1; i < row - 1; i++) {
 				for (int j = 1; j < col - 1; j++) {
-					int val = Math.max(heightMap[i][j], Math.min(vol[i - 1][j], vol[i][j - 1]));
-					if (init || val < vol[i][j]) {
-						vol[i][j] = val;
+					int val = Math.max(heightMap[i][j], Math.min(volume[i - 1][j], volume[i][j - 1]));
+					if (init || val < volume[i][j]) {
+						volume[i][j] = val;
 						update = true;
 					}
 				}
@@ -44,9 +44,9 @@ public class TrappingRainWaterII {
 			init = false;
 			for (int i = row - 2; i >= 1; i--) {
 				for (int j = col - 2; j >= 1; j--) {
-					int val = Math.max(heightMap[i][j], Math.min(vol[i + 1][j], vol[i][j + 1]));
-					if (val < vol[i][j]) {
-						vol[i][j] = val;
+					int val = Math.max(heightMap[i][j], Math.min(volume[i + 1][j], volume[i][j + 1]));
+					if (val < volume[i][j]) {
+						volume[i][j] = val;
 						update = true;
 					}
 				}
@@ -55,8 +55,8 @@ public class TrappingRainWaterII {
 		int sum = 0;
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				if (vol[i][j] - heightMap[i][j] > 0) {
-					sum += (vol[i][j] - heightMap[i][j]);
+				if (volume[i][j] - heightMap[i][j] > 0) {
+					sum += (volume[i][j] - heightMap[i][j]);
 				}
 			}
 		}
