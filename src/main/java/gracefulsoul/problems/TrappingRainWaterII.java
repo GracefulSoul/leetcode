@@ -56,7 +56,7 @@ public class TrappingRainWaterII {
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (volume[i][j] - heightMap[i][j] > 0) {
-					sum += (volume[i][j] - heightMap[i][j]);
+					sum += volume[i][j] - heightMap[i][j];
 				}
 			}
 		}
