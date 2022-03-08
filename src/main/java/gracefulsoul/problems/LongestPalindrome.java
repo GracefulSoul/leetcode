@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestPalindrome {
 
-	// https://leetcode.com/submissions/detail/655533536/
+	// https://leetcode.com/submissions/detail/655534901/
 	public static void main(String[] args) {
 		LongestPalindrome test = new LongestPalindrome();
 		System.out.println(test.longestPalindrome("abccccdd"));
