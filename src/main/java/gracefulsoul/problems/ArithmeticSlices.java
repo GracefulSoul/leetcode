@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ArithmeticSlices {
 
-	// https://leetcode.com/submissions/detail/658956263/
+	// https://leetcode.com/submissions/detail/658973072/
 	public static void main(String[] args) {
 		ArithmeticSlices test = new ArithmeticSlices();
 		System.out.println(test.numberOfArithmeticSlices(new int[] { 1, 2, 3, 4 }));
@@ -12,8 +12,8 @@ public class ArithmeticSlices {
 	public int numberOfArithmeticSlices(int[] nums) {
 		int number = 0;
 		int count = 0;
-		for (int i = 2; i < nums.length; i++) {
-			if (nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]) {
+		for (int idx = 2; idx < nums.length; idx++) {
+			if (nums[idx] - nums[idx - 1] == nums[idx - 1] - nums[idx - 2]) {
 				count++;
 				number += count;
 			} else {
