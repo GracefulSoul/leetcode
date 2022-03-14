@@ -12,16 +12,16 @@ public class ThirdMaximumNumber {
 
 	public int thirdMax(int[] nums) {
 		long[] memory = new long[] { Long.MIN_VALUE, Long.MIN_VALUE, Long.MIN_VALUE };
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] > memory[0]) {
+		for (int num : nums) {
+			if (num > memory[0]) {
 				memory[2] = memory[1];
 				memory[1] = memory[0];
-				memory[0] = nums[i];
-			} else if (nums[i] < memory[0] && nums[i] > memory[1]) {
+				memory[0] = num;
+			} else if (num < memory[0] && num > memory[1]) {
 				memory[2] = memory[1];
-				memory[1] = nums[i];
-			} else if (nums[i] < memory[1] && nums[i] > memory[2]) {
-				memory[2] = nums[i];
+				memory[1] = num;
+			} else if (num < memory[1] && num > memory[2]) {
+				memory[2] = num;
 			}
 		}
 		return (int) (memory[2] == Long.MIN_VALUE ? memory[0] : memory[2]);
