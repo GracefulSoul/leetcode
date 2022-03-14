@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ThirdMaximumNumber {
 
-	// https://leetcode.com/submissions/detail/659524416/
+	// https://leetcode.com/submissions/detail/659540012/
 	public static void main(String[] args) {
 		ThirdMaximumNumber test = new ThirdMaximumNumber();
 		System.out.println(test.thirdMax(new int[] { 3, 2, 1 }));
@@ -17,10 +17,10 @@ public class ThirdMaximumNumber {
 				memory[2] = memory[1];
 				memory[1] = memory[0];
 				memory[0] = nums[i];
-			} else if (nums[i] > memory[1] && nums[i] < memory[0]) {
+			} else if (nums[i] < memory[0] && nums[i] > memory[1]) {
 				memory[2] = memory[1];
 				memory[1] = nums[i];
-			} else if (nums[i] > memory[2] && nums[i] < memory[1]) {
+			} else if (nums[i] < memory[1] && nums[i] > memory[2]) {
 				memory[2] = nums[i];
 			}
 		}
