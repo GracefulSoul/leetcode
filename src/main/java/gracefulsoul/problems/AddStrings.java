@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class AddStrings {
 
-	// https://leetcode.com/submissions/detail/660190307/
+	// https://leetcode.com/submissions/detail/660190591/
 	public static void main(String[] args) {
 		AddStrings test = new AddStrings();
 		System.out.println(test.addStrings("11", "123"));
