@@ -28,7 +28,7 @@ public class PartitionEqualSubsetSum {
 			return true;
 		} else {
 			int num = target - nums[index];
-			if (target > nums[index] && !dp[num]) {
+			if (num > 0 && !dp[num]) {
 				dp[num] = true;
 				return this.dfs(nums, dp, index + 1, num) || this.dfs(nums, dp, index + 1, target);
 			}
