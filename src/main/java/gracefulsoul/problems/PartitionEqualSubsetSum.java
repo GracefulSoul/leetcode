@@ -2,13 +2,13 @@ package gracefulsoul.problems;
 
 public class PartitionEqualSubsetSum {
 
+	// https://leetcode.com/submissions/detail/660893913/
 	public static void main(String[] args) {
 		PartitionEqualSubsetSum test = new PartitionEqualSubsetSum();
 		System.out.println(test.canPartition(new int[] { 1, 5, 11, 5 }));
 		System.out.println(test.canPartition(new int[] { 1, 2, 3, 5 }));
 	}
 
-	// https://leetcode.com/submissions/detail/660893913/
 	public boolean canPartition(int[] nums) {
 		int sum = 0;
 		for (int num : nums) {
