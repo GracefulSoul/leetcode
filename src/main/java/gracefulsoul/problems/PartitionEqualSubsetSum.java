@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PartitionEqualSubsetSum {
 
-	// https://leetcode.com/submissions/detail/660893913/
+	// https://leetcode.com/submissions/detail/660900098/
 	public static void main(String[] args) {
 		PartitionEqualSubsetSum test = new PartitionEqualSubsetSum();
 		System.out.println(test.canPartition(new int[] { 1, 5, 11, 5 }));
@@ -27,7 +27,7 @@ public class PartitionEqualSubsetSum {
 		} else if (nums[index] == target) {
 			return true;
 		} else {
-			if (target - nums[index] > 0) {
+			if (target > nums[index]) {
 				int num = target - nums[index];
 				if (!dp[num]) {
 					dp[num] = true;
