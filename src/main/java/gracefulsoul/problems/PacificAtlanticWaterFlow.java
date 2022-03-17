@@ -42,7 +42,7 @@ public class PacificAtlanticWaterFlow {
 		return this.result;
 	}
 
-	public void dfs(int[][] heights, boolean[][] visit, int i, int j, int row, int col) {
+	private void dfs(int[][] heights, boolean[][] visit, int i, int j, int row, int col) {
 		if (visit[i][j]) {
 			return;
 		}
