@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class MaximumXOROfTwoNumbersInAnArray {
 
-	// https://leetcode.com/submissions/detail/662749365/
+	// https://leetcode.com/submissions/detail/662795016/
 	public static void main(String[] args) {
 		MaximumXOROfTwoNumbersInAnArray test = new MaximumXOROfTwoNumbersInAnArray();
 		System.out.println(test.findMaximumXOR(new int[] { 3, 10, 5, 25, 2, 8 }));
@@ -23,14 +23,15 @@ public class MaximumXOROfTwoNumbersInAnArray {
 		for (int idx = 31 - Integer.numberOfLeadingZeros(max); idx >= 0; idx--) {
 			set.clear();
 			int bit = 1 << idx;
-			mask = mask | bit;
-			int temp = result | bit;
+			mask |= bit;
+			int maxBit = result | bit;
 			for (int num : nums) {
-				if (set.contains((num & mask) ^ temp)) {
-					result = temp;
+				int temp = num & mask;
+				if (set.contains(temp ^ maxBit)) {
+					result = maxBit;
 					break;
 				}
-				set.add(num & mask);
+				set.add(temp);
 			}
 		}
 		return result;
