@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class StrongPasswordChecker {
 
+	// https://leetcode.com/submissions/detail/662744131/
 	public static void main(String[] args) {
 		StrongPasswordChecker test = new StrongPasswordChecker();
 		System.out.println(test.strongPasswordChecker("a"));
