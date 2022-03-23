@@ -29,7 +29,7 @@ public class NaryTreeLevelOrderTraversal {
 
 	private void recursive(Node root, List<List<Integer>> list, int level) {
 		if (list.size() <= level) {
-			list.add(new ArrayList<Integer>());
+			list.add(new ArrayList<>());
 		}
 		list.get(level).add(root.val);
 		for (Node node : root.children) {
