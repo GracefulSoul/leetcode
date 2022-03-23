@@ -8,7 +8,7 @@ import gracefulsoul.object.node.children.Node;
 
 public class NaryTreeLevelOrderTraversal {
 
-	// https://leetcode.com/submissions/detail/665498675/
+	// https://leetcode.com/submissions/detail/665501111/
 	public static void main(String[] args) {
 		NaryTreeLevelOrderTraversal test = new NaryTreeLevelOrderTraversal();
 		Node leafNode1 = new Node(3, Arrays.asList(new Node[] { new Node(5), new Node(6) }));
