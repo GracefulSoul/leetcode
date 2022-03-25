@@ -106,7 +106,10 @@ class AllOne {
 }
 
 /**
- * Your AllOne object will be instantiated and called as such: AllOne obj = new
- * AllOne(); obj.inc(key); obj.dec(key); String param_3 = obj.getMaxKey();
+ * Your AllOne object will be instantiated and called as such:
+ * AllOne obj = new AllOne();
+ * obj.inc(key);
+ * obj.dec(key);
+ * String param_3 = obj.getMaxKey();
  * String param_4 = obj.getMinKey();
  */
