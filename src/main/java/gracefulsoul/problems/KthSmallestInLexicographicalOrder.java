@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KthSmallestInLexicographicalOrder {
 
-	// https://leetcode.com/submissions/detail/670737288/
+	// https://leetcode.com/submissions/detail/670742891/
 	public static void main(String[] args) {
 		KthSmallestInLexicographicalOrder test = new KthSmallestInLexicographicalOrder();
 		System.out.println(test.findKthNumber(13, 2));
@@ -25,13 +25,13 @@ public class KthSmallestInLexicographicalOrder {
 	}
 
 	private long getStep(int n, long num1, long num2) {
-		long count = 0;
+		long step = 0;
 		while (num1 <= n) {
-			count += Math.min(n + 1, num2) - num1;
+			step += Math.min(n + 1, num2) - num1;
 			num1 *= 10;
 			num2 *= 10;
 		}
-		return count;
+		return step;
 	}
 
 }
