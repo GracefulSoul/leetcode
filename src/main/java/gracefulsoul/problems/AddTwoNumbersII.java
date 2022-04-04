@@ -58,18 +58,18 @@ public class AddTwoNumbersII {
 		return this.reverseList(result);
 	}
 
-	private ListNode reverseList(ListNode listNode) {
-		ListNode reverse = new ListNode(listNode.val);
-		listNode = listNode.next;
-		while (listNode != null) {
-			reverse = new ListNode(listNode.val, reverse);
-			listNode = listNode.next;
+	private ListNode reverseList(ListNode ls) {
+		ListNode rev = new ListNode(ls.val);
+		ls = ls.next;
+		while (ls != null) {
+			rev = new ListNode(ls.val, rev);
+			ls = ls.next;
 		}
-		return reverse;
+		return rev;
 	}
 
 	private static void print(ListNode listNode) {
-		while(listNode != null) {
+		while (listNode != null) {
 			System.out.print(listNode.val);
 			listNode = listNode.next;
 			if (listNode != null) {
