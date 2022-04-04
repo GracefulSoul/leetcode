@@ -4,7 +4,7 @@ import gracefulsoul.object.ListNode;
 
 public class AddTwoNumbersII {
 
-	// https://leetcode.com/submissions/detail/673553258/
+	// https://leetcode.com/submissions/detail/673555595/
 	public static void main(String[] args) {
 		AddTwoNumbersII test = new AddTwoNumbersII();
 		print(test.addTwoNumbers(new ListNode(7, new ListNode(2, new ListNode(4, new ListNode(3)))), new ListNode(5, new ListNode(6, new ListNode(4)))));
@@ -60,10 +60,9 @@ public class AddTwoNumbersII {
 
 	private ListNode reverseList(ListNode ls) {
 		ListNode reverse = new ListNode(ls.val);
-		ls = ls.next;
-		while (ls != null) {
-			reverse = new ListNode(ls.val, reverse);
+		while (ls.next != null) {
 			ls = ls.next;
+			reverse = new ListNode(ls.val, reverse);
 		}
 		return reverse;
 	}
