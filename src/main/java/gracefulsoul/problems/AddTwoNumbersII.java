@@ -21,8 +21,7 @@ public class AddTwoNumbersII {
 		while (l1 != null && l2 != null) {
 			int sum = carry + l1.val + l2.val;
 			carry = sum / 10;
-			sum %= 10;
-			ListNode listNode = new ListNode(sum);
+			ListNode listNode = new ListNode(sum % 10);
 			if (result == null) {
 				result = listNode;
 				temp = result;
@@ -36,23 +35,20 @@ public class AddTwoNumbersII {
 		while (l1 != null) {
 			int sum = carry + l1.val;
 			carry = sum / 10;
-			sum %= 10;
-			temp.next = new ListNode(sum);
+			temp.next = new ListNode(sum % 10);
 			l1 = l1.next;
 			temp = temp.next;
 		}
 		while (l2 != null) {
 			int sum = carry + l2.val;
 			carry = sum / 10;
-			sum %= 10;
-			temp.next = new ListNode(sum);
+			temp.next = new ListNode(sum % 10);
 			l2 = l2.next;
 			temp = temp.next;
 		}
 		while (carry != 0) {
-			int d = carry % 10;
+			temp.next = new ListNode(carry % 10);
 			carry /= 10;
-			temp.next = new ListNode(d);
 			temp = temp.next;
 		}
 		return this.reverseList(result);
