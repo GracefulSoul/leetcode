@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class NumberOfBoomerangs {
 
-	// https://leetcode.com/submissions/detail/674735699/
+	// https://leetcode.com/submissions/detail/674753443/
 	public static void main(String[] args) {
 		NumberOfBoomerangs test = new NumberOfBoomerangs();
 		System.out.println(test.numberOfBoomerangs(new int[][] {
@@ -43,10 +43,10 @@ public class NumberOfBoomerangs {
 		return number;
 	}
 
-	private int calculateDistance(int[] a, int[] b) {
-		int dx = a[0] - b[0];
-		int dy = a[1] - b[1];
-		return (dx * dx) + (dy * dy);
+	private int calculateDistance(int[] distance1, int[] distance2) {
+		int x = distance1[0] - distance2[0];
+		int y = distance1[1] - distance2[1];
+		return (x * x) + (y * y);
 	}
 
 }
