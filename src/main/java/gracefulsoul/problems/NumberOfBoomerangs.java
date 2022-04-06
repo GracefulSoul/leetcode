@@ -43,9 +43,9 @@ public class NumberOfBoomerangs {
 		return number;
 	}
 
-	private int calculateDistance(int[] distance1, int[] distance2) {
-		int x = distance1[0] - distance2[0];
-		int y = distance1[1] - distance2[1];
+	private int calculateDistance(int[] pointA, int[] pointB) {
+		int x = pointA[0] - pointB[0];
+		int y = pointA[1] - pointB[1];
 		return (x * x) + (y * y);
 	}
 
