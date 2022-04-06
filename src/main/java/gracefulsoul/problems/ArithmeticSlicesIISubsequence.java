@@ -11,7 +11,7 @@ public class ArithmeticSlicesIISubsequence {
 	public static void main(String[] args) {
 		ArithmeticSlicesIISubsequence test = new ArithmeticSlicesIISubsequence();
 		System.out.println(test.numberOfArithmeticSlices(new int[] { 2, 4, 6, 8, 10 }));
-		System.out.println(test.numberOfArithmeticSlices(new int[] { 7, 7, 7, 7, 7 }));
+//		System.out.println(test.numberOfArithmeticSlices(new int[] { 7, 7, 7, 7, 7 }));
 	}
 
 	public int numberOfArithmeticSlices(int[] nums) {
