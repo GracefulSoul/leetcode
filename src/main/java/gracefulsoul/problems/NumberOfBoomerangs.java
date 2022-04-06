@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class NumberOfBoomerangs {
 
-	// https://leetcode.com/submissions/detail/674756122/
+	// https://leetcode.com/submissions/detail/674759531/
 	public static void main(String[] args) {
 		NumberOfBoomerangs test = new NumberOfBoomerangs();
 		System.out.println(test.numberOfBoomerangs(new int[][] {
