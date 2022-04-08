@@ -3,7 +3,7 @@ package gracefulsoul.problems;
 import java.util.HashMap;
 import java.util.Map;
 
-import gracefulsoul.object.TreeNode;
+import gracefulsoul.object.node.TreeNode;
 
 public class PathSumIII {
 

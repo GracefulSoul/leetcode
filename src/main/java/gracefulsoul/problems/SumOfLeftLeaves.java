@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.TreeNode;
+import gracefulsoul.object.node.TreeNode;
 
 /**
  * Definition for a binary tree node.

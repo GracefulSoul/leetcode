@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 import java.util.Stack;
 
-import gracefulsoul.object.TreeNode;
+import gracefulsoul.object.node.TreeNode;
 
 public class KthSmallestElementInABST {
 

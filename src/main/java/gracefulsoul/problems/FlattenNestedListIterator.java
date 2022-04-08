@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import gracefulsoul.object.nested.NestedInteger;
+import gracefulsoul.object.nested.integer.NestedInteger;
 
 public class FlattenNestedListIterator {
 

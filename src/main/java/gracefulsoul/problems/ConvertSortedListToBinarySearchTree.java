@@ -1,7 +1,7 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.ListNode;
-import gracefulsoul.object.TreeNode;
+import gracefulsoul.object.node.ListNode;
+import gracefulsoul.object.node.TreeNode;
 
 public class ConvertSortedListToBinarySearchTree {
 

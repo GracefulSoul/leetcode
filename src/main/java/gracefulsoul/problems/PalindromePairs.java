@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import gracefulsoul.object.trie.palindrome.TrieNode;
+import gracefulsoul.object.node.trie.palindrome.TrieNode;
 
 public class PalindromePairs {
 

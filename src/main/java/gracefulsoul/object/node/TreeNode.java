@@ -1,4 +1,4 @@
-package gracefulsoul.object;
+package gracefulsoul.object.node;
 
 public class TreeNode {
 

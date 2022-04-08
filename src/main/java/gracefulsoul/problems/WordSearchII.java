@@ -3,7 +3,7 @@ package gracefulsoul.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-import gracefulsoul.object.trie.word.TrieNode;
+import gracefulsoul.object.node.trie.word.TrieNode;
 
 public class WordSearchII {
 

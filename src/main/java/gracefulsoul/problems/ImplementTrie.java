@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.trie.check.TrieNode;
+import gracefulsoul.object.node.trie.check.TrieNode;
 
 public class ImplementTrie {
 

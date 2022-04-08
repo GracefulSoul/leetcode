@@ -1,4 +1,4 @@
-package gracefulsoul.object.trie.palindrome;
+package gracefulsoul.object.node.trie.palindrome;
 
 import java.util.ArrayList;
 import java.util.List;

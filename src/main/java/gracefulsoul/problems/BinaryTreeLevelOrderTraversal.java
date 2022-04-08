@@ -3,7 +3,7 @@ package gracefulsoul.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-import gracefulsoul.object.TreeNode;
+import gracefulsoul.object.node.TreeNode;
 
 public class BinaryTreeLevelOrderTraversal {
 

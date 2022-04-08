@@ -1,7 +1,7 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.nested.NestedInteger;
-import gracefulsoul.object.nested.SimpleNestedInteger;
+import gracefulsoul.object.nested.integer.NestedInteger;
+import gracefulsoul.object.nested.integer.SimpleNestedInteger;
 
 /**
  * // This is the interface that allows for creating nested lists. // You should

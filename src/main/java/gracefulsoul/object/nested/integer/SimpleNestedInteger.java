@@ -1,4 +1,4 @@
-package gracefulsoul.object.nested;
+package gracefulsoul.object.nested.integer;
 
 import java.util.ArrayList;
 import java.util.List;

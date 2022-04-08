@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 import java.util.Random;
 
-import gracefulsoul.object.ListNode;
+import gracefulsoul.object.node.ListNode;
 
 public class LinkedListRandomNode {
 

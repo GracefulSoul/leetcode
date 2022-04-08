@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.ListNode;
+import gracefulsoul.object.node.ListNode;
 
 public class SortList {
 
