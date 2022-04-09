@@ -1,19 +1,21 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class FindRightInterval {
 
 	// https://leetcode.com/submissions/detail/668824352/
 	public static void main(String[] args) {
 		FindRightInterval test = new FindRightInterval();
-		print(test.findRightInterval(new int[][] {
+		PrintUtil.print(test.findRightInterval(new int[][] {
 			{ 1, 2 }
 		}));
-		print(test.findRightInterval(new int[][] {
+		PrintUtil.print(test.findRightInterval(new int[][] {
 			{ 3, 4 },
 			{ 2, 3 },
 			{ 1, 2 }
 		}));
-		print(test.findRightInterval(new int[][] {
+		PrintUtil.print(test.findRightInterval(new int[][] {
 			{ 1, 4 },
 			{ 2, 3 },
 			{ 3, 4 }
@@ -49,16 +51,6 @@ public class FindRightInterval {
 			}
 		}
 		return result;
-	}
-
-	private static void print(int[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

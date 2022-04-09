@@ -4,14 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.util.PrintUtil;
 
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
 	// https://leetcode.com/submissions/detail/528894574/
 	public static void main(String[] args) {
 		ConstructBinaryTreeFromInorderAndPostorderTraversal test = new ConstructBinaryTreeFromInorderAndPostorderTraversal();
-		print(test.buildTree(new int[] { 9, 3, 15, 20, 7 }, new int[] { 9, 15, 7, 20, 3 }), true, false);
-		print(test.buildTree(new int[] { -1 }, new int[] { -1 }), true, false);
+		PrintUtil.print(test.buildTree(new int[] { 9, 3, 15, 20, 7 }, new int[] { 9, 15, 7, 20, 3 }), true, false);
+		PrintUtil.print(test.buildTree(new int[] { -1 }, new int[] { -1 }), true, false);
 	}
 
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
@@ -32,33 +33,6 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 		treeNode.left = this.recursive(postorder, inorderMap, inStart, inOrderIndex - 1, postStart, postStart + numsLeft - 1);
 		treeNode.right = this.recursive(postorder, inorderMap, inOrderIndex + 1, inEnd, postStart + numsLeft, postEnd - 1);
 		return treeNode;
-	}
-
-	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
-		if (treeNode != null) {
-			if (!isRoot) {
-				System.out.print("(");
-			}
-			print(treeNode.left, false, true);
-			print(treeNode.val);
-			System.out.print(", ");
-			print(treeNode.right, false, false);
-			if (!isRoot) {
-				System.out.print(")");
-			}
-		} else {
-			print("null");
-		}
-		if (isLeft) {
-			System.out.print(", ");
-		}
-		if (isRoot) {
-			System.out.println();
-		}
-	}
-
-	private static void print(Object val) {
-		System.out.print("(" + val + ")");
 	}
 
 }

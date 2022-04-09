@@ -1,13 +1,14 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class PartitionList {
 
 	// https://leetcode.com/submissions/detail/518146184/
 	public static void main(String[] args) {
 		PartitionList test = new PartitionList();
-		print(test.partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3));
+		PrintUtil.print(test.partition(new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2)))))), 3));
 	}
 
 	public ListNode partition(ListNode head, int x) {
@@ -34,17 +35,6 @@ public class PartitionList {
 		ln2.next = temp.next;
 		temp.next = ln1.next;
 		ln1.next = temp;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

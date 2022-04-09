@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class RotateImage {
 
@@ -13,7 +13,7 @@ public class RotateImage {
 			new int[] { 7, 8, 9 }
 		};
 		test.rotate(matrix1);
-		print(matrix1);
+		PrintUtil.print(matrix1);
 		int[][] matrix2 = new int[][] {
 			new int[] { 5, 1, 9, 11 },
 			new int[] { 2, 4, 8, 10 },
@@ -21,7 +21,7 @@ public class RotateImage {
 			new int[] { 15, 14, 12, 16 }
 		};
 		test.rotate(matrix2);
-		print(matrix2);
+		PrintUtil.print(matrix2);
 	}
 
 	public void rotate(int[][] matrix) {
@@ -35,12 +35,6 @@ public class RotateImage {
 					fixed[j][matrix.length - 1 - i] = true;
 				}
 			}
-		}
-	}
-
-	private static void print(int[][] matrix) {
-		for (int[] row : matrix) {
-			System.out.println(Arrays.toString(row));
 		}
 	}
 

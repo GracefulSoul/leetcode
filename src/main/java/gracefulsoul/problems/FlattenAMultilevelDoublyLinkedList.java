@@ -1,6 +1,7 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.flatten.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class FlattenAMultilevelDoublyLinkedList {
 
@@ -30,13 +31,13 @@ public class FlattenAMultilevelDoublyLinkedList {
 		Node node12 = new Node(12, node11);
 		node8.child = node11;
 		node11.next = node12;
-		print(test.flatten(node1));
+		PrintUtil.print(test.flatten(node1));
 		Node node13 = new Node(1);
 		Node node14 = new Node(2, node13);
 		Node node15 = new Node(3);
 		node13.next = node14;
 		node13.child = node15;
-		print(test.flatten(node13));
+		PrintUtil.print(test.flatten(node13));
 	}
 
 	public Node flatten(Node head) {
@@ -65,17 +66,6 @@ public class FlattenAMultilevelDoublyLinkedList {
 			head.child = null;
 		}
 		return head;
-	}
-
-	private static void print(Node node) {
-		while (node != null) {
-			System.out.print(node.val);
-			node = node.next;
-			if (node != null) {
-				System.out.print(",");
-			}
-		}
-		System.out.println();
 	}
 
 }

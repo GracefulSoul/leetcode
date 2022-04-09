@@ -1,13 +1,15 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class SingleNumberIII {
 
 	// https://leetcode.com/submissions/detail/590226962/
 	public static void main(String[] args) {
 		SingleNumberIII test = new SingleNumberIII();
-		print(test.singleNumber(new int[] { 1, 2, 1, 3, 2, 5 }));
-		print(test.singleNumber(new int[] { -1, 0 }));
-		print(test.singleNumber(new int[] { 0, 1 }));
+		PrintUtil.print(test.singleNumber(new int[] { 1, 2, 1, 3, 2, 5 }));
+		PrintUtil.print(test.singleNumber(new int[] { -1, 0 }));
+		PrintUtil.print(test.singleNumber(new int[] { 0, 1 }));
 	}
 
 	public int[] singleNumber(int[] nums) {
@@ -23,10 +25,6 @@ public class SingleNumberIII {
 			}
 		}
 		return new int[] { single, bit ^ single };
-	}
-
-	private static void print(int[] nums) {
-		System.out.printf("[%d, %d]\n", nums[0], nums[1]);
 	}
 
 }

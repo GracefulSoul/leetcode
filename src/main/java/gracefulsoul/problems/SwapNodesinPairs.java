@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class SwapNodesinPairs {
 
 	// https://leetcode.com/submissions/detail/488972679/
 	public static void main(String[] args) {
 		SwapNodesinPairs test = new SwapNodesinPairs();
-		print(test.swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))));
-		print(test.swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, null)))));
+		PrintUtil.print(test.swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))));
+		PrintUtil.print(test.swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, null)))));
 	}
 
 	public ListNode swapPairs(ListNode head) {
@@ -39,15 +40,6 @@ public class SwapNodesinPairs {
 			}
 		}
 		return list;
-	}
-
-	private static void print(ListNode listNode) {
-		if (listNode != null) {
-			System.out.printf("%d ", listNode.val);
-			print(listNode.next);
-		} else {
-			System.out.println();
-		}
 	}
 
 }

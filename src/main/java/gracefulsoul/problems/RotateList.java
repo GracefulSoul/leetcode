@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class RotateList {
 
 	// https://leetcode.com/submissions/detail/506375322/
 	public static void main(String[] args) {
 		RotateList test = new RotateList();
-		print(test.rotateRight(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2));
-//		print(test.rotateRight(new ListNode(0, new ListNode(1, new ListNode(2))), 4));
+		PrintUtil.print(test.rotateRight(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2));
+		PrintUtil.print(test.rotateRight(new ListNode(0, new ListNode(1, new ListNode(2))), 4));
 	}
 
 	public ListNode rotateRight(ListNode head, int k) {
@@ -28,17 +29,6 @@ public class RotateList {
 		head = temp.next;
 		temp.next = null;
 		return head;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

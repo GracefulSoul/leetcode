@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 import gracefulsoul.object.nested.integer.NestedInteger;
 import gracefulsoul.object.nested.integer.SimpleNestedInteger;
+import gracefulsoul.util.PrintUtil;
 
 /**
  * // This is the interface that allows for creating nested lists. // You should
@@ -32,19 +33,10 @@ public class MiniParser {
 
 	// https://leetcode.com/submissions/detail/640405550/
 	public static void main(String[] args) {
-		print(new MiniParser().deserialize("324"));
+		PrintUtil.print(new MiniParser().deserialize("324"));
 		System.out.println();
-		print(new MiniParser().deserialize("[123,[456,[789]]]"));
+		PrintUtil.print(new MiniParser().deserialize("[123,[456,[789]]]"));
 		System.out.println();
-	}
-
-	private static void print(NestedInteger nestedInteger) {
-		if (nestedInteger.isInteger()) {
-			System.out.print(nestedInteger.getInteger());
-		}
-		for (NestedInteger child : nestedInteger.getList()) {
-			print(child);
-		}
 	}
 
 	private int start;

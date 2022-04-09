@@ -7,9 +7,9 @@ public class TextJustification {
 
 	public static void main(String[] args) {
 		TextJustification test = new TextJustification();
-//		print(test.fullJustify(new String[] {"This", "is", "an", "example", "of", "text", "justification."}, 16));
-//		print(test.fullJustify(new String[] {"What","must","be","acknowledgment","shall","be"}, 16));
-		print(test.fullJustify(new String[] { "Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do" }, 20));
+		System.out.println(test.fullJustify(new String[] {"This", "is", "an", "example", "of", "text", "justification."}, 16));
+		System.out.println(test.fullJustify(new String[] {"What","must","be","acknowledgment","shall","be"}, 16));
+		System.out.println(test.fullJustify(new String[] { "Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do" }, 20));
 	}
 
 	public List<String> fullJustify(String[] words, int maxWidth) {
@@ -63,10 +63,6 @@ public class TextJustification {
 
 	private String blank(int length) {
 		return new String(new char[length]).replace('\0', ' ');
-	}
-
-	private static void print(List<String> list) {
-		list.forEach(System.out::println);
 	}
 
 }

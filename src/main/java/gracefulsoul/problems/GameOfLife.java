@@ -1,5 +1,7 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class GameOfLife {
 
 	// https://leetcode.com/submissions/detail/598303826/
@@ -12,13 +14,13 @@ public class GameOfLife {
 			new int[] { 0, 0, 0 }
 		};
 		test.gameOfLife(board1);
-		print(board1);
+		PrintUtil.print(board1);
 		int[][] board2 = new int[][] {
 			new int[] { 1, 1 },
 			new int[] { 1, 0 }
 		};
 		test.gameOfLife(board2);
-		print(board2);
+		PrintUtil.print(board2);
 	}
 
 	public void gameOfLife(int[][] board) {
@@ -51,18 +53,6 @@ public class GameOfLife {
 		}
 		lives -= board[i][j] & 1;
 		return lives;
-	}
-
-	private static void print(int[][] board) {
-		for (int[] row : board) {
-			for (int idx = 0; idx < row.length; idx++) {
-				System.out.print(row[idx]);
-				if (idx < row.length - 1) {
-					System.out.print(", ");
-				}
-			}
-			System.out.println();
-		}
 	}
 
 }

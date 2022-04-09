@@ -1,15 +1,17 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class SlidingWindowMaximum {
 
 	// https://leetcode.com/submissions/detail/587459227/
 	public static void main(String[] args) {
 		SlidingWindowMaximum test = new SlidingWindowMaximum();
-		print(test.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
-		print(test.maxSlidingWindow(new int[] { 1 }, 1));
-		print(test.maxSlidingWindow(new int[] { 1, -1 }, 1));
-		print(test.maxSlidingWindow(new int[] { 9, 11 }, 2));
-		print(test.maxSlidingWindow(new int[] { 4, -2 }, 2));
+		PrintUtil.print(test.maxSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
+		PrintUtil.print(test.maxSlidingWindow(new int[] { 1 }, 1));
+		PrintUtil.print(test.maxSlidingWindow(new int[] { 1, -1 }, 1));
+		PrintUtil.print(test.maxSlidingWindow(new int[] { 9, 11 }, 2));
+		PrintUtil.print(test.maxSlidingWindow(new int[] { 4, -2 }, 2));
 	}
 
 	public int[] maxSlidingWindow(int[] nums, int k) {
@@ -40,16 +42,6 @@ public class SlidingWindowMaximum {
 			}
 		}
 		return result;
-	}
-
-	private static void print(int[] nums) {
-		for (int idx = 0; idx < nums.length; idx++) {
-			System.out.print(nums[idx]);
-			if (idx < nums.length - 1) {
-				System.out.print(",");
-			}
-		}
-		System.out.println();
 	}
 
 }

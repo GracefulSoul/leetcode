@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class SudokuSolver {
 
@@ -19,7 +19,7 @@ public class SudokuSolver {
 			new char[] { '.', '.', '.', '.', '8', '.', '.', '7', '9' }
 		};
 		test.solveSudoku(board);
-		print(board);
+		PrintUtil.print(board);
 	}
 
 	public void solveSudoku(char[][] board) {
@@ -63,12 +63,6 @@ public class SudokuSolver {
 			}
 		}
 		return true;
-	}
-
-	private static void print(char[][] board) {
-		for (char[] row : board) {
-			System.out.println(Arrays.toString(row));
-		}
 	}
 
 }

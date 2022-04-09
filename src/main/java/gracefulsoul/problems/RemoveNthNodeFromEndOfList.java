@@ -1,13 +1,14 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class RemoveNthNodeFromEndOfList {
 
 	// https://leetcode.com/submissions/detail/486695652/
 	public static void main(String[] args) {
 		RemoveNthNodeFromEndOfList test = new RemoveNthNodeFromEndOfList();
-		print(test.removeNthFromEnd(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2));
+		PrintUtil.print(test.removeNthFromEnd(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2));
 	}
 
 	public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -23,17 +24,6 @@ public class RemoveNthNodeFromEndOfList {
 		}
 		temp.next = temp.next.next;
 		return result.next;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

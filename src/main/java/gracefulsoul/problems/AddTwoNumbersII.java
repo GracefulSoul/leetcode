@@ -1,15 +1,16 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class AddTwoNumbersII {
 
 	// https://leetcode.com/submissions/detail/673560144/
 	public static void main(String[] args) {
 		AddTwoNumbersII test = new AddTwoNumbersII();
-		print(test.addTwoNumbers(new ListNode(7, new ListNode(2, new ListNode(4, new ListNode(3)))), new ListNode(5, new ListNode(6, new ListNode(4)))));
-		print(test.addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4)))));
-		print(test.addTwoNumbers(new ListNode(0), new ListNode(0)));
+		PrintUtil.print(test.addTwoNumbers(new ListNode(7, new ListNode(2, new ListNode(4, new ListNode(3)))), new ListNode(5, new ListNode(6, new ListNode(4)))));
+		PrintUtil.print(test.addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4)))));
+		PrintUtil.print(test.addTwoNumbers(new ListNode(0), new ListNode(0)));
 	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -61,17 +62,6 @@ public class AddTwoNumbersII {
 			reverse = new ListNode(ls.val, reverse);
 		}
 		return reverse;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			listNode = listNode.next;
-			if (listNode != null) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

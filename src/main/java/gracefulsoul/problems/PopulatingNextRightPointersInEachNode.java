@@ -1,16 +1,14 @@
 package gracefulsoul.problems;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import gracefulsoul.object.node.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class PopulatingNextRightPointersInEachNode {
 
 	// https://leetcode.com/submissions/detail/534076549/
 	public static void main(String[] args) {
 		PopulatingNextRightPointersInEachNode test = new PopulatingNextRightPointersInEachNode();
-		print(test.connect(new Node(1, new Node(2, new Node(4), new Node(5), null),  new Node(3, new Node(6), new Node(7), null), null)));
+		PrintUtil.print(test.connect(new Node(1, new Node(2, new Node(4), new Node(5), null),  new Node(3, new Node(6), new Node(7), null), null)));
 	}
 
 	public Node connect(Node root) {
@@ -25,25 +23,6 @@ public class PopulatingNextRightPointersInEachNode {
 		curr.next = next;
 		this.recursive(curr.left, curr.right);
 		this.recursive(curr.right, curr.next == null ? null : curr.next.left);
-	}
-
-	private static void print(Node node) {
-		List<Object> list = new ArrayList<>();
-		getConnectedNodeValues(node, node, list);
-		System.out.println(list);
-	}
-	
-	private static void getConnectedNodeValues(Node start, Node temp, List<Object> list) {
-		if (temp == null) {
-			return;
-		}
-		list.add(temp.val);
-		if (temp.next == null) {
-			list.add("#");
-			getConnectedNodeValues(start.left, start.left, list);
-		} else {
-			getConnectedNodeValues(start, temp.next, list);
-		}
 	}
 
 }

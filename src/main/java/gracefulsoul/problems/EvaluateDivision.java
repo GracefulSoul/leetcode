@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import gracefulsoul.util.PrintUtil;
+
 public class EvaluateDivision {
 
 	// https://leetcode.com/submissions/detail/649564514/
@@ -19,7 +21,7 @@ public class EvaluateDivision {
 		List<List<String>> queries1 = new ArrayList<>();
 		queries1.add(Arrays.asList(new String[] { "a", "c" }));
 		queries1.add(Arrays.asList(new String[] { "b", "a" }));
-		print(test.calcEquation(equations1, new double[] { 2.0, 3.0 }, queries1));
+		PrintUtil.print(test.calcEquation(equations1, new double[] { 2.0, 3.0 }, queries1));
 		List<List<String>> equations2 = new ArrayList<>();
 		equations2.add(Arrays.asList(new String[] { "a", "b" }));
 		equations2.add(Arrays.asList(new String[] { "b", "c" }));
@@ -29,7 +31,7 @@ public class EvaluateDivision {
 		queries2.add(Arrays.asList(new String[] { "c", "b" }));
 		queries2.add(Arrays.asList(new String[] { "bc", "cd" }));
 		queries2.add(Arrays.asList(new String[] { "cd", "bc" }));
-		print(test.calcEquation(equations2, new double[] { 1.5, 2.5, 5.0 }, queries2));
+		PrintUtil.print(test.calcEquation(equations2, new double[] { 1.5, 2.5, 5.0 }, queries2));
 		List<List<String>> equations3 = new ArrayList<>();
 		equations3.add(Arrays.asList(new String[] { "a", "b" }));
 		List<List<String>> queries3 = new ArrayList<>();
@@ -37,7 +39,7 @@ public class EvaluateDivision {
 		queries3.add(Arrays.asList(new String[] { "b", "a" }));
 		queries3.add(Arrays.asList(new String[] { "a", "c" }));
 		queries3.add(Arrays.asList(new String[] { "x", "y" }));
-		print(test.calcEquation(equations3, new double[] { 0.5 }, queries3));
+		PrintUtil.print(test.calcEquation(equations3, new double[] { 0.5 }, queries3));
 	}
 
 	public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
@@ -72,16 +74,6 @@ public class EvaluateDivision {
 			}
 			return -1;
 		}
-	}
-
-	private static void print(double[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

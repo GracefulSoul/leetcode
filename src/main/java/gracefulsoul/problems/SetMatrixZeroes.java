@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class SetMatrixZeroes {
 
@@ -13,14 +13,14 @@ public class SetMatrixZeroes {
 			new int[] { 1, 1, 1 }
 		};
 		test.setZeroes(matrix1);
-		print(matrix1);
+		PrintUtil.print(matrix1);
 		int[][] matrix2 = new int[][] {
 			new int[] { 0, 1, 2, 0 },
 			new int[] { 3, 4, 5, 2 },
 			new int[] { 1, 3, 1, 5 }
 		}; 
 		test.setZeroes(matrix2);
-		print(matrix2);
+		PrintUtil.print(matrix2);
 	}
 
 	public void setZeroes(int[][] matrix) {
@@ -52,12 +52,6 @@ public class SetMatrixZeroes {
 			if (isFirstColumnZero) {
 				matrix[i][0] = 0;
 			}
-		}
-	}
-
-	private static void print(int[][] matrix) {
-		for (int[] row : matrix) {
-			System.out.println(Arrays.toString(row));
 		}
 	}
 

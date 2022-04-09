@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class SortColors {
 
@@ -9,13 +9,13 @@ public class SortColors {
 		SortColors test = new SortColors();
 		int[] nums1 = new int[] { 2, 0, 2, 1, 1, 0 };
 		test.sortColors(nums1);
-		print(nums1);
+		PrintUtil.print(nums1);
 		int[] nums2 = new int[] { 2, 0, 1 };
 		test.sortColors(nums2);
-		print(nums2);
+		PrintUtil.print(nums2);
 		int[] nums3 = new int[] { 0 };
 		test.sortColors(nums3);
-		print(nums3);
+		PrintUtil.print(nums3);
 	}
 
 	public void sortColors(int[] nums) {
@@ -48,10 +48,6 @@ public class SortColors {
 		int temp = nums[idx2];
 		nums[idx2] = nums[idx1];
 		nums[idx1] = temp;
-	}
-
-	private static void print(int[] array) {
-		System.out.println(Arrays.toString(array));
 	}
 
 }

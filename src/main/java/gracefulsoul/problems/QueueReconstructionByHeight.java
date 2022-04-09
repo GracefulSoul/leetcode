@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import gracefulsoul.util.PrintUtil;
+
 public class QueueReconstructionByHeight {
 
 	// https://leetcode.com/submissions/detail/654385559/
 	public static void main(String[] args) {
 		QueueReconstructionByHeight test = new QueueReconstructionByHeight();
-		print(test.reconstructQueue(new int[][] {
+		PrintUtil.print(test.reconstructQueue(new int[][] {
 			new int[] { 7, 0 },
 			new int[] { 4, 4 },
 			new int[] { 7, 1 },
@@ -17,7 +19,7 @@ public class QueueReconstructionByHeight {
 			new int[] { 6, 1 },
 			new int[] { 5, 2 }
 		}));
-		print(test.reconstructQueue(new int[][] {
+		PrintUtil.print(test.reconstructQueue(new int[][] {
 			new int[] { 6, 0 },
 			new int[] { 5, 0 },
 			new int[] { 4, 0 },
@@ -40,20 +42,6 @@ public class QueueReconstructionByHeight {
 			result.add(p[1], p);
 		}
 		return result.toArray(new int[0][]);
-	}
-
-	private static void print(int[][] array) {
-		for (int[] row : array) {
-			System.out.print("[");
-			for (int idx = 0; idx < row.length; idx++) {
-				System.out.print(row[idx]);
-				if (idx < row.length - 1) {
-					System.out.print(", ");
-				}
-			}
-			System.out.print("]");
-		}
-		System.out.println();
 	}
 
 }

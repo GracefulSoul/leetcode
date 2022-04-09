@@ -3,14 +3,16 @@ package gracefulsoul.problems;
 import java.util.ArrayList;
 import java.util.List;
 
+import gracefulsoul.util.PrintUtil;
+
 public class Permutations {
 
 	// https://leetcode.com/submissions/detail/499405241/
 	public static void main(String[] args) {
 		Permutations test = new Permutations();
-		print(test.permute(new int[] { 1, 2, 3 }));
-		print(test.permute(new int[] { 0, 1 }));
-		print(test.permute(new int[] { 1 }));
+		PrintUtil.print(test.permute(new int[] { 1, 2, 3 }));
+		PrintUtil.print(test.permute(new int[] { 0, 1 }));
+		PrintUtil.print(test.permute(new int[] { 1 }));
 	}
 
 	public List<List<Integer>> permute(int[] nums) {
@@ -32,10 +34,6 @@ public class Permutations {
 				list.remove(list.size() - 1);
 			}
 		}
-	}
-
-	private static void print(List<List<Integer>> list) {
-		System.out.println(list);
 	}
 
 }

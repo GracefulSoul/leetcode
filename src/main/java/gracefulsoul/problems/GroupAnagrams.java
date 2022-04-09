@@ -10,9 +10,9 @@ public class GroupAnagrams {
 	// https://leetcode.com/submissions/detail/500813553/
 	public static void main(String[] args) {
 		GroupAnagrams test = new GroupAnagrams();
-		print(test.groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" }));
-		print(test.groupAnagrams(new String[] { "" }));
-		print(test.groupAnagrams(new String[] { "a" }));
+		System.out.println(test.groupAnagrams(new String[] { "eat", "tea", "tan", "ate", "nat", "bat" }));
+		System.out.println(test.groupAnagrams(new String[] { "" }));
+		System.out.println(test.groupAnagrams(new String[] { "a" }));
 	}
 
 	private static final char A = 'a';
@@ -31,10 +31,6 @@ public class GroupAnagrams {
 			result.get(key).add(str);
 		}
 		return new ArrayList<>(result.values());
-	}
-
-	private static void print(List<List<String>> list) {
-		System.out.println(list.toString());
 	}
 
 }

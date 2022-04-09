@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import gracefulsoul.object.node.neighbor.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class CloneGraph {
 
@@ -33,10 +33,9 @@ public class CloneGraph {
 		node2.neighbors = neighbor2;
 		node3.neighbors = neighbor3;
 		node4.neighbors = neighbor4;
-		print(node1);
-		map.clear();
+		PrintUtil.print(node1);
 		System.out.println();
-		print(test.cloneGraph(node1));
+		PrintUtil.print(test.cloneGraph(node1));
 	}
 
 	public Node cloneGraph(Node node) {
@@ -56,18 +55,6 @@ public class CloneGraph {
 				temp.neighbors.add(this.recursive(neighbor, map));
 			}
 			return temp;
-		}
-	}
-
-	private static Map<Integer, Boolean> map = new HashMap<>();
-
-	private static void print(Node node) {
-		for (Node neighbor : node.neighbors) {
-			if (!map.getOrDefault(neighbor.val, false)) {
-				map.put(neighbor.val, true);
-				System.out.print(neighbor.neighbors.stream().map(nd -> nd.val).collect(Collectors.toList()));
-				print(neighbor);
-			}
 		}
 	}
 

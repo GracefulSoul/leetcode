@@ -8,12 +8,12 @@ public class SpiralMatrix {
 	// https://leetcode.com/submissions/detail/502357804/
 	public static void main(String[] args) {
 		SpiralMatrix test = new SpiralMatrix();
-		print(test.spiralOrder(new int[][] {
+		System.out.println(test.spiralOrder(new int[][] {
 			new int[] { 1, 2, 3 },
 			new int[] { 4, 5, 6 },
 			new int[] { 7, 8, 9 }
 		}));
-		print(test.spiralOrder(new int[][] {
+		System.out.println(test.spiralOrder(new int[][] {
 			new int[] { 1, 2, 3, 4 },
 			new int[] { 5, 6, 7, 8 },
 			new int[] { 9, 10, 11, 12 }
@@ -47,10 +47,6 @@ public class SpiralMatrix {
 			colMax--;
 		}
 		return result;
-	}
-
-	private static void print(List<Integer> list) {
-		System.out.println(list.toString());
 	}
 
 }

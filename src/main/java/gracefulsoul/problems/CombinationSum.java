@@ -8,11 +8,11 @@ public class CombinationSum {
 	// https://leetcode.com/submissions/detail/495720930/
 	public static void main(String[] args) {
 		CombinationSum test = new CombinationSum();
-		print(test.combinationSum(new int[] { 2, 3, 6, 7 }, 7));
-		print(test.combinationSum(new int[] { 2, 3, 5 }, 8));
-		print(test.combinationSum(new int[] { 2 }, 1));
-		print(test.combinationSum(new int[] { 1 }, 1));
-		print(test.combinationSum(new int[] { 1 }, 2));
+		System.out.println(test.combinationSum(new int[] { 2, 3, 6, 7 }, 7));
+		System.out.println(test.combinationSum(new int[] { 2, 3, 5 }, 8));
+		System.out.println(test.combinationSum(new int[] { 2 }, 1));
+		System.out.println(test.combinationSum(new int[] { 1 }, 1));
+		System.out.println(test.combinationSum(new int[] { 1 }, 2));
 	}
 
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -30,12 +30,6 @@ public class CombinationSum {
 				this.getCombination(result, list, candidates, target - candidates[idx], idx);
 				list.remove(list.size() - 1);
 			}
-		}
-	}
-
-	private static void print(List<List<Integer>> list) {
-		for (List<Integer> data : list) {
-			System.out.println(data.toString());
 		}
 	}
 

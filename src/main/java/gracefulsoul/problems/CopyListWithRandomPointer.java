@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import gracefulsoul.object.node.random.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class CopyListWithRandomPointer {
 
@@ -25,9 +26,9 @@ public class CopyListWithRandomPointer {
 		node4.random = node3;
 		node5.next = null;
 		node5.random = node1;
-		print(node1);
+		PrintUtil.print(node1);
 		System.out.println();
-		print(test.copyRandomList(node1));
+		PrintUtil.print(test.copyRandomList(node1));
 	}
 
 	public Node copyRandomList(Node head) {
@@ -45,13 +46,6 @@ public class CopyListWithRandomPointer {
 			temp.next = this.recursive(node.next, map);
 			temp.random = this.recursive(node.random, map);
 			return temp;
-		}
-	}
-
-	private static void print(Node node) {
-		if (node != null) {
-			System.out.printf("[%s,%s]", node.val, node.random == null ? "null" : node.random.val);
-			print(node.next);
 		}
 	}
 

@@ -1,8 +1,9 @@
 package gracefulsoul.problems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+
+import gracefulsoul.util.PrintUtil;
 
 public class DataStreamAsDisjointIntervals {
 
@@ -10,22 +11,15 @@ public class DataStreamAsDisjointIntervals {
 	public static void main(String[] args) {
 		SummaryRanges2 summaryRanges = new SummaryRanges2();
 		summaryRanges.addNum(1);      		 // arr = [1]
-		print(summaryRanges.getIntervals()); // return [[1, 1]]
+		PrintUtil.print(summaryRanges.getIntervals()); // return [[1, 1]]
 		summaryRanges.addNum(3);      		 // arr = [1, 3]
-		print(summaryRanges.getIntervals()); // return [[1, 1], [3, 3]]
+		PrintUtil.print(summaryRanges.getIntervals()); // return [[1, 1], [3, 3]]
 		summaryRanges.addNum(7);      		 // arr = [1, 3, 7]
-		print(summaryRanges.getIntervals()); // return [[1, 1], [3, 3], [7, 7]]
+		PrintUtil.print(summaryRanges.getIntervals()); // return [[1, 1], [3, 3], [7, 7]]
 		summaryRanges.addNum(2);      		 // arr = [1, 2, 3, 7]
-		print(summaryRanges.getIntervals()); // return [[1, 3], [7, 7]]
+		PrintUtil.print(summaryRanges.getIntervals()); // return [[1, 3], [7, 7]]
 		summaryRanges.addNum(6);     		 // arr = [1, 2, 3, 6, 7]
-		print(summaryRanges.getIntervals()); // return [[1, 3], [6, 7]]
-	}
-	
-	private static void print(int[][] intervals) {
-		for (int[] interval : intervals) {
-			System.out.print(Arrays.toString(interval));
-		}
-		System.out.println();
+		PrintUtil.print(summaryRanges.getIntervals()); // return [[1, 3], [6, 7]]
 	}
 
 }

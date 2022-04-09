@@ -3,13 +3,16 @@ package gracefulsoul.problems;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import gracefulsoul.object.Num;
+import gracefulsoul.util.PrintUtil;
+
 public class TopKFrequentElements {
 
 	// https://leetcode.com/submissions/detail/624597696/
 	public static void main(String[] args) {
 		TopKFrequentElements test = new TopKFrequentElements();
-		print(test.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
-		print(test.topKFrequent(new int[] { 1 }, 1));
+		PrintUtil.print(test.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+		PrintUtil.print(test.topKFrequent(new int[] { 1 }, 1));
 	}
 
 	public int[] topKFrequent(int[] nums, int k) {
@@ -47,28 +50,6 @@ public class TopKFrequentElements {
 			result[i] = array[i].value;
 		}
 		return result;
-	}
-
-	private static void print(int[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
-	}
-
-}
-
-class Num {
-
-	public int value;
-	public int count;
-
-	public Num(int value) {
-		this.value = value;
-		this.count = 1;
 	}
 
 }

@@ -8,8 +8,8 @@ public class PermutationsII {
 	// https://leetcode.com/submissions/detail/499650179/
 	public static void main(String[] args) {
 		PermutationsII test = new PermutationsII();
-		print(test.permuteUnique(new int[] { 1, 1, 2 }));
-		print(test.permuteUnique(new int[] { 1, 2, 3 }));
+		System.out.println(test.permuteUnique(new int[] { 1, 1, 2 }));
+		System.out.println(test.permuteUnique(new int[] { 1, 2, 3 }));
 	}
 
 	public List<List<Integer>> permuteUnique(int[] nums) {
@@ -46,10 +46,6 @@ public class PermutationsII {
 				}
 			}
 		}
-	}
-
-	private static void print(List<List<Integer>> list) {
-		System.out.println(list);
 	}
 
 }

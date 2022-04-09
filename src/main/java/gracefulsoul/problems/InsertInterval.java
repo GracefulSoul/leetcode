@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import gracefulsoul.util.PrintUtil;
+
 public class InsertInterval {
 
 	// https://leetcode.com/submissions/detail/503763321/
 	public static void main(String[] args) {
 		InsertInterval test  = new InsertInterval();
-		print(test.insert(new int[][] {
+		PrintUtil.print(test.insert(new int[][] {
 			new int[] { 1, 3 },
 			new int[] { 6, 9 }
 		}, 
 			new int[] { 2, 5 }
 		));
-		print(test.insert(new int[][] {
+		PrintUtil.print(test.insert(new int[][] {
 			new int[] { 1, 2 },
 			new int[] { 3, 5 },
 			new int[] { 6, 7 },
@@ -24,16 +26,16 @@ public class InsertInterval {
 		},
 			new int[] { 4, 8 }
 		));
-		print(test.insert(new int[][] {
+		PrintUtil.print(test.insert(new int[][] {
 		},
 			new int[] { 5, 7 }
 		));
-		print(test.insert(new int[][] {
+		PrintUtil.print(test.insert(new int[][] {
 			new int[] { 1, 5 }
 		},
 			new int[] { 2, 3 }
 		));
-		print(test.insert(new int[][] {
+		PrintUtil.print(test.insert(new int[][] {
 			new int[] { 1, 5 }
 		},
 			new int[] { 2, 7 }
@@ -54,12 +56,6 @@ public class InsertInterval {
 		}
 		result.add(newInterval);
 		return result.toArray(new int[result.size()][]);
-	}
-	
-	private static void print(int[][] intervals) {
-		for (int[] array : intervals) {
-			System.out.println(Arrays.toString(array));
-		}
 	}
 
 }

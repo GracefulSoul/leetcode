@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import gracefulsoul.util.PrintUtil;
+
 public class MergeIntervals {
 
 	// https://leetcode.com/submissions/detail/503310440/
 	public static void main(String[] args) {
 		MergeIntervals test = new MergeIntervals();
-		print(test.merge(new int[][] {
+		PrintUtil.print(test.merge(new int[][] {
 			new int[] { 1, 3 },
 			new int[] { 2, 6 },
 			new int[] { 8, 10 },
 			new int[] { 15, 18 }
 		}));
-		print(test.merge(new int[][] {
+		PrintUtil.print(test.merge(new int[][] {
 			new int[] { 1, 4 },
 			new int[] { 0, 4 }
 		}));
@@ -37,12 +39,6 @@ public class MergeIntervals {
 			}
 		}
 		return result.toArray(new int[result.size()][]);
-	}
-
-	private static void print(int[][] intervals) {
-		for (int[] array : intervals) {
-			System.out.println(Arrays.toString(array));
-		}
 	}
 
 }

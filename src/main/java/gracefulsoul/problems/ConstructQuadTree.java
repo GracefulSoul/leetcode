@@ -1,18 +1,19 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.quad.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class ConstructQuadTree {
 
 	// https://leetcode.com/submissions/detail/664761906/
 	public static void main(String[] args) {
 		ConstructQuadTree test = new ConstructQuadTree();
-		print(test.construct(new int[][] {
+		PrintUtil.print(test.construct(new int[][] {
 			{ 0, 1 },
 			{ 1, 0 }
 		}));
 		System.out.println();
-		print(test.construct(new int[][] {
+		PrintUtil.print(test.construct(new int[][] {
 			{ 1, 1, 1, 1, 0, 0, 0, 0 },
 			{ 1, 1, 1, 1, 0, 0, 0, 0 },
 			{ 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -51,16 +52,6 @@ public class ConstructQuadTree {
 			}
 		}
 		return true;
-	}
-
-	private static void print(Node node) {
-		if (node != null) {
-			System.out.print("[" + (node.isLeaf ? 1 : 0) + ", " + (node.val ? 1 : 0) + "]");
-			print(node.topLeft);
-			print(node.topRight);
-			print(node.bottomLeft);
-			print(node.bottomRight);
-		}
 	}
 
 }

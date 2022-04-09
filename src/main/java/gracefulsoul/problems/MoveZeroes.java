@@ -1,5 +1,7 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class MoveZeroes {
 
 	// https://leetcode.com/submissions/detail/596640346/
@@ -7,10 +9,10 @@ public class MoveZeroes {
 		MoveZeroes test = new MoveZeroes();
 		int[] arr1 = new int[] { 0, 1, 0, 3, 12 };
 		test.moveZeroes(arr1);
-		print(arr1);
+		PrintUtil.print(arr1);
 		int[] arr2 = new int[] { 0 };
 		test.moveZeroes(arr2);
-		print(arr2);
+		PrintUtil.print(arr2);
 	}
 
 	public void moveZeroes(int[] nums) {
@@ -23,16 +25,6 @@ public class MoveZeroes {
 		while (idx < nums.length) {
 			nums[idx++] = 0;
 		}
-	}
-
-	private static void print(int[] nums) {
-		for (int idx = 0; idx < nums.length; idx++) {
-			System.out.print(nums[idx]);
-			if (idx < nums.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

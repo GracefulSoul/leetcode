@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.util.PrintUtil;
 
 public class DeleteNodeInABST {
 
 	// https://leetcode.com/submissions/detail/676682079/
 	public static void main(String[] args) {
 		DeleteNodeInABST test = new DeleteNodeInABST();
-		print(test.deleteNode(new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(6, null, new TreeNode(7))), 3), true, false);
-		print(test.deleteNode(new TreeNode(5, new TreeNode(2, null, new TreeNode(4)), new TreeNode(6, null, new TreeNode(7))), 0), true, false);
+		PrintUtil.print(test.deleteNode(new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(6, null, new TreeNode(7))), 3), true, false);
+		PrintUtil.print(test.deleteNode(new TreeNode(5, new TreeNode(2, null, new TreeNode(4)), new TreeNode(6, null, new TreeNode(7))), 0), true, false);
 	}
 
 	public TreeNode deleteNode(TreeNode root, int key) {
@@ -34,33 +35,6 @@ public class DeleteNodeInABST {
 			root = root.left;
 		}
 		return root.val;
-	}
-
-	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
-		if (treeNode != null) {
-			if (!isRoot) {
-				System.out.print("(");
-			}
-			print(treeNode.left, false, true);
-			print(treeNode.val);
-			System.out.print(", ");
-			print(treeNode.right, false, false);
-			if (!isRoot) {
-				System.out.print(")");
-			}
-		} else {
-			print("null");
-		}
-		if (isLeft) {
-			System.out.print(", ");
-		}
-		if (isRoot) {
-			System.out.println();
-		}
-	}
-
-	private static void print(Object val) {
-		System.out.print("(" + val + ")");
 	}
 
 }

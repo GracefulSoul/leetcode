@@ -1,14 +1,14 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class SpiralMatrixII {
 
 	// https://leetcode.com/submissions/detail/504834978/
 	public static void main(String[] args) {
 		SpiralMatrixII test = new SpiralMatrixII();
-		print(test.generateMatrix(3));
-		print(test.generateMatrix(1));
+		PrintUtil.print(test.generateMatrix(3));
+		PrintUtil.print(test.generateMatrix(1));
 	}
 
 	public int[][] generateMatrix(int n) {
@@ -33,12 +33,6 @@ public class SpiralMatrixII {
 			max--;
 		}
 		return result;
-	}
-
-	private static void print(int[][] matrix) {
-		for (int[] array : matrix) {
-			System.out.println(Arrays.toString(array));
-		}
 	}
 
 }

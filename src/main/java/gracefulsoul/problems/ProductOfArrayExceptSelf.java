@@ -1,12 +1,14 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class ProductOfArrayExceptSelf {
 
 	// https://leetcode.com/submissions/detail/586786954/
 	public static void main(String[] args) {
 		ProductOfArrayExceptSelf test = new ProductOfArrayExceptSelf();
-		print(test.productExceptSelf(new int[] { 1, 2, 3, 4 }));
-		print(test.productExceptSelf(new int[] { -1, 1, 0, -3, 3 }));
+		PrintUtil.print(test.productExceptSelf(new int[] { 1, 2, 3, 4 }));
+		PrintUtil.print(test.productExceptSelf(new int[] { -1, 1, 0, -3, 3 }));
 	}
 
 	public int[] productExceptSelf(int[] nums) {
@@ -22,16 +24,6 @@ public class ProductOfArrayExceptSelf {
 			right *= nums[idx];
 		}
 		return result;
-	}
-
-	private static void print(int[] nums) {
-		for (int idx = 0; idx < nums.length; idx++) {
-			System.out.print(nums[idx]);
-			if (idx < nums.length - 1) {
-				System.out.print(",");
-			}
-		}
-		System.out.println();
 	}
 
 }

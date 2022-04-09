@@ -1,5 +1,7 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class SurroundedRegions {
 
 	// https://leetcode.com/submissions/detail/540708633/
@@ -12,12 +14,12 @@ public class SurroundedRegions {
 			new char[] { 'X', 'O', 'X', 'X' }
 		};
 		test.solve(board1);
-		print(board1);
+		PrintUtil.print(board1);
 		char[][] board2 = new char[][] {
 			new char[] { 'X' }
 		};
 		test.solve(board2);
-		print(board2);
+		PrintUtil.print(board2);
 	}
 
 	public void solve(char[][] board) {
@@ -59,18 +61,6 @@ public class SurroundedRegions {
 		this.dfs(i - 1, j, board);
 		this.dfs(i, j + 1, board);
 		this.dfs(i, j - 1, board);
-	}
-
-	private static void print(char[][] board) {
-		for (char[] row : board) {
-			for (int idx = 0; idx < row.length; idx++) {
-				System.out.print(row[idx]);
-				if (idx < row.length - 1) {
-					System.out.print(", ");
-				}
-			}
-			System.out.println();
-		}
 	}
 
 }

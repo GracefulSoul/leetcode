@@ -1,15 +1,15 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class TwoSum {
 
 	// https://leetcode.com/submissions/detail/477242867/
 	public static void main(String[] args) {
 		TwoSum test = new TwoSum();
-		print(test.twoSum(new int[] { 2, 7, 11, 15 }, 9));
-		print(test.twoSum(new int[] { 3, 2, 4 }, 6));
-		print(test.twoSum(new int[] { 3, 3 }, 6));
+		PrintUtil.print(test.twoSum(new int[] { 2, 7, 11, 15 }, 9));
+		PrintUtil.print(test.twoSum(new int[] { 3, 2, 4 }, 6));
+		PrintUtil.print(test.twoSum(new int[] { 3, 3 }, 6));
 
 	}
 
@@ -22,10 +22,6 @@ public class TwoSum {
 			}
 		}
 		return new int[2];
-	}
-
-	private static void print(int[] nums) {
-		System.out.println(Arrays.toString(nums));
 	}
 
 }

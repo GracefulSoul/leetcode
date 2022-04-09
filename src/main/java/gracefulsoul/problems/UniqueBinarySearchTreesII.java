@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.util.PrintUtil;
 
 public class UniqueBinarySearchTreesII {
 
 	// https://leetcode.com/submissions/detail/522820317/
 	public static void main(String[] args) {
 		UniqueBinarySearchTreesII test = new UniqueBinarySearchTreesII();
-		print(test.generateTrees(3));
-		print(test.generateTrees(1));
+		PrintUtil.print(test.generateTrees(3));
+		PrintUtil.print(test.generateTrees(1));
 	}
 
 	public List<TreeNode> generateTrees(int n) {
@@ -31,37 +32,6 @@ public class UniqueBinarySearchTreesII {
 			}
 		}
 		return result;
-	}
-
-	private static void print(List<TreeNode> treeNodeList) {
-		for (TreeNode treeNode : treeNodeList) {
-			print(treeNode, true, false);
-			System.out.println();
-		}
-	}
-
-	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
-		if (treeNode != null) {
-			if (!isRoot) {
-				System.out.print("(");
-			}
-			print(treeNode.left, false, true);
-			print(treeNode.val);
-			System.out.print(", ");
-			print(treeNode.right, false, false);
-			if (!isRoot) {
-				System.out.print(")");
-			}
-		} else {
-			print("null");
-		}
-		if (isLeft) {
-			System.out.print(", ");
-		}
-	}
-
-	private static void print(Object val) {
-		System.out.print("(" + val + ")");
 	}
 
 }

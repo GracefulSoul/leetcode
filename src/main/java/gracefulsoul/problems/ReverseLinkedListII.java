@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class ReverseLinkedListII {
 
 	// https://leetcode.com/submissions/detail/521220264/
 	public static void main(String[] args) {
 		ReverseLinkedListII test = new ReverseLinkedListII();
-		print(test.reverseBetween(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2, 4));
-//		print(test.reverseBetween(new ListNode(5), 1, 1));
+		PrintUtil.print(test.reverseBetween(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))), 2, 4));
+		PrintUtil.print(test.reverseBetween(new ListNode(5), 1, 1));
 	}
 
 	public ListNode reverseBetween(ListNode head, int left, int right) {
@@ -30,17 +31,6 @@ public class ReverseLinkedListII {
 			idx++;
 		}
 		return temp.next;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

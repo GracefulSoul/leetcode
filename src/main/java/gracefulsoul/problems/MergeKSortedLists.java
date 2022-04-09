@@ -1,15 +1,16 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class MergeKSortedLists {
 
 	// https://leetcode.com/submissions/detail/487692525/
 	public static void main(String[] args) {
 		MergeKSortedLists test = new MergeKSortedLists();
-		print(test.mergeKLists(new ListNode[] { new ListNode(1, new ListNode(4, new ListNode(5))), new ListNode(1, new ListNode(3, new ListNode(4))), new ListNode(2, new ListNode(6)) }));
-		print(test.mergeKLists(new ListNode[] {}));
-		print(test.mergeKLists(new ListNode[] { new ListNode() }));
+		PrintUtil.print(test.mergeKLists(new ListNode[] { new ListNode(1, new ListNode(4, new ListNode(5))), new ListNode(1, new ListNode(3, new ListNode(4))), new ListNode(2, new ListNode(6)) }));
+		PrintUtil.print(test.mergeKLists(new ListNode[] {}));
+		PrintUtil.print(test.mergeKLists(new ListNode[] { new ListNode() }));
 	}
 
 	public ListNode mergeKLists(ListNode[] lists) {
@@ -43,17 +44,6 @@ public class MergeKSortedLists {
 				return l2;
 			}
 		}
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

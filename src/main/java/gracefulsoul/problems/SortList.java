@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class SortList {
 
 	// https://leetcode.com/submissions/detail/550127723/
 	public static void main(String[] args) {
 		SortList test = new SortList();
-		print(test.sortList(new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))))));
-//		print(test.sortList(new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))))));
+		PrintUtil.print(test.sortList(new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))))));
+		PrintUtil.print(test.sortList(new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))))));
 	}
 
 	public ListNode sortList(ListNode head) {
@@ -47,17 +48,6 @@ public class SortList {
 			temp.next = l2;
 		}
 		return listNode.next;
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			listNode = listNode.next;
-			if (listNode != null) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

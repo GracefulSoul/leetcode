@@ -1,13 +1,15 @@
 package gracefulsoul.problems;
 
+import gracefulsoul.util.PrintUtil;
+
 public class CreateMaximumNumber {
 
 	// https://leetcode.com/submissions/detail/609637188/
 	public static void main(String[] args) {
 		CreateMaximumNumber test = new CreateMaximumNumber();
-		print(test.maxNumber(new int[] { 3, 4, 6, 5 }, new int[] { 9, 1, 2, 5, 8, 3 }, 5));
-		print(test.maxNumber(new int[] { 6, 7 }, new int[] { 6, 0, 4 }, 5));
-		print(test.maxNumber(new int[] { 3, 9 }, new int[] { 8, 9 }, 3));
+		PrintUtil.print(test.maxNumber(new int[] { 3, 4, 6, 5 }, new int[] { 9, 1, 2, 5, 8, 3 }, 5));
+		PrintUtil.print(test.maxNumber(new int[] { 6, 7 }, new int[] { 6, 0, 4 }, 5));
+		PrintUtil.print(test.maxNumber(new int[] { 3, 9 }, new int[] { 8, 9 }, 3));
 	}
 
 	public int[] maxNumber(int[] nums1, int[] nums2, int k) {
@@ -65,16 +67,6 @@ public class CreateMaximumNumber {
 			}
 		}
 		return result;
-	}
-
-	private static void print(int[] nums) {
-		for (int idx = 0; idx < nums.length; idx++) {
-			System.out.print(nums[idx]);
-			if (idx < nums.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

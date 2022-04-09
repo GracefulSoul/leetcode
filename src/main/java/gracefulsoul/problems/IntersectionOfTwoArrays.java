@@ -2,13 +2,15 @@ package gracefulsoul.problems;
 
 import java.util.Arrays;
 
+import gracefulsoul.util.PrintUtil;
+
 public class IntersectionOfTwoArrays {
 
 	// https://leetcode.com/submissions/detail/624904682/
 	public static void main(String[] args) {
 		IntersectionOfTwoArrays test = new IntersectionOfTwoArrays();
-		print(test.intersection(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 }));
-		print(test.intersection(new int[] { 4, 9, 5 }, new int[] { 9, 4, 9, 8, 4 }));
+		PrintUtil.print(test.intersection(new int[] { 1, 2, 2, 1 }, new int[] { 2, 2 }));
+		PrintUtil.print(test.intersection(new int[] { 4, 9, 5 }, new int[] { 9, 4, 9, 8, 4 }));
 	}
 
 	public int[] intersection(int[] nums1, int[] nums2) {
@@ -25,16 +27,6 @@ public class IntersectionOfTwoArrays {
 			}
 		}
 		return Arrays.copyOf(result, index);
-	}
-
-	private static void print(int[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }

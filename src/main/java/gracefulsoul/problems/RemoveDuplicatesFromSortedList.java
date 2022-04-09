@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class RemoveDuplicatesFromSortedList {
 
 	// https://leetcode.com/submissions/detail/516540403/
 	public static void main(String[] args) {
 		RemoveDuplicatesFromSortedList test = new RemoveDuplicatesFromSortedList();
-		print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2)))));
-		print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
+		PrintUtil.print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2)))));
+		PrintUtil.print(test.deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(3)))))));
 	}
 
 	public ListNode deleteDuplicates(ListNode head) {
@@ -26,17 +27,6 @@ public class RemoveDuplicatesFromSortedList {
 				return head;
 			}
 		}
-	}
-
-	private static void print(ListNode listNode) {
-		while (listNode != null) {
-			System.out.print(listNode.val);
-			if (listNode.next != null) {
-				System.out.print(",");
-			}
-			listNode = listNode.next;
-		}
-		System.out.println();
 	}
 
 }

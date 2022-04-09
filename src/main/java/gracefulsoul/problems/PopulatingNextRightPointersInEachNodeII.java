@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gracefulsoul.object.node.Node;
+import gracefulsoul.util.PrintUtil;
 
 public class PopulatingNextRightPointersInEachNodeII {
 
 	// https://leetcode.com/submissions/detail/534492644/
 	public static void main(String[] args) {
 		PopulatingNextRightPointersInEachNodeII test = new PopulatingNextRightPointersInEachNodeII();
-		print(test.connect(new Node(1, new Node(2, new Node(4), new Node(5), null), new Node(3, null, new Node(7), null), null)));
+		PrintUtil.print(test.connect(new Node(1, new Node(2, new Node(4), new Node(5), null), new Node(3, null, new Node(7), null), null)));
 	}
 
 	public Node connect(Node root) {
@@ -31,25 +32,6 @@ public class PopulatingNextRightPointersInEachNodeII {
 		}
 		this.recursive(curr.right, curr);
 		this.recursive(curr.left, curr);
-	}
-
-	private static void print(Node node) {
-		List<Object> list = new ArrayList<>();
-		getConnectedNodeValues(node, node, list);
-		System.out.println(list);
-	}
-
-	private static void getConnectedNodeValues(Node start, Node temp, List<Object> list) {
-		if (temp == null) {
-			return;
-		}
-		list.add(temp.val);
-		if (temp.next == null) {
-			list.add("#");
-			getConnectedNodeValues(start.left, start.left, list);
-		} else {
-			getConnectedNodeValues(start, temp.next, list);
-		}
 	}
 
 }

@@ -1,6 +1,7 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.util.PrintUtil;
 
 public class RecoverBinarySearchTree {
 
@@ -9,11 +10,11 @@ public class RecoverBinarySearchTree {
 		RecoverBinarySearchTree test = new RecoverBinarySearchTree();
 		TreeNode treeNode1 = new TreeNode(1, new TreeNode(3, null, new TreeNode(2)), null);
 		test.recoverTree(treeNode1);
-		print(treeNode1, true, false);
+		PrintUtil.print(treeNode1, true, false);
 		System.out.println();
 		TreeNode treeNode2 = new TreeNode(3, new TreeNode(1), new TreeNode(4, new TreeNode(2), null));
 		test.recoverTree(treeNode2);
-		print(treeNode2, true, false);
+		PrintUtil.print(treeNode2, true, false);
 		System.out.println();
 	}
 
@@ -58,30 +59,6 @@ public class RecoverBinarySearchTree {
 			first.val = second.val;
 			second.val = tempVal;
 		}
-	}
-
-	private static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
-		if (treeNode != null) {
-			if (!isRoot) {
-				System.out.print("(");
-			}
-			print(treeNode.left, false, true);
-			print(treeNode.val);
-			System.out.print(", ");
-			print(treeNode.right, false, false);
-			if (!isRoot) {
-				System.out.print(")");
-			}
-		} else {
-			print("null");
-		}
-		if (isLeft) {
-			System.out.print(", ");
-		}
-	}
-
-	private static void print(Object val) {
-		System.out.print("(" + val + ")");
 	}
 
 }

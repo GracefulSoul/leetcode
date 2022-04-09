@@ -1,15 +1,15 @@
 package gracefulsoul.problems;
 
-import java.util.Arrays;
+import gracefulsoul.util.PrintUtil;
 
 public class FindFirstAndLastPositionOfElementInSortedArray {
 
 	// https://leetcode.com/submissions/detail/494715184/
 	public static void main(String[] args) {
 		FindFirstAndLastPositionOfElementInSortedArray test = new FindFirstAndLastPositionOfElementInSortedArray();
-		print(test.searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 8));
-		print(test.searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 6));
-		print(test.searchRange(new int[] {}, 0));
+		PrintUtil.print(test.searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 8));
+		PrintUtil.print(test.searchRange(new int[] { 5, 7, 7, 8, 8, 10 }, 6));
+		PrintUtil.print(test.searchRange(new int[] {}, 0));
 	}
 
 	public int[] searchRange(int[] nums, int target) {
@@ -33,10 +33,6 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
 			}
 		}
 		return low;
-	}
-
-	private static void print(int[] nums) {
-		System.out.println(Arrays.toString(nums));
 	}
 
 }
