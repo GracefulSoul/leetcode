@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SortCharactersByFrequency {
 
-	// https://leetcode.com/submissions/detail/677419296/
+	// https://leetcode.com/submissions/detail/677421302/
 	public static void main(String[] args) {
 		SortCharactersByFrequency test = new SortCharactersByFrequency();
 		System.out.println(test.frequencySort("tree"));
@@ -13,7 +13,7 @@ public class SortCharactersByFrequency {
 	}
 
 	public String frequencySort(String s) {
-		int[][] count = new int[256][2];
+		int[][] count = new int[128][2];
 		for (char c : s.toCharArray()) {
 			count[c][0] = c;
 			count[c][1]++;
