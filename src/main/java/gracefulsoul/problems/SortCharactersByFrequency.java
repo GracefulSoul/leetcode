@@ -21,6 +21,9 @@ public class SortCharactersByFrequency {
 		Arrays.sort(count, (a, b) -> (b[1] - a[1]));
 		StringBuilder sb = new StringBuilder();
 		for (int idx = 0; idx < count.length; idx++) {
+			if (count[idx][1] == 0) {
+				break;
+			}
 			while (count[idx][1] > 0) {
 				sb.append((char) count[idx][0]);
 				count[idx][1]--;
