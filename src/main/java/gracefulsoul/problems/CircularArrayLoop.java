@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CircularArrayLoop {
 
-	// https://leetcode.com/submissions/detail/681215406/
+	// https://leetcode.com/submissions/detail/681221745/
 	public static void main(String[] args) {
 		CircularArrayLoop test = new CircularArrayLoop();
 		System.out.println(test.circularArrayLoop(new int[] { 2, -1, 1, 2, 2 }));
@@ -25,7 +25,10 @@ public class CircularArrayLoop {
 			return false;
 		}
 		visited[start] = 1;
-		int next = ((start + nums[start]) % nums.length + nums.length) % nums.length;
+		int next = (start + nums[start]) % nums.length;
+		if (next < 0) {
+			next += nums.length;
+		}
 		if (next == start || nums[next] * nums[start] < 0) {
 			visited[start] = 2;
 			return false;
