@@ -1,0 +1,17 @@
+package gracefulsoul.problems;
+
+public class PoorPigs {
+
+	// https://leetcode.com/submissions/detail/681926753/
+	public static void main(String[] args) {
+		PoorPigs test = new PoorPigs();
+		System.out.println(test.poorPigs(1000, 15, 60));
+		System.out.println(test.poorPigs(4, 15, 15));
+		System.out.println(test.poorPigs(4, 15, 30));
+	}
+
+	public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
+		return (int) Math.ceil(Math.log(buckets) / Math.log(minutesToTest / minutesToDie + 1));
+	}
+
+}
