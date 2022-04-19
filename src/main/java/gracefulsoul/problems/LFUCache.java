@@ -1,12 +1,13 @@
 package gracefulsoul.problems;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import gracefulsoul.object.node.key.Node;
 
 public class LFUCache {
 
-	// https://leetcode.com/submissions/detail/683254796/
+	// https://leetcode.com/submissions/detail/683276051/
 	public static void main(String[] args) {
 		LFUCache lfu = new LFUCache(2);
 		lfu.put(1, 1);   					// cache=[1,_], cnt(1)=1
@@ -30,8 +31,8 @@ public class LFUCache {
 	private Node head;
 	private Node tail;
 
-	private HashMap<Integer, Node> map;
-	private HashMap<Integer, Node> frequency;
+	private Map<Integer, Node> map;
+	private Map<Integer, Node> frequency;
 	private int capacity;
 
 	public LFUCache(int capacity) {
@@ -44,21 +45,6 @@ public class LFUCache {
 		this.frequency.put(this.head.count, this.head);
 		this.frequency.put(this.tail.count, this.tail);
 		this.capacity = capacity;
-	}
-
-	public void update(Node node) {
-		Node temp;
-		if (this.frequency.containsKey(node.count + 1)) {
-			temp = this.frequency.get(node.count + 1);
-		} else {
-			temp = this.frequency.get(node.count);
-			if (temp == node) {
-				temp = temp.prev;
-			}
-		}
-		this.remove(node);
-		node.count++;
-		this.insert(temp, node);
 	}
 
 	public int get(int key) {
@@ -81,16 +67,31 @@ public class LFUCache {
 		} else {
 			Node node = new Node(key, value);
 			if (this.map.size() == this.capacity) {
-				Node removed = this.head.next;
-				this.remove(removed);
-				this.map.remove(removed.key);
+				Node temp = this.head.next;
+				this.remove(temp);
+				this.map.remove(temp.key);
 			}
 			this.map.put(key, node);
 			this.insert(this.frequency.getOrDefault(1, this.head), node);
 		}
 	}
 
-	public void remove(Node node) {
+	private void update(Node node) {
+		Node temp;
+		if (this.frequency.containsKey(node.count + 1)) {
+			temp = this.frequency.get(node.count + 1);
+		} else {
+			temp = this.frequency.get(node.count);
+			if (temp == node) {
+				temp = temp.prev;
+			}
+		}
+		this.remove(node);
+		node.count++;
+		this.insert(temp, node);
+	}
+
+	private void remove(Node node) {
 		if (node.prev.count != node.count && node.count != node.next.count) {
 			this.frequency.remove(node.count);
 		} else if (node == frequency.get(node.count)) {
@@ -104,7 +105,7 @@ public class LFUCache {
 		node.prev = null;
 	}
 
-	public void insert(Node prev, Node curr) {
+	private void insert(Node prev, Node curr) {
 		Node next = prev.next;
 		next.prev = curr;
 		curr.next = next;
