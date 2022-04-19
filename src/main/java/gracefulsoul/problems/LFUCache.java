@@ -7,7 +7,7 @@ import gracefulsoul.object.node.key.Node;
 
 public class LFUCache {
 
-	// https://leetcode.com/submissions/detail/683310554/
+	// https://leetcode.com/submissions/detail/683349527/
 	public static void main(String[] args) {
 		LFUCache lfu = new LFUCache(2);
 		lfu.put(1, 1);   					// cache=[1,_], cnt(1)=1
@@ -47,7 +47,7 @@ public class LFUCache {
 
 	public int get(int key) {
 		if (this.map.containsKey(key)) {
-			Node node = map.get(key);
+			Node node = this.map.get(key);
 			this.update(node);
 			return node.val;
 		} else {
