@@ -6,7 +6,7 @@ import gracefulsoul.object.node.key.Node;
 
 public class LFUCache {
 
-	// https://leetcode.com/submissions/detail/683251410/
+	// https://leetcode.com/submissions/detail/683254796/
 	public static void main(String[] args) {
 		LFUCache lfu = new LFUCache(2);
 		lfu.put(1, 1);   					// cache=[1,_], cnt(1)=1
@@ -58,7 +58,7 @@ public class LFUCache {
 		}
 		this.remove(node);
 		node.count++;
-		this.insert(node, temp);
+		this.insert(temp, node);
 	}
 
 	public int get(int key) {
@@ -86,7 +86,7 @@ public class LFUCache {
 				this.map.remove(removed.key);
 			}
 			this.map.put(key, node);
-			this.insert(node, this.frequency.getOrDefault(1, this.head));
+			this.insert(this.frequency.getOrDefault(1, this.head), node);
 		}
 	}
 
@@ -104,7 +104,7 @@ public class LFUCache {
 		node.prev = null;
 	}
 
-	public void insert(Node curr, Node prev) {
+	public void insert(Node prev, Node curr) {
 		Node next = prev.next;
 		next.prev = curr;
 		curr.next = next;
