@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CanIWin {
 
-	// https://leetcode.com/submissions/detail/685709388/
+	// https://leetcode.com/submissions/detail/685710013/
 	public static void main(String[] args) {
 		CanIWin test = new CanIWin();
 		System.out.println(test.canIWin(10, 11));
@@ -20,15 +20,15 @@ public class CanIWin {
 		}
 	}
 
-	private boolean dfs(int max, int total, boolean[] dp, int cur) {
-		if (dp[cur]) {
-			return dp[cur];
+	private boolean dfs(int max, int total, boolean[] dp, int curr) {
+		if (dp[curr]) {
+			return dp[curr];
 		}
 		for (int idx = 0; idx < max; idx++) {
-			if ((cur & 1 << idx) != 0) {
+			if ((curr & 1 << idx) != 0) {
 				continue;
-			} else if (idx + 1 >= total || !this.dfs(max, total - idx - 1, dp, cur | 1 << idx)) {
-				dp[cur] = true;
+			} else if (idx + 1 >= total || !this.dfs(max, total - idx - 1, dp, curr | 1 << idx)) {
+				dp[curr] = true;
 				return true;
 			}
 		}
