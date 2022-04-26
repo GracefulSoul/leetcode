@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ValidateIPAddress {
 
-	// https://leetcode.com/submissions/detail/687558704/
+	// https://leetcode.com/submissions/detail/687564966/
 	public static void main(String[] args) {
 		ValidateIPAddress test = new ValidateIPAddress();
 		System.out.println(test.validIPAddress("172.16.254.1"));
@@ -11,31 +11,13 @@ public class ValidateIPAddress {
 	}
 
 	public String validIPAddress(String queryIP) {
-		if (this.isIPv6(queryIP)) {
-			return "IPv6";
-		} else if (this.isIPv4(queryIP)) {
+		if (this.isIPv4(queryIP)) {
 			return "IPv4";
+		} else if (this.isIPv6(queryIP)) {
+			return "IPv6";
 		} else {
 			return "Neither";
 		}
-	}
-
-	private boolean isIPv6(String ip) {
-		String[] octets = ip.split(":", -1);
-		if (octets.length != 8) {
-			return false;
-		}
-		for (String octet : octets) {
-			if (octet.length() > 4 || octet.length() == 0) {
-				return false;
-			}
-			for (int c : octet.toCharArray()) {
-				if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'))) {
-					return false;
-				}
-			}
-		}
-		return true;
 	}
 
 	private boolean isIPv4(String ip) {
@@ -57,6 +39,24 @@ public class ValidateIPAddress {
 			}
 			if (num > 255) {
 				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean isIPv6(String ip) {
+		String[] octets = ip.split(":", -1);
+		if (octets.length != 8) {
+			return false;
+		}
+		for (String octet : octets) {
+			if (octet.length() > 4 || octet.length() == 0) {
+				return false;
+			}
+			for (int c : octet.toCharArray()) {
+				if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F'))) {
+					return false;
+				}
 			}
 		}
 		return true;
