@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ValidateIPAddress {
 
-	// https://leetcode.com/submissions/detail/687564966/
+	// https://leetcode.com/submissions/detail/687572415/
 	public static void main(String[] args) {
 		ValidateIPAddress test = new ValidateIPAddress();
 		System.out.println(test.validIPAddress("172.16.254.1"));
@@ -20,8 +20,8 @@ public class ValidateIPAddress {
 		}
 	}
 
-	private boolean isIPv4(String ip) {
-		String[] octets = ip.split("\\.", -1);
+	private boolean isIPv4(String queryIP) {
+		String[] octets = queryIP.split("\\.", -1);
 		if (octets.length != 4) {
 			return false;
 		}
@@ -44,8 +44,8 @@ public class ValidateIPAddress {
 		return true;
 	}
 
-	private boolean isIPv6(String ip) {
-		String[] octets = ip.split(":", -1);
+	private boolean isIPv6(String queryIP) {
+		String[] octets = queryIP.split(":", -1);
 		if (octets.length != 8) {
 			return false;
 		}
