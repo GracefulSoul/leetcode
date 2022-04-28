@@ -8,7 +8,7 @@ import gracefulsoul.object.node.trie.check.TrieNode;
 
 public class ConcatenatedWords {
 
-	// https://leetcode.com/submissions/detail/688866452/
+	// https://leetcode.com/submissions/detail/688870489/
 	public static void main(String[] args) {
 		ConcatenatedWords test = new ConcatenatedWords();
 		System.out.println(test.findAllConcatenatedWordsInADict(new String[] { "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat" }));
@@ -19,12 +19,12 @@ public class ConcatenatedWords {
 	public List<String> findAllConcatenatedWordsInADict(String[] words) {
 		Arrays.sort(words, (a, b) -> a.length() - b.length());
 		TrieNode root = new TrieNode();
-		List<String> ans = new ArrayList<>();
+		List<String> result = new ArrayList<>();
 		for (String word : words) {
 			if (this.insert(root, word))
-				ans.add(word);
+				result.add(word);
 		}
-		return ans;
+		return result;
 	}
 
 	private boolean insert(TrieNode root, String word) {
@@ -45,16 +45,16 @@ public class ConcatenatedWords {
 		return false;
 	}
 
-	private boolean isContains(TrieNode root, String s) {
+	private boolean isContains(TrieNode root, String word) {
 		TrieNode curr = root;
-		for (int idx = 0; idx < s.length(); idx++) {
-			int key = s.charAt(idx) - 'a';
+		for (int idx = 0; idx < word.length(); idx++) {
+			int key = word.charAt(idx) - 'a';
 			if (curr.children[key] == null) {
 				return false;
 			}
 			curr = curr.children[key];
-			if (curr.isWord && idx + 1 < s.length()) {
-				if (this.isContains(root, s.substring(idx + 1)))
+			if (curr.isWord && idx + 1 < word.length()) {
+				if (this.isContains(root, word.substring(idx + 1)))
 					return true;
 			}
 		}
