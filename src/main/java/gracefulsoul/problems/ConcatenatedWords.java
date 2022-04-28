@@ -8,7 +8,7 @@ import gracefulsoul.object.node.trie.check.TrieNode;
 
 public class ConcatenatedWords {
 
-	// https://leetcode.com/submissions/detail/688889281/
+	// https://leetcode.com/submissions/detail/688904538/
 	public static void main(String[] args) {
 		ConcatenatedWords test = new ConcatenatedWords();
 		System.out.println(test.findAllConcatenatedWordsInADict(new String[] { "cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat" }));
@@ -36,10 +36,8 @@ public class ConcatenatedWords {
 				curr.children[num] = new TrieNode();
 			}
 			curr = curr.children[num];
-			if (curr.isWord && idx + 1 < word.length()) {
-				if (this.isContains(root, word.substring(idx + 1))) {
-					return true;
-				}
+			if (curr.isWord && idx < word.length() - 1 && this.isContains(root, word.substring(idx + 1))) {
+				return true;
 			}
 		}
 		curr.isWord = true;
@@ -54,10 +52,8 @@ public class ConcatenatedWords {
 				return false;
 			}
 			curr = curr.children[num];
-			if (curr.isWord && idx + 1 < word.length()) {
-				if (this.isContains(root, word.substring(idx + 1))) {
-					return true;
-				}
+			if (curr.isWord && idx < word.length() - 1 && this.isContains(root, word.substring(idx + 1))) {
+				return true;
 			}
 		}
 		return curr.isWord;
