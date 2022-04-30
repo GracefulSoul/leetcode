@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MatchsticksToSquare {
 
-	// https://leetcode.com/submissions/detail/689464791/
+	// https://leetcode.com/submissions/detail/689467874/
 	public static void main(String[] args) {
 		MatchsticksToSquare test = new MatchsticksToSquare();
 		System.out.println(test.makesquare(new int[] { 1, 1, 2, 2, 2 }));
@@ -32,7 +32,7 @@ public class MatchsticksToSquare {
 			return false;
 		} else {
 			for (int idx = curr; idx < nums.length; idx++) {
-				if (dp[idx] || (idx > 0 && nums[idx] == nums[idx - 1] && !dp[idx - 1])) {
+				if (dp[idx] || (idx > 0 && nums[idx - 1] == nums[idx] && !dp[idx - 1])) {
 					continue;
 				}
 				dp[idx] = true;
