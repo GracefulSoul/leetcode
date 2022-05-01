@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Heaters {
 
-	// https://leetcode.com/submissions/detail/690578165/
+	// https://leetcode.com/submissions/detail/690578819/
 	public static void main(String[] args) {
 		Heaters test = new Heaters();
 		System.out.println(test.findRadius(new int[] { 1, 2, 3 }, new int[] { 2 }));
