@@ -21,7 +21,7 @@ public class Heaters {
 			while (index + 1 < heaters.length && house - heaters[index] > heaters[index + 1] - house) {
 				index++;
 			}
-			result = Integer.max(result, Math.abs(heaters[index] - house));
+			result = Math.max(result, Math.abs(heaters[index] - house));
 		}
 		return result;
 	}
