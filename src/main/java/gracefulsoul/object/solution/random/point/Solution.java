@@ -19,14 +19,14 @@ public class Solution {
 	public double[] randPoint() {
 		double x = this.getCoordinate(this.x_center);
 		double y = this.getCoordinate(this.y_center);
-		while (this.getArea(x, y) >= this.radius * this.radius) {
+		while (this.getDistanceAboutCenter(x, y) >= this.radius * this.radius) {
 			x = this.getCoordinate(this.x_center);
 			y = this.getCoordinate(this.y_center);
 		}
 		return new double[] { x, y };
 	}
 
-	private double getArea(double x, double y) {
+	private double getDistanceAboutCenter(double x, double y) {
 		double x_distance = this.x_center - x;
 		double y_distance = this.y_center - y;
 		return (x_distance * x_distance) + (y_distance * y_distance);
