@@ -4,7 +4,7 @@ import gracefulsoul.object.solution.random.point.Solution;
 
 public class GenerateRandomPointInACircle {
 
-	// https://leetcode.com/submissions/detail/693536721/
+	// https://leetcode.com/submissions/detail/693545351/
 	public static void main(String[] args) {
 		Solution solution = new Solution(1.0, 0.0, 0.0);
 		print(solution.randPoint()); // return [-0.02493, -0.38077]
