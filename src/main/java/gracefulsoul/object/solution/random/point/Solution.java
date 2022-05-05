@@ -19,7 +19,7 @@ public class Solution {
 	public double[] randPoint() {
 		double x = this.getCoordinate(this.x_center);
 		double y = this.getCoordinate(this.y_center);
-		while (this.getDistanceAboutCenter(x, y) >= this.radius * this.radius) {
+		while (this.getDistanceAboutCenter(x, y) > this.radius * this.radius) {
 			x = this.getCoordinate(this.x_center);
 			y = this.getCoordinate(this.y_center);
 		}
