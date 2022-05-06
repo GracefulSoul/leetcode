@@ -12,16 +12,16 @@ public class LargestPalindromeProduct {
 	public int largestPalindrome(int n) {
 		if (n > 1) {
 			int num = (int) Math.pow(10, n);
-			for (long x = 2; x < num; x += 2) {
-				long high = num - x;
+			for (long idx = 2; idx < num; idx += 2) {
+				long high = num - idx;
 				long low = Long.parseLong(new StringBuilder(Long.toString(high)).reverse().toString());
-				long temp = x * x - 4 * low;
+				long temp = (idx * idx) - (4 * low);
 				if (temp < 0) {
 					continue;
 				}
 				long sqrt = (long) Math.sqrt(temp);
 				if (sqrt * sqrt == temp) {
-					return (int) ((high * num + low) % 1337);
+					return (int) (((high * num) + low) % 1337);
 				}
 			}
 		}
