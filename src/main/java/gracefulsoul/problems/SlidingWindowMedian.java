@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SlidingWindowMedian {
 
-	// https://leetcode.com/submissions/detail/694667656/
+	// https://leetcode.com/submissions/detail/694775278/
 	public static void main(String[] args) {
 		SlidingWindowMedian test = new SlidingWindowMedian();
 		print(test.medianSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
@@ -27,11 +27,11 @@ public class SlidingWindowMedian {
 		return result;
 	}
 
-	private double getMedian(int[] part, int size) {
-		if (size % 2 == 1) {
-			return (double) part[size / 2];
+	private double getMedian(int[] part, int k) {
+		if (k % 2 == 1) {
+			return (double) part[k / 2];
 		} else {
-			return (part[(size / 2) - 1] / 2.0) + (part[size / 2] / 2.0);
+			return (part[(k / 2) - 1] / 2.0) + (part[k / 2] / 2.0);
 		}
 	}
 
