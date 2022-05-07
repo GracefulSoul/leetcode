@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LargestPalindromeProduct {
 
-	// https://leetcode.com/submissions/detail/693991657/
+	// https://leetcode.com/submissions/detail/694013045/
 	public static void main(String[] args) {
 		LargestPalindromeProduct test = new LargestPalindromeProduct();
 		System.out.println(test.largestPalindrome(2));
