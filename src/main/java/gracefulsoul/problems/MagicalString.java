@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MagicalString {
 
-	// https://leetcode.com/submissions/detail/695417033/
+	// https://leetcode.com/submissions/detail/695418469/
 	public static void main(String[] args) {
 		MagicalString test = new MagicalString();
 		System.out.println(test.magicalString(6));
