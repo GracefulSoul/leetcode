@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LicenseKeyFormatting {
 
-	// https://leetcode.com/submissions/detail/695885129/
+	// https://leetcode.com/submissions/detail/695887383/
 	public static void main(String[] args) {
 		LicenseKeyFormatting test = new LicenseKeyFormatting();
 		System.out.println(test.licenseKeyFormatting("5F3Z-2e-9-w", 4));
@@ -11,21 +11,21 @@ public class LicenseKeyFormatting {
 
 	public String licenseKeyFormatting(String s, int k) {
 		char[] chars = new char[s.length() * 2];
-		int left = 0;
-		int right = chars.length;
+		int count = 0;
+		int index = chars.length;
 		for (int idx = s.length() - 1; idx >= 0; idx--) {
 			char c = s.charAt(idx);
 			if (c == '-') {
 				continue;
 			}
-			if (left == k) {
-				chars[--right] = '-';
-				left = 0;
+			if (count == k) {
+				chars[--index] = '-';
+				count = 0;
 			}
-			chars[--right] = Character.toUpperCase(c);
-			left++;
+			chars[--index] = Character.toUpperCase(c);
+			count++;
 		}
-		return String.valueOf(chars, right, chars.length - right);
+		return String.valueOf(chars, index, chars.length - index);
 	}
 
 }
