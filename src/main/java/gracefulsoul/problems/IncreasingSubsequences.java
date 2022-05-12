@@ -21,7 +21,7 @@ public class IncreasingSubsequences {
 	private void dfs(int[] nums, List<List<Integer>> result, List<Integer> temp, int index, int value) {
 		if (index == nums.length) {
 			if (temp.size() >= 2) {
-				result.add(new ArrayList<Integer>(temp));
+				result.add(new ArrayList<>(temp));
 			}
 			return;
 		}
