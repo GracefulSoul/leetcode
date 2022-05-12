@@ -1,7 +1,7 @@
 package gracefulsoul.util;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -113,8 +113,9 @@ public class PrintUtil {
 		getConnectedNodeValues(node, node, list);
 		System.out.println(list);
 	}
-	
-	private static void getConnectedNodeValues(gracefulsoul.object.node.Node start, gracefulsoul.object.node.Node temp, List<Object> list) {
+
+	private static void getConnectedNodeValues(gracefulsoul.object.node.Node start, gracefulsoul.object.node.Node temp,
+			List<Object> list) {
 		if (temp == null) {
 			return;
 		}
@@ -128,62 +129,26 @@ public class PrintUtil {
 	}
 
 	public static void print(int[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
+		System.out.println(Arrays.toString(array));
 	}
 
-	public static void print(Object object) {
-		if (object instanceof Array) {
-			
-		}
-	}
-	
 	public static void print(double[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void print(char[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void print(int[][] matrix) {
 		for (int[] row : matrix) {
-			for (int idx = 0; idx < row.length; idx++) {
-				System.out.print(row[idx]);
-				if (idx < row.length - 1) {
-					System.out.print(", ");
-				}
-			}
-			System.out.println();
+			print(row);
 		}
 	}
 
 	public static void print(char[][] matrix) {
 		for (char[] row : matrix) {
-			for (int idx = 0; idx < row.length; idx++) {
-				System.out.print(row[idx]);
-				if (idx < row.length - 1) {
-					System.out.print(", ");
-				}
-			}
-			System.out.println();
+			print(row);
 		}
 	}
 

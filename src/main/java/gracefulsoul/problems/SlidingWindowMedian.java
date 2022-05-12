@@ -2,13 +2,15 @@ package gracefulsoul.problems;
 
 import java.util.Arrays;
 
+import gracefulsoul.util.PrintUtil;
+
 public class SlidingWindowMedian {
 
 	// https://leetcode.com/submissions/detail/694801030/
 	public static void main(String[] args) {
 		SlidingWindowMedian test = new SlidingWindowMedian();
-		print(test.medianSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
-		print(test.medianSlidingWindow(new int[] { 1, 2, 3, 4, 2, 3, 1, 4, 2 }, 3));
+		PrintUtil.print(test.medianSlidingWindow(new int[] { 1, 3, -1, -3, 5, 3, 6, 7 }, 3));
+		PrintUtil.print(test.medianSlidingWindow(new int[] { 1, 2, 3, 4, 2, 3, 1, 4, 2 }, 3));
 	}
 
 	public double[] medianSlidingWindow(int[] nums, int k) {
@@ -66,16 +68,6 @@ public class SlidingWindowMedian {
 		}
 		System.arraycopy(part, left, part, left + 1, (k - 1) - left);
 		part[left] = value;
-	}
-
-	private static void print(double[] array) {
-		for (int idx = 0; idx < array.length; idx++) {
-			System.out.print(array[idx]);
-			if (idx < array.length - 1) {
-				System.out.print(", ");
-			}
-		}
-		System.out.println();
 	}
 
 }
