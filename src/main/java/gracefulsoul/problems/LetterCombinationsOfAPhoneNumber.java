@@ -3,16 +3,14 @@ package gracefulsoul.problems;
 import java.util.LinkedList;
 import java.util.List;
 
-import gracefulsoul.util.PrintUtil;
-
 public class LetterCombinationsOfAPhoneNumber {
 
 	// https://leetcode.com/submissions/detail/485817328/
 	public static void main(String[] args) {
 		LetterCombinationsOfAPhoneNumber test = new LetterCombinationsOfAPhoneNumber();
-		PrintUtil.print(test.letterCombinations("23"));
-		PrintUtil.print(test.letterCombinations(""));
-		PrintUtil.print(test.letterCombinations("2"));
+		System.out.println(test.letterCombinations("23"));
+		System.out.println(test.letterCombinations(""));
+		System.out.println(test.letterCombinations("2"));
 	}
 
 	private static final String[] MAPPING = new String[] { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };

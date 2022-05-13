@@ -10,9 +10,9 @@ public class Permutations {
 	// https://leetcode.com/submissions/detail/499405241/
 	public static void main(String[] args) {
 		Permutations test = new Permutations();
-		PrintUtil.print(test.permute(new int[] { 1, 2, 3 }));
-		PrintUtil.print(test.permute(new int[] { 0, 1 }));
-		PrintUtil.print(test.permute(new int[] { 1 }));
+		System.out.println(test.permute(new int[] { 1, 2, 3 }));
+		System.out.println(test.permute(new int[] { 0, 1 }));
+		System.out.println(test.permute(new int[] { 1 }));
 	}
 
 	public List<List<Integer>> permute(int[] nums) {
