@@ -5,7 +5,8 @@ public class ReversePairs {
 	// https://leetcode.com/submissions/detail/699106478/
 	public static void main(String[] args) {
 		ReversePairs test = new ReversePairs();
-		System.out.println(test.reversePairs(new int[] {}));
+		System.out.println(test.reversePairs(new int[] { 1, 3, 2, 3, 1 }));
+		System.out.println(test.reversePairs(new int[] { 2, 4, 3, 5, 1 }));
 	}
 
 	public int reversePairs(int[] nums) {
