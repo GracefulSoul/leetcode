@@ -1,8 +1,10 @@
 package gracefulsoul.problems;
 
+import java.util.Arrays;
+
 public class ReversePairs {
 
-	// https://leetcode.com/submissions/detail/699106478/
+	// https://leetcode.com/submissions/detail/699122971/
 	public static void main(String[] args) {
 		ReversePairs test = new ReversePairs();
 		System.out.println(test.reversePairs(new int[] { 1, 3, 2, 3, 1 }));
@@ -10,34 +12,22 @@ public class ReversePairs {
 	}
 
 	public int reversePairs(int[] nums) {
-		return this.mergeSort(nums, new int[nums.length], 0, nums.length - 1);
+		return this.mergeSort(nums, 0, nums.length - 1);
 	}
 
-	private int mergeSort(int[] nums, int[] temp, int start, int end) {
+	private int mergeSort(int[] nums, int start, int end) {
 		if (start >= end) {
 			return 0;
 		}
 		int mid = (start + end) / 2;
-		int result = this.mergeSort(nums, temp, start, mid) + this.mergeSort(nums, temp, mid + 1, end);
-		int i = start;
-		int j = mid + 1;
-		int right = j;
-		for (int left = start; left <= mid; left++) {
-			while (j <= end && (long) nums[left] > 2 * (long) nums[j]) {
+		int result = this.mergeSort(nums, start, mid) + this.mergeSort(nums, mid + 1, end);
+		for (int i = start, j = mid + 1; i <= mid; i++) {
+			while (j <= end && nums[i] / 2.0 > nums[j]) {
 				j++;
 			}
-			result += j - mid - 1;
-			while (right <= end && nums[right] < nums[left]) {
-				temp[i++] = nums[right++];
-			}
-			temp[i++] = nums[left];
+			result += j - (mid + 1);
 		}
-		while (right <= end) {
-			temp[i++] = nums[right++];
-		}
-		for (int idx = start; idx <= end; idx++) {
-			nums[idx] = temp[idx];
-		}
+		Arrays.sort(nums, start, end + 1);
 		return result;
 	}
 
