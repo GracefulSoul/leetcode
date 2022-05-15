@@ -23,9 +23,9 @@ public class TargetSum {
 		}
 		int[] dp = new int[target + 1];
 		dp[0] = 1;
-		for (int n : nums) {
-			for (int i = target; i >= n; i--) {
-				dp[i] += dp[i - n];
+		for (int num : nums) {
+			for (int idx = target; idx >= num; idx--) {
+				dp[idx] += dp[idx - num];
 			}
 		}
 		return dp[target];
