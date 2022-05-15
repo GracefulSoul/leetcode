@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class TargetSum {
 
-	// https://leetcode.com/submissions/detail/699616849/
+	// https://leetcode.com/submissions/detail/699619428/
 	public static void main(String[] args) {
 		TargetSum test = new TargetSum();
 		System.out.println(test.findTargetSumWays(new int[] { 1, 1, 1, 1, 1 }, 3));
