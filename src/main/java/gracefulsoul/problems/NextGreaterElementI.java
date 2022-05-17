@@ -27,13 +27,12 @@ public class NextGreaterElementI {
 
 	private int findNextGreaterElement(int[] nums2, int index) {
 		int num = nums2[index];
-		int nextGreaterElement = -1;
 		for (int idx = index + 1; idx < nums2.length; idx++) {
 			if (nums2[idx] > num) {
 				return nums2[idx];
 			}
 		}
-		return nextGreaterElement;
+		return -1;
 	}
 
 }
