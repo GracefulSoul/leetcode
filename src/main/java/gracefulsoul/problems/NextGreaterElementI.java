@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class NextGreaterElementI {
 
-	// https://leetcode.com/submissions/detail/701105888/
+	// https://leetcode.com/submissions/detail/701116905/
 	public static void main(String[] args) {
 		NextGreaterElementI test = new NextGreaterElementI();
 		PrintUtil.print(test.nextGreaterElement(new int[] { 4, 1, 2 }, new int[] { 1, 3, 4, 2 }));
