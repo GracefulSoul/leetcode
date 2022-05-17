@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class NextGreaterElementI {
 
-	// https://leetcode.com/submissions/detail/701101929/
+	// https://leetcode.com/submissions/detail/701105888/
 	public static void main(String[] args) {
 		NextGreaterElementI test = new NextGreaterElementI();
 		PrintUtil.print(test.nextGreaterElement(new int[] { 4, 1, 2 }, new int[] { 1, 3, 4, 2 }));
@@ -28,9 +28,9 @@ public class NextGreaterElementI {
 	private int findNextGreaterElement(int[] nums2, int index) {
 		int num = nums2[index];
 		int nextGreaterElement = -1;
-		for (int i = index + 1; i < nums2.length; i++) {
-			if (nums2[i] > num) {
-				return nums2[i];
+		for (int idx = index + 1; idx < nums2.length; idx++) {
+			if (nums2[idx] > num) {
+				return nums2[idx];
 			}
 		}
 		return nextGreaterElement;
