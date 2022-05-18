@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.solution.random.point.Solution;
+import gracefulsoul.object.solution.random.point.circle.Solution;
 import gracefulsoul.util.PrintUtil;
 
 public class GenerateRandomPointInACircle {

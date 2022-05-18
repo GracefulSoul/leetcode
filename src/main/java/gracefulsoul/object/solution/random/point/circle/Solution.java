@@ -1,4 +1,4 @@
-package gracefulsoul.object.solution.random.point;
+package gracefulsoul.object.solution.random.point.circle;
 
 import java.util.Random;
 
