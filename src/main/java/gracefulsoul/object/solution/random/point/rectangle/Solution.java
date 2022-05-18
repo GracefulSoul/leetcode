@@ -23,9 +23,10 @@ public class Solution {
 
 	public int[] pick() {
 		int index = this.map.ceilingEntry(1 + this.random.nextInt(this.sum)).getValue();
-		int x = this.random.nextInt(this.rectangles[index][2] - this.rectangles[index][0] + 1);
-		int y = this.random.nextInt(this.rectangles[index][3] - this.rectangles[index][1] + 1);
-		return new int[] { this.rectangles[index][0] + x, this.rectangles[index][1] + y };
+		int[] rectangle = this.rectangles[index];
+		int x = this.random.nextInt(rectangle[2] - rectangle[0] + 1);
+		int y = this.random.nextInt(rectangle[3] - rectangle[1] + 1);
+		return new int[] { rectangle[0] + x, rectangle[1] + y };
 	}
 
 }

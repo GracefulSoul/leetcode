@@ -5,7 +5,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class RandomPointInNonOverlappingRectangles {
 
-	// https://leetcode.com/submissions/detail/701812745/
+	// https://leetcode.com/submissions/detail/701822620/
 	public static void main(String[] args) {
 		Solution solution = new Solution(new int[][] {
 			{ -2, -2, 1, 1 },
