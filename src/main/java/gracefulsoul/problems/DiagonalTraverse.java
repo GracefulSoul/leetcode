@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class DiagonalTraverse {
 
-	// https://leetcode.com/submissions/detail/702681885/
+	// https://leetcode.com/submissions/detail/702683026/
 	public static void main(String[] args) {
 		DiagonalTraverse test = new DiagonalTraverse();
 		PrintUtil.print(test.findDiagonalOrder(new int[][] {
@@ -23,8 +23,7 @@ public class DiagonalTraverse {
 		int col = 0;
 		int rowLength = mat.length;
 		int colLength = mat[0].length;
-		int size = rowLength * colLength;
-		int[] result = new int[size];
+		int[] result = new int[rowLength * colLength];
 		for (int idx = 0; idx < result.length; idx++) {
 			result[idx] = mat[row][col];
 			if ((row + col) % 2 == 0) {
