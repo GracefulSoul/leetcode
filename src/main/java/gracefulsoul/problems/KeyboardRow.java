@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class KeyboardRow {
 
-	// https://leetcode.com/submissions/detail/703135605/
+	// https://leetcode.com/submissions/detail/703138600/
 	public static void main(String[] args) {
 		KeyboardRow test = new KeyboardRow();
 		PrintUtil.print(test.findWords(new String[] { "Hello", "Alaska", "Dad", "Peace" }));
@@ -15,18 +15,14 @@ public class KeyboardRow {
 		PrintUtil.print(test.findWords(new String[] { "adsdf", "sfd" }));
 	}
 
-	private static final String[] ROWS = { "qwertyuiop", "asdfghjkl", "zxcvbnm" };
+	private static final String[] KEYBOARD_ROWS = { "qwertyuiop", "asdfghjkl", "zxcvbnm" };
 
 	public String[] findWords(String[] words) {
-		char[] positions = new char[26];
-		for (char c : ROWS[0].toCharArray()) {
-			positions[c - 'a'] = 1;
-		}
-		for (char c : ROWS[1].toCharArray()) {
-			positions[c - 'a'] = 2;
-		}
-		for (char c : ROWS[2].toCharArray()) {
-			positions[c - 'a'] = 3;
+		int[] positions = new int[26];
+		for (int idx = 0; idx < KEYBOARD_ROWS.length; idx++) {
+			for (char c : KEYBOARD_ROWS[idx].toCharArray()) {
+				positions[c - 'a'] = idx + 1;
+			}	
 		}
 		List<String> result = new ArrayList<>();
 		for (String word : words) {
