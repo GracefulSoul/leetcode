@@ -8,7 +8,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class FindModeInBinarySearchTree {
 
-	// https://leetcode.com/submissions/detail/704054867/
+	// https://leetcode.com/submissions/detail/704065654/
 	public static void main(String[] args) {
 		PrintUtil.print(new FindModeInBinarySearchTree().findMode(new TreeNode(1, null, new TreeNode(2, new TreeNode(2), null))));
 		PrintUtil.print(new FindModeInBinarySearchTree().findMode(new TreeNode(0)));
@@ -19,16 +19,16 @@ public class FindModeInBinarySearchTree {
 	private TreeNode prev = null;
 
 	public int[] findMode(TreeNode root) {
-		List<TreeNode> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<>();
 		this.dfs(root, list);
 		int[] result = new int[list.size()];
 		for (int idx = 0; idx < list.size(); idx++) {
-			result[idx] = list.get(idx).val;
+			result[idx] = list.get(idx);
 		}
 		return result;
 	}
 
-	public void dfs(TreeNode node, List<TreeNode> list) {
+	public void dfs(TreeNode node, List<Integer> list) {
 		if (node == null) {
 			return;
 		}
@@ -42,10 +42,10 @@ public class FindModeInBinarySearchTree {
 		}
 		if (this.count > this.max) {
 			list.clear();
-			list.add(node);
+			list.add(node.val);
 			this.max = this.count;
 		} else if (this.count == this.max) {
-			list.add(node);
+			list.add(node.val);
 		}
 		this.prev = node;
 		this.dfs(node.right, list);
