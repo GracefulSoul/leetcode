@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class Base7 {
 
-	// https://leetcode.com/submissions/detail/705867653/
+	// https://leetcode.com/submissions/detail/705870441/
 	public static void main(String[] args) {
 		Base7 test = new Base7();
 		System.out.println(test.convertToBase7(100));
@@ -13,7 +13,7 @@ public class Base7 {
 		if (num == 0) {
 			return "0";
 		} else {
-			StringBuffer sb = new StringBuffer();
+			StringBuilder sb = new StringBuilder();
 			String sign = "";
 			if (num < 0) {
 				num *= -1;
