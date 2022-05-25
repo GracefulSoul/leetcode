@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class RelativeRanks {
 
-	// https://leetcode.com/submissions/detail/706584087/
+	// https://leetcode.com/submissions/detail/706588616/
 	public static void main(String[] args) {
 		RelativeRanks test = new RelativeRanks();
 		PrintUtil.print(test.findRelativeRanks(new int[] { 5, 4, 3, 2, 1 }));
@@ -31,7 +31,7 @@ public class RelativeRanks {
 					case 1: result[map[idx] - 1] = "Gold Medal"; break;
 					case 2: result[map[idx] - 1] = "Silver Medal"; break;
 					case 3: result[map[idx] - 1] = "Bronze Medal"; break;
-					default: result[map[idx] - 1] = Integer.toString(count);
+					default: result[map[idx] - 1] = String.valueOf(count);
 				}
 			}
 		}
