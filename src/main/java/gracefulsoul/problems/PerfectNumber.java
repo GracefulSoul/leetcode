@@ -10,7 +10,7 @@ public class PerfectNumber {
 	}
 
 	public boolean checkPerfectNumber(int num) {
-		if (num < 3) {
+		if (num == 1) {
 			return false;
 		}
 		int sum = 1;
