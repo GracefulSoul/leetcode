@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PerfectNumber {
 
-	// https://leetcode.com/submissions/detail/707547273/
+	// https://leetcode.com/submissions/detail/707558962/
 	public static void main(String[] args) {
 		PerfectNumber test = new PerfectNumber();
 		System.out.println(test.checkPerfectNumber(28));
