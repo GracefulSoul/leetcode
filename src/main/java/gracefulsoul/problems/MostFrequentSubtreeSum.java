@@ -10,7 +10,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class MostFrequentSubtreeSum {
 
-	// https://leetcode.com/submissions/detail/707968081/
+	// https://leetcode.com/submissions/detail/707972074/
 	public static void main(String[] args) {
 		PrintUtil.print(new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-3))));
 		PrintUtil.print(new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-5))));
@@ -20,7 +20,7 @@ public class MostFrequentSubtreeSum {
 
 	public int[] findFrequentTreeSum(TreeNode root) {
 		List<Integer> list = new ArrayList<>();
-		this.dfs(root, list, new HashMap<>());
+		this.dfs(root, new HashMap<>(), list);
 		int[] result = new int[list.size()];
 		for (int idx = 0; idx < list.size(); idx++) {
 			result[idx] = list.get(idx);
@@ -28,11 +28,11 @@ public class MostFrequentSubtreeSum {
 		return result;
 	}
 
-	private int dfs(TreeNode root, List<Integer> list, Map<Integer, Integer> map) {
+	private int dfs(TreeNode root, Map<Integer, Integer> map, List<Integer> list) {
 		if (root == null) {
 			return 0;
 		}
-		int sum = root.val + this.dfs(root.left, list, map) + this.dfs(root.right, list, map);
+		int sum = root.val + this.dfs(root.left, map, list) + this.dfs(root.right, map, list);
 		int frequency = map.getOrDefault(sum, 0) + 1;
 		map.put(sum, frequency);
 		if (frequency > this.max) {
