@@ -12,10 +12,8 @@ public class MostFrequentSubtreeSum {
 
 	// https://leetcode.com/submissions/detail/707968081/
 	public static void main(String[] args) {
-		PrintUtil.print(
-				new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-3))));
-		PrintUtil.print(
-				new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-5))));
+		PrintUtil.print(new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-3))));
+		PrintUtil.print(new MostFrequentSubtreeSum().findFrequentTreeSum(new TreeNode(5, new TreeNode(2), new TreeNode(-5))));
 	}
 
 	private int max = 0;
