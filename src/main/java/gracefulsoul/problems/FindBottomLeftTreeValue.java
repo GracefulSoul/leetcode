@@ -8,8 +8,7 @@ public class FindBottomLeftTreeValue {
 	public static void main(String[] args) {
 		FindBottomLeftTreeValue test = new FindBottomLeftTreeValue();
 		System.out.println(test.findBottomLeftValue(new TreeNode(2, new TreeNode(1), new TreeNode(3))));
-		System.out.println(test.findBottomLeftValue(new TreeNode(1, new TreeNode(2, new TreeNode(4), null),
-				new TreeNode(3, new TreeNode(5, new TreeNode(7), null), new TreeNode(6)))));
+		System.out.println(test.findBottomLeftValue(new TreeNode(1, new TreeNode(2, new TreeNode(4), null), new TreeNode(3, new TreeNode(5, new TreeNode(7), null), new TreeNode(6)))));
 	}
 
 	public int findBottomLeftValue(TreeNode root) {
