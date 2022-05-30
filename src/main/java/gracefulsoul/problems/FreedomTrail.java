@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FreedomTrail {
 
-	// https://leetcode.com/submissions/detail/710331696/
+	// https://leetcode.com/submissions/detail/710333262/
 	public static void main(String[] args) {
 		FreedomTrail test = new FreedomTrail();
 		System.out.println(test.findRotateSteps("godding", "gd"));
@@ -35,8 +35,7 @@ public class FreedomTrail {
 			int result = Integer.MAX_VALUE;
 			for (int num : position[key.charAt(y) - 'a']) {
 				int diff = Math.abs(x - num);
-				result = Math.min(result,
-						Math.min(diff, length - diff) + this.dfs(position, dp, ring, length, key, num, y + 1));
+				result = Math.min(result, Math.min(diff, length - diff) + this.dfs(position, dp, ring, length, key, num, y + 1));
 			}
 			dp[x][y] = result + 1;
 			return result + 1;
