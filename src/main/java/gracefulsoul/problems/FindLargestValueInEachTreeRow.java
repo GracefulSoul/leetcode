@@ -25,8 +25,7 @@ public class FindLargestValueInEachTreeRow {
 			if (result.size() == level) {
 				result.add(root.val);
 			} else {
-				int value = result.get(level);
-				if (root.val > value) {
+				if (root.val > result.get(level)) {
 					result.set(level, root.val);
 				}
 			}
