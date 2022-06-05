@@ -5,7 +5,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class RandomFlipMatrix {
 
-	// https://leetcode.com/submissions/detail/714523470/
+	// https://leetcode.com/submissions/detail/714531703/
 	public static void main(String[] args) {
 		Solution solution = new Solution(3, 1);
 		PrintUtil.print(solution.flip());	// return [1, 0], [0,0], [1,0], and [2,0] should be equally likely to be returned.
