@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ContiguousArray {
 
-	// https://leetcode.com/submissions/detail/719242276/
+	// https://leetcode.com/submissions/detail/719265380/
 	public static void main(String[] args) {
 		ContiguousArray test = new ContiguousArray();
 		System.out.println(test.findMaxLength(new int[] { 0, 1 }));
@@ -12,17 +12,18 @@ public class ContiguousArray {
 	}
 
 	public int findMaxLength(int[] nums) {
-		int[] dp = new int[2 * nums.length + 1];
+		int length = nums.length;
+		int[] dp = new int[2 * length + 1];
 		Arrays.fill(dp, -2);
-		dp[nums.length] = -1;
+		dp[length] = -1;
 		int result = 0;
-		int count = 0;
-		for (int idx = 0; idx < nums.length; idx++) {
-			count += nums[idx] == 0 ? -1 : 1;
-			if (dp[count + nums.length] >= -1) {
-				result = Math.max(result, idx - dp[count + nums.length]);
+		int index = length;
+		for (int idx = 0; idx < length; idx++) {
+			index += nums[idx] == 0 ? -1 : 1;
+			if (dp[index] >= -1) {
+				result = Math.max(result, idx - dp[index]);
 			} else {
-				dp[count + nums.length] = idx;
+				dp[index] = idx;
 			}
 		}
 		return result;
