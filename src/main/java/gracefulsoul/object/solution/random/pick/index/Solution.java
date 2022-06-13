@@ -1,4 +1,4 @@
-package gracefulsoul.object.solution.random.pick;
+package gracefulsoul.object.solution.random.pick.index;
 
 import java.util.Random;
 

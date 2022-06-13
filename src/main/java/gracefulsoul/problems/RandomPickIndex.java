@@ -1,6 +1,6 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.solution.random.pick.Solution;
+import gracefulsoul.object.solution.random.pick.index.Solution;
 
 public class RandomPickIndex {
 
