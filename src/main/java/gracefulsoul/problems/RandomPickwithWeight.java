@@ -4,7 +4,7 @@ import gracefulsoul.object.solution.random.pick.weight.Solution;
 
 public class RandomPickwithWeight {
 
-	// https://leetcode.com/submissions/detail/721138310/
+	// https://leetcode.com/submissions/detail/721150148/
 	public static void main(String[] args) {
 		Solution solution = new Solution(new int[] { 1 });
 		System.out.println(solution.pickIndex()); // return 0. The only option is to return 0 since there is only one element in w.

@@ -10,8 +10,8 @@ public class Solution {
 
 	public Solution(int[] w) {
 		this.random = new Random();
-		for (int i = 1; i < w.length; ++i) {
-			w[i] += w[i - 1];
+		for (int idx = 1; idx < w.length; idx++) {
+			w[idx] += w[idx - 1];
 		}
 		this.sum = w;
 		this.length = w.length;
