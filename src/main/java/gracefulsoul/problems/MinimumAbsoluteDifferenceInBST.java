@@ -4,7 +4,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class MinimumAbsoluteDifferenceInBST {
 
-	// https://leetcode.com/submissions/detail/722793042/
+	// https://leetcode.com/submissions/detail/722796187/
 	public static void main(String[] args) {
 		System.out.println(new MinimumAbsoluteDifferenceInBST().getMinimumDifference(new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(6))));
 		System.out.println(new MinimumAbsoluteDifferenceInBST().getMinimumDifference(new TreeNode(1, new TreeNode(0), new TreeNode(48, new TreeNode(12), new TreeNode(49)))));
@@ -25,8 +25,7 @@ public class MinimumAbsoluteDifferenceInBST {
 		if (prev != null) {
 			this.min = Math.min(this.min, Math.abs(root.val - prev.val));
 		}
-		prev = root;
-		prev = this.dfs(root.right, prev);
+		prev = this.dfs(root.right, root);
 		return prev;
 	}
 
