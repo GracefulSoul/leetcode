@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class EncodeAndDecodeTinyURL {
 
-	// https://leetcode.com/submissions/detail/724321153/
+	// https://leetcode.com/submissions/detail/724321742/
 	public static void main(String[] args) {
 		Codec obj = new Codec();
 		String tiny = obj.encode("https://leetcode.com/problems/design-tinyurl"); // returns the encoded tiny url.
