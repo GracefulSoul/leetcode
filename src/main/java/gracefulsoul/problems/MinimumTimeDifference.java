@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MinimumTimeDifference {
 
-	// https://leetcode.com/submissions/detail/727506278/
+	// https://leetcode.com/submissions/detail/727510114/
 	public static void main(String[] args) {
 		MinimumTimeDifference test = new MinimumTimeDifference();
 		System.out.println(test.findMinDifference(Arrays.asList(new String[] { "23:59", "00:00" })));
@@ -18,11 +18,12 @@ public class MinimumTimeDifference {
 		for (String timePoint : timePoints) {
 			String[] time = timePoint.split(":");
 			int minutes = Integer.parseInt(time[0]) * 60 + Integer.parseInt(time[1]);
-			start = Math.min(start, minutes);
 			if (visited[minutes]) {
 				return 0;
+			} else {
+				start = Math.min(start, minutes);
+				visited[minutes] = true;
 			}
-			visited[minutes] = true;
 		}
 		int prev = start;
 		int result = Integer.MAX_VALUE;
