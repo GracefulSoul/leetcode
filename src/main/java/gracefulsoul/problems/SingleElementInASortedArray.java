@@ -1,4 +1,4 @@
-package gracefulsoul.object;
+package gracefulsoul.problems;
 
 public class SingleElementInASortedArray {
 
