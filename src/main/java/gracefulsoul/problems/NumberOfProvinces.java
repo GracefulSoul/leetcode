@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfProvinces {
 
-	// https://leetcode.com/submissions/detail/732458480/
+	// https://leetcode.com/submissions/detail/732470404/
 	public static void main(String[] args) {
 		NumberOfProvinces test = new NumberOfProvinces();
 		System.out.println(test.findCircleNum(new int[][] {
@@ -19,10 +19,10 @@ public class NumberOfProvinces {
 
 	public int findCircleNum(int[][] isConnected) {
 		int length = isConnected.length;
-		int[] visited = new int[length];
+		boolean[] visited = new boolean[length];
 		int count = 0;
 		for (int idx = 0; idx < length; idx++) {
-			if (visited[idx] == 0) {
+			if (!visited[idx]) {
 				this.dfs(isConnected, visited, idx);
 				count++;
 			}
@@ -30,10 +30,10 @@ public class NumberOfProvinces {
 		return count;
 	}
 
-	public void dfs(int[][] isConnected, int[] visited, int i) {
+	private void dfs(int[][] isConnected, boolean[] visited, int i) {
 		for (int j = 0; j < isConnected.length; j++) {
-			if (isConnected[i][j] == 1 && visited[j] == 0) {
-				visited[j] = 1;
+			if (isConnected[i][j] == 1 && !visited[j]) {
+				visited[j] = true;
 				this.dfs(isConnected, visited, j);
 			}
 		}
