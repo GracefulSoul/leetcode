@@ -19,24 +19,24 @@ public class NumberOfProvinces {
 
 	public int findCircleNum(int[][] isConnected) {
 		int length = isConnected.length;
-        int[] visited = new int[length];
-        int count = 0;
-        for (int idx = 0; idx < length; idx++) {
-            if (visited[idx] == 0) {
-                this.dfs(isConnected, visited, idx);
-                count++;
-            }
-        }
-        return count;
+		int[] visited = new int[length];
+		int count = 0;
+		for (int idx = 0; idx < length; idx++) {
+			if (visited[idx] == 0) {
+				this.dfs(isConnected, visited, idx);
+				count++;
+			}
+		}
+		return count;
 	}
 
-    public void dfs(int[][] isConnected, int[] visited, int i) {
-        for (int j = 0; j < isConnected.length; j++) {
-            if (isConnected[i][j] == 1 && visited[j] == 0) {
-                visited[j] = 1;
-                this.dfs(isConnected, visited, j);
-            }
-        }
-    }
-    
+	public void dfs(int[][] isConnected, int[] visited, int i) {
+		for (int j = 0; j < isConnected.length; j++) {
+			if (isConnected[i][j] == 1 && visited[j] == 0) {
+				visited[j] = 1;
+				this.dfs(isConnected, visited, j);
+			}
+		}
+	}
+
 }
