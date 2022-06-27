@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfProvinces {
 
+	// https://leetcode.com/submissions/detail/732458480/
 	public static void main(String[] args) {
 		NumberOfProvinces test = new NumberOfProvinces();
 		System.out.println(test.findCircleNum(new int[][] {
