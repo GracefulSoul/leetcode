@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class StudentAttendanceRecordII {
 
-	// https://leetcode.com/submissions/detail/733342960/
+	// https://leetcode.com/submissions/detail/733355951/
 	public static void main(String[] args) {
 		StudentAttendanceRecordII test = new StudentAttendanceRecordII();
 		System.out.println(test.checkRecord(2));
@@ -10,7 +10,7 @@ public class StudentAttendanceRecordII {
 	}
 
 	public int checkRecord(int n) {
-		int[] dp = { 1, 1, 0, 1, 0, 0 };
+		int[] dp = new int[] { 1, 1, 0, 1, 0, 0 };
 		for (int idx = 2; idx <= n; idx++) {
 			dp = new int[] { this.getSum(dp, 0, 2), dp[0], dp[1], this.getSum(dp, 0, 5), dp[3], dp[4] };
 		}
