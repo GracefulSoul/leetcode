@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class OptimalDivision {
 
-	// https://leetcode.com/submissions/detail/734197061/
+	// https://leetcode.com/submissions/detail/734199084/
 	public static void main(String[] args) {
 		OptimalDivision test = new OptimalDivision();
 		System.out.println(test.optimalDivision(new int[] { 1000, 100, 10, 2 }));
@@ -14,12 +14,12 @@ public class OptimalDivision {
 		int length = nums.length;
 		StringBuilder sb = new StringBuilder();
 		sb.append(nums[0]);
-		for (int i = 1; i < length; i++) {
+		for (int idx = 1; idx < length; idx++) {
 			sb.append("/");
-			if (i == 1 && length > 2) {
+			if (idx == 1 && length > 2) {
 				sb.append("(");
 			}
-			sb.append(nums[i]);
+			sb.append(nums[idx]);
 		}
 		if (length > 2) {
 			sb.append(")");
