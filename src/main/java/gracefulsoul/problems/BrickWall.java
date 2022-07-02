@@ -22,20 +22,16 @@ public class BrickWall {
 
 	public int leastBricks(List<List<Integer>> wall) {
 		Map<Integer, Integer> map = new HashMap<>();
-		int max = 0;
+		int count = 0;
 		for (List<Integer> row : wall) {
 			int sum = 0;
-			for (int i = 0; i < row.size() - 1; i++) {
-				sum += row.get(i);
-				if (!map.containsKey(sum)) {
-					map.put(sum, 1);
-				} else {
-					map.put(sum, 1 + (int) map.get(sum));
-				}
-				max = Math.max(max, (int) map.get(sum));
+			for (int idx = 0; idx < row.size() - 1; idx++) {
+				sum += row.get(idx);
+				map.put(sum, map.getOrDefault(sum, 0) + 1);
+				count = Math.max(count, map.get(sum));
 			}
-		};
-		return wall.size() - max;
+		}
+		return wall.size() - count;
 	}
 
 }
