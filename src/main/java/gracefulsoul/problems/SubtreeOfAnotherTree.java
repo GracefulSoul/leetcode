@@ -4,7 +4,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class SubtreeOfAnotherTree {
 
-	// https://leetcode.com/submissions/detail/747702224/
+	// https://leetcode.com/submissions/detail/747717491/
 	public static void main(String[] args) {
 		SubtreeOfAnotherTree test = new SubtreeOfAnotherTree();
 		System.out.println(test.isSubtree(new TreeNode(3, new TreeNode(4, new TreeNode(1), new TreeNode(2)), new TreeNode(5)), new TreeNode(4, new TreeNode(1), new TreeNode(2))));
