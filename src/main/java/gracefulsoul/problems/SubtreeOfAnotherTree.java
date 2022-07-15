@@ -25,7 +25,7 @@ public class SubtreeOfAnotherTree {
 		if (root == null || subRoot == null) {
 			return root == null && subRoot == null;
 		} else if (root.val == subRoot.val) {
-			return this.isSameTree(root.right, subRoot.right) && this.isSameTree(root.left, subRoot.left);
+			return this.isSameTree(root.left, subRoot.left) && this.isSameTree(root.right, subRoot.right);
 		} else {
 			return false;
 		}
