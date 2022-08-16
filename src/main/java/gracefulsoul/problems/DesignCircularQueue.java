@@ -32,6 +32,14 @@ class MyCircularQueue {
 		this.length = 0;
 	}
 
+	public int Front() {
+		return this.isEmpty() ? -1 : this.array[this.front];
+	}
+
+	public int Rear() {
+		return this.isEmpty() ? -1 : this.array[this.rear];
+	}
+
 	public boolean enQueue(int val) {
 		if (!this.isFull()) {
 			this.rear = (this.rear + 1) % this.array.length;
@@ -51,14 +59,6 @@ class MyCircularQueue {
 		} else {
 			return false;
 		}
-	}
-
-	public int Front() {
-		return this.isEmpty() ? -1 : this.array[this.front];
-	}
-
-	public int Rear() {
-		return this.isEmpty() ? -1 : this.array[this.rear];
 	}
 
 	public boolean isEmpty() {
