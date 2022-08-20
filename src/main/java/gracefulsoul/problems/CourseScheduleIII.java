@@ -6,6 +6,7 @@ import java.util.Queue;
 
 public class CourseScheduleIII {
 
+	// https://leetcode.com/submissions/detail/778123369/
 	public static void main(String[] args) {
 		CourseScheduleIII test = new CourseScheduleIII();
 		System.out.println(test.scheduleCourse(new int[][] {
