@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SumOfSquareNumbers {
 
-	// https://leetcode.com/submissions/detail/780196507/
+	// https://leetcode.com/submissions/detail/780201035/
 	public static void main(String[] args) {
 		SumOfSquareNumbers test = new SumOfSquareNumbers();
 		System.out.println(test.judgeSquareSum(5));
@@ -15,7 +15,7 @@ public class SumOfSquareNumbers {
 			if (c % idx == 0) {
 				while (c % idx == 0) {
 					count++;
-					c = c / idx;
+					c /= idx;
 				}
 				if (idx % 4 == 3 && count % 2 != 0) {
 					return false;
