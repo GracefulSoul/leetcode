@@ -9,7 +9,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class AverageOfLevelsInBinaryTree {
 
-	// https://leetcode.com/submissions/detail/782965294/
+	// https://leetcode.com/submissions/detail/782967115/
 	public static void main(String[] args) {
 		AverageOfLevelsInBinaryTree test = new AverageOfLevelsInBinaryTree();
 		System.out.println(test.averageOfLevels(new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)))));
@@ -18,9 +18,6 @@ public class AverageOfLevelsInBinaryTree {
 
 	public List<Double> averageOfLevels(TreeNode root) {
 		List<Double> result = new ArrayList<>();
-		if (root == null) {
-			return result;
-		}
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(root);
 		while (!queue.isEmpty()) {
