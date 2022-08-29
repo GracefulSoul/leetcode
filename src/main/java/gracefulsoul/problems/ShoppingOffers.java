@@ -16,18 +16,18 @@ public class ShoppingOffers {
 	private int min;
 
 	public int shoppingOffers(List<Integer> price, List<List<Integer>> special, List<Integer> needs) {
-		min = this.buyWithoutOffer(price, needs);
+		this.min = this.buyWithoutOffer(price, needs);
 		this.dfs(price, special, needs, 0, 0);
-		return min;
+		return this.min;
 	}
 
 	private void dfs(List<Integer> price, List<List<Integer>> special, List<Integer> needs, int index, int curr) {
-		if (curr > min)
+		if (curr > this.min)
 			return;
 		if (index == special.size()) {
 			curr += this.buyWithoutOffer(price, needs);
-			if (curr < min) {
-				min = curr;
+			if (curr < this.min) {
+				this.min = curr;
 			}
 			return;
 		}
