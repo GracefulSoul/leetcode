@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DesignCircularQueue {
 
-	// https://leetcode.com/submissions/detail/772992823/
+	// https://leetcode.com/submissions/detail/787892870/
 	public static void main(String[] args) {
 		MyCircularQueue myCircularQueue = new MyCircularQueue(3);
 		System.out.println(myCircularQueue.enQueue(1)); // return True
@@ -20,31 +20,35 @@ public class DesignCircularQueue {
 
 class MyCircularQueue {
 
-	private final int[] array;
+	private final int[] queue;
+
 	private int front;
 	private int rear;
-	private int length;
+
+	private int max;
+	private int size;
 
 	public MyCircularQueue(int k) {
-		this.array = new int[k];
+		this.queue = new int[k];
+		this.max = k;
+		this.size = 0;
 		this.front = 0;
 		this.rear = -1;
-		this.length = 0;
 	}
 
 	public int Front() {
-		return this.isEmpty() ? -1 : this.array[this.front];
+		return this.isEmpty() ? -1 : this.queue[this.front];
 	}
 
 	public int Rear() {
-		return this.isEmpty() ? -1 : this.array[this.rear];
+		return this.isEmpty() ? -1 : this.queue[this.rear];
 	}
 
 	public boolean enQueue(int val) {
 		if (!this.isFull()) {
-			this.rear = (this.rear + 1) % this.array.length;
-			this.array[this.rear] = val;
-			this.length++;
+			this.rear = (this.rear + 1) % this.max;
+			this.queue[this.rear] = val;
+			this.size++;
 			return true;
 		} else {
 			return false;
@@ -53,8 +57,8 @@ class MyCircularQueue {
 
 	public boolean deQueue() {
 		if (!this.isEmpty()) {
-			this.front = (this.front + 1) % this.array.length;
-			this.length--;
+			this.front = (this.front + 1) % this.max;
+			this.size--;
 			return true;
 		} else {
 			return false;
@@ -62,11 +66,11 @@ class MyCircularQueue {
 	}
 
 	public boolean isEmpty() {
-		return this.length == 0;
+		return this.size == 0;
 	}
 
 	public boolean isFull() {
-		return this.length == this.array.length;
+		return this.size == this.max;
 	}
 
 }
