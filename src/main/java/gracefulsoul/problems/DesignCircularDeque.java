@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DesignCircularDeque {
 
-	// https://leetcode.com/submissions/detail/787891052/
+	// https://leetcode.com/submissions/detail/787893506/
 	public static void main(String[] args) {
 		MyCircularDeque myCircularDeque = new MyCircularDeque(3);
 		System.out.println(myCircularDeque.insertLast(1));  // return True
@@ -31,7 +31,7 @@ class MyCircularDeque {
 	public MyCircularDeque(int k) {
 		this.deque = new int[k];
 		this.max = k;
-		this.rear = 1;
+		this.rear = -1;
 	}
 
 	public boolean insertFront(int value) {
