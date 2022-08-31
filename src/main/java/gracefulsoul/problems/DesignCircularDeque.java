@@ -31,7 +31,7 @@ class MyCircularDeque {
 	public MyCircularDeque(int k) {
 		this.deque = new int[k];
 		this.max = k;
-		this.rear = -1;
+		this.rear = 1;
 	}
 
 	public boolean insertFront(int value) {
