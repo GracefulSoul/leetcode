@@ -10,8 +10,8 @@ public class MaximumAverageSubarrayI {
 	}
 
 	public double findMaxAverage(int[] nums, int k) {
-		long sum = 0;
-		long max = Long.MIN_VALUE;
+		int sum = 0;
+		int max = Integer.MIN_VALUE;
 		for (int idx = 0; idx < nums.length; idx++) {
 			sum += nums[idx];
 			if (idx > k - 1) {
