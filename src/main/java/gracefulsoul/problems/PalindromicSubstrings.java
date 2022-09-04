@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PalindromicSubstrings {
 
-	// https://leetcode.com/submissions/detail/790845435/
+	// https://leetcode.com/submissions/detail/790848726/
 	public static void main(String[] args) {
 		PalindromicSubstrings test = new PalindromicSubstrings();
 		System.out.println(test.countSubstrings("abc"));
@@ -13,8 +13,7 @@ public class PalindromicSubstrings {
 		int count = 0;
 		char[] charArray = s.toCharArray();
 		for (int idx = 0; idx < s.length(); idx++) {
-			count += this.isPalindrome(charArray, idx, idx);
-			count += this.isPalindrome(charArray, idx, idx + 1);
+			count += this.isPalindrome(charArray, idx, idx) + this.isPalindrome(charArray, idx, idx + 1);
 		}
 		return count;
 	}
