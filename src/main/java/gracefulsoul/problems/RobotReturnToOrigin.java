@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RobotReturnToOrigin {
 
-	// https://leetcode.com/submissions/detail/798680337/
+	// https://leetcode.com/submissions/detail/798681246/
 	public static void main(String[] args) {
 		RobotReturnToOrigin test = new RobotReturnToOrigin();
 		System.out.println(test.judgeCircle("UD"));
@@ -16,8 +16,8 @@ public class RobotReturnToOrigin {
 			switch (move) {
 				case 'U': y++; break;
 				case 'R': x++; break;
-				case 'L': x--; break;
 				case 'D': y--; break;
+				case 'L': x--; break;
 			}
 		}
 		return x == 0 && y == 0;
