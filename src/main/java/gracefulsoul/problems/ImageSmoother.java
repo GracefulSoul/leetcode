@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class ImageSmoother {
 
-	// https://leetcode.com/submissions/detail/800377895/
+	// https://leetcode.com/submissions/detail/800382670/
 	public static void main(String[] args) {
 		ImageSmoother test = new ImageSmoother();
 		PrintUtil.print(test.imageSmoother(new int[][] {
@@ -25,13 +25,13 @@ public class ImageSmoother {
 		int[][] result = new int[row][col];
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				result[i][j] = this.check(img, row, col, i, j);
+				result[i][j] = this.caculate(img, row, col, i, j);
 			}
 		}
 		return result;
 	}
 
-	private int check(int[][] img, int row, int col, int i, int j) {
+	private int caculate(int[][] img, int row, int col, int i, int j) {
 		int count = 1;
 		int sum = img[i][j];
 		if (i - 1 >= 0) {
