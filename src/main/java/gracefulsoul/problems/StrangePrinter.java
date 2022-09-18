@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class StrangePrinter {
 
-	// https://leetcode.com/submissions/detail/802471576/
+	// https://leetcode.com/submissions/detail/802475396/
 	public static void main(String[] args) {
 		StrangePrinter test = new StrangePrinter();
 		System.out.println(test.strangePrinter("aaabbb"));
@@ -10,16 +10,16 @@ public class StrangePrinter {
 	}
 
 	public int strangePrinter(String s) {
-		int lnegth = s.length();
-		int[][] dp = new int[lnegth][lnegth];
-		for (int idx = 0; idx < lnegth; idx++) {
+		int length = s.length();
+		int[][] dp = new int[length][length];
+		for (int idx = 0; idx < length; idx++) {
 			dp[idx][idx] = 1;
-			if (idx + 1 < lnegth) {
+			if (idx + 1 < length) {
 				dp[idx][idx + 1] = s.charAt(idx) == s.charAt(idx + 1) ? 1 : 2;
 			}
 		}
-		for (int l = 3; l <= lnegth; l++) {
-			for (int i = 0; i <= lnegth - l; i++) {
+		for (int l = 3; l <= length; l++) {
+			for (int i = 0; i <= length - l; i++) {
 				int j = i + l - 1;
 				dp[i][j] = Integer.MAX_VALUE;
 				for (int k = i; k < j; k++) {
@@ -30,7 +30,7 @@ public class StrangePrinter {
 				}
 			}
 		}
-		return dp[0][lnegth - 1];
+		return dp[0][length - 1];
 	}
 
 }
