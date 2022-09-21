@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KthSmallestNumberInMultiplicationTable {
 
-	// https://leetcode.com/submissions/detail/805199311/
+	// https://leetcode.com/submissions/detail/805207808/
 	public static void main(String[] args) {
 		KthSmallestNumberInMultiplicationTable test = new KthSmallestNumberInMultiplicationTable();
 		System.out.println(test.findKthNumber(3, 3, 5));
@@ -14,9 +14,9 @@ public class KthSmallestNumberInMultiplicationTable {
 		int right = m * n;
 		while (left < right) {
 			int mid = (left + right) / 2;
-			int count = mid / n * n;
-			for (int i = (mid / n) + 1; i <= m; i++) {
-				count += mid / i;
+			int count = (mid / n) * n;
+			for (int idx = (mid / n) + 1; idx <= m; idx++) {
+				count += mid / idx;
 			}
 			if (count >= k) {
 				right = mid;
