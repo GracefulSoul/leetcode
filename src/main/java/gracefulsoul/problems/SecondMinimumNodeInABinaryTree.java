@@ -4,7 +4,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class SecondMinimumNodeInABinaryTree {
 
-	// https://leetcode.com/submissions/detail/807183220/
+	// https://leetcode.com/submissions/detail/807186221/
 	public static void main(String[] args) {
 		SecondMinimumNodeInABinaryTree test = new SecondMinimumNodeInABinaryTree();
 		System.out.println(test.findSecondMinimumValue(new TreeNode(2, new TreeNode(2), new TreeNode(5, new TreeNode(5), new TreeNode(7)))));
@@ -12,11 +12,7 @@ public class SecondMinimumNodeInABinaryTree {
 	}
 
 	public int findSecondMinimumValue(TreeNode root) {
-		if (root == null) {
-			return -1;
-		} else {
-			return this.dfs(root, root.val);
-		}
+		return this.dfs(root, root.val);
 	}
 
 	private int dfs(TreeNode root, int min) {
