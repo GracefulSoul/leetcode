@@ -9,7 +9,7 @@ import java.util.Queue;
 
 public class CutOffTreesForGolfEvent {
 
-	// https://leetcode.com/submissions/detail/810509987/
+	// https://leetcode.com/submissions/detail/810524475/
 	public static void main(String[] args) {
 		CutOffTreesForGolfEvent test = new CutOffTreesForGolfEvent();
 		System.out.println(test.cutOffTree(Arrays.asList(
@@ -68,13 +68,13 @@ public class CutOffTreesForGolfEvent {
 		queue.add(new int[] { x, y });
 		boolean[][] visited = new boolean[row][col];
 		visited[x][y] = true;
-		int level = 0;
+		int steps = 0;
 		while (!queue.isEmpty()) {
 			int size = queue.size();
 			while (size-- > 0) {
 				int[] curr = queue.poll();
 				if (curr[0] == tree[0] && curr[1] == tree[1]) {
-					return level;
+					return steps;
 				}
 				for (int[] direction : DIRECTIONS) {
 					x = direction[0] + curr[0];
@@ -86,7 +86,7 @@ public class CutOffTreesForGolfEvent {
 					queue.add(new int[] { x, y });
 				}
 			}
-			level++;
+			steps++;
 		}
 		return -1;
 	}
