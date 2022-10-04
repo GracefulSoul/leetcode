@@ -39,7 +39,7 @@ public class BaseballGame {
 					stack.push(num);
 					sum += num;
 			}
-		}
+		} 
 		return sum;
 	}
 
