@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class BaseballGame {
 
-	// https://leetcode.com/submissions/detail/814948929/
+	// https://leetcode.com/submissions/detail/814952148/
 	public static void main(String[] args) {
 		BaseballGame test = new BaseballGame();
 		System.out.println(test.calPoints(new String[] { "5", "2", "C", "D", "+" }));
@@ -35,8 +35,8 @@ public class BaseballGame {
 					break;
 				default:
 					num = Integer.parseInt(operation);
-					stack.push(num);
 					sum += num;
+					stack.push(num);
 			}
 		}
 		return sum;
