@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class StickersToSpellWord {
 
-	// https://leetcode.com/submissions/detail/820812624/
+	// https://leetcode.com/submissions/detail/820818476/
 	public static void main(String[] args) {
 		StickersToSpellWord test = new StickersToSpellWord();
 		System.out.println(test.minStickers(new String[] { "with", "example", "science" }, "thehat"));
@@ -15,9 +15,9 @@ public class StickersToSpellWord {
 	public int minStickers(String[] stickers, String target) {
 		int length = stickers.length;
 		int[][] dp = new int[length][26];
-		for (int i = 0; i < length; i++) {
-			for (char c : stickers[i].toCharArray()) {
-				dp[i][c - 'a']++;
+		for (int idx = 0; idx < length; idx++) {
+			for (char c : stickers[idx].toCharArray()) {
+				dp[idx][c - 'a']++;
 			}
 		}
 		Map<String, Integer> map = new HashMap<>();
