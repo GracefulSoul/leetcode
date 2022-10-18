@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountBinarySubstrings {
 
-	// https://leetcode.com/submissions/detail/825095825/
+	// https://leetcode.com/submissions/detail/825101498/
 	public static void main(String[] args) {
 		CountBinarySubstrings test = new CountBinarySubstrings();
 		System.out.println(test.countBinarySubstrings("00110011"));
@@ -14,8 +14,8 @@ public class CountBinarySubstrings {
 		int curr = 1;
 		int result = 0;
 		char[] charArray = s.toCharArray();
-		for (int i = 1; i < s.length(); i++) {
-			if (charArray[i - 1] == charArray[i]) {
+		for (int idx = 1; idx < s.length(); idx++) {
+			if (charArray[idx - 1] == charArray[idx]) {
 				curr++;
 			} else {
 				result += Math.min(curr, prev);
