@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class KthLargestElementInAStream {
 
-	// https://leetcode.com/submissions/detail/829222163/
+	// https://leetcode.com/submissions/detail/829228487/
 	public static void main(String[] args) {
 		KthLargest kthLargest = new KthLargest(3, new int[] { 4, 5, 8, 2 });
 		System.out.println(kthLargest.add(3));	// return 4
@@ -31,7 +31,7 @@ class KthLargest {
 	}
 
 	public int add(int val) {
-		this.queue.offer(val);
+		this.queue.add(val);
 		if (this.queue.size() > k) {
 			this.queue.poll();
 		}
