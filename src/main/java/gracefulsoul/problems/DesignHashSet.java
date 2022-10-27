@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DesignHashSet {
 
-	// https://leetcode.com/submissions/detail/831331224/
+	// https://leetcode.com/submissions/detail/831334350/
 	public static void main(String[] args) {
 		MyHashSet myHashSet = new MyHashSet();
 		myHashSet.add(1);							// set = [1]
