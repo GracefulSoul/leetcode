@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DesignHashSet {
 
-	// https://leetcode.com/submissions/detail/831334350/
+	// https://leetcode.com/submissions/detail/831337137/
 	public static void main(String[] args) {
 		MyHashSet myHashSet = new MyHashSet();
 		myHashSet.add(1);							// set = [1]
@@ -29,16 +29,9 @@ class MyHashSet {
 
 	public void add(int key) {
 		if (key >= this.set.length) {
-			this.extend(key);
+			this.set = Arrays.copyOf(this.set, key + 10);
 		}
 		this.set[key] = true;
-	}
-
-	public void remove(int key) {
-		if (key >= this.set.length) {
-			this.extend(key);
-		}
-		this.set[key] = false;
 	}
 
 	public boolean contains(int key) {
@@ -49,8 +42,10 @@ class MyHashSet {
 		}
 	}
 
-	private void extend(int key) {
-		this.set = Arrays.copyOf(this.set, key + 10);
+	public void remove(int key) {
+		if (key < this.set.length) {
+			this.set[key] = false;
+		}
 	}
 
 }
