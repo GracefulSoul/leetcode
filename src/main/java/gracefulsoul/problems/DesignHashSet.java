@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DesignHashSet {
 
-	// https://leetcode.com/submissions/detail/831337137/
+	// https://leetcode.com/submissions/detail/831982910/
 	public static void main(String[] args) {
 		MyHashSet myHashSet = new MyHashSet();
 		myHashSet.add(1);							// set = [1]
@@ -29,7 +29,7 @@ class MyHashSet {
 
 	public void add(int key) {
 		if (key >= this.set.length) {
-			this.set = Arrays.copyOf(this.set, key + 10);
+			this.set = Arrays.copyOf(this.set, key + 1);
 		}
 		this.set[key] = true;
 	}
