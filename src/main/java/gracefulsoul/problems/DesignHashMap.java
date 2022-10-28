@@ -23,31 +23,31 @@ class MyHashMap {
 
 	private int[] map;
 
-    public MyHashMap() {
+	public MyHashMap() {
 		this.map = new int[10];
-    }
-    
-    public void put(int key, int value) {
+	}
+
+	public void put(int key, int value) {
 		if (key >= this.map.length) {
 			this.map = Arrays.copyOf(this.map, key + 1);
 		}
 		this.map[key] = value == 0 ? -1 : value;
-    }
-    
-    public int get(int key) {
+	}
+
+	public int get(int key) {
 		if (key >= this.map.length || this.map[key] == 0) {
 			return -1;
 		} else {
 			return this.map[key] == -1 ? 0 : this.map[key];
 		}
-    }
-    
-    public void remove(int key) {
+	}
+
+	public void remove(int key) {
 		if (key < this.map.length) {
 			this.map[key] = 0;
 		}
-    }
-   
+	}
+
 }
 
 /**
