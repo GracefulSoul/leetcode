@@ -12,7 +12,7 @@ public class Solution {
 
 	public Solution(int n, int[] blacklist) {
 		this.random = new Random();
-		this.map = new HashMap<Integer, Integer>();
+		this.map = new HashMap<>();
 		this.size = n - blacklist.length;
 		for (int blacklistNum : blacklist) {
 			if (blacklistNum >= this.size) {
