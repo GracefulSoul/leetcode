@@ -7,31 +7,31 @@ import java.util.Random;
 public class Solution {
 
 	private Random random;
-	private Map<Integer, Integer> blacklistMap;
-	private int whitelistSize;
+	private Map<Integer, Integer> map;
+	private int size;
 
 	public Solution(int n, int[] blacklist) {
 		this.random = new Random();
-		this.blacklistMap = new HashMap<Integer, Integer>();
-		this.whitelistSize = n - blacklist.length;
+		this.map = new HashMap<Integer, Integer>();
+		this.size = n - blacklist.length;
 		for (int blacklistNum : blacklist) {
-			if (blacklistNum >= this.whitelistSize) {
-				this.blacklistMap.put(blacklistNum, -1);
+			if (blacklistNum >= this.size) {
+				this.map.put(blacklistNum, -1);
 			}
 		}
 		int index = n - 1;
 		for (int blacklistNum : blacklist) {
-			if (blacklistNum < this.whitelistSize) {
-				while (this.blacklistMap.containsKey(index--)) {
+			if (blacklistNum < this.size) {
+				while (this.map.containsKey(index--)) {
 				}
-				this.blacklistMap.put(blacklistNum, index + 1);
+				this.map.put(blacklistNum, index + 1);
 			}
 		}
 	}
 
 	public int pick() {
-		int num = this.random.nextInt(this.whitelistSize);
-		return this.blacklistMap.getOrDefault(num, num);
+		int num = this.random.nextInt(this.size);
+		return this.map.getOrDefault(num, num);
 	}
 
 }

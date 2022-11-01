@@ -4,7 +4,7 @@ import gracefulsoul.object.solution.random.pick.blacklist.Solution;
 
 public class RandomPickWithBlacklist {
 
-	// https://leetcode.com/submissions/detail/834662546/
+	// https://leetcode.com/submissions/detail/834667259/
 	public static void main(String[] args) {
 		Solution solution = new Solution(7, new int[] { 2, 3, 5 });
 		System.out.println(solution.pick());	// return 0, any integer from [0,1,4,6] should be ok. Note that for every call of pick,
