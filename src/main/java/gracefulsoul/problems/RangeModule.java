@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class RangeModule {
 
-	// https://leetcode.com/submissions/detail/837080785/
+	// https://leetcode.com/submissions/detail/837119051/
 	public static void main(String[] args) {
 		RangeModule rangeModule = new RangeModule();
 		rangeModule.addRange(10, 20);
@@ -37,8 +37,9 @@ public class RangeModule {
 		Integer start = this.map.floorKey(left);
 		if (start == null) {
 			return false;
+		} else {
+			return this.map.get(start) >= right;
 		}
-		return this.map.get(start) >= right;
 	}
 
 	public void removeRange(int left, int right) {
