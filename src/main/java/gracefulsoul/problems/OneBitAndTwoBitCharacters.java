@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class OneBitAndTwoBitCharacters {
 
-	// https://leetcode.com/submissions/detail/837659403/
+	// https://leetcode.com/submissions/detail/837662377/
 	public static void main(String[] args) {
 		OneBitAndTwoBitCharacters test = new OneBitAndTwoBitCharacters();
 		System.out.println(test.isOneBitCharacter(new int[] { 1, 0, 0 }));
@@ -11,7 +11,7 @@ public class OneBitAndTwoBitCharacters {
 
 	public boolean isOneBitCharacter(int[] bits) {
 		int bit = 0;
-		for (int i = bits.length - 2; i >= 0 && bits[i] != 0; i--) {
+		for (int idx = bits.length - 2; idx >= 0 && bits[idx] != 0; idx--) {
 			bit++;
 		}
 		return bit % 2 <= 0;
