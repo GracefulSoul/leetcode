@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FindKthSmallestPairDistance {
 
-	// https://leetcode.com/submissions/detail/839265177/
+	// https://leetcode.com/submissions/detail/839269230/
 	public static void main(String[] args) {
 		FindKthSmallestPairDistance test = new FindKthSmallestPairDistance();
 		System.out.println(test.smallestDistancePair(new int[] { 1, 3, 1 }, 1));
@@ -19,8 +19,7 @@ public class FindKthSmallestPairDistance {
 		while (low < high) {
 			int mid = (low + high) / 2;
 			int count = 0;
-			int j = 0;
-			for (int i = 0; i < nums.length; i++) {
+			for (int i = 0, j = 0; i < nums.length; i++) {
 				while (nums[i] - nums[j] > mid) {
 					j++;
 				}
