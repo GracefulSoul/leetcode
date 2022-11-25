@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ParseLispExpression {
 
-	// https://leetcode.com/submissions/detail/849544380/
+	// https://leetcode.com/submissions/detail/849544992/
 	public static void main(String[] args) {
 		ParseLispExpression test = new ParseLispExpression();
 		System.out.println(test.evaluate("(let x 3 x 2 x)"));
@@ -34,7 +34,7 @@ public class ParseLispExpression {
 		} else {
 			Map<String, Integer> intMap = new HashMap<>(map);
 			for (int idx = 1; idx < exp.size() - 1; idx += 2) {
-				intMap.put(exp.get(idx), eval(exp.get(idx + 1), intMap));
+				intMap.put(exp.get(idx), this.eval(exp.get(idx + 1), intMap));
 			}
 			result = this.eval(exp.get(exp.size() - 1), intMap);
 		}
