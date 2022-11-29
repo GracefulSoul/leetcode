@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DeleteAndEarn {
 
-	// https://leetcode.com/submissions/detail/851527464/
+	// https://leetcode.com/submissions/detail/851530240/
 	public static void main(String[] args) {
 		DeleteAndEarn test = new DeleteAndEarn();
 		System.out.println(test.deleteAndEarn(new int[] { 3, 4, 2 }));
@@ -10,8 +10,7 @@ public class DeleteAndEarn {
 	}
 
 	public int deleteAndEarn(int[] nums) {
-		int n = 10001;
-		int[] dp = new int[n];
+		int[] dp = new int[10001];
 		int max = 0;
 		for (int num : nums) {
 			dp[num] = dp[num] + num;
