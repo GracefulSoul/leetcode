@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NetworkDelayTime {
 
-	// https://leetcode.com/submissions/detail/852043613/
+	// https://leetcode.com/submissions/detail/852045368/
 	public static void main(String[] args) {
 		NetworkDelayTime test = new NetworkDelayTime();
 		System.out.println(test.networkDelayTime(new int[][] {
@@ -22,8 +22,8 @@ public class NetworkDelayTime {
 
 	public int networkDelayTime(int[][] times, int n, int k) {
 		int[][] graph = new int[n][n];
-		for (int i = 0; i < n; i++) {
-			Arrays.fill(graph[i], Integer.MAX_VALUE);
+		for (int idx = 0; idx < n; idx++) {
+			Arrays.fill(graph[idx], Integer.MAX_VALUE);
 		}
 		for (int[] time : times) {
 			graph[time[0] - 1][time[1] - 1] = time[2];
