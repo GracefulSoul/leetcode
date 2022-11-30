@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NetworkDelayTime {
 
-	// https://leetcode.com/submissions/detail/852034196/
+	// https://leetcode.com/submissions/detail/852043613/
 	public static void main(String[] args) {
 		NetworkDelayTime test = new NetworkDelayTime();
 		System.out.println(test.networkDelayTime(new int[][] {
@@ -40,9 +40,9 @@ public class NetworkDelayTime {
 			visited[index] = true;
 			for (int j = 0; j < n; j++) {
 				if (graph[index][j] != Integer.MAX_VALUE) {
-					int newDist = graph[index][j] + distances[index];
-					if (newDist < distances[j]) {
-						distances[j] = newDist;
+					int distance = graph[index][j] + distances[index];
+					if (distance < distances[j]) {
+						distances[j] = distance;
 					}
 				}
 			}
