@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class FindSmallestLetterGreaterThanTarget {
 
+	// https://leetcode.com/submissions/detail/852627234/
 	public static void main(String[] args) {
 		FindSmallestLetterGreaterThanTarget test = new FindSmallestLetterGreaterThanTarget();
 		System.out.println(test.nextGreatestLetter(new char[] { 'c', 'f', 'j' }, 'a'));
@@ -16,7 +17,7 @@ public class FindSmallestLetterGreaterThanTarget {
 		while (left < right) {
 			int mid = left + ((right - left) / 2);
 			if (letters[mid] > target) {
-				right = mid;
+				right = mid - 1;
 			} else {
 				left = mid + 1;
 			}
