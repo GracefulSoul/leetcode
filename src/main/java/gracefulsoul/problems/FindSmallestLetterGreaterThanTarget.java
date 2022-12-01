@@ -17,7 +17,7 @@ public class FindSmallestLetterGreaterThanTarget {
 		while (left < right) {
 			int mid = left + ((right - left) / 2);
 			if (letters[mid] > target) {
-				right = mid - 1;
+				right = mid;
 			} else {
 				left = mid + 1;
 			}
