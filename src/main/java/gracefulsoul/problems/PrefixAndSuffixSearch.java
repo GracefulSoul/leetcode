@@ -4,7 +4,7 @@ import gracefulsoul.object.node.trie.weight.TrieNode;
 
 public class PrefixAndSuffixSearch {
 
-	// https://leetcode.com/submissions/detail/853100437/
+	// https://leetcode.com/submissions/detail/853100951/
 	public static void main(String[] args) {
 		WordFilter wordFilter = new WordFilter(new String[] { "apple" });
 		System.out.println(wordFilter.f("a", "e")); // return 0,
@@ -36,8 +36,8 @@ class WordFilter {
 	public int f(String pref, String suff) {
 		char[] charArray = (suff + "{" + pref).toCharArray();
 		TrieNode temp = this.root;
-		for (int i = 0; i < charArray.length; i++) {
-			temp = temp.children[charArray[i] - 'a'];
+		for (char c : charArray) {
+			temp = temp.children[c - 'a'];
 			if (temp == null) {
 				return -1;
 			}
