@@ -1,10 +1,10 @@
 package gracefulsoul.problems;
 
-import gracefulsoul.object.node.trie.weight.TrieNode;
+import gracefulsoul.object.node.trie.index.TrieNode;
 
 public class PrefixAndSuffixSearch {
 
-	// https://leetcode.com/submissions/detail/853100951/
+	// https://leetcode.com/submissions/detail/853124162/
 	public static void main(String[] args) {
 		WordFilter wordFilter = new WordFilter(new String[] { "apple" });
 		System.out.println(wordFilter.f("a", "e")); // return 0,
@@ -27,7 +27,7 @@ class WordFilter {
 						temp.children[num] = new TrieNode();
 					}
 					temp = temp.children[num];
-					temp.weight = i;
+					temp.index = i;
 				}
 			}
 		}
@@ -42,7 +42,7 @@ class WordFilter {
 				return -1;
 			}
 		}
-		return temp.weight;
+		return temp.index;
 	}
 
 }

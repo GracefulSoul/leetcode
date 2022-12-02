@@ -1,8 +1,8 @@
-package gracefulsoul.object.node.trie.weight;
+package gracefulsoul.object.node.trie.index;
 
 public class TrieNode {
 
-	public int weight;
+	public int index;
 	public TrieNode[] children;
 
 	public TrieNode() {
