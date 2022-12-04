@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LargestNumberAtLeastTwiceOfOthers {
 
-	// https://leetcode.com/submissions/detail/854211841/
+	// https://leetcode.com/submissions/detail/854222717/
 	public static void main(String[] args) {
 		LargestNumberAtLeastTwiceOfOthers test = new LargestNumberAtLeastTwiceOfOthers();
 		System.out.println(test.dominantIndex(new int[] { 3, 6, 1, 0 }));
@@ -13,13 +13,13 @@ public class LargestNumberAtLeastTwiceOfOthers {
 		int max = -1;
 		int index = -1;
 		int second = -1;
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] > max) {
+		for (int idx = 0; idx < nums.length; idx++) {
+			if (nums[idx] > max) {
 				second = max;
-				max = nums[i];
-				index = i;
-			} else if (nums[i] > second) {
-				second = nums[i];
+				max = nums[idx];
+				index = idx;
+			} else if (nums[idx] > second) {
+				second = nums[idx];
 			}
 		}
 		return max >= second * 2 ? index : -1;
