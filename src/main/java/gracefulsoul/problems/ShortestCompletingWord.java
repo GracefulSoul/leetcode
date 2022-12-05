@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ShortestCompletingWord {
 
-	// https://leetcode.com/submissions/detail/854758252/
+	// https://leetcode.com/submissions/detail/854769720/
 	public static void main(String[] args) {
 		ShortestCompletingWord test = new ShortestCompletingWord();
 		System.out.println(test.shortestCompletingWord("1s3 PSt", new String[] { "step", "steps", "stripe", "stepple" }));
@@ -11,9 +11,9 @@ public class ShortestCompletingWord {
 
 	public String shortestCompletingWord(String licensePlate, String[] words) {
 		int[] licenseChars = this.getCharCounts(licensePlate);
-		String result = "";
+		String result = null;
 		for (String word : words) {
-			if ((result.isEmpty() || result.length() > word.length()) && this.isCompletingWord(licenseChars, this.getCharCounts(word))) {
+			if ((result == null || result.length() > word.length()) && this.isCompletingWord(licenseChars, this.getCharCounts(word))) {
 				result = word;
 			}
 		}
