@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class OpenTheLock {
 
-	// https://leetcode.com/problems/open-the-lock/submissions/855373585/
+	// https://leetcode.com/problems/open-the-lock/submissions/855405999/
 	public static void main(String[] args) {
 		OpenTheLock test = new OpenTheLock();
 		System.out.println(test.openLock(new String[] { "0201", "0101", "0102", "1212", "2002" }, "0202"));
@@ -22,12 +22,12 @@ public class OpenTheLock {
 		Set<String> end = new HashSet<>();
 		end.add(target);
 		Set<String> checked = new HashSet<>(Arrays.asList(deadends));
-		int level = 0;
+		int step = 0;
 		while (!start.isEmpty() && !end.isEmpty()) {
 			Set<String> temp = new HashSet<>();
 			for (String curr : start) {
 				if (end.contains(curr)) {
-					return level;
+					return step;
 				} else if (checked.contains(curr)) {
 					continue;
 				} else {
@@ -37,7 +37,7 @@ public class OpenTheLock {
 					}
 				}
 			}
-			level++;
+			step++;
 			start = end;
 			end = temp;
 		}
