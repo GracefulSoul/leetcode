@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class OpenTheLock {
 
-	// https://leetcode.com/problems/open-the-lock/submissions/855405999/
+	// https://leetcode.com/problems/open-the-lock/submissions/855412378/
 	public static void main(String[] args) {
 		OpenTheLock test = new OpenTheLock();
 		System.out.println(test.openLock(new String[] { "0201", "0101", "0102", "1212", "2002" }, "0202"));
@@ -32,9 +32,7 @@ public class OpenTheLock {
 					continue;
 				} else {
 					checked.add(curr);
-					for (String next : this.getNexts(curr)) {
-						temp.add(next);
-					}
+					temp.addAll(this.getNexts(curr));
 				}
 			}
 			step++;
