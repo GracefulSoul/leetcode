@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReachANumber {
 
-	// https://leetcode.com/problems/reach-a-number/submissions/856387576/
+	// https://leetcode.com/problems/reach-a-number/submissions/856401522/
 	public static void main(String[] args) {
 		ReachANumber test = new ReachANumber();
 		System.out.println(test.reachNumber(2));
@@ -12,15 +12,12 @@ public class ReachANumber {
 	public int reachNumber(int target) {
 		target = Math.abs(target);
 		int numMoves = 0;
-		int sum = 0;
-		while (sum < target) {
-			numMoves++;
-			sum += numMoves;
+		while (target > 0) {
+			target -= ++numMoves; 
 		}
-		if (sum != target && (sum - target) % 2 == 1) {
-			while ((sum - target) % 2 != 0) {
-				numMoves++;
-				sum += numMoves;
+		if (target != 0 && target % 2 != 0) {
+			while (target % 2 != 0) {
+				target -= ++numMoves;
 			}
 		}
 		return numMoves;
