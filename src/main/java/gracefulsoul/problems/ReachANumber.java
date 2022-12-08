@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReachANumber {
 
-	// https://leetcode.com/problems/reach-a-number/submissions/856402595/
+	// https://leetcode.com/problems/reach-a-number/submissions/856419049/
 	public static void main(String[] args) {
 		ReachANumber test = new ReachANumber();
 		System.out.println(test.reachNumber(2));
