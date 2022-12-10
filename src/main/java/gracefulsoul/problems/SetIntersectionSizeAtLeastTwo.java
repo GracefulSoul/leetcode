@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SetIntersectionSizeAtLeastTwo {
 
-	// https://leetcode.com/problems/set-intersection-size-at-least-two/submissions/857433553/
+	// https://leetcode.com/problems/set-intersection-size-at-least-two/submissions/857436052/
 	public static void main(String[] args) {
 		SetIntersectionSizeAtLeastTwo test = new SetIntersectionSizeAtLeastTwo();
 		System.out.println(test.intersectionSizeTwo(new int[][] {
@@ -28,19 +28,18 @@ public class SetIntersectionSizeAtLeastTwo {
 
 	public int intersectionSizeTwo(int[][] intervals) {
 		Arrays.sort(intervals, (a, b) -> a[1] != b[1] ? a[1] - b[1] : b[0] - a[0]);
-		int size = 0;
 		int start = intervals[0][1] - 1;
 		int end = intervals[0][1];
-		size += 2;
+		int size = 2;
 		for (int idx = 1; idx < intervals.length; idx++) {
 			if (intervals[idx][0] > start && intervals[idx][0] <= end) {
-				size += 1;
 				start = end;
 				end = intervals[idx][1];
+				size++;
 			} else if (intervals[idx][0] > end) {
-				size += 2;
 				start = intervals[idx][1] - 1;
 				end = intervals[idx][1];
+				size += 2;
 			}
 		}
 		return size;
