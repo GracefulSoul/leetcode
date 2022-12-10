@@ -24,7 +24,7 @@ public class PyramidTransitionMatrix {
 			map.putIfAbsent(key, new ArrayList<>());
 			map.get(key).add(s.charAt(2));
 		}
-		return this.dfs(map, bottom + "&", new HashSet<>());
+		return this.dfs(map, bottom + '&', new HashSet<>());
 	}
 
 	private boolean dfs(Map<String, List<Character>> map, String s, Set<String> set) {
