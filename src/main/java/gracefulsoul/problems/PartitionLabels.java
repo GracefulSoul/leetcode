@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PartitionLabels {
 
-	// https://leetcode.com/problems/partition-labels/submissions/859346335/
+	// https://leetcode.com/problems/partition-labels/submissions/859347905/
 	public static void main(String[] args) {
 		PartitionLabels test = new PartitionLabels();
 		System.out.println(test.partitionLabels("ababcbacadefegdehijhklij"));
@@ -22,7 +22,7 @@ public class PartitionLabels {
 		List<Integer> result = new ArrayList<>();
 		int start = 0;
 		int end = 0;
-		for (int idx = 0; idx < charArray.length; idx++) {
+		for (int idx = 0; idx < length; idx++) {
 			int index = last[charArray[idx] - 'a'];
 			if (index > end) {
 				end = index;
