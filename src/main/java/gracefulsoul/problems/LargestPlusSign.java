@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LargestPlusSign {
 
-	// https://leetcode.com/problems/largest-plus-sign/submissions/859947841/
+	// https://leetcode.com/problems/largest-plus-sign/submissions/859948375/
 	public static void main(String[] args) {
 		LargestPlusSign test = new LargestPlusSign();
 		System.out.println(test.orderOfLargestPlusSign(5, new int[][] {
@@ -17,8 +17,8 @@ public class LargestPlusSign {
 
 	public int orderOfLargestPlusSign(int n, int[][] mines) {
 		int[][] grid = new int[n][n];
-		for (int i = 0; i < n; i++) {
-			Arrays.fill(grid[i], n);
+		for (int[] row : grid) {
+			Arrays.fill(row, n);
 		}
 		for (int[] mine : mines) {
 			grid[mine[0]][mine[1]] = 0;
