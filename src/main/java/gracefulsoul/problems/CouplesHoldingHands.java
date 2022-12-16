@@ -13,9 +13,9 @@ public class CouplesHoldingHands {
 		int length = row.length;
 		int[] partner = new int[length];
 		int[] position = new int[length];
-		for (int i = 0; i < length; i++) {
-			partner[i] = i % 2 == 0 ? i + 1 : i - 1;
-			position[row[i]] = i;
+		for (int idx = 0; idx < length; idx++) {
+			partner[idx] = idx % 2 == 0 ? idx + 1 : idx - 1;
+			position[row[idx]] = idx;
 		}
 		int result = 0;
 		for (int i = 0; i < length; i += 2) {
