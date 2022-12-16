@@ -2,13 +2,13 @@ package gracefulsoul.problems;
 
 public class CouplesHoldingHands {
 
+	// https://leetcode.com/problems/couples-holding-hands/submissions/860441462/
 	public static void main(String[] args) {
 		CouplesHoldingHands test = new CouplesHoldingHands();
 		System.out.println(test.minSwapsCouples(new int[] { 0, 2, 1, 3 }));
 		System.out.println(test.minSwapsCouples(new int[] { 3, 2, 0, 1 }));
 	}
 
-	// https://leetcode.com/problems/couples-holding-hands/submissions/860441462/
 	public int minSwapsCouples(int[] row) {
 		int length = row.length;
 		int[] partner = new int[length];
