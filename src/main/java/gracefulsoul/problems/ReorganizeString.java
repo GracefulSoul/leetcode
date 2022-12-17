@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReorganizeString {
 
-	// https://leetcode.com/problems/reorganize-string/submissions/860926244/
+	// https://leetcode.com/problems/reorganize-string/submissions/860928612/
 	public static void main(String[] args) {
 		ReorganizeString test = new ReorganizeString();
 		System.out.println(test.reorganizeString("aab"));
@@ -11,16 +11,16 @@ public class ReorganizeString {
 
 	public String reorganizeString(String s) {
 		int length = s.length();
-		int[] hash = new int[26];
+		int[] counts = new int[26];
 		for (char c : s.toCharArray()) {
-			hash[c - 'a']++;
+			counts[c - 'a']++;
 		}
 		int letter = 0;
 		int count = 0;
-		for (int idx = 0; idx < hash.length; idx++) {
-			if (hash[idx] > count) {
+		for (int idx = 0; idx < counts.length; idx++) {
+			if (counts[idx] > count) {
 				letter = idx;
-				count = hash[idx];
+				count = counts[idx];
 			}
 		}
 		if (count > (length + 1) / 2) {
@@ -28,19 +28,19 @@ public class ReorganizeString {
 		}
 		char[] result = new char[length];
 		int index = 0;
-		while (hash[letter] > 0) {
+		while (counts[letter] > 0) {
 			result[index] = (char) (letter + 'a');
 			index += 2;
-			hash[letter]--;
+			counts[letter]--;
 		}
-		for (int idx = 0; idx < hash.length; idx++) {
-			while (hash[idx] > 0) {
+		for (int idx = 0; idx < counts.length; idx++) {
+			while (counts[idx] > 0) {
 				if (index >= result.length) {
 					index = 1;
 				}
 				result[index] = (char) (idx + 'a');
 				index += 2;
-				hash[idx]--;
+				counts[idx]--;
 			}
 		}
 		return String.valueOf(result);
