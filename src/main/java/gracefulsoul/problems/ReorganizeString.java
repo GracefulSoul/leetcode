@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReorganizeString {
 
-	// https://leetcode.com/problems/reorganize-string/submissions/860928612/
+	// https://leetcode.com/problems/reorganize-string/submissions/860931635/
 	public static void main(String[] args) {
 		ReorganizeString test = new ReorganizeString();
 		System.out.println(test.reorganizeString("aab"));
@@ -35,7 +35,7 @@ public class ReorganizeString {
 		}
 		for (int idx = 0; idx < counts.length; idx++) {
 			while (counts[idx] > 0) {
-				if (index >= result.length) {
+				if (index >= length) {
 					index = 1;
 				}
 				result[index] = (char) (idx + 'a');
