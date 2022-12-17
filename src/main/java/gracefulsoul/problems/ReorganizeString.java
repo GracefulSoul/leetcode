@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReorganizeString {
 
-	// https://leetcode.com/problems/reorganize-string/submissions/860902867/
+	// https://leetcode.com/problems/reorganize-string/submissions/860926244/
 	public static void main(String[] args) {
 		ReorganizeString test = new ReorganizeString();
 		System.out.println(test.reorganizeString("aab"));
@@ -15,15 +15,15 @@ public class ReorganizeString {
 		for (char c : s.toCharArray()) {
 			hash[c - 'a']++;
 		}
-		int max = 0;
 		int letter = 0;
+		int count = 0;
 		for (int idx = 0; idx < hash.length; idx++) {
-			if (hash[idx] > max) {
-				max = hash[idx];
+			if (hash[idx] > count) {
 				letter = idx;
+				count = hash[idx];
 			}
 		}
-		if (max > (length + 1) / 2) {
+		if (count > (length + 1) / 2) {
 			return "";
 		}
 		char[] result = new char[length];
