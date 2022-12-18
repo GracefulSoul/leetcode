@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaxChunksToMakeSortedII {
 
-	// https://leetcode.com/problems/max-chunks-to-make-sorted-ii/submissions/861368346/
+	// https://leetcode.com/problems/max-chunks-to-make-sorted-ii/submissions/861378708/
 	public static void main(String[] args) {
 		MaxChunksToMakeSortedII test = new MaxChunksToMakeSortedII();
 		System.out.println(test.maxChunksToSorted(new int[] { 5, 4, 3, 2, 1 }));
@@ -16,7 +16,7 @@ public class MaxChunksToMakeSortedII {
 		for (int idx = 1; idx < length; idx++) {
 			dp[idx] = Math.max(dp[idx - 1], arr[idx]);
 		}
-		int result = 0;
+		int result = 1;
 		int min = arr[length - 1];
 		for (int idx = length - 2; idx >= 0; idx--) {
 			if (dp[idx] <= min) {
@@ -24,7 +24,7 @@ public class MaxChunksToMakeSortedII {
 			}
 			min = Math.min(min, arr[idx]);
 		}
-		return result + 1;
+		return result;
 	}
 
 }
