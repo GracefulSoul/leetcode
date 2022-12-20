@@ -54,8 +54,8 @@ public class SlidingPuzzle {
 					return result;
 				}
 				int index = curr.indexOf('0');
-				for (int dir : DIRECTIONS[index]) {
-					String next = this.swap(curr, index, dir);
+				for (int direction : DIRECTIONS[index]) {
+					String next = this.swap(curr, index, direction);
 					if (visited.contains(next)) {
 						continue;
 					}
