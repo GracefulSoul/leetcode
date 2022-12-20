@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class BasicCalculatorIV {
 
-	// https://leetcode.com/problems/basic-calculator-iv/submissions/862485680/
+	// https://leetcode.com/problems/basic-calculator-iv/submissions/862486650/
 	public static void main(String[] args) {
 		BasicCalculatorIV test = new BasicCalculatorIV();
 		System.out.println(test.basicCalculatorIV("e + 8 - a + 5", new String[] { "e" }, new int[] { 1 }));
@@ -19,7 +19,7 @@ public class BasicCalculatorIV {
 
 	public List<String> basicCalculatorIV(String expression, String[] evalVars, int[] evalInts) {
 		Map<String, Integer> evalMap = new HashMap<>();
-		for (int i = 0; i < evalVars.length; ++i) {
+		for (int i = 0; i < evalVars.length; i++) {
 			evalMap.put(evalVars[i], evalInts[i]);
 		}
 		return this.parse(expression).evaluate(evalMap).toList();
@@ -57,7 +57,7 @@ public class BasicCalculatorIV {
 		while (i < expression.length()) {
 			if (expression.charAt(i) == '(') {
 				int bal = 0, j = i;
-				for (; j < expression.length(); ++j) {
+				for (; j < expression.length(); j++) {
 					if (expression.charAt(j) == '(')
 						bal++;
 					if (expression.charAt(j) == ')')
