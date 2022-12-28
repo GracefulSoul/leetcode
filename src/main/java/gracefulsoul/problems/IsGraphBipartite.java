@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class IsGraphBipartite {
 
-	// https://leetcode.com/problems/is-graph-bipartite/submissions/866767781/
+	// https://leetcode.com/problems/is-graph-bipartite/submissions/866788048/
 	public static void main(String[] args) {
 		IsGraphBipartite test = new IsGraphBipartite();
 		System.out.println(test.isBipartite(new int[][] {
@@ -21,22 +21,22 @@ public class IsGraphBipartite {
 	}
 
 	public boolean isBipartite(int[][] graph) {
-		int[] colors = new int[graph.length];
+		int[] sets = new int[graph.length];
 		for (int idx = 0; idx < graph.length; idx++) {
-			if (colors[idx] == 0 && !this.dfs(graph, colors, 1, idx)) {
+			if (sets[idx] == 0 && !this.dfs(graph, sets, 1, idx)) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private boolean dfs(int[][] graph, int[] colors, int color, int index) {
-		if (colors[index] != 0) {
-			return colors[index] == color;
+	private boolean dfs(int[][] graph, int[] sets, int set, int index) {
+		if (sets[index] != 0) {
+			return sets[index] == set;
 		}
-		colors[index] = color;
+		sets[index] = set;
 		for (int node : graph[index]) {
-			if (!this.dfs(graph, colors, -color, node)) {
+			if (!this.dfs(graph, sets, -set, node)) {
 				return false;
 			}
 		}
