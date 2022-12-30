@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CheapestFlightsWithinKStops {
 
-	// https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/867834812/
+	// https://leetcode.com/problems/cheapest-flights-within-k-stops/submissions/867880088/
 	public static void main(String[] args) {
 		CheapestFlightsWithinKStops test = new CheapestFlightsWithinKStops();
 		System.out.println(test.findCheapestPrice(4, new int[][] {
@@ -46,7 +46,7 @@ public class CheapestFlightsWithinKStops {
 			int dst = flight[1];
 			int cost = flight[2];
 			if (temp[src] < Integer.MAX_VALUE && dp[dst] > dp[src] + cost) {
-				dp[dst] = cost + temp[src];
+				dp[dst] = temp[src] + cost;
 				result = false;
 			}
 		}
