@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ValidTicTacToeState {
 
-	// https://leetcode.com/problems/valid-tic-tac-toe-state/submissions/871875667/
+	// https://leetcode.com/problems/valid-tic-tac-toe-state/submissions/871893426/
 	public static void main(String[] args) {
 		ValidTicTacToeState test = new ValidTicTacToeState();
 		System.out.println(test.validTicTacToe(new String[] { "O  ", "   ", "   " }));
@@ -11,19 +11,18 @@ public class ValidTicTacToeState {
 	}
 
 	public boolean validTicTacToe(String[] board) {
-		int x = 0;
-		int o = 0;
+		int count = 0;
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				if (board[i].charAt(j) == 'X') {
-					x++;
+					count++;
 				}
 				if (board[i].charAt(j) == 'O') {
-					o++;
+					count--;
 				}
 			}
 		}
-		if ((x != o && x != o + 1) || (this.isWin(board, 'X') && x == o) || (this.isWin(board, 'O') && x == o + 1)) {
+		if ((count != 0 && count != 1) || (this.isWin(board, 'X') && count == 0) || (this.isWin(board, 'O') && count == 1)) {
 			return false;
 		} else {
 			return true;
