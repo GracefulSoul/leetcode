@@ -8,25 +8,22 @@ public class ValidTicTacToeState {
 		System.out.println(test.validTicTacToe(new String[] { "O  ", "   ", "   " }));
 		System.out.println(test.validTicTacToe(new String[] { "XOX", " X ", "   " }));
 		System.out.println(test.validTicTacToe(new String[] { "XOX", "O O", "XOX" }));
+		System.out.println(test.validTicTacToe(new String[] { "XXX", "   ", "OOO" }));
 	}
 
 	public boolean validTicTacToe(String[] board) {
-		int count = 0;
+		int diff = 0;
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				if (board[i].charAt(j) == 'X') {
-					count++;
+					diff++;
 				}
 				if (board[i].charAt(j) == 'O') {
-					count--;
+					diff--;
 				}
 			}
 		}
-		if ((count != 0 && count != 1) || (this.isWin(board, 'X') && count == 0) || (this.isWin(board, 'O') && count == 1)) {
-			return false;
-		} else {
-			return true;
-		}
+		return !((diff != 0 && diff != 1) || (this.isWin(board, 'X') && diff == 0) || (this.isWin(board, 'O') && diff == 1));
 	}
 
 	private boolean isWin(String[] board, char c) {
