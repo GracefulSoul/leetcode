@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AllPathsFromSourceToTarget {
 
-	// https://leetcode.com/problems/all-paths-from-source-to-target/submissions/874699931/
+	// https://leetcode.com/problems/all-paths-from-source-to-target/submissions/874705005/
 	public static void main(String[] args) {
 		AllPathsFromSourceToTarget test = new AllPathsFromSourceToTarget();
 		System.out.println(test.allPathsSourceTarget(new int[][] {
@@ -34,8 +34,8 @@ public class AllPathsFromSourceToTarget {
 		if (start == end) {
 			result.add(new ArrayList<>(path));
 		} else {
-			for (int n : graph[start]) {
-				this.dfs(result, path, graph, n, end);
+			for (int node : graph[start]) {
+				this.dfs(result, path, graph, node, end);
 			}
 		}
 		path.remove(path.size() - 1);
