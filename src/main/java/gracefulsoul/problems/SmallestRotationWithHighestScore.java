@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SmallestRotationWithHighestScore {
 
-	// https://leetcode.com/problems/smallest-rotation-with-highest-score/submissions/875384586/
+	// https://leetcode.com/problems/smallest-rotation-with-highest-score/submissions/875413724/
 	public static void main(String[] args) {
 		SmallestRotationWithHighestScore test = new SmallestRotationWithHighestScore();
 		System.out.println(test.bestRotation(new int[] { 2, 3, 1, 4, 0 }));
@@ -11,7 +11,7 @@ public class SmallestRotationWithHighestScore {
 
 	public int bestRotation(int[] nums) {
 		int length = nums.length;
-		int change[] = new int[length];
+		int[] change = new int[length];
 		for (int idx = 0; idx < length; idx++) {
 			change[(idx - nums[idx] + 1 + length) % length]--;
 		}
