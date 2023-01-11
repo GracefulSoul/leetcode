@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class ChampagneTower {
 
+	// https://leetcode.com/problems/champagne-tower/submissions/876069144/
 	public static void main(String[] args) {
 		ChampagneTower test = new ChampagneTower();
 		System.out.println(test.champagneTower(1, 1, 1));
@@ -9,7 +10,6 @@ public class ChampagneTower {
 		System.out.println(test.champagneTower(100000009, 33, 17));
 	}
 
-	// https://leetcode.com/problems/champagne-tower/submissions/876069144/
 	public double champagneTower(int poured, int query_row, int query_glass) {
 		double[] dp = new double[101];
 		dp[0] = poured;
