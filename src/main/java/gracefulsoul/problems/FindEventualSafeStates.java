@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FindEventualSafeStates {
 
-	// https://leetcode.com/problems/find-eventual-safe-states/submissions/877361264/
+	// https://leetcode.com/problems/find-eventual-safe-states/submissions/877367519/
 	public static void main(String[] args) {
 		FindEventualSafeStates test = new FindEventualSafeStates();
 		System.out.println(test.eventualSafeNodes(new int[][] {
