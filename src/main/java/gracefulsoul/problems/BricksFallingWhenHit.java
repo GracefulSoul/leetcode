@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BricksFallingWhenHit {
 
-	// https://leetcode.com/problems/bricks-falling-when-hit/submissions/877707286/
+	// https://leetcode.com/problems/bricks-falling-when-hit/submissions/877710948/
 	public static void main(String[] args) {
 		BricksFallingWhenHit test = new BricksFallingWhenHit();
 		System.out.println(test.hitBricks(new int[][] {
@@ -32,15 +32,15 @@ public class BricksFallingWhenHit {
 		for (int[] hit : hits) {
 			grid[hit[0]][hit[1]]--;
 		}
-		for (int i = 0; i < grid[0].length; i++) {
-			this.dfs(grid, 0, i);
+		for (int idx = 0; idx < grid[0].length; idx++) {
+			this.dfs(grid, 0, idx);
 		}
-		for (int i = hits.length - 1; i >= 0; i--) {
-			int x = hits[i][0];
-			int y = hits[i][1];
+		for (int idx = hits.length - 1; idx >= 0; idx--) {
+			int x = hits[idx][0];
+			int y = hits[idx][1];
 			grid[x][y]++;
 			if (grid[x][y] == 1 && this.isConnected(x, y, grid)) {
-				result[i] = this.dfs(grid, x, y) - 1;
+				result[idx] = this.dfs(grid, x, y) - 1;
 			}
 		}
 		return result;
