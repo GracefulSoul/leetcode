@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FindEventualSafeStates {
 
-	// https://leetcode.com/problems/find-eventual-safe-states/submissions/877367519/
+	// https://leetcode.com/problems/find-eventual-safe-states/submissions/877369039/
 	public static void main(String[] args) {
 		FindEventualSafeStates test = new FindEventualSafeStates();
 		System.out.println(test.eventualSafeNodes(new int[][] {
@@ -29,26 +29,26 @@ public class FindEventualSafeStates {
 	public List<Integer> eventualSafeNodes(int[][] graph) {
 		List<Integer> result = new ArrayList<>();
 		int length = graph.length;
-		int[] color = new int[length];
+		int[] state = new int[length];
 		for (int idx = 0; idx < length; idx++) {
-			if (this.dfs(graph, idx, color)) {
+			if (this.dfs(graph, state, idx)) {
 				result.add(idx);
 			}
 		}
 		return result;
 	}
 
-	private boolean dfs(int[][] graph, int start, int[] color) {
-		if (color[start] != 0) {
-			return color[start] == 1;
+	private boolean dfs(int[][] graph, int[] state, int index) {
+		if (state[index] != 0) {
+			return state[index] == 1;
 		} else {
-			color[start] = 2;
-			for (int node : graph[start]) {
-				if (!this.dfs(graph, node, color)) {
+			state[index] = 2;
+			for (int node : graph[index]) {
+				if (!this.dfs(graph, state, node)) {
 					return false;
 				}
 			}
-			color[start] = 1;
+			state[index] = 1;
 			return true;
 		}
 	}
