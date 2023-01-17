@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SoupServings {
 
-	// https://leetcode.com/problems/soup-servings/submissions/879813797/
+	// https://leetcode.com/problems/soup-servings/submissions/879836198/
 	public static void main(String[] args) {
 		SoupServings test = new SoupServings();
 		System.out.println(test.soupServings(50));
@@ -11,7 +11,7 @@ public class SoupServings {
 
 	public double soupServings(int n) {
 		n = (n + 24) / 25;
-		return n > 500 ? 1.0 : this.dfs(new double[n + 1][n + 1], n, n);
+		return n > 192 ? 1.0 : this.dfs(new double[n + 1][n + 1], n, n);
 	}
 
 	private double dfs(double[][] dp, int a, int b) {
