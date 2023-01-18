@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ExpressiveWords {
 
-	// https://leetcode.com/problems/expressive-words/submissions/880487470/
+	// https://leetcode.com/problems/expressive-words/submissions/880490942/
 	public static void main(String[] args) {
 		ExpressiveWords test = new ExpressiveWords();
 		System.out.println(test.expressiveWords("heeellooo", new String[] { "hello", "hi", "helo" }));
@@ -26,8 +26,8 @@ public class ExpressiveWords {
 		for (int i = 0; i < sLength; i++) {
 			if (j < wordLength && sCharArray[i] == wordCharArray[j]) {
 				j++;
-			} else if (!(1 < i && sCharArray[i - 1] == sCharArray[i] && sCharArray[i - 2] == sCharArray[i - 1])
-					&& !(0 < i && i < sLength - 1 && sCharArray[i - 1] == sCharArray[i] && sCharArray[i] == sCharArray[i + 1])) {
+			} else if (!(0 < i && i < sLength - 1 && sCharArray[i - 1] == sCharArray[i] && sCharArray[i] == sCharArray[i + 1])
+					&& !(1 < i && sCharArray[i - 2] == sCharArray[i - 1] && sCharArray[i - 1] == sCharArray[i])) {
 				return false;
 			}
 		}
