@@ -7,6 +7,7 @@ public class ChalkboardXORGame {
 		ChalkboardXORGame test = new ChalkboardXORGame();
 		System.out.println(test.xorGame(new int[] { 1, 1, 2 }));
 		System.out.println(test.xorGame(new int[] { 0, 1 }));
+		System.out.println(test.xorGame(new int[] { 1, 2, 3 }));
 	}
 
 	public boolean xorGame(int[] nums) {
