@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class SubdomainVisitCount {
 
-	// https://leetcode.com/problems/subdomain-visit-count/submissions/882140704/
+	// https://leetcode.com/problems/subdomain-visit-count/submissions/882143428/
 	public static void main(String[] args) {
 		SubdomainVisitCount test = new SubdomainVisitCount();
 		System.out.println(test.subdomainVisits(new String[] { "9001 discuss.leetcode.com" }));
@@ -18,7 +18,7 @@ public class SubdomainVisitCount {
 		Map<String, Integer> map = new HashMap<>();
 		for (String cpdomain : cpdomains) {
 			String[] split = cpdomain.split(" ");
-			this.getDomains(map, split[1], Integer.valueOf(split[0]));
+			this.saveCpdomains(map, split[1], Integer.valueOf(split[0]));
 		}
 		List<String> result = new ArrayList<>();
 		for (Map.Entry<String, Integer> entry : map.entrySet()) {
@@ -27,11 +27,11 @@ public class SubdomainVisitCount {
 		return result;
 	}
 
-	private void getDomains(Map<String, Integer> map, String domain, int time) {
+	private void saveCpdomains(Map<String, Integer> map, String domain, int time) {
 		map.put(domain, map.getOrDefault(domain, 0) + time);
 		int index = domain.indexOf('.');
 		if (index != -1) {
-			this.getDomains(map, domain.substring(index + 1, domain.length()), time);
+			this.saveCpdomains(map, domain.substring(index + 1, domain.length()), time);
 		}
 	}
 
