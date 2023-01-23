@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LargestSumOfAverages {
 
-	// https://leetcode.com/problems/largest-sum-of-averages/submissions/883589773/
+	// https://leetcode.com/problems/largest-sum-of-averages/submissions/883591133/
 	public static void main(String[] args) {
 		LargestSumOfAverages test = new LargestSumOfAverages();
 		System.out.println(test.largestSumOfAverages(new int[] { 9, 1, 2, 3, 9 }, 3));
@@ -17,10 +17,10 @@ public class LargestSumOfAverages {
 			sum += nums[idx];
 			dp[idx][1] = sum / (length - idx);
 		}
-		return this.getCount(nums, length, dp, 0, k);
+		return this.getMaximumScore(nums, length, dp, 0, k);
 	}
 
-	private double getCount(int[] nums, int length, double[][] dp, int start, int k) {
+	private double getMaximumScore(int[] nums, int length, double[][] dp, int start, int k) {
 		if (dp[start][k] == 0) {
 			double sum = 0;
 			for (int idx = start; idx < length; idx++) {
@@ -28,7 +28,7 @@ public class LargestSumOfAverages {
 					break;
 				}
 				sum += nums[idx];
-				dp[start][k] = Math.max((sum / (idx + 1 - start)) + this.getCount(nums, length, dp, idx + 1, k - 1), dp[start][k]);
+				dp[start][k] = Math.max((sum / (idx + 1 - start)) + this.getMaximumScore(nums, length, dp, idx + 1, k - 1), dp[start][k]);
 			}
 		}
 		return dp[start][k];
