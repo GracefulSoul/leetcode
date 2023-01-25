@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AmbiguousCoordinates {
 
-	// https://leetcode.com/problems/ambiguous-coordinates/submissions/884956747/
+	// https://leetcode.com/problems/ambiguous-coordinates/submissions/884958579/
 	public static void main(String[] args) {
 		AmbiguousCoordinates test = new AmbiguousCoordinates();
 		System.out.println(test.ambiguousCoordinates("(123)"));
@@ -29,7 +29,7 @@ public class AmbiguousCoordinates {
 	}
 
 	private List<String> makeCoordinates(String s) {
-		List<String> result = new ArrayList<>();
+		List<String> list = new ArrayList<>();
 		for (int idx = 1; idx <= s.length(); idx++) {
 			String left = s.substring(0, idx);
 			String right = s.substring(idx);
@@ -37,12 +37,12 @@ public class AmbiguousCoordinates {
 				continue;
 			}
 			if (right.isEmpty()) {
-				result.add(left);
+				list.add(left);
 			} else {
-				result.add(left + "." + right);
+				list.add(left + "." + right);
 			}
 		}
-		return result;
+		return list;
 	}
 
 }
