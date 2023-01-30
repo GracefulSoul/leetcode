@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class CardFlippingGame {
 
-	// https://leetcode.com/problems/card-flipping-game/submissions/888035895/
+	// https://leetcode.com/problems/card-flipping-game/submissions/888055254/
 	public static void main(String[] args) {
 		CardFlippingGame test = new CardFlippingGame();
 		System.out.println(test.flipgame(new int[] { 1, 2, 4, 4, 7 }, new int[] { 1, 3, 4, 1, 3 }));
@@ -20,12 +20,12 @@ public class CardFlippingGame {
 			}
 		}
 		int result = 2001;
-		for (int i = 0; i < fronts.length; i++) {
-			if (!set.contains(backs[i])) {
-				result = Math.min(result, backs[i]);
+		for (int idx = 0; idx < fronts.length; idx++) {
+			if (!set.contains(backs[idx])) {
+				result = Math.min(result, backs[idx]);
 			}
-			if (!set.contains(fronts[i])) {
-				result = Math.min(result, fronts[i]);
+			if (!set.contains(fronts[idx])) {
+				result = Math.min(result, fronts[idx]);
 			}
 		}
 		return result % 2001;
