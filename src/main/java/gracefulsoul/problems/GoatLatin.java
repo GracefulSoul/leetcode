@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GoatLatin {
 
-	// https://leetcode.com/problems/goat-latin/submissions/888773271/
+	// https://leetcode.com/problems/goat-latin/submissions/888774200/
 	public static void main(String[] args) {
 		GoatLatin test = new GoatLatin();
 		System.out.println(test.toGoatLatin("I speak Goat Latin"));
@@ -26,7 +26,7 @@ public class GoatLatin {
 				temp.append(word.charAt(0));
 			}
 			temp.append("ma");
-			for (int idx = 0; idx <= i; idx++) {
+			for (int j = 0; j <= i; j++) {
 				temp.append('a');
 			}
 			sb.append(temp);
