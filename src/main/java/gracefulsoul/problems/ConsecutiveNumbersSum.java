@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ConsecutiveNumbersSum {
 
-	// https://leetcode.com/problems/consecutive-numbers-sum/submissions/891821928/
+	// https://leetcode.com/problems/consecutive-numbers-sum/submissions/891836138/
 	public static void main(String[] args) {
 		ConsecutiveNumbersSum test = new ConsecutiveNumbersSum();
 		System.out.println(test.consecutiveNumbersSum(5));
@@ -16,12 +16,12 @@ public class ConsecutiveNumbersSum {
 			n /= 2;
 		}
 		for (int idx = 3; idx * idx <= n; idx += 2) {
-			int count = 0;
+			int count = 1;
 			while (n % idx == 0) {
 				n /= idx;
 				count++;
 			}
-			result *= count + 1;
+			result *= count;
 		}
 		return n == 1 ? result : result * 2;
 	}
