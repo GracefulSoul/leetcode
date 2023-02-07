@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FlippingAnImage {
 
-	// https://leetcode.com/problems/flipping-an-image/submissions/893257905/
+	// https://leetcode.com/problems/flipping-an-image/submissions/893261283/
 	public static void main(String[] args) {
 		FlippingAnImage test = new FlippingAnImage();
 		System.out.println(test.flipAndInvertImage(new int[][] {
@@ -20,7 +20,7 @@ public class FlippingAnImage {
 
 	public int[][] flipAndInvertImage(int[][] image) {
 		for (int[] row : image) {
-			for (int left = 0, right = image[0].length - 1; left <= right;) {
+			for (int left = 0, right = row.length - 1; left <= right;) {
 				int temp = row[left];
 				row[left++] = 1 - row[right];
 				row[right--] = 1 - temp;
