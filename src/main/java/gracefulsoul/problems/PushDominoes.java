@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PushDominoes {
 
-	// https://leetcode.com/problems/push-dominoes/submissions/897088790/
+	// https://leetcode.com/problems/push-dominoes/submissions/897093663/
 	public static void main(String[] args) {
 		PushDominoes test = new PushDominoes();
 		System.out.println(test.pushDominoes("RR.L"));
@@ -12,13 +12,12 @@ public class PushDominoes {
 	public String pushDominoes(String dominoes) {
 		char[] charArray = dominoes.toCharArray();
 		int index = -1;
-		char c = '!';
+		char c = '.';
 		for (int idx = 0; idx < charArray.length; idx++) {
 			if (charArray[idx] == 'L') {
 				if (index == -1 || c == 'L') {
 					while (index < idx - 1) {
-						index++;
-						charArray[index] = 'L';
+						charArray[++index] = 'L';
 					}
 				} else if (c == 'R') {
 					int left = index + 1;
