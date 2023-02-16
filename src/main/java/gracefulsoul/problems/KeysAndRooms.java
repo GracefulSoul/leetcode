@@ -5,7 +5,7 @@ import java.util.List;
 
 public class KeysAndRooms {
 
-	// https://leetcode.com/problems/keys-and-rooms/submissions/899064136/
+	// https://leetcode.com/problems/keys-and-rooms/submissions/899070365/
 	public static void main(String[] args) {
 		KeysAndRooms test = new KeysAndRooms();
 		System.out.println(test.canVisitAllRooms(Arrays.asList(Arrays.asList(1), Arrays.asList(2), Arrays.asList(3), Arrays.asList())));
@@ -18,7 +18,7 @@ public class KeysAndRooms {
 		for (int i = 0; i < firstRoom.size(); i++) {
 			this.dfs(rooms, visited, firstRoom.get(i));
 		}
-		for (int i = 1; i < rooms.size(); i++) {
+		for (int i = 1; i < visited.length; i++) {
 			if (!visited[i]) {
 				return false;
 			}
