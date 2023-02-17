@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SplitArrayIntoFibonacciSequence {
 
-	// https://leetcode.com/problems/split-array-into-fibonacci-sequence/submissions/899692664/
+	// https://leetcode.com/problems/split-array-into-fibonacci-sequence/submissions/899697460/
 	public static void main(String[] args) {
 		SplitArrayIntoFibonacciSequence test = new SplitArrayIntoFibonacciSequence();
 		System.out.println(test.splitIntoFibonacci("1101111"));
@@ -27,7 +27,7 @@ public class SplitArrayIntoFibonacciSequence {
 		}
 		int n = 0;
 		for (int i = index; i < num.length(); i++) {
-			n = n * 10 + num.charAt(i) - '0';
+			n = (n * 10) + num.charAt(i) - '0';
 			if (n < 0) {
 				return false;
 			}
