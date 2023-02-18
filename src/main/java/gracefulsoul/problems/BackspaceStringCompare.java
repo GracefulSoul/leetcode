@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class BackspaceStringCompare {
 
-	// https://leetcode.com/problems/backspace-string-compare/submissions/900033207/
+	// https://leetcode.com/problems/backspace-string-compare/submissions/900037562/
 	public static void main(String[] args) {
 		BackspaceStringCompare test = new BackspaceStringCompare();
 		System.out.println(test.backspaceCompare("ab#c", "ab#c"));
@@ -13,9 +13,8 @@ public class BackspaceStringCompare {
 	public boolean backspaceCompare(String s, String t) {
 		int i = s.length() - 1;
 		int j = t.length() - 1;
-		int back = 0;
 		while (true) {
-			back = 0;
+			int back = 0;
 			while (i >= 0 && (back > 0 || s.charAt(i) == '#')) {
 				back += s.charAt(i--) == '#' ? 1 : -1;
 			}
