@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class HandOfStraights {
 
-	// https://leetcode.com/problems/hand-of-straights/submissions/901486744/
+	// https://leetcode.com/problems/hand-of-straights/submissions/901495118/
 	public static void main(String[] args) {
 		HandOfStraights test = new HandOfStraights();
 		System.out.println(test.isNStraightHand(new int[] { 1, 2, 3, 6, 2, 3, 4, 7, 8 }, 3));
@@ -23,7 +23,7 @@ public class HandOfStraights {
 			if (map.get(card) <= 0) {
 				continue;
 			}
-			for (int i = 1; i < groupSize; i++) {
+			for (int i = 0; i < groupSize; i++) {
 				int count = map.getOrDefault(card + i, 0);
 				if (count > 0) {
 					map.put(card + i, count - 1);
@@ -31,7 +31,6 @@ public class HandOfStraights {
 					return false;
 				}
 			}
-			map.put(card, map.get(card) - 1);
 		}
 		return true;
 	}
