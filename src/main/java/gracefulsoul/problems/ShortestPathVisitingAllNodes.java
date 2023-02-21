@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class ShortestPathVisitingAllNodes {
 
-	// https://leetcode.com/problems/shortest-path-visiting-all-nodes/submissions/902187436/
+	// https://leetcode.com/problems/shortest-path-visiting-all-nodes/submissions/902189912/
 	public static void main(String[] args) {
 		ShortestPathVisitingAllNodes test = new ShortestPathVisitingAllNodes();
 		System.out.println(test.shortestPathLength(new int[][] {
@@ -25,9 +25,10 @@ public class ShortestPathVisitingAllNodes {
 	}
 
 	public int shortestPathLength(int[][] graph) {
-		int[][] dp = new int[graph.length][1 << graph.length];
+		int length = graph.length;
+		int[][] dp = new int[length][1 << length];
 		Queue<int[]> queue = new LinkedList<>();
-		for (int i = 0; i < graph.length; i++) {
+		for (int i = 0; i < length; i++) {
 			Arrays.fill(dp[i], Integer.MAX_VALUE);
 			dp[i][1 << i] = 0;
 			queue.offer(new int[] { i, 1 << i });
@@ -43,8 +44,8 @@ public class ShortestPathVisitingAllNodes {
 			}
 		}
 		int result = Integer.MAX_VALUE;
-		for (int i = 0; i < graph.length; i++) {
-			result = Math.min(result, dp[i][(1 << graph.length) - 1]);
+		for (int i = 0; i < length; i++) {
+			result = Math.min(result, dp[i][(1 << length) - 1]);
 		}
 		return result;
 	}
