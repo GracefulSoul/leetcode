@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximizeDistanceToClosestPerson {
 
-	// https://leetcode.com/problems/maximize-distance-to-closest-person/submissions/902846684/
+	// https://leetcode.com/problems/maximize-distance-to-closest-person/submissions/902853390/
 	public static void main(String[] args) {
 		MaximizeDistanceToClosestPerson test = new MaximizeDistanceToClosestPerson();
 		System.out.println(test.maxDistToClosest(new int[] { 1, 0, 0, 0, 1, 0, 1 }));
@@ -24,7 +24,7 @@ public class MaximizeDistanceToClosestPerson {
 				left = right;
 			}
 		}
-		return Math.max(result, length - 1 - left);
+		return seats[length - 1] == 1 ? result : Math.max(result, length - 1 - left);
 	}
 
 }
