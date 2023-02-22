@@ -36,7 +36,7 @@ public class ShortestPathVisitingAllNodes {
 		while (!queue.isEmpty()) {
 			int[] state = queue.poll();
 			for (int next : graph[state[0]]) {
-				int val = state[1] | 1 << next;
+				int val = state[1] | (1 << next);
 				if (dp[next][val] > dp[state[0]][state[1]] + 1) {
 					dp[next][val] = dp[state[0]][state[1]] + 1;
 					queue.add(new int[] { next, val });
