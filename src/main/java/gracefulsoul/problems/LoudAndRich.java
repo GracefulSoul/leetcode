@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class LoudAndRich {
 
-	// https://leetcode.com/problems/loud-and-rich/submissions/903491335/
+	// https://leetcode.com/problems/loud-and-rich/submissions/903510331/
 	public static void main(String[] args) {
 		LoudAndRich test = new LoudAndRich();
 		PrintUtil.print(test.loudAndRich(new int[][] {
