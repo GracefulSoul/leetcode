@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KSimilarStrings {
 
-	// https://leetcode.com/problems/k-similar-strings/submissions/905827598/
+	// https://leetcode.com/problems/k-similar-strings/submissions/905828734/
 	public static void main(String[] args) {
 		KSimilarStrings test = new KSimilarStrings();
 		System.out.println(test.kSimilarity("ab", "ba"));
@@ -23,7 +23,7 @@ public class KSimilarStrings {
 		if (curr >= this.result) {
 			return;
 		}
-		if (start == s1CharArray.length - 1) {
+		if (start == this.length - 1) {
 			this.result = Math.min(this.result, curr);
 		}
 		for (int i = start; i < this.length; i++) {
