@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KSimilarStrings {
 
-	// https://leetcode.com/problems/k-similar-strings/submissions/905833130/
+	// https://leetcode.com/problems/k-similar-strings/submissions/905851931/
 	public static void main(String[] args) {
 		KSimilarStrings test = new KSimilarStrings();
 		System.out.println(test.kSimilarity("ab", "ba"));
@@ -22,21 +22,20 @@ public class KSimilarStrings {
 	private void dfs(char[] s1CharArray, char[] s2CharArray, int start, int curr) {
 		if (curr >= this.result) {
 			return;
-		} else if (start < this.length - 1) {
-			for (int i = start; i < this.length; i++) {
-				if (s1CharArray[i] != s2CharArray[i]) {
-					for (int j = i + 1; j < this.length; j++) {
-						if (s1CharArray[i] == s2CharArray[j] && s1CharArray[j] != s2CharArray[j]) {
-							this.swap(s2CharArray, i, j);
-							this.dfs(s1CharArray, s2CharArray, i + 1, curr + 1);
-							this.swap(s2CharArray, i, j);
-							if (s1CharArray[j] == s2CharArray[i]) {
-								break;
-							}
+		}
+		for (int i = start; i < this.length; i++) {
+			if (s1CharArray[i] != s2CharArray[i]) {
+				for (int j = i + 1; j < this.length; j++) {
+					if (s1CharArray[i] == s2CharArray[j] && s1CharArray[j] != s2CharArray[j]) {
+						this.swap(s2CharArray, i, j);
+						this.dfs(s1CharArray, s2CharArray, i + 1, curr + 1);
+						this.swap(s2CharArray, i, j);
+						if (s1CharArray[j] == s2CharArray[i]) {
+							break;
 						}
 					}
-					return;
 				}
+				return;
 			}
 		}
 		this.result = Math.min(curr, this.result);
