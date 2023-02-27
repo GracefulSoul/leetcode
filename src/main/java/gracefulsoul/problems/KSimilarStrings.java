@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KSimilarStrings {
 
-	// https://leetcode.com/problems/k-similar-strings/submissions/905825407/
+	// https://leetcode.com/problems/k-similar-strings/submissions/905827598/
 	public static void main(String[] args) {
 		KSimilarStrings test = new KSimilarStrings();
 		System.out.println(test.kSimilarity("ab", "ba"));
@@ -30,9 +30,9 @@ public class KSimilarStrings {
 			if (s1CharArray[i] != s2CharArray[i]) {
 				for (int j = i + 1; j < this.length; j++) {
 					if (s1CharArray[i] == s2CharArray[j] && s1CharArray[j] != s2CharArray[j]) {
-						swap(s2CharArray, i, j);
-						dfs(s1CharArray, s2CharArray, i + 1, curr + 1);
-						swap(s2CharArray, i, j);
+						this.swap(s2CharArray, i, j);
+						this.dfs(s1CharArray, s2CharArray, i + 1, curr + 1);
+						this.swap(s2CharArray, i, j);
 						if (s1CharArray[j] == s2CharArray[i]) {
 							break;
 						}
