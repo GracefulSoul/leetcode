@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ShortestSubarrayWithSumAtLeastK {
 
-	// https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/submissions/909453795/
+	// https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/submissions/909458477/
 	public static void main(String[] args) {
 		ShortestSubarrayWithSumAtLeastK test = new ShortestSubarrayWithSumAtLeastK();
 		System.out.println(test.shortestSubarray(new int[] { 1 }, 1));
@@ -29,9 +29,8 @@ public class ShortestSubarrayWithSumAtLeastK {
 				right--;
 			}
 			dp[++right] = i;
-
 		}
-		return result == nums.length + 1 ? -1 : result;
+		return result == length + 1 ? -1 : result;
 	}
 
 }
