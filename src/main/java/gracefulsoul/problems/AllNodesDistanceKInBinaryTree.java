@@ -7,7 +7,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class AllNodesDistanceKInBinaryTree {
 
-	// https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/submissions/910079501/
+	// https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/submissions/910084313/
 	public static void main(String[] args) {
 		AllNodesDistanceKInBinaryTree test = new AllNodesDistanceKInBinaryTree();
 		System.out.println(test.distanceK(new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))), new TreeNode(1, new TreeNode(0), new TreeNode(8))), new TreeNode(5), 2));
