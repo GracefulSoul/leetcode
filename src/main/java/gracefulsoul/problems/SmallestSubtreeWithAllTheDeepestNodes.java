@@ -1,15 +1,16 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.util.PrintUtil;
 
 public class SmallestSubtreeWithAllTheDeepestNodes {
 
 	// https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/submissions/910765273/
 	public static void main(String[] args) {
 		SmallestSubtreeWithAllTheDeepestNodes test = new SmallestSubtreeWithAllTheDeepestNodes();
-		System.out.println(test.subtreeWithAllDeepest(new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))), new TreeNode(1, new TreeNode(0), new TreeNode(8)))));
-		System.out.println(test.subtreeWithAllDeepest(new TreeNode(1)));
-		System.out.println(test.subtreeWithAllDeepest(new TreeNode(0, new TreeNode(1, null, new TreeNode(2)), new TreeNode(3))));
+		PrintUtil.print(test.subtreeWithAllDeepest(new TreeNode(3, new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4))), new TreeNode(1, new TreeNode(0), new TreeNode(8)))), true, false);
+		PrintUtil.print(test.subtreeWithAllDeepest(new TreeNode(1)), true, false);
+		PrintUtil.print(test.subtreeWithAllDeepest(new TreeNode(0, new TreeNode(1, null, new TreeNode(2)), new TreeNode(3))), true, false);
 	}
 
 	public TreeNode subtreeWithAllDeepest(TreeNode root) {
