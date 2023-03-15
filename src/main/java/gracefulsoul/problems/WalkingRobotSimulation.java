@@ -23,9 +23,9 @@ public class WalkingRobotSimulation {
 	};
 
 	public int robotSim(int[] commands, int[][] obstacles) {
-		Set<Integer> blocked = new HashSet<>();
+		Set<Integer> set = new HashSet<>();
 		for (int[] obstacle : obstacles) {
-			blocked.add(obstacle[0] + obstacle[1] * 40000);
+			set.add(obstacle[0] + obstacle[1] * 40000);
 		}
 		int[] coordinate = new int[] { 0, 0 };
 		int direction = 0;
@@ -37,7 +37,7 @@ public class WalkingRobotSimulation {
 				direction = (direction - 1 + 4) % 4;
 			} else {
 				while (command-- > 0) {
-					if (!blocked.contains((coordinate[0] + DIRECTIONS[direction][0]) + (coordinate[1] + DIRECTIONS[direction][1]) * 40000)) {
+					if (!set.contains((coordinate[0] + DIRECTIONS[direction][0]) + (coordinate[1] + DIRECTIONS[direction][1]) * 40000)) {
 						coordinate[0] += DIRECTIONS[direction][0];
 						coordinate[1] += DIRECTIONS[direction][1];
 						result = Math.max(result, coordinate[0] * coordinate[0] + coordinate[1] * coordinate[1]);
