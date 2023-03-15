@@ -9,9 +9,7 @@ public class WalkingRobotSimulation {
 	public static void main(String[] args) {
 		WalkingRobotSimulation test = new WalkingRobotSimulation();
 		System.out.println(test.robotSim(new int[] { 4, -1, 3 }, new int[][] {}));
-		System.out.println(test.robotSim(new int[] { 4, -1, 4, -2, 4 }, new int[][] {
-			{ 2, 4 }
-		}));
+		System.out.println(test.robotSim(new int[] { 4, -1, 4, -2, 4 }, new int[][] { { 2, 4 } }));
 		System.out.println(test.robotSim(new int[] { 6, -1, -1, 6 }, new int[][] {}));
 	}
 
