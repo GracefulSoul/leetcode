@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class KokoEatingBananas {
 
-	// https://leetcode.com/problems/koko-eating-bananas/submissions/916306455/
+	// https://leetcode.com/problems/koko-eating-bananas/submissions/916324232/
 	public static void main(String[] args) {
 		KokoEatingBananas test = new KokoEatingBananas();
 		System.out.println(test.minEatingSpeed(new int[] { 3, 6, 7, 11 }, 8));
@@ -15,11 +15,11 @@ public class KokoEatingBananas {
 		int right = 1000000000;
 		while (left < right) {
 			int mid = (left + right) / 2;
-			int total = 0;
+			int time = 0;
 			for (int pile : piles) {
-				total += (pile + mid - 1) / mid;
+				time += (pile + mid - 1) / mid;
 			}
-			if (total > h) {
+			if (time > h) {
 				left = mid + 1;
 			} else {
 				right = mid;
