@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NthMagicalNumber {
 
-	// https://leetcode.com/problems/nth-magical-number/submissions/918683201/
+	// https://leetcode.com/problems/nth-magical-number/submissions/918686372/
 	public static void main(String[] args) {
 		NthMagicalNumber test = new NthMagicalNumber();
 		System.out.println(test.nthMagicalNumber(1, 2, 3));
@@ -14,7 +14,7 @@ public class NthMagicalNumber {
 		long B = b;
 		long mod = 1000000007L;
 		long left = Math.min(a, b);
-		long right = (long) n * Math.min(a, b);
+		long right = (long) n * left;
 		while (B > 0) {
 			long temp = A;
 			A = B;
