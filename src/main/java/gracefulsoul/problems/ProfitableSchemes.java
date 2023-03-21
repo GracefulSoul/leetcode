@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ProfitableSchemes {
 
-	// https://leetcode.com/problems/profitable-schemes/submissions/919405144/
+	// https://leetcode.com/problems/profitable-schemes/submissions/919431040/
 	public static void main(String[] args) {
 		ProfitableSchemes test = new ProfitableSchemes();
 		System.out.println(test.profitableSchemes(5, 3, new int[] { 2, 2 }, new int[] { 2, 3 }));
