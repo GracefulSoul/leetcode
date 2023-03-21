@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ProfitableSchemes {
 
-	// https://leetcode.com/problems/profitable-schemes/submissions/919431040/
+	// https://leetcode.com/problems/profitable-schemes/submissions/919445645/
 	public static void main(String[] args) {
 		ProfitableSchemes test = new ProfitableSchemes();
 		System.out.println(test.profitableSchemes(5, 3, new int[] { 2, 2 }, new int[] { 2, 3 }));
@@ -16,8 +16,8 @@ public class ProfitableSchemes {
 		for (int k = 0; k < group.length; k++) {
 			int g = group[k];
 			int p = profit[k];
-			for (int i = minProfit; 0 <= i; i--) {
-				for (int j = n; g <= j; j--) {
+			for (int i = minProfit; i >= 0; i--) {
+				for (int j = n; j >= g; j--) {
 					dp[i][j] = (dp[i][j] + dp[Math.max(0, i - p)][j - g]) % mod;
 				}
 			}
