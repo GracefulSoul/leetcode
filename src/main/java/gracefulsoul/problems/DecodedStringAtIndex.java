@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DecodedStringAtIndex {
 
-	// https://leetcode.com/problems/decoded-string-at-index/submissions/920065696/
+	// https://leetcode.com/problems/decoded-string-at-index/submissions/920080269/
 	public static void main(String[] args) {
 		DecodedStringAtIndex test = new DecodedStringAtIndex();
 		System.out.println(test.decodeAtIndex("leet2code3", 10));
@@ -27,8 +27,9 @@ public class DecodedStringAtIndex {
 			} else {
 				if (k % n == 0) {
 					break;
+				} else {
+					n--;
 				}
-				n--;
 			}
 		}
 		return Character.toString(s.charAt(i));
