@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ProjectionAreaOf3DShapes {
 
-	// https://leetcode.com/problems/projection-area-of-3d-shapes/submissions/921256905/
+	// https://leetcode.com/problems/projection-area-of-3d-shapes/submissions/921266447/
 	public static void main(String[] args) {
 		ProjectionAreaOf3DShapes test = new ProjectionAreaOf3DShapes();
 		System.out.println(test.projectionArea(new int[][] {
@@ -22,15 +22,16 @@ public class ProjectionAreaOf3DShapes {
 		int result = 0;
 		int length = grid.length;
 		for (int i = 0; i < length; i++) {
-			int[] coordinate = new int[] { 0, 0 };
+			int x = 0;
+			int y = 0;
 			for (int j = 0; j < length; j++) {
-				coordinate[0] = Math.max(coordinate[0], grid[i][j]);
-				coordinate[1] = Math.max(coordinate[1], grid[j][i]);
+				x = Math.max(x, grid[i][j]);
+				y = Math.max(y, grid[j][i]);
 				if (grid[i][j] > 0) {
 					result++;
 				}
 			}
-			result += coordinate[0] + coordinate[1];
+			result += x + y;
 		}
 		return result;
 	}
