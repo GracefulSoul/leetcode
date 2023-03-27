@@ -152,14 +152,16 @@ public class PrintUtil {
 
 	public static void print(int[][] matrix) {
 		for (int[] row : matrix) {
-			print(row);
+			System.out.print(Arrays.toString(row));
 		}
+		System.out.println();
 	}
 
 	public static void print(char[][] matrix) {
 		for (char[] row : matrix) {
-			print(row);
+			System.out.print(Arrays.toString(row));
 		}
+		System.out.println();
 	}
 
 	public static void print(NestedInteger nestedInteger) {
