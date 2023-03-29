@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class FairCandySwap {
 
-	// https://leetcode.com/problems/fair-candy-swap/submissions/924189065/
+	// https://leetcode.com/problems/fair-candy-swap/submissions/924189673/
 	public static void main(String[] args) {
 		FairCandySwap test = new FairCandySwap();
 		PrintUtil.print(test.fairCandySwap(new int[] { 1, 1 }, new int[] { 2, 2 }));
@@ -27,7 +27,7 @@ public class FairCandySwap {
 		}
 		diff /= 2;
 		for (int bobSize : bobSizes) {
-			if (set.remove(bobSize + diff)) {
+			if (set.contains(bobSize + diff)) {
 				return new int[] { bobSize + diff, bobSize };
 			}
 		}
