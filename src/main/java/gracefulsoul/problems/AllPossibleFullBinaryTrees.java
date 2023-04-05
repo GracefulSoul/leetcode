@@ -10,7 +10,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class AllPossibleFullBinaryTrees {
 
-	// https://leetcode.com/problems/all-possible-full-binary-trees/submissions/928387476/
+	// https://leetcode.com/problems/all-possible-full-binary-trees/submissions/928391175/
 	public static void main(String[] args) {
 		AllPossibleFullBinaryTrees test = new AllPossibleFullBinaryTrees();
 		PrintUtil.print(test.allPossibleFBT(7));
@@ -18,9 +18,7 @@ public class AllPossibleFullBinaryTrees {
 	}
 
 	public List<TreeNode> allPossibleFBT(int n) {
-		Map<Integer, List<TreeNode>> map = new HashMap<>();
-		this.dfs(n, map);
-		return map.get(n);
+		return this.dfs(n, new HashMap<>());
 	}
 
 	private List<TreeNode> dfs(int n, Map<Integer, List<TreeNode>> map) {
