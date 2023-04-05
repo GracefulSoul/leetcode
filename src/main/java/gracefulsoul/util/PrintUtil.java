@@ -38,10 +38,19 @@ public class PrintUtil {
 	}
 
 	public static void print(List<TreeNode> treeNodeList) {
+		System.out.print("[");
 		for (TreeNode treeNode : treeNodeList) {
-			print(treeNode, true, false);
-			System.out.println();
+			if (treeNode != null) {
+				System.out.print("(");
+				print(treeNode.left, false, true);
+				System.out.print("(" + treeNode.val + "), ");
+				print(treeNode.right, false, false);
+				System.out.print(")");
+			} else {
+				System.out.print("(null)");
+			}
 		}
+		System.out.println("]");
 	}
 
 	public static void print(TreeNode treeNode, boolean isRoot, boolean isLeft) {
@@ -65,6 +74,7 @@ public class PrintUtil {
 			System.out.println();
 		}
 	}
+
 
 	public static void print(gracefulsoul.object.node.quad.Node node) {
 		if (node != null) {
