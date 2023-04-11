@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class BitwiseORsOfSubarrays {
 
-	// https://leetcode.com/problems/bitwise-ors-of-subarrays/submissions/931831128/
+	// https://leetcode.com/problems/bitwise-ors-of-subarrays/submissions/931841131/
 	public static void main(String[] args) {
 		BitwiseORsOfSubarrays test = new BitwiseORsOfSubarrays();
 		System.out.println(test.subarrayBitwiseORs(new int[] { 0 }));
@@ -22,7 +22,7 @@ public class BitwiseORsOfSubarrays {
 				if (curr == arr[j]) {
 					break;
 				}
-				arr[j] |= arr[i];
+				arr[j] = curr;
 				result.add(arr[j]);
 			}
 		}
