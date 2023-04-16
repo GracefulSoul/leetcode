@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumbersAtMostNGivenDigitSet {
 
-	// https://leetcode.com/problems/numbers-at-most-n-given-digit-set/submissions/934526062/
+	// https://leetcode.com/problems/numbers-at-most-n-given-digit-set/submissions/934539451/
 	public static void main(String[] args) {
 		NumbersAtMostNGivenDigitSet test = new NumbersAtMostNGivenDigitSet();
 		System.out.println(test.atMostNGivenDigitSet(new String[] { "1", "3", "5", "7" }, 100));
@@ -16,11 +16,11 @@ public class NumbersAtMostNGivenDigitSet {
 		int[] dp = new int[length + 1];
 		dp[length] = 1;
 		for (int i = length - 1; i >= 0; i--) {
-			int c = str.charAt(i) - '0';
+			int num = str.charAt(i) - '0';
 			for (String digit : digits) {
-				if (Integer.parseInt(digit) < c) {
+				if (Integer.parseInt(digit) < num) {
 					dp[i] += Math.pow(digits.length, length - i - 1);
-				} else if (Integer.parseInt(digit) == c) {
+				} else if (Integer.parseInt(digit) == num) {
 					dp[i] += dp[i + 1];
 				}
 			}
