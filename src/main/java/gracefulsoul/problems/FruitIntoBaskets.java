@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FruitIntoBaskets {
 
-	// https://leetcode.com/problems/fruit-into-baskets/submissions/936292143/
+	// https://leetcode.com/problems/fruit-into-baskets/submissions/936300737/
 	public static void main(String[] args) {
 		FruitIntoBaskets test = new FruitIntoBaskets();
 		System.out.println(test.totalFruit(new int[] { 1, 2, 1 }));
@@ -13,8 +13,8 @@ public class FruitIntoBaskets {
 	public int totalFruit(int[] fruits) {
 		int length = fruits.length;
 		int start = 0;
-		int max = 0;
 		int mid = 0;
+		int max = 0;
 		int[] baskets = new int[] { -1, -1 };
 		for (int end = 0; end < length; end++) {
 			int curr = fruits[end];
