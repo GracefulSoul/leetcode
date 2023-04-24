@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SumOfSubarrayMinimums {
 
-	// https://leetcode.com/problems/sum-of-subarray-minimums/submissions/938895796/
+	// https://leetcode.com/problems/sum-of-subarray-minimums/submissions/938899467/
 	public static void main(String[] args) {
 		SumOfSubarrayMinimums test = new SumOfSubarrayMinimums();
 		System.out.println(test.sumSubarrayMins(new int[] { 3, 1, 2, 4 }));
@@ -10,7 +10,6 @@ public class SumOfSubarrayMinimums {
 	}
 
 	public int sumSubarrayMins(int[] arr) {
-		double mod = 1000000007d;
 		int length = arr.length;
 		int index = 0;
 		int[] dp = new int[length];
@@ -24,7 +23,7 @@ public class SumOfSubarrayMinimums {
 			result += dp[i];
 			stack[++index] = i;
 		}
-		return (int) (result % mod);
+		return (int) (result % 1000000007);
 	}
 
 }
