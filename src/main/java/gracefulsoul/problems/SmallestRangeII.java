@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SmallestRangeII {
 
-	// https://leetcode.com/problems/smallest-range-ii/submissions/940546863/
+	// https://leetcode.com/problems/smallest-range-ii/submissions/940559463/
 	public static void main(String[] args) {
 		SmallestRangeII test = new SmallestRangeII();
 		System.out.println(test.smallestRangeII(new int[] { 1 }, 0));
@@ -16,8 +16,8 @@ public class SmallestRangeII {
 	public int smallestRangeII(int[] nums, int k) {
 		Arrays.sort(nums);
 		int length = nums.length;
-		int min = nums[0];
 		int max = nums[length - 1];
+		int min = nums[0];
 		int result = max - min;
 		for (int i = 0; i < length - 1; i++) {
 			max = Math.max(max, nums[i] + (k * 2));
