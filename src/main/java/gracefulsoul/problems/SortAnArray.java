@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class SortAnArray {
 
-	// https://leetcode.com/problems/sort-an-array/submissions/943153540/
+	// https://leetcode.com/problems/sort-an-array/submissions/943161133/
 	public static void main(String[] args) {
 		SortAnArray test = new SortAnArray();
 		PrintUtil.print(test.sortArray(new int[] { 5, 2, 3, 1 }));
@@ -28,7 +28,7 @@ public class SortAnArray {
 		int j = mid + 1;
 		int k = 0;
 		while (i <= mid || j <= right) {
-			if (i > mid || j <= right && nums[i] > nums[j]) {
+			if (i > mid || (j <= right && nums[i] > nums[j])) {
 				temp[k++] = nums[j++];
 			} else {
 				temp[k++] = nums[i++];
