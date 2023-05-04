@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PartitionArrayIntoDisjointIntervals {
 
-	// https://leetcode.com/problems/partition-array-into-disjoint-intervals/submissions/944307549/
+	// https://leetcode.com/problems/partition-array-into-disjoint-intervals/submissions/944324105/
 	public static void main(String[] args) {
 		PartitionArrayIntoDisjointIntervals test = new PartitionArrayIntoDisjointIntervals();
 		System.out.println(test.partitionDisjoint(new int[] { 5, 0, 3, 8, 6 }));
@@ -14,11 +14,11 @@ public class PartitionArrayIntoDisjointIntervals {
 		int prev = nums[0];
 		int max = prev;
 		for (int i = 1; i < nums.length; i++) {
-			if (prev > nums[i]) {
-				prev = max;
+			if (max > nums[i]) {
+				max = prev;
 				index = i;
 			} else {
-				max = Math.max(max, nums[i]);
+				prev = Math.max(prev, nums[i]);
 			}
 		}
 		return index + 1;
