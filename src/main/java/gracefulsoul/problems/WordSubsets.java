@@ -5,7 +5,7 @@ import java.util.List;
 
 public class WordSubsets {
 
-	// https://leetcode.com/problems/word-subsets/submissions/944650789/
+	// https://leetcode.com/problems/word-subsets/submissions/944655326/
 	public static void main(String[] args) {
 		WordSubsets test = new WordSubsets();
 		System.out.println(test.wordSubsets(new String[] { "amazon", "apple", "facebook", "google", "leetcode" }, new String[] { "e", "o" }));
@@ -30,14 +30,14 @@ public class WordSubsets {
 			for (char c : word.toCharArray()) {
 				temp[c - 'a']++;
 			}
-			if (this.issubset(charArray, temp)) {
+			if (this.isSubset(charArray, temp)) {
 				result.add(word);
 			}
 		}
 		return result;
 	}
 
-	private boolean issubset(int[] charArray, int[] temp) {
+	private boolean isSubset(int[] charArray, int[] temp) {
 		for (int i = 0; i < 26; i++) {
 			if (charArray[i] > temp[i]) {
 				return false;
