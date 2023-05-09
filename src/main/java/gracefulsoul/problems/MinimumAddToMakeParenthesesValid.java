@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumAddToMakeParenthesesValid {
 
-	// https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/submissions/947189306/
+	// https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/submissions/947191488/
 	public static void main(String[] args) {
 		MinimumAddToMakeParenthesesValid test = new MinimumAddToMakeParenthesesValid();
 		System.out.println(test.minAddToMakeValid("())"));
