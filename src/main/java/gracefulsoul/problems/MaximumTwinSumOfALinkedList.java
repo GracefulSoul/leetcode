@@ -4,7 +4,7 @@ import gracefulsoul.object.node.ListNode;
 
 public class MaximumTwinSumOfALinkedList {
 
-	// https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/submissions/952024973/
+	// https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/submissions/952029289/
 	public static void main(String[] args) {
 		MaximumTwinSumOfALinkedList test = new MaximumTwinSumOfALinkedList();
 		System.out.println(test.pairSum(new ListNode(4, new ListNode(2, new ListNode(2, new ListNode(3))))));
@@ -12,10 +12,10 @@ public class MaximumTwinSumOfALinkedList {
 	}
 
 	public int pairSum(ListNode head) {
-		ListNode slow = head;
 		ListNode fast = head;
-		ListNode prev = null;
+		ListNode slow = head;
 		ListNode curr = head;
+		ListNode prev = null;
 		while (fast != null) {
 			fast = fast.next.next;
 			curr = slow;
