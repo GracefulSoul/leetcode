@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongPressedName {
 
-	// https://leetcode.com/problems/long-pressed-name/submissions/954291370/
+	// https://leetcode.com/problems/long-pressed-name/submissions/954292072/
 	public static void main(String[] args) {
 		LongPressedName test = new LongPressedName();
 		System.out.println(test.isLongPressedName("alex", "aaleex"));
@@ -15,7 +15,7 @@ public class LongPressedName {
 		while (j < typed.length()) {
 			if (i < name.length() && name.charAt(i) == typed.charAt(j)) {
 				i++;
-			} else if (j == 0 || typed.charAt(j) != typed.charAt(j - 1)) {
+			} else if (j == 0 || typed.charAt(j - 1) != typed.charAt(j)) {
 				return false;
 			}
 			j++;
