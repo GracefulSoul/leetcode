@@ -11,7 +11,6 @@ public class MaximumSubsequenceScore {
 		MaximumSubsequenceScore test = new MaximumSubsequenceScore();
 		System.out.println(test.maxScore(new int[] { 1, 3, 3, 2 }, new int[] { 2, 1, 3, 4 }, 3));
 		System.out.println(test.maxScore(new int[] { 4, 2, 3, 1, 1 }, new int[] { 7, 5, 10, 9, 6 }, 1));
-
 	}
 
 	public long maxScore(int[] nums1, int[] nums2, int k) {
