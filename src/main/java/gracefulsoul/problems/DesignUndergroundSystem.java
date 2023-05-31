@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class DesignUndergroundSystem {
 
-	// https://leetcode.com/problems/design-underground-system/submissions/960876346/
+	// https://leetcode.com/problems/design-underground-system/submissions/960878486/
 	public static void main(String[] args) {
 		UndergroundSystem undergroundSystem = new UndergroundSystem();
 		undergroundSystem.checkIn(45, "Leyton", 3);
@@ -39,11 +39,11 @@ public class DesignUndergroundSystem {
 class UndergroundSystem {
 
 	private Map<Integer, Map.Entry<String, Integer>> travel;
-	private Map<Map.Entry<String, String>, Map.Entry<Double, Integer>> trip;
+	private Map<Map.Entry<String, String>, Map.Entry<Double, Integer>> averageTime;
 
 	public UndergroundSystem() {
 		this.travel = new HashMap<>();
-		this.trip = new HashMap<>();
+		this.averageTime = new HashMap<>();
 	}
 
 	public void checkIn(int id, String stationName, int t) {
@@ -57,16 +57,16 @@ class UndergroundSystem {
 		Map.Entry<String, Integer> prev = this.travel.remove(id);
 		Map.Entry<String, String> station = new AbstractMap.SimpleEntry<>(prev.getKey(), stationName);
 		double time = t - prev.getValue();
-		if (this.trip.containsKey(station)) {
-			Map.Entry<Double, Integer> curr = this.trip.get(station);
-			this.trip.put(station, new AbstractMap.SimpleEntry<>(curr.getKey() + time, curr.getValue() + 1));
+		if (this.averageTime.containsKey(station)) {
+			Map.Entry<Double, Integer> curr = this.averageTime.get(station);
+			this.averageTime.put(station, new AbstractMap.SimpleEntry<>(curr.getKey() + time, curr.getValue() + 1));
 		} else {
-			this.trip.put(station, new AbstractMap.SimpleEntry<>(time, 1));
+			this.averageTime.put(station, new AbstractMap.SimpleEntry<>(time, 1));
 		}
 	}
 
 	public double getAverageTime(String startStation, String endStation) {
-		Map.Entry<Double, Integer> curr = this.trip.get(new AbstractMap.SimpleEntry<>(startStation, endStation));
+		Map.Entry<Double, Integer> curr = this.averageTime.get(new AbstractMap.SimpleEntry<>(startStation, endStation));
 		return curr.getKey() / curr.getValue();
 	}
 
