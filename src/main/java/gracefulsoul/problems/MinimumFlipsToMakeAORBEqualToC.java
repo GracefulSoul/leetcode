@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumFlipsToMakeAORBEqualToC {
 
-	// https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/submissions/965823655/
+	// https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/submissions/965838904/
 	public static void main(String[] args) {
 		MinimumFlipsToMakeAORBEqualToC test = new MinimumFlipsToMakeAORBEqualToC();
 		System.out.println(test.minFlips(2, 6, 5));
@@ -16,7 +16,7 @@ public class MinimumFlipsToMakeAORBEqualToC {
 			if ((c & 1) == 0) {
 				result += (a & 1) + (b & 1);
 			} else if ((a & 1) == 0 && (b & 1) == 0) {
-				result += 1;
+				result++;
 			}
 			a >>= 1;
 			b >>= 1;
