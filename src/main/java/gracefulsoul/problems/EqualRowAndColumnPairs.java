@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class EqualRowAndColumnPairs {
 
-	// https://leetcode.com/problems/equal-row-and-column-pairs/submissions/970207430/
+	// https://leetcode.com/problems/equal-row-and-column-pairs/submissions/970263675/
 	public static void main(String[] args) {
 		EqualRowAndColumnPairs test = new EqualRowAndColumnPairs();
 		System.out.println(test.equalPairs(new int[][] {
@@ -22,11 +22,13 @@ public class EqualRowAndColumnPairs {
 		int result = 0;
 		int length = grid.length;
 		for (int i = 0; i < length; i++) {
-			for (int j = 0, k = 0; j < length; j++) {
-				for (k = 0; k < length; k++) {
+			for (int j = 0; j < length; j++) {
+				int k = 0;
+				while (k < length) {
 					if (grid[i][k] != grid[k][j]) {
 						break;
 					}
+					k++;
 				}
 				result += k == length ? 1 : 0;
 			}
