@@ -11,8 +11,8 @@ public class MakeArrayStrictlyIncreasing {
 	public static void main(String[] args) {
 		MakeArrayStrictlyIncreasing test = new MakeArrayStrictlyIncreasing();
 		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 1, 3, 2, 4 }));
-//		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 4, 3, 1 }));
-//		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 1, 6, 3, 3 }));
+		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 4, 3, 1 }));
+		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 1, 6, 3, 3 }));
 	}
 
 	public int makeArrayIncreasing(int[] arr1, int[] arr2) {
