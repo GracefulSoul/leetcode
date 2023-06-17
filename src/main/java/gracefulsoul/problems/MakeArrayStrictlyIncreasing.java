@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class MakeArrayStrictlyIncreasing {
 
-	// https://leetcode.com/problems/make-array-strictly-increasing/submissions/973114588/
+	// https://leetcode.com/problems/make-array-strictly-increasing/submissions/973120625/
 	public static void main(String[] args) {
 		MakeArrayStrictlyIncreasing test = new MakeArrayStrictlyIncreasing();
 		System.out.println(test.makeArrayIncreasing(new int[] { 1, 5, 3, 6, 7 }, new int[] { 1, 3, 2, 4 }));
@@ -22,16 +22,15 @@ public class MakeArrayStrictlyIncreasing {
 		for (int num : arr1) {
 			Map<Integer, Integer> temp = new HashMap<>();
 			for (Map.Entry<Integer, Integer> entry : dp.entrySet()) {
-				int value = entry.getValue();
 				if (num > entry.getKey()) {
-					temp.put(num, Math.min(temp.getOrDefault(num, Integer.MAX_VALUE), value));
+					temp.put(num, Math.min(temp.getOrDefault(num, Integer.MAX_VALUE), entry.getValue()));
 				}
 				int index = Arrays.binarySearch(arr2, entry.getKey() + 1);
 				if (index < 0) {
 					index = -index - 1;
 				}
 				if (index < arr2.length) {
-					temp.put(arr2[index], Math.min(value + 1, temp.getOrDefault(arr2[index], Integer.MAX_VALUE)));
+					temp.put(arr2[index], Math.min(entry.getValue() + 1, temp.getOrDefault(arr2[index], Integer.MAX_VALUE)));
 				}
 			}
 			dp = temp;
