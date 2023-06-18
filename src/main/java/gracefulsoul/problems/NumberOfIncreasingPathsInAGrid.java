@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfIncreasingPathsInAGrid {
 
-	// https://leetcode.com/problems/number-of-increasing-paths-in-a-grid/submissions/973647830/
+	// https://leetcode.com/problems/number-of-increasing-paths-in-a-grid/submissions/973648436/
 	public static void main(String[] args) {
 		NumberOfIncreasingPathsInAGrid test = new NumberOfIncreasingPathsInAGrid();
 		System.out.println(test.countPaths(new int[][] {
@@ -43,7 +43,7 @@ public class NumberOfIncreasingPathsInAGrid {
 			return dp[i][j];
 		} else {
 			int count = 1;
-			for (int[] direction : directions) {
+			for (int[] direction : this.directions) {
 				count = (count + this.getCount(grid, dp, i + direction[0], j + direction[1], M, N, grid[i][j])) % this.mod;
 			}
 			dp[i][j] = count;
