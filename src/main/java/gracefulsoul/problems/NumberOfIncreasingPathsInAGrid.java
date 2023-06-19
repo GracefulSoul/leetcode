@@ -37,7 +37,7 @@ public class NumberOfIncreasingPathsInAGrid {
 	}
 
 	private int getCount(int[][] grid, int[][] dp, int row, int col, int i, int j, int prev) {
-		if (i < 0 || j < 0 || i == row || j == col || grid[i][j] <= prev) {
+		if (i < 0 || i >= row || j < 0 || j >= col || grid[i][j] <= prev) {
 			return 0;
 		} else if (dp[i][j] != 0) {
 			return dp[i][j];
