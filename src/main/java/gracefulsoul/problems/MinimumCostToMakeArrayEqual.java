@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumCostToMakeArrayEqual {
 
-	// https://leetcode.com/problems/minimum-cost-to-make-array-equal/submissions/976234778/
+	// https://leetcode.com/problems/minimum-cost-to-make-array-equal/submissions/976243888/
 	public static void main(String[] args) {
 		MinimumCostToMakeArrayEqual test = new MinimumCostToMakeArrayEqual();
 		System.out.println(test.minCost(new int[] { 1, 3, 5, 2 }, new int[] { 2, 3, 1, 14 }));
@@ -16,9 +16,9 @@ public class MinimumCostToMakeArrayEqual {
 			left = Math.min(num, left);
 			right = Math.max(num, right);
 		}
-		long result = this.getCost(nums, cost, 1);
+		long result = 0;
 		while (left < right) {
-			long mid = (left + right) / 2;
+			long mid = left + ((right - left) / 2);
 			long cost1 = this.getCost(nums, cost, mid);
 			long cost2 = this.getCost(nums, cost, mid + 1);
 			result = Math.min(cost1, cost2);
