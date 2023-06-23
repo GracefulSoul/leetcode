@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestArithmeticSubsequence {
 
-	// https://leetcode.com/problems/longest-arithmetic-subsequence/submissions/977751947/
+	// https://leetcode.com/problems/longest-arithmetic-subsequence/submissions/977758689/
 	public static void main(String[] args) {
 		LongestArithmeticSubsequence test = new LongestArithmeticSubsequence();
 		System.out.println(test.longestArithSeqLength(new int[] { 3, 6, 9, 12 }));
@@ -12,7 +12,6 @@ public class LongestArithmeticSubsequence {
 
 	public int longestArithSeqLength(int[] nums) {
 		int result = 0;
-		int limit = 500;
 		int max = Integer.MIN_VALUE;
 		int min = Integer.MAX_VALUE;
 		for (int num : nums) {
@@ -23,10 +22,10 @@ public class LongestArithmeticSubsequence {
 			if (i * result > max - min) {
 				break;
 			}
-			int[] first = new int[limit + 1];
-			int[] second = new int[limit + 1];
+			int[] first = new int[501];
+			int[] second = new int[501];
 			for (int num : nums) {
-				first[num] = (num + i <= limit) ? (first[num + i] + 1) : 1;
+				first[num] = (num + i <= 500) ? (first[num + i] + 1) : 1;
 				second[num] = (num - i >= 0) ? (second[num - i] + 1) : 1;
 				result = Math.max(result, Math.max(first[num], second[num]));
 			}
