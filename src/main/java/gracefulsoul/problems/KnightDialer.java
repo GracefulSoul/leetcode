@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class KnightDialer {
 
-	// https://leetcode.com/problems/knight-dialer/submissions/976989957/
+	// https://leetcode.com/problems/knight-dialer/submissions/977023267/
 	public static void main(String[] args) {
 		KnightDialer test = new KnightDialer();
 		System.out.println(test.knightDialer(1));
@@ -13,10 +13,10 @@ public class KnightDialer {
 	}
 
 	public int knightDialer(int n) {
-		int mod = 1000000007;
 		if (n == 1) {
 			return 10;
 		}
+		int mod = 1000000007;
 		int[][] graph = {
 			{ 4, 6 },
 			{ 6, 8 },
