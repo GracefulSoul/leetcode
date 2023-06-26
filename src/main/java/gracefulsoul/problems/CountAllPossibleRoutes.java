@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class CountAllPossibleRoutes {
 
+	// https://leetcode.com/problems/count-all-possible-routes/submissions/979261966/
 	public static void main(String[] args) {
 		CountAllPossibleRoutes test = new CountAllPossibleRoutes();
 		System.out.println(test.countRoutes(new int[] { 2, 3, 6, 8, 4 }, 1, 3, 5));
