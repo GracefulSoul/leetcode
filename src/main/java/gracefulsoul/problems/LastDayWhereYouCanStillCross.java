@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LastDayWhereYouCanStillCross {
 
-	// https://leetcode.com/problems/last-day-where-you-can-still-cross/submissions/982999083/
+	// https://leetcode.com/problems/last-day-where-you-can-still-cross/submissions/983002276/
 	public static void main(String[] args) {
 		LastDayWhereYouCanStillCross test = new LastDayWhereYouCanStillCross();
 		System.out.println(test.latestDayToCross(2, 2, new int[][] {
@@ -52,16 +52,16 @@ public class LastDayWhereYouCanStillCross {
 		return left;
 	}
 
-	private boolean dfs(int i, int j, int[][] grid, int visited) {
-		if (i < 0 || j < 0 || i == grid.length || j == grid[0].length || grid[i][j] == visited) {
+	private boolean dfs(int i, int j, int[][] grid, int index) {
+		if (i < 0 || j < 0 || i == grid.length || j == grid[0].length || grid[i][j] == index) {
 			return false;
 		} else {
-			grid[i][j] = visited;
+			grid[i][j] = index;
 			return i == grid.length - 1
-					|| this.dfs(i + 1, j, grid, visited)
-					|| this.dfs(i - 1, j, grid, visited)
-					|| this.dfs(i, j + 1, grid, visited)
-					|| this.dfs(i, j - 1, grid, visited);
+					|| this.dfs(i + 1, j, grid, index)
+					|| this.dfs(i - 1, j, grid, index)
+					|| this.dfs(i, j + 1, grid, index)
+					|| this.dfs(i, j - 1, grid, index);
 		}
 	}
 
