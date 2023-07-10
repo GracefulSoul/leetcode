@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FindTheShortestSuperstring {
 
-	// https://leetcode.com/problems/find-the-shortest-superstring/submissions/990854663/
+	// https://leetcode.com/problems/find-the-shortest-superstring/submissions/990872322/
 	public static void main(String[] args) {
 		FindTheShortestSuperstring test = new FindTheShortestSuperstring();
 		System.out.println(test.shortestSuperstring(new String[] { "alex", "loves", "leetcode" }));
