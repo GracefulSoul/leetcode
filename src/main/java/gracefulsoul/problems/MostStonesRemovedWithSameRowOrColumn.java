@@ -43,10 +43,8 @@ public class MostStonesRemovedWithSameRowOrColumn {
 	private void dfs(Set<int[]> visited, int[][] stones, int[] prev) {
 		visited.add(prev);
 		for (int[] stone : stones) {
-			if (!visited.contains(stone)) {
-				if (prev[0] == stone[0] || prev[1] == stone[1]) {
-					this.dfs(visited, stones, stone);
-				}
+			if (!visited.contains(stone) && (prev[0] == stone[0] || prev[1] == stone[1])) {
+				this.dfs(visited, stones, stone);
 			}
 		}
 	}
