@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumSpeedToArriveOnTime {
 
-	// https://leetcode.com/problems/minimum-speed-to-arrive-on-time/submissions/1004399974/
+	// https://leetcode.com/problems/minimum-speed-to-arrive-on-time/submissions/1004408871/
 	public static void main(String[] args) {
 		MinimumSpeedToArriveOnTime test = new MinimumSpeedToArriveOnTime();
 		System.out.println(test.minSpeedOnTime(new int[] { 1, 3, 2 }, 6));
@@ -17,7 +17,7 @@ public class MinimumSpeedToArriveOnTime {
 		while (min < max) {
 			int mid = min + (max - min) / 2;
 			double sum = 0;
-			for (int i = 0; i < length - 1; ++i) {
+			for (int i = 0; i < length - 1; i++) {
 				sum += Math.ceil(((double) dist[i]) / mid);
 			}
 			sum += ((double) dist[length - 1]) / mid;
