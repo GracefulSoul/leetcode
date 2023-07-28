@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RegionsCutBySlashes {
 
-	// https://leetcode.com/problems/regions-cut-by-slashes/submissions/1006075574/
+	// https://leetcode.com/problems/regions-cut-by-slashes/submissions/1006081526/
 	public static void main(String[] args) {
 		RegionsCutBySlashes test = new RegionsCutBySlashes();
 		System.out.println(test.regionsBySlashes(new String[] { " /", "/ " }));
@@ -28,7 +28,7 @@ public class RegionsCutBySlashes {
 		}
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				regions += dfs(dp, i, j) > 0 ? 1 : 0;
+				regions += this.dfs(dp, i, j) > 0 ? 1 : 0;
 			}
 		}
 		return regions;
