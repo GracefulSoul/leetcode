@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class NumbersWithSameConsecutiveDifferences {
 
-	// https://leetcode.com/problems/numbers-with-same-consecutive-differences/submissions/1011951941/
+	// https://leetcode.com/problems/numbers-with-same-consecutive-differences/submissions/1011953675/
 	public static void main(String[] args) {
 		NumbersWithSameConsecutiveDifferences test = new NumbersWithSameConsecutiveDifferences();
 		PrintUtil.print(test.numsSameConsecDiff(3, 7));
@@ -33,16 +33,13 @@ public class NumbersWithSameConsecutiveDifferences {
 		} else {
 			int a = item % 10;
 			if (k == 0) {
-				int temp = (item * 10) + a;
-				this.dfs(list, temp, i + 1, n, k);
+				this.dfs(list, (item * 10) + a, i + 1, n, k);
 			} else {
 				if ((a + k) <= 9) {
-					int temp = (item * 10) + (a + k);
-					this.dfs(list, temp, i + 1, n, k);
+					this.dfs(list, (item * 10) + (a + k), i + 1, n, k);
 				}
 				if ((a - k) >= 0) {
-					int temp = (item * 10) + (a - k);
-					this.dfs(list, temp, i + 1, n, k);
+					this.dfs(list, (item * 10) + (a - k), i + 1, n, k);
 				}
 			}
 		}
