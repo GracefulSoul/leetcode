@@ -4,14 +4,14 @@ import gracefulsoul.object.node.TreeNode;
 
 public class BinaryTreeCameras {
 
-	// https://leetcode.com/problems/binary-tree-cameras/submissions/1012535198/
+	// https://leetcode.com/problems/binary-tree-cameras/submissions/1012538417/
 	public static void main(String[] args) {
 		BinaryTreeCameras test = new BinaryTreeCameras();
 		System.out.println(test.minCameraCover(new TreeNode(0, new TreeNode(-1, new TreeNode(0), new TreeNode(0)), null)));
 		System.out.println(test.minCameraCover(new TreeNode(0, new TreeNode(-1, new TreeNode(0, null, new TreeNode(-1, null, new TreeNode(0))), null), null)));
 	}
 
-	private int result = 0;
+	private int result;
 
 	public int minCameraCover(TreeNode root) {
 		this.result = 0;
