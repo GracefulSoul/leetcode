@@ -17,12 +17,12 @@ public class EqualRationalNumbers {
 	private double parse(String str) {
 		int index = str.indexOf('(');
 		if (index > 0) {
-			String base = str.substring(0, index);
+			StringBuilder base = new StringBuilder(str.substring(0, index));
 			String num = str.substring(index + 1, str.length() - 1);
 			for (int i = 1; i < 18; i++) {
-				base += num;
+				base.append(num);
 			}
-			return Double.valueOf(base);
+			return Double.valueOf(base.toString());
 		} else {
 			return Double.valueOf(str);
 		}
