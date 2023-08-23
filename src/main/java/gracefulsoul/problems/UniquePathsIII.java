@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class UniquePathsIII {
 
-	// https://leetcode.com/problems/unique-paths-iii/submissions/1029415477/
+	// https://leetcode.com/problems/unique-paths-iii/submissions/1029419087/
 	public static void main(String[] args) {
 		UniquePathsIII test = new UniquePathsIII();
 		System.out.println(test.uniquePathsIII(new int[][] {
@@ -46,10 +46,10 @@ public class UniquePathsIII {
 		} else {
 			grid[x][y] = -1;
 			count--;
-			int totalCount = this.dfs(grid, x + 1, y, count) + this.dfs(grid, x, y + 1, count) + this.dfs(grid, x - 1, y, count) + this.dfs(grid, x, y - 1, count);
+			int total = this.dfs(grid, x + 1, y, count) + this.dfs(grid, x, y + 1, count) + this.dfs(grid, x - 1, y, count) + this.dfs(grid, x, y - 1, count);
 			grid[x][y] = 0;
 			count++;
-			return totalCount;
+			return total;
 		}
 	}
 
