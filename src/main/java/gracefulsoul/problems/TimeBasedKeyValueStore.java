@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class TimeBasedKeyValueStore {
 
-	// https://leetcode.com/problems/time-based-key-value-store/submissions/1030369965/
+	// https://leetcode.com/problems/time-based-key-value-store/submissions/1030378636/
 	public static void main(String[] args) {
 		TimeMap timeMap = new TimeMap();
 		timeMap.set("foo", "bar", 1);				// store the key "foo" and value "bar" along with timestamp = 1.
@@ -43,18 +43,18 @@ class TimeMap {
 		}
 	}
 
-	protected String binarySearch(List<Pair> list, int time) {
+	protected String binarySearch(List<Pair> list, int timestamp) {
 		int left = 0;
 		int right = list.size() - 1;
 		while (left < right) {
 			int mid = (left + right + 1) >> 1;
-			if (list.get(mid).time <= time) {
+			if (list.get(mid).timestamp <= timestamp) {
 				left = mid;
 			} else {
 				right = mid - 1;
 			}
 		}
-		return list.get(left).time <= time ? list.get(left).value : "";
+		return list.get(left).timestamp <= timestamp ? list.get(left).value : "";
 	}
 
 }
@@ -62,11 +62,11 @@ class TimeMap {
 class Pair {
 
 	String value;
-	int time;
+	int timestamp;
 
-	public Pair(String value, int time) {
+	public Pair(String value, int timestamp) {
 		this.value = value;
-		this.time = time;
+		this.timestamp = timestamp;
 	}
 
 }
