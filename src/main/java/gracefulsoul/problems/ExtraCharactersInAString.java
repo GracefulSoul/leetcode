@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ExtraCharactersInAString {
 
-	// https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038284412/
+	// https://leetcode.com/problems/extra-characters-in-a-string/submissions/1038290323/
 	public static void main(String[] args) {
 		ExtraCharactersInAString test = new ExtraCharactersInAString();
 		System.out.println(test.minExtraChar("leetscode", new String[] { "leet", "code", "leetcode" }));
@@ -12,7 +12,6 @@ public class ExtraCharactersInAString {
 	public int minExtraChar(String s, String[] dictionary) {
 		int length = s.length();
 		int[] dp = new int[length + 1];
-		dp[length] = 0;
 		for (int i = length - 1; i >= 0; i--) {
 			String str = s.substring(i);
 			dp[i] = dp[i + 1] + 1;
