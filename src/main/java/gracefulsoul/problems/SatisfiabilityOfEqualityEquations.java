@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SatisfiabilityOfEqualityEquations {
 
-	// https://leetcode.com/problems/satisfiability-of-equality-equations/submissions/1042893429/
+	// https://leetcode.com/problems/satisfiability-of-equality-equations/submissions/1042925276/
 	public static void main(String[] args) {
 		SatisfiabilityOfEqualityEquations test = new SatisfiabilityOfEqualityEquations();
 		System.out.println(test.equationsPossible(new String[] { "a==b", "b!=a" }));
@@ -31,7 +31,7 @@ public class SatisfiabilityOfEqualityEquations {
 		if (parent[i] == i) {
 			return i;
 		} else {
-			return parent[i] = find(parent, parent[i]);
+			return parent[i] = this.find(parent, parent[i]);
 		}
 	}
 
