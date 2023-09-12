@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class MinimumDeletionsToMakeCharacterFrequenciesUnique {
 
-	// https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/submissions/1047317858/
+	// https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/submissions/1047334213/
 	public static void main(String[] args) {
 		MinimumDeletionsToMakeCharacterFrequenciesUnique test = new MinimumDeletionsToMakeCharacterFrequenciesUnique();
 		System.out.println(test.minDeletions("aab"));
@@ -15,12 +15,12 @@ public class MinimumDeletionsToMakeCharacterFrequenciesUnique {
 
 	public int minDeletions(String s) {
 		int[] count = new int[26];
-		int result = 0;
 		for (char c : s.toCharArray()) {
 			count[c - 'a']++;
 		}
 		Set<Integer> set = new HashSet<>();
-		for (int i = 0; i < 26; i++) {
+		int result = 0;
+		for (int i = 0; i < count.length; i++) {
 			int freq = count[i];
 			while (freq > 0) {
 				if (!set.contains(freq)) {
