@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class PathWithMinimumEffort {
 
-	// https://leetcode.com/problems/path-with-minimum-effort/submissions/1050500251/
+	// https://leetcode.com/problems/path-with-minimum-effort/submissions/1050506436/
 	public static void main(String[] args) {
 		PathWithMinimumEffort test = new PathWithMinimumEffort();
 		System.out.println(test.minimumEffortPath(new int[][] {
@@ -40,14 +40,14 @@ public class PathWithMinimumEffort {
 		dist[0][0] = 0;
 		queue.add(new int[] { 0, 0, 0 });
 		while (!queue.isEmpty()) {
-			int curr[] = queue.poll();
+			int[] curr = queue.poll();
 			int x = curr[0];
 			int y = curr[1];
 			int diff = curr[2];
 			if (x == row - 1 && y == col - 1) {
 				return diff;
 			}
-			for (int direction[] : directions) {
+			for (int[] direction : directions) {
 				int nx = x + direction[0];
 				int ny = y + direction[1];
 				if (nx >= 0 && nx < row && ny >= 0 && ny < col) {
