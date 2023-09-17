@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RottingOranges {
 
-	// https://leetcode.com/problems/rotting-oranges/submissions/1051563302/
+	// https://leetcode.com/problems/rotting-oranges/submissions/1051571224/
 	public static void main(String[] args) {
 		RottingOranges test = new RottingOranges();
 		System.out.println(test.orangesRotting(new int[][] {
@@ -41,7 +41,7 @@ public class RottingOranges {
 	}
 
 	private void dfs(int[][] grid, int i, int j, int minutes) {
-		if (i >= 0 && i < grid.length && j >= 0 && j < grid[0].length && grid[i][j] != 0 && (grid[i][j] <= 1 || grid[i][j] >= minutes)) {
+		if (i >= 0 && i < grid.length && j >= 0 && j < grid[0].length && grid[i][j] != 0 && (grid[i][j] == 1 || grid[i][j] >= minutes)) {
 			grid[i][j] = minutes;
 			this.dfs(grid, i - 1, j, minutes + 1);
 			this.dfs(grid, i + 1, j, minutes + 1);
