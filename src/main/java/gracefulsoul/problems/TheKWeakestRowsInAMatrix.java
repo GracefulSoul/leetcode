@@ -3,19 +3,21 @@ package gracefulsoul.problems;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+import gracefulsoul.util.PrintUtil;
+
 public class TheKWeakestRowsInAMatrix {
 
 	// https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/submissions/1053417948/
 	public static void main(String[] args) {
 		TheKWeakestRowsInAMatrix test = new TheKWeakestRowsInAMatrix();
-		System.out.println(test.kWeakestRows(new int[][] {
+		PrintUtil.print(test.kWeakestRows(new int[][] {
 			{ 1, 1, 0, 0, 0 },
 			{ 1, 1, 1, 1, 0 },
 			{ 1, 0, 0, 0, 0 },
 			{ 1, 1, 0, 0, 0 },
 			{ 1, 1, 1, 1, 1 }
 		}, 3));
-		System.out.println(test.kWeakestRows(new int[][] {
+		PrintUtil.print(test.kWeakestRows(new int[][] {
 			{ 1, 0, 0, 0 },
 			{ 1, 1, 1, 1 },
 			{ 1, 0, 0, 0 },
