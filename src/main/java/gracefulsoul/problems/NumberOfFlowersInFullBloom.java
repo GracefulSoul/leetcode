@@ -6,7 +6,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class NumberOfFlowersInFullBloom {
 
-	// https://leetcode.com/problems/number-of-flowers-in-full-bloom/submissions/1072501456/
+	// https://leetcode.com/problems/number-of-flowers-in-full-bloom/submissions/1072522892/
 	public static void main(String[] args) {
 		NumberOfFlowersInFullBloom test = new NumberOfFlowersInFullBloom();
 		PrintUtil.print(test.fullBloomFlowers(new int[][] {
@@ -34,23 +34,23 @@ public class NumberOfFlowersInFullBloom {
 		length = people.length;
 		int[] result = new int[length];
 		for (int i = 0; i < length; i++) {
-			result[i] = this.find(start, people[i] + 1) - this.find(end, people[i]);
+			result[i] = this.getCountFlowers(start, people[i] + 1) - this.getCountFlowers(end, people[i]);
 		}
 		return result;
 	}
 
-	private int find(int[] people, int target) {
+	private int getCountFlowers(int[] flowers, int target) {
 		int left = 0;
-		int right = people.length - 1;
+		int right = flowers.length - 1;
 		while (left < right) {
 			int mid = left + (right - left) / 2;
-			if (people[mid] < target) {
+			if (flowers[mid] < target) {
 				left = mid + 1;
 			} else {
 				right = mid;
 			}
 		}
-		return people[left] >= target ? left : left + 1;
+		return flowers[left] >= target ? left : left + 1;
 	}
 
 }
