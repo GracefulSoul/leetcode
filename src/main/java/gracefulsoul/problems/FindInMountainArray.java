@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindInMountainArray {
 
-	// https://leetcode.com/problems/find-in-mountain-array/submissions/1073374785/
+	// https://leetcode.com/problems/find-in-mountain-array/submissions/1073389911/
 	public static void main(String[] args) {
 		FindInMountainArray test = new FindInMountainArray();
 		System.out.println(test.findInMountainArray(3, new MountainArray(new int[] { 1, 2, 3, 4, 5, 3, 1 })));
@@ -22,22 +22,24 @@ public class FindInMountainArray {
 		}
 		for (int left = 0, right = peak; left <= right;) {
 			int mid = (left + right) / 2;
-			if (mountainArr.get(mid) < target) {
-				left = mid + 1;
-			} else if (mountainArr.get(mid) > target) {
+			int high = mountainArr.get(mid);
+			if (high == target) {
+				return mid;
+			} else if (high > target) {
 				right = mid - 1;
 			} else {
-				return mid;
+				left = mid + 1;
 			}
 		}
 		for (int left = peak, right = length - 1; left <= right;) {
 			int mid = (left + right) / 2;
-			if (mountainArr.get(mid) > target) {
-				left = mid + 1;
-			} else if (mountainArr.get(mid) < target) {
+			int high = mountainArr.get(mid);
+			if (high == target) {
+				return mid;
+			} else if (high < target) {
 				right = mid - 1;
 			} else {
-				return mid;
+				left = mid + 1;
 			}
 		}
 		return -1;
