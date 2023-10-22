@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumScoreOfAGoodSubarray {
 
-	// https://leetcode.com/problems/maximum-score-of-a-good-subarray/submissions/1081040870/
+	// https://leetcode.com/problems/maximum-score-of-a-good-subarray/submissions/1081083175/
 	public static void main(String[] args) {
 		MaximumScoreOfAGoodSubarray test = new MaximumScoreOfAGoodSubarray();
 		System.out.println(test.maximumScore(new int[] { 1, 4, 3, 7, 4, 5 }, 3));
@@ -10,23 +10,33 @@ public class MaximumScoreOfAGoodSubarray {
 	}
 
 	public int maximumScore(int[] nums, int k) {
-		int result = nums[k];
-		int min = nums[k];
 		int length = nums.length;
-		for (int i = k, j = k; i > 0 || j < length - 1;) {
-			if (i == 0) {
-				j++;
-			} else if (j == length - 1) {
-				i--;
-			} else if (nums[i - 1] < nums[j + 1]) {
-				j++;
-			} else {
-				i--;
-			}
-			min = Math.min(min, Math.min(nums[i], nums[j]));
-			result = Math.max(result, min * (j - i + 1));
+		int i = k - 1;
+		int j = k + 1;
+		int min = nums[k];
+		while (0 <= i && min <= nums[i]) {
+			i--;
 		}
-		return result;
+		while (j < length && min <= nums[j]) {
+			j++;
+		}
+		int max = min * (j - i - 1);
+		while (0 <= i || j < length) {
+			if (i < 0 || (j < length && nums[i] <= nums[j])) {
+				min = nums[j];
+				while (j < length && min <= nums[j]) {
+					j++;
+				}
+				max = Math.max(max, min * (j - i - 1));
+			} else {
+				min = nums[i];
+				while (0 <= i && min <= nums[i]) {
+					i--;
+				}
+				max = Math.max(max, min * (j - i - 1));
+			}
+		}
+		return max;
 	}
 
 }
