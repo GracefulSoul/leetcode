@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumDominoRotationsForEqualRow {
 
-	// https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/submissions/1083756960/
+	// https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/submissions/1083791277/
 	public static void main(String[] args) {
 		MinimumDominoRotationsForEqualRow test = new MinimumDominoRotationsForEqualRow();
 		System.out.println(test.minDominoRotations(new int[] { 2, 1, 2, 4, 2, 2 }, new int[] { 5, 2, 6, 2, 3, 2 }));
@@ -20,15 +20,15 @@ public class MinimumDominoRotationsForEqualRow {
 		return result;
 	}
 
-	private int calculate(int[] tops, int[] bottoms, int val) {
+	private int calculate(int[] tops, int[] bottoms, int index) {
 		int top = 0;
 		int bottom = 0;
 		for (int i = 0; i < tops.length; i++) {
-			if (tops[i] != val && bottoms[i] != val) {
+			if (tops[i] != index && bottoms[i] != index) {
 				return -1;
-			} else if (tops[i] != val) {
+			} else if (tops[i] != index) {
 				top++;
-			} else if (bottoms[i] != val) {
+			} else if (bottoms[i] != index) {
 				bottom++;
 			}
 		}
