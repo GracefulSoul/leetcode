@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BinaryTreesWithFactors {
 
-	// https://leetcode.com/problems/binary-trees-with-factors/submissions/1084554595/
+	// https://leetcode.com/problems/binary-trees-with-factors/submissions/1084555656/
 	public static void main(String[] args) {
 		BinaryTreesWithFactors test = new BinaryTreesWithFactors();
 		System.out.println(test.numFactoredBinaryTrees(new int[] { 2, 4 }));
@@ -18,9 +18,7 @@ public class BinaryTreesWithFactors {
 		Arrays.sort(arr);
 		long result = 0;
 		for (int i = 1; i < length; i++) {
-			int left = 0;
-			int right = i - 1;
-			while (left <= right) {
+			for (int left = 0, right = i - 1; left <= right;) {
 				long product = 1L * arr[left] * arr[right];
 				if (product == arr[i]) {
 					count[i] += count[left] * count[right];
