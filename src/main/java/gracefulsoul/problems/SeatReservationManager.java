@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SeatReservationManager {
 
-	// https://leetcode.com/problems/seat-reservation-manager/submissions/1092707270/
+	// https://leetcode.com/problems/seat-reservation-manager/submissions/1092714310/
 	public static void main(String[] args) {
 		SeatManager seatManager = new SeatManager(5);	// Initializes a SeatManager with 5 seats.
 		System.out.println(seatManager.reserve());		// All seats are available, so return the lowest numbered seat, which is 1.
