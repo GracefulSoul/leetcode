@@ -1,8 +1,5 @@
 package gracefulsoul.problems;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 public class SeatReservationManager {
 
 	// https://leetcode.com/problems/seat-reservation-manager/submissions/1092707270/
@@ -22,24 +19,33 @@ public class SeatReservationManager {
 
 class SeatManager {
 
-	private Queue<Integer> queue;
-	private int count;
+	private boolean[] seats;
+	private int reserved = 1;
+	private int unreserved = 0;
 
 	public SeatManager(int n) {
-		this.count = 1;
-		this.queue = new PriorityQueue<>();
+		this.seats = new boolean[n + 1];
 	}
 
 	public int reserve() {
-		if (this.queue.isEmpty()) {
-			return this.count++;
+		if (unreserved == 0) {
+			this.seats[reserved] = true;
+			return this.reserved++;
 		} else {
-			return this.queue.poll();
+			for (int i = 1; i < this.seats.length; i++) {
+				if (!this.seats[i]) {
+					this.seats[i] = true;
+					this.unreserved--;
+					return i;
+				}
+			}
 		}
+		return -1;
 	}
 
 	public void unreserve(int seatNumber) {
-		this.queue.add(seatNumber);
+		this.unreserved++;
+		this.seats[seatNumber] = false;
 	}
 
 }
