@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class RestoreTheArrayFromAdjacentPairs {
 
-	// https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/submissions/1095835860/
+	// https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/submissions/1095856737/
 	public static void main(String[] args) {
 		RestoreTheArrayFromAdjacentPairs test = new RestoreTheArrayFromAdjacentPairs();
 		PrintUtil.print(test.restoreArray(new int[][] {
@@ -46,6 +46,7 @@ public class RestoreTheArrayFromAdjacentPairs {
 		for (Map.Entry<Integer, int[]> entry : map.entrySet()) {
 			if (entry.getValue()[1] == -1000000) {
 				start = entry.getKey();
+				break;
 			}
 		}
 		result[0] = start;
