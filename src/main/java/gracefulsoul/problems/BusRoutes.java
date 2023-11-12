@@ -1,5 +1,7 @@
 package gracefulsoul.problems;
 
+import java.util.Arrays;
+
 public class BusRoutes {
 
 	// https://leetcode.com/problems/bus-routes/submissions/884068213/
@@ -24,37 +26,36 @@ public class BusRoutes {
 		}
 		int max = 0;
 		for (int[] route : routes) {
-			for (int i : route) {
-				max = Math.max(max, i);
+			for (int stop : route) {
+				max = Math.max(max, stop);
 			}
 		}
-		if (target > max || source > max) {
+		if (max < target) {
 			return -1;
 		}
-		int[] stations = new int[max + 1];
-		for (int idx = 0; idx < 2 && stations[target] == 0; idx++) {
+		int n = routes.length;
+		int[] station = new int[max + 1];
+		Arrays.fill(station, n + 1);
+		station[source] = 0;
+		boolean flag = true;
+		while (flag) {
+			flag = false;
 			for (int[] route : routes) {
-				int min = Integer.MAX_VALUE - 1;
-				for (int postion : route) {
-					if (postion == source) {
-						min = 0;
-						break;
-					} else if (stations[postion] == 0) {
-						continue;
-					} else {
-						min = Math.min(min, stations[postion]);
-					}
+				int min = n + 1;
+				for (int stop : route) {
+					min = Math.min(min, station[stop]);
 				}
-				for (int position : route) {
-					if (stations[position] == 0 && min != Integer.MAX_VALUE - 1) {
-						stations[position] = min + 1;
-						continue;
+				min++;
+				for (int stop : route) {
+					if (station[stop] > min) {
+						station[stop] = min;
+						flag = true;
 					}
-					stations[position] = Math.min(min + 1, stations[position]);
 				}
 			}
+
 		}
-		return stations[target] == 0 ? -1 : stations[target];
+		return (station[target] < n + 1 ? station[target] : -1);
 	}
 
 }
