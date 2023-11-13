@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SortVowelsInAString {
 
-	// https://leetcode.com/problems/sort-vowels-in-a-string/submissions/1097865161/
+	// https://leetcode.com/problems/sort-vowels-in-a-string/submissions/1097866219/
 	public static void main(String[] args) {
 		SortVowelsInAString test = new SortVowelsInAString();
 		System.out.println(test.sortVowels("lEetcOde"));
@@ -23,9 +23,8 @@ public class SortVowelsInAString {
 			}
 		}
 		Arrays.sort(vowelArray, 0, i);
-		i = 0;
 		StringBuilder sb = new StringBuilder();
-		for (int j = 0; i < charArray.length; i++) {
+		for (int j = i = 0; i < charArray.length; i++) {
 			if (vowels.indexOf(charArray[i]) != -1) {
 				sb.append(vowelArray[j++]);
 			} else {
