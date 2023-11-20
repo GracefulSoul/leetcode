@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumAmountOfTimeToCollectGarbage {
 
-	// https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/submissions/1102618408/
+	// https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/submissions/1102630400/
 	public static void main(String[] args) {
 		MinimumAmountOfTimeToCollectGarbage test = new MinimumAmountOfTimeToCollectGarbage();
 		System.out.println(test.garbageCollection(new String[] { "G", "P", "GP", "GG" }, new int[] { 2, 4, 3 }));
@@ -11,7 +11,7 @@ public class MinimumAmountOfTimeToCollectGarbage {
 
 	public int garbageCollection(String[] garbage, int[] travel) {
 		int[] charArray = new int[128];
-		char[] glassGarbages = new char[] { 'M', 'P', 'G' };
+		char[] garbages = new char[] { 'M', 'P', 'G' };
 		int result = 0;
 		for (int i = 0; i < garbage.length; i++) {
 			result += garbage[i].length();
@@ -22,9 +22,9 @@ public class MinimumAmountOfTimeToCollectGarbage {
 		for (int i = 1; i < travel.length; i++) {
 			travel[i] += travel[i - 1];
 		}
-		for (int glassGarbage : glassGarbages) {
-			if (charArray[glassGarbage] > 0) {
-				result += travel[charArray[glassGarbage] - 1];
+		for (int g : garbages) {
+			if (charArray[g] > 0) {
+				result += travel[charArray[g] - 1];
 			}
 		}
 		return result;
