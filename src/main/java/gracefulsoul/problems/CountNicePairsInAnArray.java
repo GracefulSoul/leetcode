@@ -14,14 +14,14 @@ public class CountNicePairsInAnArray {
 
 	public int countNicePairs(int[] nums) {
 		int result = 0;
-		Map<Integer, Integer> count = new HashMap<>();
+		Map<Integer, Integer> map = new HashMap<>();
 		for (int num : nums) {
 			int reverse = 0;
 			for (int i = num; i > 0; i /= 10) {
 				reverse = (reverse * 10) + (i % 10);
 			}
-			int value = count.getOrDefault(num - reverse, 0);
-			count.put(num - reverse, value + 1);
+			int value = map.getOrDefault(num - reverse, 0);
+			map.put(num - reverse, value + 1);
 			result = (result + value) % 1000000007;
 		}
 		return result;
