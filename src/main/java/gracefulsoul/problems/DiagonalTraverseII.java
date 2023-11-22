@@ -8,7 +8,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class DiagonalTraverseII {
 
-	// https://leetcode.com/problems/diagonal-traverse-ii/submissions/1104084398/
+	// https://leetcode.com/problems/diagonal-traverse-ii/submissions/1104087099/
 	public static void main(String[] args) {
 		DiagonalTraverseII test = new DiagonalTraverseII();
 		PrintUtil.print(test.findDiagonalOrder(Arrays.asList(
@@ -29,7 +29,6 @@ public class DiagonalTraverseII {
 	public int[] findDiagonalOrder(List<List<Integer>> nums) {
 		int max = 0;
 		int length = 0;
-		int index = 0;
 		List<Integer>[] map = new ArrayList[100001];
 		for (int i = 0; i < nums.size(); i++) {
 			List<Integer> list = nums.get(i);
@@ -45,6 +44,7 @@ public class DiagonalTraverseII {
 			}
 		}
 		int[] result = new int[length];
+		int index = 0;
 		for (int i = 0; i <= max; i++) {
 			List<Integer> curr = map[i];
 			for (int j = curr.size() - 1; j >= 0; j--) {
