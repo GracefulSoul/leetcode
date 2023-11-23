@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ArithmeticSubarrays {
 
-	// https://leetcode.com/problems/arithmetic-subarrays/submissions/1104789697/
+	// https://leetcode.com/problems/arithmetic-subarrays/submissions/1104801022/
 	public static void main(String[] args) {
 		ArithmeticSubarrays test = new ArithmeticSubarrays();
 		System.out.println(test.checkArithmeticSubarrays(new int[] { 4, 6, 5, 9, 3, 7 }, new int[] { 0, 0, 2 }, new int[] { 2, 3, 5 }));
@@ -32,9 +32,6 @@ public class ArithmeticSubarrays {
 		}
 		int diff = max - min;
 		int length = right - left;
-		if (diff % length != 0) {
-			return false;
-		}
 		if (diff % length != 0) {
 			return false;
 		}
