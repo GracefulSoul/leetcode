@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumOneBitOperationsToMakeIntegersZero {
 
-	// https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/submissions/1109488008/
+	// https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/submissions/1109526430/
 	public static void main(String[] args) {
 		MinimumOneBitOperationsToMakeIntegersZero test = new MinimumOneBitOperationsToMakeIntegersZero();
 		System.out.println(test.minimumOneBitOperations(3));
@@ -13,7 +13,7 @@ public class MinimumOneBitOperationsToMakeIntegersZero {
 		int result = 0;
 		int sign = 1;
 		while (n > 0) {
-			result += n ^ (n - 1) * sign;
+			result += (n ^ (n - 1)) * sign;
 			sign = -sign;
 			n &= n - 1;
 		}
