@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class NumbersWithRepeatedDigits {
 
-	// https://leetcode.com/problems/numbers-with-repeated-digits/submissions/1116170827/
+	// https://leetcode.com/problems/numbers-with-repeated-digits/submissions/1116173124/
 	public static void main(String[] args) {
 		NumbersWithRepeatedDigits test = new NumbersWithRepeatedDigits();
 		System.out.println(test.numDupDigitsAtMostN(20));
@@ -41,8 +41,8 @@ public class NumbersWithRepeatedDigits {
 		return n - result;
 	}
 
-	private int getCountOfPermutations(int m, int n) {
-		return n == 0 ? 1 : this.getCountOfPermutations(m, n - 1) * (m - n + 1);
+	private int getCountOfPermutations(int a, int b) {
+		return b == 0 ? 1 : this.getCountOfPermutations(a, b - 1) * (a - b + 1);
 	}
 
 }
