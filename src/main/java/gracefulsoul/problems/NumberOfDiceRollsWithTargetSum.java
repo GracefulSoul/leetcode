@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfDiceRollsWithTargetSum {
 
-	// https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/submissions/1128527225/
+	// https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/submissions/1128529662/
 	public static void main(String[] args) {
 		NumberOfDiceRollsWithTargetSum test = new NumberOfDiceRollsWithTargetSum();
 		System.out.println(test.numRollsToTarget(1, 6, 3));
@@ -11,12 +11,6 @@ public class NumberOfDiceRollsWithTargetSum {
 	}
 
 	public int numRollsToTarget(int n, int k, int target) {
-		if (n == 0 && target == 0) {
-			return 1;
-		}
-		if (target < n || n * k < target) {
-			return 0;
-		}
 		return this.numRollsToTarget(new int[n + 1][target + 1], n, k, target);
 	}
 
