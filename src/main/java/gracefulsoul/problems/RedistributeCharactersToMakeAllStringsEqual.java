@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class RedistributeCharactersToMakeAllStringsEqual {
 
-	// https://leetcode.com/problems/redistribute-characters-to-make-all-strings-equal/submissions/1131800958/
+	// https://leetcode.com/problems/redistribute-characters-to-make-all-strings-equal/submissions/1131803110/
 	public static void main(String[] args) {
 		RedistributeCharactersToMakeAllStringsEqual test = new RedistributeCharactersToMakeAllStringsEqual();
 		System.out.println(test.makeEqual(new String[] { "abc", "aabc", "bc" }));
@@ -15,16 +15,15 @@ public class RedistributeCharactersToMakeAllStringsEqual {
 			return true;
 		}
 		int wordsLength = 0;
-		for (String s : words) {
-			wordsLength += s.length();
+		for (String word : words) {
+			wordsLength += word.length();
 		}
 		if (wordsLength % length != 0) {
 			return false;
 		}
 		int[] counts = new int[26];
-		for (String s : words) {
-			wordsLength += s.length();
-			for (char c : s.toCharArray()) {
+		for (String word : words) {
+			for (char c : word.toCharArray()) {
 				counts[c - 'a']++;
 			}
 		}
