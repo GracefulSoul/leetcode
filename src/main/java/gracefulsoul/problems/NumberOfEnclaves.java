@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfEnclaves {
 
-	// https://leetcode.com/problems/number-of-enclaves/submissions/1140028386/
+	// https://leetcode.com/problems/number-of-enclaves/submissions/1140038238/
 	public static void main(String[] args) {
 		NumberOfEnclaves test = new NumberOfEnclaves();
 		System.out.println(test.numEnclaves(new int[][] {
@@ -42,7 +42,7 @@ public class NumberOfEnclaves {
 	}
 
 	private void dfs(int grid[][], int i, int j) {
-		if (i >= 0 && i <= grid.length - 1 && j >= 0 && j <= grid[i].length - 1 && grid[i][j] == 1) {
+		if (0 <= i && i <= grid.length - 1 && 0 <= j && j <= grid[i].length - 1 && grid[i][j] == 1) {
 			grid[i][j] = 0;
 			this.dfs(grid, i + 1, j);
 			this.dfs(grid, i - 1, j);
