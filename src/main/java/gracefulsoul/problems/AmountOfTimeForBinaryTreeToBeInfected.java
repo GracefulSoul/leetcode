@@ -4,7 +4,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class AmountOfTimeForBinaryTreeToBeInfected {
 
-	// https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/submissions/1141969651/
+	// https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/submissions/1141976701/
 	public static void main(String[] args) {
 		AmountOfTimeForBinaryTreeToBeInfected test = new AmountOfTimeForBinaryTreeToBeInfected();
 		System.out.println(test.amountOfTime(new TreeNode(1, new TreeNode(5, null, new TreeNode(4, new TreeNode(9), new TreeNode(2))), new TreeNode(3, new TreeNode(10), new TreeNode(6))), 3));
@@ -14,7 +14,6 @@ public class AmountOfTimeForBinaryTreeToBeInfected {
 	private int amount;
 
 	public int amountOfTime(TreeNode root, int start) {
-		this.amount = 0;
 		this.dfs(root, start);
 		return this.amount;
 	}
