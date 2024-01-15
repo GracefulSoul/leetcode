@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FindPlayersWithZeroOrOneLosses {
 
-	// https://leetcode.com/problems/find-players-with-zero-or-one-losses/submissions/1146744149/
+	// https://leetcode.com/problems/find-players-with-zero-or-one-losses/submissions/1146766054/
 	public static void main(String[] args) {
 		FindPlayersWithZeroOrOneLosses test = new FindPlayersWithZeroOrOneLosses();
 		System.out.println(test.findWinners(new int[][] {
@@ -30,24 +30,24 @@ public class FindPlayersWithZeroOrOneLosses {
 	}
 
 	public List<List<Integer>> findWinners(int[][] matches) {
-		int[] losses = new int[100001];
+		int[] count = new int[100001];
 		for (int i = 0; i < matches.length; i++) {
 			int win = matches[i][0];
-			int loss = matches[i][1];
-			if (losses[win] == 0) {
-				losses[win] = -1;
+			int lose = matches[i][1];
+			if (count[win] == 0) {
+				count[win] = -1;
 			}
-			if (losses[loss] == -1) {
-				losses[loss] = 1;
+			if (count[lose] == -1) {
+				count[lose] = 1;
 			} else {
-				losses[loss]++;
+				count[lose]++;
 			}
 		}
 		List<List<Integer>> result = Arrays.asList(new ArrayList<>(), new ArrayList<>());
-		for (int i = 0; i < losses.length; i++) {
-			if (losses[i] == -1) {
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] == -1) {
 				result.get(0).add(i);
-			} else if (losses[i] == 1) {
+			} else if (count[i] == 1) {
 				result.get(1).add(i);
 			}
 		}
