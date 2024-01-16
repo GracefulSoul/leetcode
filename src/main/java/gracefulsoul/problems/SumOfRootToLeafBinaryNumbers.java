@@ -8,7 +8,7 @@ public class SumOfRootToLeafBinaryNumbers {
 	public static void main(String[] args) {
 		SumOfRootToLeafBinaryNumbers test = new SumOfRootToLeafBinaryNumbers();
 		System.out.println(test.sumRootToLeaf(new TreeNode(1, new TreeNode(0, new TreeNode(0), new TreeNode(1)), new TreeNode(1, new TreeNode(0), new TreeNode(1)))));
-		System.out.println(test.sumRootToLeaf(new TreeNode(1)));
+		System.out.println(test.sumRootToLeaf(new TreeNode(0)));
 	}
 
 	public int sumRootToLeaf(TreeNode root) {
