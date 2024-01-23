@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class MaximumLengthOfAConcatenatedStringwithUniqueCharacters {
 
-	// https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/submissions/submissions/
+	// https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/submissions/1154513348/
 	public static void main(String[] args) {
 		MaximumLengthOfAConcatenatedStringwithUniqueCharacters test = new MaximumLengthOfAConcatenatedStringwithUniqueCharacters();
 		System.out.println(test.maxLength(Arrays.asList("un", "iq", "ue")));
@@ -23,16 +23,16 @@ public class MaximumLengthOfAConcatenatedStringwithUniqueCharacters {
 		return this.result;
 	}
 
-	private void dfs(List<String> arr, String path, int idx) {
-		boolean isUnique = this.validate(path);
+	private void dfs(List<String> arr, String s, int index) {
+		boolean isUnique = this.validate(s);
 		if (isUnique) {
-			this.result = Math.max(path.length(), this.result);
+			this.result = Math.max(this.result, s.length());
 		}
-		if (idx == arr.size() || !isUnique) {
+		if (index == arr.size() || !isUnique) {
 			return;
 		}
-		for (int i = idx; i < arr.size(); i++) {
-			this.dfs(arr, path + arr.get(i), i + 1);
+		for (int i = index; i < arr.size(); i++) {
+			this.dfs(arr, s + arr.get(i), i + 1);
 		}
 	}
 
