@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class TwoCityScheduling {
 
-	// https://leetcode.com/problems/two-city-scheduling/submissions/1157330158/
+	// https://leetcode.com/problems/two-city-scheduling/submissions/1157348173/
 	public static void main(String[] args) {
 		TwoCityScheduling test = new TwoCityScheduling();
 		System.out.println(test.twoCitySchedCost(new int[][] {
@@ -36,17 +36,17 @@ public class TwoCityScheduling {
 	public int twoCitySchedCost(int[][] costs) {
 		int length = costs.length / 2;
 		int[] dp = new int[length * 2];
-		int min = 0;
+		int result = 0;
 		int index = 0;
 		for (int[] cost : costs) {
 			dp[index++] = cost[1] - cost[0];
-			min += cost[0];
+			result += cost[0];
 		}
 		Arrays.sort(dp);
 		for (int i = 0; i < length; i++) {
-			min += dp[i];
+			result += dp[i];
 		}
-		return min;
+		return result;
 	}
 
 }
