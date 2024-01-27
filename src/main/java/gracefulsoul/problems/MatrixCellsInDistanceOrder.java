@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class MatrixCellsInDistanceOrder {
 
-	// https://leetcode.com/problems/matrix-cells-in-distance-order/submissions/1158141422/
+	// https://leetcode.com/problems/matrix-cells-in-distance-order/submissions/1158150449/
 	public static void main(String[] args) {
 		MatrixCellsInDistanceOrder test = new MatrixCellsInDistanceOrder();
 		PrintUtil.print(test.allCellsDistOrder(1, 2, 0, 0));
@@ -18,35 +18,35 @@ public class MatrixCellsInDistanceOrder {
 		int index = 1;
 		int max = Math.max(rCenter, rows - rCenter - 1) + Math.max(cCenter, cols - cCenter - 1);
 		for (int i = 1; i <= max; i++) {
-			int r = rCenter - i;
-			int c = cCenter;
+			int row = rCenter - i;
+			int col = cCenter;
 			for (int j = i; j > 0; j--) {
-				if (r >= 0 && c >= 0) {
-					result[index++] = new int[] { r, c };
+				if (row >= 0 && col >= 0) {
+					result[index++] = new int[] { row, col };
 				}
-				r++;
-				c--;
+				row++;
+				col--;
 			}
 			for (int j = i; j > 0; j--) {
-				if (r < rows && c >= 0) {
-					result[index++] = new int[] { r, c };
+				if (row < rows && col >= 0) {
+					result[index++] = new int[] { row, col };
 				}
-				r++;
-				c++;
+				row++;
+				col++;
 			}
 			for (int j = i; j > 0; j--) {
-				if (r < rows && c < cols) {
-					result[index++] = new int[] { r, c };
+				if (row < rows && col < cols) {
+					result[index++] = new int[] { row, col };
 				}
-				r--;
-				c++;
+				row--;
+				col++;
 			}
 			for (int j = i; j > 0; j--) {
-				if (r >= 0 && c < cols) {
-					result[index++] = new int[] { r, c };
+				if (row >= 0 && col < cols) {
+					result[index++] = new int[] { row, col };
 				}
-				r--;
-				c--;
+				row--;
+				col--;
 			}
 		}
 		return result;
