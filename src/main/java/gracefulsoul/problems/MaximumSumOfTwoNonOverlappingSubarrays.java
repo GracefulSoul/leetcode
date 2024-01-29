@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumSumOfTwoNonOverlappingSubarrays {
 
-	// https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/submissions/1159964381/
+	// https://leetcode.com/problems/maximum-sum-of-two-non-overlapping-subarrays/submissions/1159974265/
 	public static void main(String[] args) {
 		MaximumSumOfTwoNonOverlappingSubarrays test = new MaximumSumOfTwoNonOverlappingSubarrays();
 		System.out.println(test.maxSumTwoNoOverlap(new int[] { 0, 6, 5, 2, 2, 5, 1, 9, 4 }, 1, 2));
@@ -24,7 +24,7 @@ public class MaximumSumOfTwoNonOverlappingSubarrays {
 				sumSecondLen += nums[i];
 			}
 		}
-		int result = sumSecondLen + sumFirstLen;
+		int result = sumFirstLen  + sumSecondLen;
 		for (int i = firstLen + secondLen, max = sumFirstLen; i < nums.length; i++) {
 			sumFirstLen += nums[i - secondLen] - nums[i - firstLen - secondLen];
 			sumSecondLen += nums[i] - nums[i - secondLen];
