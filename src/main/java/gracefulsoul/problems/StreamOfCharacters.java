@@ -4,7 +4,7 @@ import gracefulsoul.object.node.trie.check.TrieNode;
 
 public class StreamOfCharacters {
 
-	// https://leetcode.com/problems/stream-of-characters/submissions/1160963268/
+	// https://leetcode.com/problems/stream-of-characters/submissions/1160972457/
 	public static void main(String[] args) {
 		StreamChecker streamChecker = new StreamChecker(new String[] { "cd", "f", "kl" });
 		System.out.println(streamChecker.query('a')); // return False
@@ -50,8 +50,7 @@ class StreamChecker {
 		this.sb.append(letter);
 		TrieNode node = this.root;
 		for (int i = this.sb.length() - 1; i >= 0 && node != null; i--) {
-			char c = this.sb.charAt(i);
-			node = node.children[c - 'a'];
+			node = node.children[this.sb.charAt(i) - 'a'];
 			if (node != null && node.isWord) {
 				return true;
 			}
