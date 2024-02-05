@@ -5,15 +5,13 @@ import java.util.Set;
 
 public class EscapeALargeMaze {
 
-	// https://leetcode.com/problems/escape-a-large-maze/submissions/1166675195/
+	// https://leetcode.com/problems/escape-a-large-maze/submissions/1166683052/
 	public static void main(String[] args) {
 		EscapeALargeMaze test = new EscapeALargeMaze();
 		System.out.println(test.isEscapePossible(new int[][] {
 			{ 0, 1 },
 			{ 1, 0 }
 		}, new int[] { 0, 0 }, new int[] { 0, 2 }));
-		System.out.println(test.isEscapePossible(new int[][] {
-		}, new int[] { 0, 0 }, new int[] { 999999, 999999 }));
 	}
 
 	public boolean isEscapePossible(int[][] blocked, int[] source, int[] target) {
@@ -22,11 +20,8 @@ public class EscapeALargeMaze {
 			String key = block[0] + "," + block[1];
 			blockedSet.add(key);
 		}
-		return this.canVisit(blockedSet, source, target) && this.canVisit(blockedSet, target, source);
-	}
-
-	private boolean canVisit(Set<String> blocked, int[] source, int[] target) {
-		return this.dfs(blocked, source[0], source[1], target[0], target[1], new HashSet<>());
+		return this.dfs(blockedSet, source[0], source[1], target[0], target[1], new HashSet<>())
+				&& this.dfs(blockedSet, target[0], target[1], source[0], source[1], new HashSet<>());
 	}
 
 	private boolean dfs(Set<String> blocked, int sourceX, int sourceY, int targetX, int targetY, Set<String> visited) {
