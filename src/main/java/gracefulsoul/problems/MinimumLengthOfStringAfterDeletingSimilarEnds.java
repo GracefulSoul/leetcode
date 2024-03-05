@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumLengthOfStringAfterDeletingSimilarEnds {
 
+	// https://leetcode.com/problems/minimum-length-of-string-after-deleting-similar-ends/submissions/1194642090/
 	public static void main(String[] args) {
 		MinimumLengthOfStringAfterDeletingSimilarEnds test = new MinimumLengthOfStringAfterDeletingSimilarEnds();
 		System.out.println(test.minimumLength("ca"));
