@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MinimumScoreTriangulationOfPolygon {
 
-	// https://leetcode.com/problems/minimum-score-triangulation-of-polygon/submissions/1196589666/
+	// https://leetcode.com/problems/minimum-score-triangulation-of-polygon/submissions/1196611636/
 	public static void main(String[] args) {
 		MinimumScoreTriangulationOfPolygon test = new MinimumScoreTriangulationOfPolygon();
 		System.out.println(test.minScoreTriangulation(new int[] { 1, 2, 3 }));
@@ -18,10 +18,10 @@ public class MinimumScoreTriangulationOfPolygon {
 		for (int[] row : dp) {
 			Arrays.fill(row, -1);
 		}
-		return this.solve(values, dp, 1, length - 1);
+		return this.dfs(values, dp, 1, length - 1);
 	}
 
-	private int solve(int[] values, int[][] dp, int i, int j) {
+	private int dfs(int[] values, int[][] dp, int i, int j) {
 		if (i >= j) {
 			return 0;
 		} else if (dp[i][j] != -1) {
@@ -29,9 +29,7 @@ public class MinimumScoreTriangulationOfPolygon {
 		} else {
 			int min = Integer.MAX_VALUE;
 			for (int k = i; k < j; k++) {
-				int temp = this.solve(values, dp, i, k) + this.solve(values, dp, k + 1, j)
-						+ values[i - 1] * values[k] * values[j];
-				min = Math.min(min, temp);
+				min = Math.min(min, this.dfs(values, dp, i, k) + this.dfs(values, dp, k + 1, j) + values[i - 1] * values[k] * values[j]);
 			}
 			return dp[i][j] = min;
 		}
