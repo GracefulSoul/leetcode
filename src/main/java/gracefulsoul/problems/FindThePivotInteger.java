@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindThePivotInteger {
 
-	// https://leetcode.com/problems/find-the-pivot-integer/submissions/1202407008/
+	// https://leetcode.com/problems/find-the-pivot-integer/submissions/1202416570/
 	public static void main(String[] args) {
 		FindThePivotInteger test = new FindThePivotInteger();
 		System.out.println(test.pivotInteger(8));
@@ -11,8 +11,7 @@ public class FindThePivotInteger {
 	}
 
 	public int pivotInteger(int n) {
-		int sum = 0;
-		for (int i = 0, j = n; i < j;) {
+		for (int i = 0, j = n, sum = 0; i < j;) {
 			if (sum > 0) {
 				sum -= j--;
 			} else {
