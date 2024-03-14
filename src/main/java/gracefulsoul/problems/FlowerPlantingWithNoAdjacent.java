@@ -40,7 +40,6 @@ public class FlowerPlantingWithNoAdjacent {
 			int y = path[1] - 1;
 			graph[x].add(y);
 			graph[y].add(x);
-
 		}
 		int[] result = new int[n];
 		for (int i = 0; i < n; i++) {
