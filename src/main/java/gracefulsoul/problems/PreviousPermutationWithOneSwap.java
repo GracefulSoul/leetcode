@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class PreviousPermutationWithOneSwap {
 
-	// https://leetcode.com/problems/previous-permutation-with-one-swap/submissions/1211308822/
+	// https://leetcode.com/problems/previous-permutation-with-one-swap/submissions/1211315378/
 	public static void main(String[] args) {
 		PreviousPermutationWithOneSwap test = new PreviousPermutationWithOneSwap();
 		PrintUtil.print(test.prevPermOpt1(new int[] { 3, 2, 1 }));
@@ -24,9 +24,9 @@ public class PreviousPermutationWithOneSwap {
 		while (arr[j] >= arr[i] || (j > 0 && arr[j] == arr[j - 1])) {
 			j--;
 		}
-		int tmp = arr[j];
+		int temp = arr[j];
 		arr[j] = arr[i];
-		arr[i] = tmp;
+		arr[i] = temp;
 		return arr;
 	}
 
