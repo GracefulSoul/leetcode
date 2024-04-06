@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MinimumRemoveToMakeValidParentheses {
 
-	// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/submissions/1224453732/
+	// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/submissions/1224600190/
 	public static void main(String[] args) {
 		MinimumRemoveToMakeValidParentheses test = new MinimumRemoveToMakeValidParentheses();
 		System.out.println(test.minRemoveToMakeValid("lee(t(c)o)de)"));
@@ -17,22 +17,22 @@ public class MinimumRemoveToMakeValidParentheses {
 		Stack<Integer> stack = new Stack<>();
 		for (int i = 0; i < sb.length(); i++) {
 			switch (sb.charAt(i)) {
-			case '(':
-				stack.add(i);
-				break;
-			case ')':
-				if (!stack.empty()) {
-					stack.pop();
-				} else {
-					sb.setCharAt(i, '*');
-				}
-				break;
+				case '(':
+					stack.add(i);
+					break;
+				case ')':
+					if (!stack.empty()) {
+						stack.pop();
+					} else {
+						sb.setCharAt(i, '.');
+					}
+					break;
 			}
 		}
 		while (!stack.empty()) {
-			sb.setCharAt(stack.pop(), '*');
+			sb.setCharAt(stack.pop(), '.');
 		}
-		return sb.toString().replaceAll("\\*", "");
+		return sb.toString().replaceAll("\\.", "");
 	}
 
 }
