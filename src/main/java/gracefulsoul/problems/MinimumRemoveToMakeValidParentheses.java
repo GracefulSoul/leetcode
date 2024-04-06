@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class MinimumRemoveToMakeValidParentheses {
 
-	// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/submissions/1224600190/
+	// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/submissions/1224619191/
 	public static void main(String[] args) {
 		MinimumRemoveToMakeValidParentheses test = new MinimumRemoveToMakeValidParentheses();
 		System.out.println(test.minRemoveToMakeValid("lee(t(c)o)de)"));
@@ -13,26 +13,34 @@ public class MinimumRemoveToMakeValidParentheses {
 	}
 
 	public String minRemoveToMakeValid(String s) {
-		StringBuilder sb = new StringBuilder(s);
-		Stack<Integer> stack = new Stack<>();
-		for (int i = 0; i < sb.length(); i++) {
-			switch (sb.charAt(i)) {
-				case '(':
-					stack.add(i);
-					break;
+		char[] charArray = s.toCharArray();
+		int open = 0;
+		for (int i = 0; i < charArray.length; i++) {
+			switch (charArray[i]) {
+				case '(': open++; break;
 				case ')':
-					if (!stack.empty()) {
-						stack.pop();
+					if (open == 0) {
+						charArray[i] = '.';
 					} else {
-						sb.setCharAt(i, '.');
+						open--;
 					}
 					break;
+				default: break;
 			}
 		}
-		while (!stack.empty()) {
-			sb.setCharAt(stack.pop(), '.');
+		for (int i = charArray.length - 1; i >= 0; i--) {
+			if (open > 0 && charArray[i] == '(') {
+				charArray[i] = '.';
+				open--;
+			}
 		}
-		return sb.toString().replaceAll("\\.", "");
+		StringBuilder sb = new StringBuilder();
+		for (char c : charArray) {
+			if (c != '.') {
+				sb.append(c);
+			}
+		}
+		return sb.toString();
 	}
 
 }
