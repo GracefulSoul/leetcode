@@ -1,7 +1,5 @@
 package gracefulsoul.problems;
 
-import java.util.Stack;
-
 public class MinimumRemoveToMakeValidParentheses {
 
 	// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/submissions/1224619191/
