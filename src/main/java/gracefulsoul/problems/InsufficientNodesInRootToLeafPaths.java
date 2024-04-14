@@ -10,6 +10,7 @@ public class InsufficientNodesInRootToLeafPaths {
 		InsufficientNodesInRootToLeafPaths test = new InsufficientNodesInRootToLeafPaths();
 		PrintUtil.print(test.sufficientSubset(new TreeNode(1, new TreeNode(2, new TreeNode(4, new TreeNode(8), new TreeNode(9)), new TreeNode(-99, new TreeNode(-99), new TreeNode(-99))), new TreeNode(3, new TreeNode(-99, new TreeNode(12), new TreeNode(13)), new TreeNode(7, new TreeNode(-99), new TreeNode(14)))), 1), true, false);
 		PrintUtil.print(test.sufficientSubset(new TreeNode(5, new TreeNode(4, new TreeNode(11, new TreeNode(7), new TreeNode(1)), null), new TreeNode(8, new TreeNode(17), new TreeNode(4, new TreeNode(5), new TreeNode(3)))), 22), true, false);
+		PrintUtil.print(test.sufficientSubset(new TreeNode(1, new TreeNode(2, new TreeNode(-5), null), new TreeNode(-3, new TreeNode(4), null)), -1), true, false);
 	}
 
 	public TreeNode sufficientSubset(TreeNode root, int limit) {
