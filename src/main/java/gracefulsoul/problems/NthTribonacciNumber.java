@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NthTribonacciNumber {
 
-	// https://leetcode.com/problems/n-th-tribonacci-number/submissions/1240648224/
+	// https://leetcode.com/problems/n-th-tribonacci-number/submissions/1240654557/
 	public static void main(String[] args) {
 		NthTribonacciNumber test = new NthTribonacciNumber();
 		System.out.println(test.tribonacci(4));
@@ -14,7 +14,7 @@ public class NthTribonacciNumber {
 			return n;
 		} else {
 			int result = 1;
-			for (int i = 0, j = 1; n-- > 2;) {
+			for (int i = 0, j = 1; n > 2; n--) {
 				int temp = i + j + result;
 				i = j;
 				j = result;
