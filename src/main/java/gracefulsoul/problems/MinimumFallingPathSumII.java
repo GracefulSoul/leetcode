@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimumFallingPathSumII {
 
-	// https://leetcode.com/problems/minimum-falling-path-sum-ii/submissions/1242367304/
+	// https://leetcode.com/problems/minimum-falling-path-sum-ii/submissions/1242375372/
 	public static void main(String[] args) {
 		MinimumFallingPathSumII test = new MinimumFallingPathSumII();
 		System.out.println(test.minFallingPathSum(new int[][] {
@@ -28,8 +28,8 @@ public class MinimumFallingPathSumII {
 			}
 		}
 		int result = Integer.MAX_VALUE;
-		for (int i = 0; i < length; i++) {
-			result = Math.min(result, grid[length - 1][i]);
+		for (int num : grid[length - 1]) {
+			result = Math.min(result, num);
 		}
 		return result;
 	}
