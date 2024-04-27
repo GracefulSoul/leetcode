@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class StatisticsFromALargeSample {
 
-	// https://leetcode.com/problems/statistics-from-a-large-sample/submissions/1242912818/
+	// https://leetcode.com/problems/statistics-from-a-large-sample/submissions/1243187317/
 	public static void main(String[] args) {
 		StatisticsFromALargeSample test = new StatisticsFromALargeSample();
 		PrintUtil.print(test.sampleStats(new int[] { 0, 1, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -33,6 +33,18 @@ public class StatisticsFromALargeSample {
 		int count2 = 0;
 		int mid1 = 0;
 		int mid2 = 0;
+		for (int i = 0; i < count.length; i++) {
+			if (count[i] > 0) {
+				if (result[0] == 256) {
+					result[0] = i;
+				}
+				result[1] = i;
+				result[2] += (double) i * count[i];
+				if (count[i] > count[(int) result[4]]) {
+					result[4] = i;
+				}
+			}
+		}
 		while (left <= right) {
 			while (count[left] == 0) {
 				left++;
@@ -41,25 +53,11 @@ public class StatisticsFromALargeSample {
 				right--;
 			}
 			if (count1 < count2) {
-				result[2] += (double) count[left] * left;
 				count1 += count[left];
-				if (count[left] > count[(int) result[4]]) {
-					result[4] = left;
-				}
-				result[1] = Math.max(result[1], left);
-				result[0] = Math.min(result[0], left);
-				mid1 = left;
-				left++;
+				mid1 = left++;
 			} else {
-				result[2] += (double) count[right] * right;
 				count2 += count[right];
-				if (count[right] > count[(int) result[4]]) {
-					result[4] = right;
-				}
-				result[1] = Math.max(result[1], right);
-				result[0] = Math.min(result[0], right);
-				mid2 = right;
-				right--;
+				mid2 = right--;
 			}
 		}
 		result[2] /= (count1 + count2);
