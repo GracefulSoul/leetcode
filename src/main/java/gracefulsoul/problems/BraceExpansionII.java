@@ -8,7 +8,7 @@ import java.util.TreeSet;
 
 public class BraceExpansionII {
 
-	// https://leetcode.com/problems/brace-expansion-ii/submissions/1248150861/
+	// https://leetcode.com/problems/brace-expansion-ii/submissions/1248166984/
 	public static void main(String[] args) {
 		BraceExpansionII test = new BraceExpansionII();
 		System.out.println(test.braceExpansionII("{a,b}{c,{d,e}}"));
@@ -28,7 +28,7 @@ public class BraceExpansionII {
 			if (expression[j] == '{' && ++count == 1) {
 				i = j + 1;
 			} else if (expression[j] == '}' && --count == 0) {
-				this.merge(groups, dfs(expression, i, j - 1));
+				this.merge(groups, this.dfs(expression, i, j - 1));
 			} else if (count == 0) {
 				if (expression[j] == ',') {
 					groups.add(new ArrayList<>());
