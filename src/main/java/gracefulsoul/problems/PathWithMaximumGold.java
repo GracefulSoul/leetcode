@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class PathWithMaximumGold {
 
-	// https://leetcode.com/problems/path-with-maximum-gold/submissions/1257811967/
+	// https://leetcode.com/problems/path-with-maximum-gold/submissions/1257820418/
 	public static void main(String[] args) {
 		PathWithMaximumGold test = new PathWithMaximumGold();
 		System.out.println(test.getMaximumGold(new int[][] {
@@ -38,17 +38,17 @@ public class PathWithMaximumGold {
 			int max = 0;
 			int curr = grid[i][j];
 			grid[i][j] = 0;
-			if (i < row - 1) {
-				max = Math.max(max, this.getMaximumGold(grid, row, col, i + 1, j, sum));
-			}
-			if (j < col - 1) {
-				max = Math.max(max, this.getMaximumGold(grid, row, col, i, j + 1, sum));
-			}
 			if (i > 0) {
 				max = Math.max(max, this.getMaximumGold(grid, row, col, i - 1, j, sum));
 			}
+			if (i < row - 1) {
+				max = Math.max(max, this.getMaximumGold(grid, row, col, i + 1, j, sum));
+			}
 			if (j > 0) {
 				max = Math.max(max, this.getMaximumGold(grid, row, col, i, j - 1, sum));
+			}
+			if (j < col - 1) {
+				max = Math.max(max, this.getMaximumGold(grid, row, col, i, j + 1, sum));
 			}
 			grid[i][j] = curr;
 			max += curr;
