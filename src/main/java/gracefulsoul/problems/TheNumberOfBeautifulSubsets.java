@@ -1,12 +1,10 @@
 package gracefulsoul.problems;
 
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class TheNumberOfBeautifulSubsets {
 
-	// https://leetcode.com/problems/the-number-of-beautiful-subsets/submissions/1265663645/
+	// https://leetcode.com/problems/the-number-of-beautiful-subsets/submissions/1265713869/
 	public static void main(String[] args) {
 		TheNumberOfBeautifulSubsets test = new TheNumberOfBeautifulSubsets();
 		System.out.println(test.beautifulSubsets(new int[] { 2, 4, 6 }, 2));
@@ -15,21 +13,19 @@ public class TheNumberOfBeautifulSubsets {
 
 	public int beautifulSubsets(int[] nums, int k) {
 		Arrays.sort(nums);
-		return this.dfs(nums, k, 0, new HashSet<Integer>());
+		return this.dfs(nums, k, new int[1001], 0, 0);
 	}
 
-	private int dfs(int[] nums, int k, int i, Set<Integer> set) {
-		if (i == nums.length) {
-			return set.isEmpty() ? 0 : 1;
-		} else {
-			int count = this.dfs(nums, k, i + 1, set);
-			if (!set.contains(nums[i] - k)) {
-				set.add(nums[i]);
-				count += this.dfs(nums, k, i + 1, set);
-				set.remove(nums[i]);
+	private int dfs(int[] nums, int k, int[] freqMap, int i, int count) {
+		for (int j = i; j < nums.length; j++) {
+			if (nums[j] > k && freqMap[nums[j] - k] > 0) {
+				continue;
 			}
-			return count;
+			freqMap[nums[j]]++;
+			count = this.dfs(nums, k, freqMap, j + 1, count + 1);
+			freqMap[nums[j]]--;
 		}
+		return count;
 	}
 
 }
