@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 
 public class PrintFooBarAlternately {
 
-	// https://leetcode.com/problems/print-foobar-alternately/submissions/1278378036/
+	// https://leetcode.com/problems/print-foobar-alternately/submissions/1278399595/
 	public static void main(String[] args) throws InterruptedException {
 		FooBar fooBar = new FooBar(2);
 		new Thread(() -> {
@@ -28,15 +28,17 @@ public class PrintFooBarAlternately {
 class FooBar {
 
 	private int n;
-	private Semaphore fooSemaphore = new Semaphore(0);
-	private Semaphore barSemaphore = new Semaphore(1);
+	private Semaphore fooSemaphore;
+	private Semaphore barSemaphore;
 
 	public FooBar(int n) {
 		this.n = n;
+		this.fooSemaphore = new Semaphore(0);
+		this.barSemaphore = new Semaphore(1);
 	}
 
 	public void foo(Runnable printFoo) throws InterruptedException {
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < this.n; i++) {
 			this.barSemaphore.acquire();
 			// printFoo.run() outputs "foo". Do not change or remove this line.
 			printFoo.run();
@@ -45,7 +47,7 @@ class FooBar {
 	}
 
 	public void bar(Runnable printBar) throws InterruptedException {
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < this.n; i++) {
 			this.fooSemaphore.acquire();
 			// printBar.run() outputs "bar". Do not change or remove this line.
 			printBar.run();
