@@ -6,19 +6,21 @@ public class PrintFooBarAlternately {
 
 	// https://leetcode.com/problems/print-foobar-alternately/submissions/1278378036/
 	public static void main(String[] args) throws InterruptedException {
-		FooBar fooBar = new FooBar(1);
-		fooBar.foo(new Runnable() {
-			@Override
-			public void run() {
-				System.out.println("foo");
+		FooBar fooBar = new FooBar(2);
+		new Thread(() -> {
+			try {
+				fooBar.foo(() -> System.out.print("foo"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		});
-		fooBar.bar(new Runnable() {
-			@Override
-			public void run() {
-				System.out.println("bar");
+		}).start();
+		new Thread(() -> {
+			try {
+				fooBar.bar(() -> System.out.print("bar"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		});
+		}).start();
 	}
 
 }
