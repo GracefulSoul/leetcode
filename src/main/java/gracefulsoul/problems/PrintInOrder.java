@@ -7,24 +7,27 @@ public class PrintInOrder {
 	// https://leetcode.com/problems/print-in-order/submissions/1268099185/
 	public static void main(String[] args) throws InterruptedException {
 		Foo foo = new Foo();
-		foo.first(new Runnable() {
-			@Override
-			public void run() {
-				System.out.print("first");
+		new Thread(() -> {
+			try {
+				foo.third(() -> System.out.print("third"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		});
-		foo.second(new Runnable() {
-			@Override
-			public void run() {
-				System.out.print("second");
+		}).start();
+		new Thread(() -> {
+			try {
+				foo.second(() -> System.out.print("second"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		});
-		foo.third(new Runnable() {
-			@Override
-			public void run() {
-				System.out.println("third");
+		}).start();
+		new Thread(() -> {
+			try {
+				foo.first(() -> System.out.print("first"));
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		});
+		}).start();
 	}
 
 }
@@ -44,14 +47,16 @@ class Foo {
 	}
 
 	public void second(Runnable printSecond) throws InterruptedException {
-		while (!this.semaphore.tryAcquire(1));
+		while (!this.semaphore.tryAcquire(1))
+			;
 		// printSecond.run() outputs "second". Do not change or remove this line.
 		printSecond.run();
 		this.semaphore.release(2);
 	}
 
 	public void third(Runnable printThird) throws InterruptedException {
-		while (!this.semaphore.tryAcquire(2));
+		while (!this.semaphore.tryAcquire(2))
+			;
 		// printThird.run() outputs "third". Do not change or remove this line.
 		printThird.run();
 	}
