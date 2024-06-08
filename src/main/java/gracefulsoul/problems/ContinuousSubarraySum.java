@@ -1,8 +1,11 @@
 package gracefulsoul.problems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ContinuousSubarraySum {
 
-	// https://leetcode.com/submissions/detail/718024868/
+	// https://leetcode.com/submissions/detail/1281632196/
 	public static void main(String[] args) {
 		ContinuousSubarraySum test = new ContinuousSubarraySum();
 		System.out.println(test.checkSubarraySum(new int[] { 23, 2, 4, 6, 7 }, 6));
@@ -11,22 +14,21 @@ public class ContinuousSubarraySum {
 	}
 
 	public boolean checkSubarraySum(int[] nums, int k) {
-		int length = nums.length;
-		int sum = nums[length - 1];
-		for (int i = length - 2; i >= 0; i--) {
-			if (nums[i] == 0 && nums[i + 1] == 0) {
-				return true;
-			} else {
-				sum += nums[i];
+		Map<Integer, Integer> map = new HashMap<>();
+		map.put(0, -1);
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			sum += nums[i];
+			if (k != 0) {
+				sum %= k;
 			}
-			if (sum == 0 || sum >= k) {
-				int subSum = nums[i];
-				for (int j = i + 1; j < length; j++) {
-					subSum += nums[j];
-					if (subSum % k == 0) {
-						return true;
-					}
+			Integer prev = map.get(sum);
+			if (prev != null) {
+				if (i - prev > 1) {
+					return true;
 				}
+			} else {
+				map.put(sum, i);
 			}
 		}
 		return false;
