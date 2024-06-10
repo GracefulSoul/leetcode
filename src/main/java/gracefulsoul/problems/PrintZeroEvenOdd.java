@@ -5,7 +5,7 @@ import java.util.function.IntConsumer;
 
 public class PrintZeroEvenOdd {
 
-	// https://leetcode.com/problems/print-zero-even-odd/submissions/1283666265/
+	// https://leetcode.com/problems/print-zero-even-odd/submissions/1283714305/
 	public static void main(String[] args) {
 		ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(5);
 		IntConsumer consumer = System.out::print;
@@ -50,13 +50,13 @@ class ZeroEvenOdd {
 
 	// printNumber.accept(x) outputs "x", where x is an integer.
 	public void zero(IntConsumer printNumber) throws InterruptedException {
-		for (int i = 0; i < this.n; i++) {
+		for (int i = 1; i <= this.n; i++) {
 			this.zeroSemaphore.acquire();
 			printNumber.accept(0);
 			if (i % 2 == 0) {
-				this.oddSemaphore.release();
-			} else {
 				this.evenSemaphore.release();
+			} else {
+				this.oddSemaphore.release();
 			}
 		}
 	}
