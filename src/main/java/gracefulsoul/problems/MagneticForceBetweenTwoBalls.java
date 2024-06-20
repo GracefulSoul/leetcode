@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MagneticForceBetweenTwoBalls {
 
-	// https://leetcode.com/problems/magnetic-force-between-two-balls/submissions/1294543286/
+	// https://leetcode.com/problems/magnetic-force-between-two-balls/submissions/1294584201/
 	public static void main(String[] args) {
 		MagneticForceBetweenTwoBalls test = new MagneticForceBetweenTwoBalls();
 		System.out.println(test.maxDistance(new int[] { 1, 2, 3, 4, 7 }, 3));
@@ -31,9 +31,9 @@ public class MagneticForceBetweenTwoBalls {
 	private boolean isPossible(int[] positions, int m, int max) {
 		int count = 1;
 		int prev = positions[0];
-		for (int position : positions) {
-			if (position - prev >= max) {
-				prev = position;
+		for (int i = 1; i < positions.length; i++) {
+			if (positions[i] - prev >= max) {
+				prev = positions[i];
 				count++;
 			}
 		}
