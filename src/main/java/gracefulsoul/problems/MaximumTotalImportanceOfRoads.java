@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MaximumTotalImportanceOfRoads {
 
-	// https://leetcode.com/problems/maximum-total-importance-of-roads/submissions/1303004475/
+	// https://leetcode.com/problems/maximum-total-importance-of-roads/submissions/1303393144/
 	public static void main(String[] args) {
 		MaximumTotalImportanceOfRoads test = new MaximumTotalImportanceOfRoads();
 		System.out.println(test.maximumImportance(5, new int[][] {
@@ -23,7 +23,7 @@ public class MaximumTotalImportanceOfRoads {
 	}
 
 	public long maximumImportance(int n, int[][] roads) {
-		long reulst = 0;
+		long result = 0;
 		long cost = 1;
 		long[] connections = new long[n];
 		for (int[] road : roads) {
@@ -32,9 +32,9 @@ public class MaximumTotalImportanceOfRoads {
 		}
 		Arrays.sort(connections);
 		for (long connection : connections) {
-			reulst += connection * (cost++);
+			result += connection * (cost++);
 		}
-		return reulst;
+		return result;
 	}
 
 }
