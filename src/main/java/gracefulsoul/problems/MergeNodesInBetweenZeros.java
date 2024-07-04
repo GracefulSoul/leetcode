@@ -1,14 +1,15 @@
 package gracefulsoul.problems;
 
 import gracefulsoul.object.node.ListNode;
+import gracefulsoul.util.PrintUtil;
 
 public class MergeNodesInBetweenZeros {
 
 	// https://leetcode.com/problems/merge-nodes-in-between-zeros/submissions/1309222219/
 	public static void main(String[] args) {
 		MergeNodesInBetweenZeros test = new MergeNodesInBetweenZeros();
-		System.out.println(test.mergeNodes(new ListNode(0, new ListNode(3, new ListNode(1, new ListNode(0, new ListNode(4, new ListNode(5, new ListNode(2, new ListNode(0))))))))));
-		System.out.println(test.mergeNodes(new ListNode(0, new ListNode(1, new ListNode(0, new ListNode(3, new ListNode(0, new ListNode(2, new ListNode(2, new ListNode(0))))))))));
+		PrintUtil.print(test.mergeNodes(new ListNode(0, new ListNode(3, new ListNode(1, new ListNode(0, new ListNode(4, new ListNode(5, new ListNode(2, new ListNode(0))))))))));
+		PrintUtil.print(test.mergeNodes(new ListNode(0, new ListNode(1, new ListNode(0, new ListNode(3, new ListNode(0, new ListNode(2, new ListNode(2, new ListNode(0))))))))));
 	}
 
 	public ListNode mergeNodes(ListNode head) {
