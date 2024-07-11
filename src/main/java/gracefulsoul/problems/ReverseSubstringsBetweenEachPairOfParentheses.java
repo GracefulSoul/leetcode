@@ -1,10 +1,8 @@
 package gracefulsoul.problems;
 
-import java.util.Stack;
-
 public class ReverseSubstringsBetweenEachPairOfParentheses {
 
-	// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/submissions/1317362151/
+	// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/submissions/1317385150/
 	public static void main(String[] args) {
 		ReverseSubstringsBetweenEachPairOfParentheses test = new ReverseSubstringsBetweenEachPairOfParentheses();
 		System.out.println(test.reverseParentheses("(abcd)"));
@@ -12,29 +10,20 @@ public class ReverseSubstringsBetweenEachPairOfParentheses {
 		System.out.println(test.reverseParentheses("(ed(et(oc))el)"));
 	}
 
+	private int index;
+
 	public String reverseParentheses(String s) {
-		int length = s.length();
-		Stack<Integer> stack = new Stack<>();
-		int[] pair = new int[length];
-		for (int i = 0; i < length; i++) {
-			switch (s.charAt(i)) {
-				case '(':
-					stack.push(i);
-					break;
-				case ')':
-					int j = stack.pop();
-					pair[i] = j;
-					pair[j] = i;
-					break;
-				}
-		}
+		this.index = 0;
+		return this.reverseParentheses(s.toCharArray());
+	}
+
+	public String reverseParentheses(char[] charArray) {
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0, direction = 1; i < length; i += direction) {
-			if (s.charAt(i) == '(' || s.charAt(i) == ')') {
-				i = pair[i];
-				direction = -direction;
-			} else {
-				sb.append(s.charAt(i));
+		while (index < charArray.length) {
+			switch (charArray[index]) {
+			case ')': index++; return sb.reverse().toString();
+			case '(': index++; sb.append(this.reverseParentheses(charArray)); break;
+			default: sb.append(charArray[index]); index++; break;
 			}
 		}
 		return sb.toString();
