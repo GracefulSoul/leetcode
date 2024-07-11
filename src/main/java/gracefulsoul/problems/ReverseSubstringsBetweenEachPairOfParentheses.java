@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ReverseSubstringsBetweenEachPairOfParentheses {
 
-	// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/submissions/1317387204/
+	// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/submissions/1317390532/
 	public static void main(String[] args) {
 		ReverseSubstringsBetweenEachPairOfParentheses test = new ReverseSubstringsBetweenEachPairOfParentheses();
 		System.out.println(test.reverseParentheses("(abcd)"));
@@ -17,7 +17,7 @@ public class ReverseSubstringsBetweenEachPairOfParentheses {
 		return this.reverseParentheses(s.toCharArray());
 	}
 
-	public String reverseParentheses(char[] charArray) {
+	private String reverseParentheses(char[] charArray) {
 		StringBuilder sb = new StringBuilder();
 		while (index < charArray.length) {
 			switch (charArray[index]) {
