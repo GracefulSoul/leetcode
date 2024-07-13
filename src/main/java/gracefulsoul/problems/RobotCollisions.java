@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class RobotCollisions {
 
-	// https://leetcode.com/problems/robot-collisions/submissions/1319265408/
+	// https://leetcode.com/problems/robot-collisions/submissions/1319298462/
 	public static void main(String[] args) {
 		RobotCollisions test = new RobotCollisions();
 		System.out.println(test.survivedRobotsHealths(new int[] { 5, 4, 3, 2, 1 }, new int[] { 2, 17, 9, 15, 10 }, "RRRRR"));
@@ -31,11 +31,11 @@ public class RobotCollisions {
 				while (!stack.isEmpty() && healths[curr] > 0) {
 					int top = stack.pop();
 					if (healths[top] > healths[curr]) {
-						healths[top] -= 1;
+						healths[top]--;
 						healths[curr] = 0;
 						stack.push(top);
 					} else if (healths[top] < healths[curr]) {
-						healths[curr] -= 1;
+						healths[curr]--;
 						healths[top] = 0;
 					} else {
 						healths[curr] = 0;
@@ -44,9 +44,9 @@ public class RobotCollisions {
 				}
 			}
 		}
-		for (int i = 0; i < length; i++) {
-			if (healths[i] > 0) {
-				result.add(healths[i]);
+		for (int health : healths) {
+			if (health > 0) {
+				result.add(health);
 			}
 		}
 		return result;
