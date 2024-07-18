@@ -40,7 +40,6 @@ public class NumberOfGoodLeafNodesPairs {
 			for (int i = result.length - 2; i >= 1; i--) {
 				result[i + 1] = left[i] + right[i];
 			}
-
 			return result;
 		}
 	}
