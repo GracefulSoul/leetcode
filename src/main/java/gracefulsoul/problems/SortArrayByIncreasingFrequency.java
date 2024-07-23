@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class SortArrayByIncreasingFrequency {
 
-	// https://leetcode.com/problems/sort-array-by-increasing-frequency/submissions/1330491943/
+	// https://leetcode.com/problems/sort-array-by-increasing-frequency/submissions/1330500566/
 	public static void main(String[] args) {
 		SortArrayByIncreasingFrequency test = new SortArrayByIncreasingFrequency();
 		PrintUtil.print(test.frequencySort(new int[] { 1, 1, 2, 2, 2, 3 }));
@@ -13,16 +13,16 @@ public class SortArrayByIncreasingFrequency {
 	}
 
 	public int[] frequencySort(int[] nums) {
-		int count[] = new int[201];
+		int[] counts = new int[201];
 		for (int num : nums) {
-			count[num + 100]++;
+			counts[num + 100]++;
 		}
 		for (int i = nums.length - 1; i >= 0;) {
 			int max = 0;
 			int index = -1;
 			for (int j = 0; j < 201; j++) {
-				if (count[j] > max) {
-					max = count[j];
+				if (counts[j] > max) {
+					max = counts[j];
 					index = j;
 				}
 			}
@@ -30,7 +30,7 @@ public class SortArrayByIncreasingFrequency {
 			while (max-- > 0) {
 				nums[i--] = num;
 			}
-			count[index] = 0;
+			counts[index] = 0;
 		}
 		return nums;
 	}
