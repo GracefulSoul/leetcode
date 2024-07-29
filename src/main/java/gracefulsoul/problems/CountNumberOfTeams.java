@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountNumberOfTeams {
 
-	// https://leetcode.com/problems/count-number-of-teams/submissions/1337081719/
+	// https://leetcode.com/problems/count-number-of-teams/submissions/1337089849/
 	public static void main(String[] args) {
 		CountNumberOfTeams test = new CountNumberOfTeams();
 		System.out.println(test.numTeams(new int[] { 2, 5, 3, 4, 1 }));
@@ -14,7 +14,7 @@ public class CountNumberOfTeams {
 		int length = rating.length;
 		int[][] dp = new int[length][2];
 		int result = 0;
-		for (int i = 1; i < rating.length; i++) {
+		for (int i = 1; i < length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (rating[i] > rating[j]) {
 					dp[i][0]++;
