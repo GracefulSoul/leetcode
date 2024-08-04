@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class RangeSumofSortedSubarraySums {
 
-	// https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/submissions/1343631241/
+	// https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/submissions/1343639175/
 	public static void main(String[] args) {
 		RangeSumofSortedSubarraySums test = new RangeSumofSortedSubarraySums();
 		System.out.println(test.rangeSum(new int[] { 1, 2, 3, 4 }, 4, 1, 5));
@@ -16,7 +16,7 @@ public class RangeSumofSortedSubarraySums {
 	public int rangeSum(int[] nums, int n, int left, int right) {
 		int mod = 1000000007;
 		int result = 0;
-		Queue<int[]> queue = new PriorityQueue<int[]>(n, (p1, p2) -> p1[0] - p2[0]);
+		Queue<int[]> queue = new PriorityQueue<>(n, (p1, p2) -> p1[0] - p2[0]);
 		for (int i = 0; i < n; i++) {
 			queue.offer(new int[] { nums[i], i });
 		}
