@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MinimumNumberOfPushesToTypeWordII {
 
-	// https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii/submissions/1346354885/
+	// https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii/submissions/1346378094/
 	public static void main(String[] args) {
 		MinimumNumberOfPushesToTypeWordII test = new MinimumNumberOfPushesToTypeWordII();
 		System.out.println(test.minimumPushes("abcde"));
@@ -20,7 +20,7 @@ public class MinimumNumberOfPushesToTypeWordII {
 		Arrays.sort(counts);
 		int result = 0;
 		for (int i = 25, multiplier = 1, count = 0; i >= 0 && counts[i] > 0; i--) {
-			result += (multiplier * counts[i]);
+			result += multiplier * counts[i];
 			count++;
 			if (count == 8) {
 				multiplier++;
