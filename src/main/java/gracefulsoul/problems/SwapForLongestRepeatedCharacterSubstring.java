@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class SwapForLongestRepeatedCharacterSubstring {
 
-	// https://leetcode.com/problems/swap-for-longest-repeated-character-substring/submissions/1352925549/
+	// https://leetcode.com/problems/swap-for-longest-repeated-character-substring/submissions/1352937240/
 	public static void main(String[] args) {
 		SwapForLongestRepeatedCharacterSubstring test = new SwapForLongestRepeatedCharacterSubstring();
 		System.out.println(test.maxRepOpt1("ababa"));
@@ -17,7 +17,7 @@ public class SwapForLongestRepeatedCharacterSubstring {
 		for (int i = 0; i < length; i++) {
 			counts[charArray[i] - 'a']++;
 		}
-		int max = 0;
+		int result = 0;
 		for (int i = 0; i < length; i++) {
 			char curr = charArray[i];
 			int j = i;
@@ -33,9 +33,9 @@ public class SwapForLongestRepeatedCharacterSubstring {
 			if (count < counts[charArray[i] - 'a'] && diff == 0) {
 				count++;
 			}
-			max = Math.max(max, count);
+			result = Math.max(result, count);
 		}
-		return max;
+		return result;
 	}
 
 }
