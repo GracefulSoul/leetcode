@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class CompareStringsByFrequencyOfTheSmallestCharacter {
 
-	// https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/submissions/1365656062/
+	// https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/submissions/1365690668/
 	public static void main(String[] args) {
 		CompareStringsByFrequencyOfTheSmallestCharacter test = new CompareStringsByFrequencyOfTheSmallestCharacter();
 		PrintUtil.print(test.numSmallerByFrequency(new String[] { "cbd" }, new String[] { "zaaaz" }));
@@ -16,10 +16,8 @@ public class CompareStringsByFrequencyOfTheSmallestCharacter {
 		for (String word : words) {
 			counts[this.getCount(word)]++;
 		}
-		int sum = 0;
-		for (int i = 0; i < counts.length; i++) {
-			sum += counts[i];
-			counts[i] = sum;
+		for (int i = 0; i < counts.length - 1; i++) {
+			counts[i + 1] += counts[i];
 		}
 		int[] result = new int[queries.length];
 		for (int i = 0; i < queries.length; i++) {
