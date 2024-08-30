@@ -161,17 +161,19 @@ public class PrintUtil {
 	}
 
 	public static void print(int[][] matrix) {
+		System.out.print("[");
 		for (int[] row : matrix) {
 			System.out.print(Arrays.toString(row));
 		}
-		System.out.println();
+		System.out.println("]");
 	}
 
 	public static void print(char[][] matrix) {
+		System.out.print("[");
 		for (char[] row : matrix) {
 			System.out.print(Arrays.toString(row));
 		}
-		System.out.println();
+		System.out.println("]");
 	}
 
 	public static void print(NestedInteger nestedInteger) {
