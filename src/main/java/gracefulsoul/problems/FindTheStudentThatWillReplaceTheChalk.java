@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindTheStudentThatWillReplaceTheChalk {
 
-	// https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/submissions/1376274842/
+	// https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/submissions/1376278899/
 	public static void main(String[] args) {
 		FindTheStudentThatWillReplaceTheChalk test = new FindTheStudentThatWillReplaceTheChalk();
 		System.out.println(test.chalkReplacer(new int[] { 5, 1, 5 }, 22));
@@ -11,8 +11,8 @@ public class FindTheStudentThatWillReplaceTheChalk {
 
 	public int chalkReplacer(int[] chalk, int k) {
 		long sum = 0;
-		for (int studentChalkUse : chalk) {
-			sum += studentChalkUse;
+		for (int c : chalk) {
+			sum += c;
 		}
 		k %= sum;
 		for (int i = 0; i < chalk.length; i++) {
