@@ -6,7 +6,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class FindMissingObservations {
 
-	// https://leetcode.com/problems/find-missing-observations/submissions/1379816873/
+	// https://leetcode.com/problems/find-missing-observations/submissions/1379829084/
 	public static void main(String[] args) {
 		FindMissingObservations test = new FindMissingObservations();
 		PrintUtil.print(test.missingRolls(new int[] { 3, 2, 4, 3 }, 4, 2));
@@ -23,10 +23,10 @@ public class FindMissingObservations {
 		if (less < n || (6 * n) < less) {
 			return new int[0];
 		} else {
-			int[] result = new int[n];
 			int quotient = less / n;
 			int remainder = less % n;
-			Arrays.fill(result, less / n);
+			int[] result = new int[n];
+			Arrays.fill(result, quotient);
 			for (int i = 0; i < remainder; i++) {
 				result[i] = quotient + 1;
 			}
