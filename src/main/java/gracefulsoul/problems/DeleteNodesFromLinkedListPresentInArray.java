@@ -5,7 +5,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class DeleteNodesFromLinkedListPresentInArray {
 
-	// https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/submissions/1380908373/
+	// https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/submissions/1380913842/
 	public static void main(String[] args) {
 		DeleteNodesFromLinkedListPresentInArray test = new DeleteNodesFromLinkedListPresentInArray();
 		PrintUtil.print(test.modifiedList(new int[] { 1, 2, 3 }, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))))));
@@ -18,14 +18,14 @@ public class DeleteNodesFromLinkedListPresentInArray {
 		for (int num : nums) {
 			max = num > max ? num : max;
 		}
-		boolean[] freq = new boolean[max + 1];
+		boolean[] frequency = new boolean[max + 1];
 		for (int num : nums) {
-			freq[num] = true;
+			frequency[num] = true;
 		}
 		ListNode temp = new ListNode();
 		ListNode curr = temp;
 		while (head != null) {
-			if (head.val > max || freq[head.val] == false) {
+			if (head.val > max || frequency[head.val] == false) {
 				curr.next = head;
 				curr = curr.next;
 			}
