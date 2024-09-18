@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DayOfTheWeek {
 
-	// https://leetcode.com/problems/day-of-the-week/submissions/1393825364/
+	// https://leetcode.com/problems/day-of-the-week/submissions/1393828670/
 	public static void main(String[] args) {
 		DayOfTheWeek test = new DayOfTheWeek();
 		System.out.println(test.dayOfTheWeek(31, 8, 2019));
@@ -19,8 +19,7 @@ public class DayOfTheWeek {
 		}
 		int century = year / 100;
 		year %= 100;
-		int w = ((century / 4) - (2 * century) + year + (year / 4) + ((13 * (month + 1)) / 5) + day - 1) % 7;
-		return days[(w + 7) % 7];
+		return days[((((century / 4) - (2 * century) + year + (year / 4) + ((13 * (month + 1)) / 5) + day - 1) % 7) + 7) % 7];
 	}
 
 }
