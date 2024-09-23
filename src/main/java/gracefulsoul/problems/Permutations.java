@@ -3,8 +3,6 @@ package gracefulsoul.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-import gracefulsoul.util.PrintUtil;
-
 public class Permutations {
 
 	// https://leetcode.com/submissions/detail/499405241/
