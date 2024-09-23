@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CriticalConnectionsInANetwork {
 
-	// https://leetcode.com/problems/critical-connections-in-a-network/submissions/1399508008/
+	// https://leetcode.com/problems/critical-connections-in-a-network/submissions/1399516104/
 	public static void main(String[] args) {
 		CriticalConnectionsInANetwork test = new CriticalConnectionsInANetwork();
 		System.out.println(test.criticalConnections(4,Arrays.asList(
@@ -39,16 +39,16 @@ public class CriticalConnectionsInANetwork {
 		visited[node] = true;
 		times[node] = time++;
 		int current = times[node];
-		for (int neighbour : graph[node]) {
-			if (neighbour == parent) {
+		for (int neighbor : graph[node]) {
+			if (neighbor == parent) {
 				continue;
 			}
-			if (!visited[neighbour]) {
-				this.criticalConnections(results, graph, node, neighbour, visited, times, time);
+			if (!visited[neighbor]) {
+				this.criticalConnections(results, graph, node, neighbor, visited, times, time);
 			}
-			times[node] = Math.min(times[node], times[neighbour]);
-			if (current < times[neighbour]) {
-				results.add(Arrays.asList(node, neighbour));
+			times[node] = Math.min(times[node], times[neighbor]);
+			if (current < times[neighbor]) {
+				results.add(Arrays.asList(node, neighbor));
 			}
 		}
 	}
