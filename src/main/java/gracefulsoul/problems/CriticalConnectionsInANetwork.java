@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CriticalConnectionsInANetwork {
 
-	// https://leetcode.com/problems/critical-connections-in-a-network/submissions/1399516104/
+	// https://leetcode.com/problems/critical-connections-in-a-network/submissions/1399525950/
 	public static void main(String[] args) {
 		CriticalConnectionsInANetwork test = new CriticalConnectionsInANetwork();
 		System.out.println(test.criticalConnections(4,Arrays.asList(
@@ -31,23 +31,21 @@ public class CriticalConnectionsInANetwork {
 			graph[connection.get(1)].add(connection.get(0));
 		}
 		List<List<Integer>> results = new ArrayList<>();
-		this.criticalConnections(results, graph, -1, 0, new boolean[n], new int[n], 0);
+		this.dfs(results, graph, 0, 0, new int[n], 1);
 		return results;
 	}
 
-	private void criticalConnections(List<List<Integer>> results, List<Integer>[] graph, int parent, int node, boolean[] visited, int[] times, int time) {
-		visited[node] = true;
-		times[node] = time++;
-		int current = times[node];
+	private void dfs(List<List<Integer>> results, List<Integer>[] graph, int parent, int node, int[] times, int time) {
+		times[node] = time;
 		for (int neighbor : graph[node]) {
 			if (neighbor == parent) {
 				continue;
 			}
-			if (!visited[neighbor]) {
-				this.criticalConnections(results, graph, node, neighbor, visited, times, time);
+			if (times[neighbor] == 0) {
+				this.dfs(results, graph, node, neighbor, times, time + 1);
 			}
 			times[node] = Math.min(times[node], times[neighbor]);
-			if (current < times[neighbor]) {
+			if (times[neighbor] > time) {
 				results.add(Arrays.asList(node, neighbor));
 			}
 		}
