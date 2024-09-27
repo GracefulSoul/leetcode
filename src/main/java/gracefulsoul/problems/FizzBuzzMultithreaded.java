@@ -42,10 +42,11 @@ public class FizzBuzzMultithreaded {
 class FizzBuzz2 {
 
 	private int n;
-	private int count = 1;
+	private int count;
 
 	public FizzBuzz2(int n) {
 		this.n = n;
+		this.count = 1;
 	}
 
 	// printFizz.run() outputs "fizz".
@@ -64,7 +65,7 @@ class FizzBuzz2 {
 	// printBuzz.run() outputs "buzz".
 	public synchronized void buzz(Runnable printBuzz) throws InterruptedException {
 		while (this.count <= this.n) {
-			if (this.count % 5 != 0 || this.count % 3 == 0) {
+			if (this.count % 3 == 0 || this.count % 5 != 0) {
 				wait();
 				continue;
 			}
