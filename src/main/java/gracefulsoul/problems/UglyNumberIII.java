@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class UglyNumberIII {
 
-	// https://leetcode.com/problems/ugly-number-iii/submissions/1405516926/
+	// https://leetcode.com/problems/ugly-number-iii/submissions/1405526087/
 	public static void main(String[] args) {
 		UglyNumberIII test = new UglyNumberIII();
 		System.out.println(test.nthUglyNumber(3, 2, 3, 5));
@@ -29,7 +29,7 @@ public class UglyNumberIII {
 	private int getCount(long num, long a, long b, long c) {
 		long bc = this.getLcm(b, c);
 		return (int) ((num / a) + (num / b) + (num / c)
-				- (num / this.getLcm(a, b)) - (num / bc)- (num / this.getLcm(a, c))
+				- (num / this.getLcm(a, b)) - (num / bc) - (num / this.getLcm(a, c))
 				+ (num / (this.getLcm(a, bc))));
 	}
 
@@ -42,7 +42,7 @@ public class UglyNumberIII {
 	}
 
 	private long getLcm(long a, long b) {
-		return a * b / this.getGcd(a, b);
+		return (a * b) / this.getGcd(a, b);
 	}
 
 }
