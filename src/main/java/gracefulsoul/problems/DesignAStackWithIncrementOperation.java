@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class DesignAStackWithIncrementOperation {
 
-	// https://leetcode.com/problems/design-a-stack-with-increment-operation/submissions/1406908209/
+	// https://leetcode.com/problems/design-a-stack-with-increment-operation/submissions/1406916355/
 	public static void main(String[] args) {
 		CustomStack stk = new CustomStack(3); // Stack is Empty []
 		stk.push(1);                          // stack becomes [1]
@@ -24,10 +24,11 @@ public class DesignAStackWithIncrementOperation {
 class CustomStack {
 
 	private int[] stack;
-	private int top = -1;
+	private int top;
 
 	public CustomStack(int maxSize) {
 		this.stack = new int[maxSize];
+		this.top = -1;
 	}
 
 	public void push(int x) {
