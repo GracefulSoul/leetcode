@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class RemoveAllAdjacentDuplicatesInStringII {
 
+	// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/submissions/1417886947/
 	public static void main(String[] args) {
 		RemoveAllAdjacentDuplicatesInStringII test = new RemoveAllAdjacentDuplicatesInStringII();
 		System.out.println(test.removeDuplicates("abcd", 2));
