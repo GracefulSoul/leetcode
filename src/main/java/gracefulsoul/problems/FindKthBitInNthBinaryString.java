@@ -20,7 +20,7 @@ public class FindKthBitInNthBinaryString {
 				flips ^= 1;
 				k = length - k + 1;
 			}
-			n -= 1;
+			n--;
 		}
 		return flips == 0 ? '0' : '1';
 	}
