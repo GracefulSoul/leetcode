@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumNumberOfMovesInAGrid {
 
-	// https://leetcode.com/problems/maximum-number-of-moves-in-a-grid/submissions/1437136330/
+	// https://leetcode.com/problems/maximum-number-of-moves-in-a-grid/submissions/1437138646/
 	public static void main(String[] args) {
 		MaximumNumberOfMovesInAGrid test = new MaximumNumberOfMovesInAGrid();
 		System.out.println(test.maxMoves(new int[][] {
@@ -26,13 +26,13 @@ public class MaximumNumberOfMovesInAGrid {
 		for (int j = col - 2; j >= 0; j--) {
 			for (int i = 0; i < row; i++) {
 				int num = grid[i][j];
-				if (i - 1 > -1 && grid[i - 1][j + 1] > num) {
+				if (i - 1 >= 0 && grid[i - 1][j + 1] > num) {
 					dp[i][j] = Math.max(dp[i][j], dp[i - 1][j + 1] + 1);
 				}
 				if (grid[i][j + 1] > num) {
 					dp[i][j] = Math.max(dp[i][j], dp[i][j + 1] + 1);
 				}
-				if (i + 1 < row && grid[i + 1][j + 1] > num) {
+				if (row > i + 1 && grid[i + 1][j + 1] > num) {
 					dp[i][j] = Math.max(dp[i][j], dp[i + 1][j + 1] + 1);
 				}
 			}
