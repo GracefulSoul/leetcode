@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class MinimumNumberOfRemovalsToMakeMountainArray {
 
+	// https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/submissions/1438270201/
 	public static void main(String[] args) {
 		MinimumNumberOfRemovalsToMakeMountainArray test = new MinimumNumberOfRemovalsToMakeMountainArray();
 		System.out.println(test.minimumMountainRemovals(new int[] { 1, 3, 1 }));
