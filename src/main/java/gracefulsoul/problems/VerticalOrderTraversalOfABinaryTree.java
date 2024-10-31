@@ -2,7 +2,6 @@ package gracefulsoul.problems;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +27,8 @@ public class VerticalOrderTraversalOfABinaryTree {
 		Map<Integer, List<Pair>> map = new HashMap<>();
 		Queue<Pair> queue = new LinkedList<>();
 		queue.add(new Pair(root, 0, 0));
-		int min = 0, max = 0;
+		int min = 0;
+		int max = 0;
 		while (!queue.isEmpty()) {
 			Pair pair = queue.remove();
 			min = Math.min(min, pair.x);
@@ -46,13 +46,11 @@ public class VerticalOrderTraversalOfABinaryTree {
 			}
 		}
 		for (int i = min; i <= max; i++) {
-			Collections.sort(map.get(i), new Comparator<Pair>() {
-				public int compare(Pair a, Pair b) {
-					if (a.y == b.y) {
-						return a.node.val - b.node.val;
-					}
-					return 0;
+			Collections.sort(map.get(i), (Pair a, Pair b) -> {
+				if (a.y == b.y) {
+					return a.node.val - b.node.val;
 				}
+				return 0;
 			});
 			List<Integer> list = new ArrayList<>();
 			List<Pair> pairs = map.get(i);
