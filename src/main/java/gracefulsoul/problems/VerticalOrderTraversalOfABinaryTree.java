@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Queue;
 
 import gracefulsoul.object.node.TreeNode;
+import gracefulsoul.object.pair.node.Pair;
 
 public class VerticalOrderTraversalOfABinaryTree {
 
@@ -21,16 +22,6 @@ public class VerticalOrderTraversalOfABinaryTree {
 		System.out.println(test.verticalTraversal(new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(6)), new TreeNode(3, new TreeNode(5), new TreeNode(7)))));
 	}
 
-	class Pair {
-		TreeNode node;
-		int x;
-		int y;
-		Pair(TreeNode node, int x, int y) {
-			this.node = node;
-			this.x = x;
-			this.y = y;
-		}
-	}
 
 	public List<List<Integer>> verticalTraversal(TreeNode root) {
 		List<List<Integer>> lists = new ArrayList<>();
