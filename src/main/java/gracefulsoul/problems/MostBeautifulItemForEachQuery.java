@@ -8,21 +8,21 @@ public class MostBeautifulItemForEachQuery {
 	// https://leetcode.com/problems/most-beautiful-item-for-each-query/submissions/1451040922/
 	public static void main(String[] args) {
 		MostBeautifulItemForEachQuery test = new MostBeautifulItemForEachQuery();
-		PrintUtil.print(test.maximumBeauty(new int[][] 
+		PrintUtil.print(test.maximumBeauty(new int[][] {
 			{ 1, 2 },
 			{ 3, 2 },
 			{ 2, 4 },
 			{ 5, 6 },
 			{ 3, 5 }
 		}, new int[] { 1, 2, 3, 4, 5, 6 }));
-		PrintUtil.print(test.maximumBeauty(new int[][] 
+		PrintUtil.print(test.maximumBeauty(new int[][] {
 			{ 1, 2 },
 			{ 3, 2 },
 			{ 2, 4 },
 			{ 5, 6 },
 			{ 3, 5 }
 		}, new int[] { 1, 2, 3, 4, 5, 6 }));
-		PrintUtil.print(test.maximumBeauty(new int[][] 
+		PrintUtil.print(test.maximumBeauty(new int[][] {
 				{ 10, 10000 }
 		}, new int[] { 5 }));
 	}
