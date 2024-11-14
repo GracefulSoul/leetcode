@@ -2,6 +2,7 @@ package gracefulsoul.problems;
 
 public class MinimizedMaximumOfProductsDistributedToAnyStore {
 
+	// https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/submissions/1452431630/
 	public static void main(String[] args) {
 		MinimizedMaximumOfProductsDistributedToAnyStore test = new MinimizedMaximumOfProductsDistributedToAnyStore();
 		System.out.println(test.minimizedMaximum(6, new int[] { 11, 6 }));
