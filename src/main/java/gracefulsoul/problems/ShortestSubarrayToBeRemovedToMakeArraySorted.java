@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ShortestSubarrayToBeRemovedToMakeArraySorted {
 
-	// https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/submissions/1453345947/
+	// https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/submissions/1453355067/
 	public static void main(String[] args) {
 		ShortestSubarrayToBeRemovedToMakeArraySorted test = new ShortestSubarrayToBeRemovedToMakeArraySorted();
 		System.out.println(test.findLengthOfShortestSubarray(new int[] { 1, 2, 3, 10, 4, 2, 3, 5 }));
@@ -20,7 +20,7 @@ public class ShortestSubarrayToBeRemovedToMakeArraySorted {
 		if (left == length - 1) {
 			return 0;
 		}
-		while (right > 0 && arr[right - 1] <= arr[right]) {
+		while (0 < right && arr[right - 1] <= arr[right]) {
 			right--;
 		}
 		int i = 0;
