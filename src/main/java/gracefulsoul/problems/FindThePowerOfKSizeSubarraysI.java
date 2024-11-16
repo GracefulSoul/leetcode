@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class FindThePowerOfKSizeSubarraysI {
 
-	// https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/submissions/1453936055/
+	// https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/submissions/1453939643/
 	public static void main(String[] args) {
 		FindThePowerOfKSizeSubarraysI test = new FindThePowerOfKSizeSubarraysI();
 		PrintUtil.print(test.resultsArray(new int[] { 1, 2, 3, 4, 3, 2, 5 }, 3));
@@ -14,8 +14,7 @@ public class FindThePowerOfKSizeSubarraysI {
 
 	public int[] resultsArray(int[] nums, int k) {
 		int length = nums.length;
-		int m = length - k + 1;
-		int[] result = new int[m];
+		int[] result = new int[length - k + 1];
 		int sum = 0;
 		for (int i = 0; i < k - 1; i++) {
 			sum += nums[i];
