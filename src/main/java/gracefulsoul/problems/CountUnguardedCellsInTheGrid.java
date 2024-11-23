@@ -36,7 +36,7 @@ public class CountUnguardedCellsInTheGrid {
 		for (int[] guard : guards) {
 			int x = guard[0] - 1;
 			int y = guard[1];
-			while (x >= 0 && grid[x][y] != 1) {
+			while (0 <= x && grid[x][y] != 1) {
 				if (grid[x][y] != -1) {
 					count--;
 					grid[x][y] = -1;
@@ -53,7 +53,7 @@ public class CountUnguardedCellsInTheGrid {
 			}
 			x = guard[0];
 			y = guard[1] - 1;
-			while (y >= 0 && grid[x][y] != 1) {
+			while (0 <= y && grid[x][y] != 1) {
 				if (grid[x][y] != -1) {
 					count--;
 					grid[x][y] = -1;
