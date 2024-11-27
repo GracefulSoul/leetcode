@@ -9,7 +9,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class ShortestDistanceAfterRoadAdditionQueriesI {
 
-	// https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/submissions/1464108702/
+	// https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/submissions/1464127965/
 	public static void main(String[] args) {
 		ShortestDistanceAfterRoadAdditionQueriesI test = new ShortestDistanceAfterRoadAdditionQueriesI();
 		PrintUtil.print(test.shortestDistanceAfterQueries(5, new int[][] {
@@ -29,12 +29,14 @@ public class ShortestDistanceAfterRoadAdditionQueriesI {
 			list.add(new ArrayList<>());
 			list.get(i).add(i + 1);
 		}
-		List<Integer> result = new ArrayList<>();
-		for (int[] query : queries) {
+		int length = queries.length;
+		int[] result = new int[length];
+		for (int i = 0; i < length; i++) {
+			int[] query = queries[i];
 			list.get(query[0]).add(query[1]);
-			result.add(this.getShortestDistance(list, n));
+			result[i] = this.getShortestDistance(list, n);
 		}
-		return result.stream().mapToInt(Integer::intValue).toArray();
+		return result;
 	}
 
 	private int getShortestDistance(List<List<Integer>> list, int n) {
