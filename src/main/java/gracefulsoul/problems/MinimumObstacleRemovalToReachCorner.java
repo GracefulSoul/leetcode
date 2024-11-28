@@ -5,7 +5,7 @@ import java.util.Deque;
 
 public class MinimumObstacleRemovalToReachCorner {
 
-	// https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/submissions/1464941594/
+	// https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/submissions/1464965130/
 	public static void main(String[] args) {
 		MinimumObstacleRemovalToReachCorner test = new MinimumObstacleRemovalToReachCorner();
 		System.out.println(test.minimumObstacles(new int[][] {
@@ -36,14 +36,14 @@ public class MinimumObstacleRemovalToReachCorner {
 		while (!deque.isEmpty()) {
 			int[] curr = deque.pollFirst();
 			int x = curr[0];
-			int c = curr[1];
+			int y = curr[1];
 			int obstacle = curr[2];
-			if (x == row - 1 && c == col - 1) {
+			if (x == row - 1 && y == col - 1) {
 				return obstacle;
 			}
 			for (int[] direction : DIRECTIONS) {
 				int dx = x + direction[0];
-				int dy = c + direction[1];
+				int dy = y + direction[1];
 				if (0 <= dx && dx < row && 0 <= dy && dy < col && grid[dx][dy] != -1) {
 					if (grid[dx][dy] == 0) {
 						deque.addFirst(new int[] { dx, dy, obstacle });
