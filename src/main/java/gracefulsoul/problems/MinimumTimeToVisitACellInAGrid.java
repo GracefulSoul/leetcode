@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MinimumTimeToVisitACellInAGrid {
 
-	// https://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/submissions/1465424058/
+	// https://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/submissions/1465438735/
 	public static void main(String[] args) {
 		MinimumTimeToVisitACellInAGrid test = new MinimumTimeToVisitACellInAGrid();
 		System.out.println(test.minimumTime(new int[][] {
@@ -48,8 +48,7 @@ public class MinimumTimeToVisitACellInAGrid {
 				if (0 <= dx && dx < row && 0 <= dy && dy < col && !visited[dx][dy]) {
 					int currTime = time + 1;
 					if (grid[dx][dy] > currTime) {
-						int wait = ((grid[dx][dy] - currTime + 1) / 2) * 2;
-						currTime += wait;
+						currTime += ((grid[dx][dy] - currTime + 1) / 2) * 2;
 					}
 					if (dx == row - 1 && dy == col - 1) {
 						return currTime;
