@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumNumberOfIntegersToChooseFromARangeI {
 
-	// https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/submissions/1471695459/
+	// https://leetcode.com/problems/maximum-number-of-integers-to-choose-from-a-range-i/submissions/1471697531/
 	public static void main(String[] args) {
 		MaximumNumberOfIntegersToChooseFromARangeI test = new MaximumNumberOfIntegersToChooseFromARangeI();
 		System.out.println(test.maxCount(new int[] { 1, 6, 5 }, 5, 6));
@@ -16,17 +16,17 @@ public class MaximumNumberOfIntegersToChooseFromARangeI {
 			ban[num] = true;
 		}
 		long sum = 0;
-		int cnt = 0;
+		int count = 0;
 		for (int i = 1; i <= n; i++) {
 			if (!ban[i]) {
 				sum += i;
 				if (sum > maxSum) {
 					break;
 				}
-				cnt++;
+				count++;
 			}
 		}
-		return cnt;
+		return count;
 	}
 
 }
