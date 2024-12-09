@@ -150,6 +150,10 @@ public class PrintUtil {
 		System.out.println(Arrays.toString(array));
 	}
 
+	public static void print(boolean[] array) {
+		System.out.println(Arrays.toString(array));
+	}
+
 	public static void print(String[] array) {
 		System.out.println(Arrays.toString(array));
 	}
