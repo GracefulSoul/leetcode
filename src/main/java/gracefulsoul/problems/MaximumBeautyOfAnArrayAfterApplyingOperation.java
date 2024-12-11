@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MaximumBeautyOfAnArrayAfterApplyingOperation {
 
-	// https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/submissions/1476104521/
+	// https://leetcode.com/problems/maximum-beauty-of-an-array-after-applying-operation/submissions/1476107237/
 	public static void main(String[] args) {
 		MaximumBeautyOfAnArrayAfterApplyingOperation test = new MaximumBeautyOfAnArrayAfterApplyingOperation();
 		System.out.println(test.maximumBeauty(new int[] { 4, 6, 1, 2 }, 2));
@@ -15,12 +15,12 @@ public class MaximumBeautyOfAnArrayAfterApplyingOperation {
 		Arrays.sort(nums);
 		int start = 0;
 		int end = 0;
-		while (start < nums.length) {
-			if (nums[start++] - nums[end] > k * 2) {
-				end++;
+		while (end < nums.length) {
+			if (nums[end++] - nums[start] > k * 2) {
+				start++;
 			}
 		}
-		return start - end;
+		return end - start;
 	}
 
 }
