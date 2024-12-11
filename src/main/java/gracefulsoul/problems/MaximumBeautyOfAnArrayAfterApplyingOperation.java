@@ -8,7 +8,7 @@ public class MaximumBeautyOfAnArrayAfterApplyingOperation {
 	public static void main(String[] args) {
 		MaximumBeautyOfAnArrayAfterApplyingOperation test = new MaximumBeautyOfAnArrayAfterApplyingOperation();
 		System.out.println(test.maximumBeauty(new int[] { 4, 6, 1, 2 }, 2));
-		System.out.println(test.maximumBeauty(new int[] { 4, 6, 1, 2 }, 2));
+		System.out.println(test.maximumBeauty(new int[] { 1, 1, 1, 1 }, 10));
 	}
 
 	public int maximumBeauty(int[] nums, int k) {
