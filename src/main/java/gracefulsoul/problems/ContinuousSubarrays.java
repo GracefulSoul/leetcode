@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class ContinuousSubarrays {
 
-	// https://leetcode.com/problems/continuous-subarrays/submissions/1478266496/
+	// https://leetcode.com/problems/continuous-subarrays/submissions/1478310538/
 	public static void main(String[] args) {
 		ContinuousSubarrays test = new ContinuousSubarrays();
 		System.out.println(test.continuousSubarrays(new int[] { 5, 4, 2, 4 }));
@@ -16,8 +16,7 @@ public class ContinuousSubarrays {
 		long result = 0;
 		Deque<Integer> max = new LinkedList<>();
 		Deque<Integer> min = new LinkedList<>();
-		int j = -1;
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 0, j = -1; i < nums.length; i++) {
 			while (!max.isEmpty() && max.peekLast() > nums[i]) {
 				max.pollLast();
 			}
