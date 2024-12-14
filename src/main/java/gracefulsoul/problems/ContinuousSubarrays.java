@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class ContinuousSubarrays {
 
-	// https://leetcode.com/problems/continuous-subarrays/submissions/1478310538/
+	// https://leetcode.com/problems/continuous-subarrays/submissions/1478324244/
 	public static void main(String[] args) {
 		ContinuousSubarrays test = new ContinuousSubarrays();
 		System.out.println(test.continuousSubarrays(new int[] { 5, 4, 2, 4 }));
@@ -14,24 +14,24 @@ public class ContinuousSubarrays {
 
 	public long continuousSubarrays(int[] nums) {
 		long result = 0;
-		Deque<Integer> max = new LinkedList<>();
-		Deque<Integer> min = new LinkedList<>();
+		Deque<Integer> ascending = new LinkedList<>();
+		Deque<Integer> descending = new LinkedList<>();
 		for (int i = 0, j = -1; i < nums.length; i++) {
-			while (!max.isEmpty() && max.peekLast() > nums[i]) {
-				max.pollLast();
+			while (!ascending.isEmpty() && ascending.peekLast() > nums[i]) {
+				ascending.pollLast();
 			}
-			max.add(nums[i]);
-			while (!min.isEmpty() && min.peekLast() < nums[i]) {
-				min.pollLast();
+			ascending.add(nums[i]);
+			while (!descending.isEmpty() && descending.peekLast() < nums[i]) {
+				descending.pollLast();
 			}
-			min.add(nums[i]);
-			while (min.peekFirst() - max.peekFirst() > 2) {
+			descending.add(nums[i]);
+			while (descending.peekFirst() - ascending.peekFirst() > 2) {
 				j++;
-				if (max.peekFirst() == nums[j]) {
-					max.pollFirst();
+				if (ascending.peekFirst() == nums[j]) {
+					ascending.pollFirst();
 				}
-				if (min.peekFirst() == nums[j]) {
-					min.pollFirst();
+				if (descending.peekFirst() == nums[j]) {
+					descending.pollFirst();
 				}
 			}
 			result += i - j;
