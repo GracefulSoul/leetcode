@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class MaximumAveragePassRatio {
 
-	// https://leetcode.com/problems/maximum-average-pass-ratio/submissions/1478965446/
+	// https://leetcode.com/problems/maximum-average-pass-ratio/submissions/1479096096/
 	public static void main(String[] args) {
 		MaximumAveragePassRatio test = new MaximumAveragePassRatio();
 		System.out.println(test.maxAverageRatio(new int[][] {
@@ -23,7 +23,7 @@ public class MaximumAveragePassRatio {
 	}
 
 	public double maxAverageRatio(int[][] classes, int extraStudents) {
-		Queue<double[]> queue = new PriorityQueue<>(Comparator.comparingDouble(o -> -o[2]));
+		Queue<double[]> queue = new PriorityQueue<>(Comparator.comparingDouble(c -> -c[2]));
 		for (int[] c : classes) {
 			double a = c[0];
 			double b = c[1];
