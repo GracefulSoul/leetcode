@@ -22,9 +22,6 @@ public class CountServersThatCommunicate {
 	}
 
 	public int countServers(int[][] grid) {
-		if (grid == null || grid.length == 0 || grid[0].length == 0) {
-			return 0;
-		}
 		int rowLength = grid.length;
 		int colLength = grid[0].length;
 		int[] rowCounts = new int[rowLength];
