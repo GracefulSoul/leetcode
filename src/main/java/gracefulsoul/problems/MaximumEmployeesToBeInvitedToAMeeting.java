@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MaximumEmployeesToBeInvitedToAMeeting {
 
-	// https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting/submissions/1520591105/
+	// https://leetcode.com/problems/maximum-employees-to-be-invited-to-a-meeting/submissions/1520609766/
 	public static void main(String[] args) {
 		MaximumEmployeesToBeInvitedToAMeeting test = new MaximumEmployeesToBeInvitedToAMeeting();
 		System.out.println(test.maximumInvitations(new int[] { 2, 2, 1, 2 }));
@@ -43,7 +43,7 @@ public class MaximumEmployeesToBeInvitedToAMeeting {
 		for (int i = 0; i < length; i++) {
 			if (!visited[i]) {
 				int num = 0;
-				for (int j = i; visited[j] == false; j = favorite[j]) {
+				for (int j = i; !visited[j]; j = favorite[j]) {
 					visited[j] = true;
 					num++;
 				}
