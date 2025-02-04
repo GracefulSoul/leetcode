@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumAscendingSubarraySum {
 
-	// https://leetcode.com/problems/maximum-ascending-subarray-sum/submissions/1530893708/
+	// https://leetcode.com/problems/maximum-ascending-subarray-sum/submissions/1530899854/
 	public static void main(String[] args) {
 		MaximumAscendingSubarraySum test = new MaximumAscendingSubarraySum();
 		System.out.println(test.maxAscendingSum(new int[] { 10, 20, 30, 5, 10, 50 }));
