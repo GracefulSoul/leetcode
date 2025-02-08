@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class DesignANumberContainerSystem {
 
-	// https://leetcode.com/problems/design-a-number-container-system/submissions/1535349023/
+	// https://leetcode.com/problems/design-a-number-container-system/submissions/1535362698/
 	public static void main(String[] args) {
 		NumberContainers nc = new NumberContainers();
 		System.out.println(nc.find(10));	// There is no index that is filled with number 10. Therefore, we return -1.
@@ -43,9 +43,9 @@ class NumberContainers {
 		if (!this.valueMap.containsKey(number)) {
 			return -1;
 		}
-		for (Integer a : this.valueMap.get(number)) {
-			if (this.indexMap.get(a) == number) {
-				return a;
+		for (Integer value : this.valueMap.get(number)) {
+			if (this.indexMap.get(value) == number) {
+				return value;
 			}
 		}
 		return -1;
