@@ -27,7 +27,7 @@ public class MinimumOperationsToExceedThresholdValueII {
 				break;
 			} else {
 				int y = queue.poll();
-				long value = 2L * x + y;
+				long value = (2L * x) + y;
 				if (value < k) {
 					queue.add((int) value);
 				}
