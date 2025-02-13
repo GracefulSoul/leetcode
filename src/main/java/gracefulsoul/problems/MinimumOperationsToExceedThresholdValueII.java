@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class MinimumOperationsToExceedThresholdValueII {
 
+	// https://leetcode.com/problems/minimum-operations-to-exceed-threshold-value-ii/submissions/1541543065/
 	public static void main(String[] args) {
 		MinimumOperationsToExceedThresholdValueII test = new MinimumOperationsToExceedThresholdValueII();
 		System.out.println(test.minOperations(new int[] { 2, 11, 10, 1, 3 }, 10));
