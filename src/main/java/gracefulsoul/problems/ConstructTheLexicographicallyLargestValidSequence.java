@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class ConstructTheLexicographicallyLargestValidSequence {
 
-	// https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/submissions/1544773210/
+	// https://leetcode.com/problems/construct-the-lexicographically-largest-valid-sequence/submissions/1544785866/
 	public static void main(String[] args) {
 		ConstructTheLexicographicallyLargestValidSequence test = new ConstructTheLexicographicallyLargestValidSequence();
 		PrintUtil.print(test.constructDistancedSequence(3));
@@ -43,9 +43,8 @@ public class ConstructTheLexicographicallyLargestValidSequence {
 					visited[i] = false;
 				}
 			}
-
+			return false;
 		}
-		return false;
 	}
 
 }
