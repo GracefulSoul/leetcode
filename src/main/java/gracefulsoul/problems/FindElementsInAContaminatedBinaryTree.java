@@ -6,7 +6,7 @@ import gracefulsoul.object.node.TreeNode;
 
 public class FindElementsInAContaminatedBinaryTree {
 
-	// https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/submissions/1550249016/
+	// https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/submissions/1550250189/
 	public static void main(String[] args) {
 		FindElements findElements = new FindElements(new TreeNode(-1, null, new TreeNode(-1))); 
 		System.out.println(findElements.find(1)); // return False 
@@ -41,11 +41,11 @@ class FindElements {
 	private void bfs(TreeNode node) {
 		this.bitSet.set(node.val);
 		if (node.left != null) {
-			node.left.val = node.val * 2 + 1;
+			node.left.val = (2 * node.val) + 1;
 			this.bfs(node.left);
 		}
 		if (node.right != null) {
-			node.right.val = node.val * 2 + 2;
+			node.right.val = (2 * node.val) + 2;
 			this.bfs(node.right);
 		}
 	}
