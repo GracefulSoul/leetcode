@@ -9,8 +9,8 @@ public class FindPositiveIntegerSolutionForAGivenEquation {
 	// https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/submissions/1552243369/
 	public static void main(String[] args) {
 		FindPositiveIntegerSolutionForAGivenEquation test = new FindPositiveIntegerSolutionForAGivenEquation();
-		System.out.println(test.findSolution(new CustomFunction(1), 5));
-		System.out.println(test.findSolution(new CustomFunction(2), 5));
+		System.out.println(test.findSolution(new CustomPlusFunction(), 5));
+		System.out.println(test.findSolution(new CustomMultiplyFunction(), 5));
 	}
 
 	public List<List<Integer>> findSolution(CustomFunction customfunction, int z) {
@@ -32,20 +32,24 @@ public class FindPositiveIntegerSolutionForAGivenEquation {
 
 }
 
-class CustomFunction {
+interface CustomFunction {
 
-	private final int functionId;
+	public int f(int x, int y);
 
-	public CustomFunction(int functionId) {
-		this.functionId = functionId;
-	}
+}
+
+class CustomPlusFunction implements CustomFunction {
 
 	public int f(int x, int y) {
-		if (functionId == 1) {
-			return x + y;
-		} else {
-			return x * y;
-		}
+		return x + y;
+	}
+
+}
+
+class CustomMultiplyFunction implements CustomFunction {
+
+	public int f(int x, int y) {
+		return x * y;
 	}
 
 }
