@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FindPositiveIntegerSolutionForAGivenEquation {
 
-	// https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/submissions/1552243369/
+	// https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/submissions/1552251207/
 	public static void main(String[] args) {
 		FindPositiveIntegerSolutionForAGivenEquation test = new FindPositiveIntegerSolutionForAGivenEquation();
 		System.out.println(test.findSolution(new CustomPlusFunction(), 5));
@@ -18,10 +18,10 @@ public class FindPositiveIntegerSolutionForAGivenEquation {
 		int x = 1;
 		int y = 1000;
 		while (x <= 1000 && y > 0) {
-			int v = customfunction.f(x, y);
-			if (v < z) {
+			int value = customfunction.f(x, y);
+			if (value < z) {
 				x++;
-			} else if (v > z) {
+			} else if (value > z) {
 				y--;
 			} else {
 				result.add(Arrays.asList(x++, y--));
@@ -32,6 +32,16 @@ public class FindPositiveIntegerSolutionForAGivenEquation {
 
 }
 
+/*
+ * // This is the custom function interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface CustomFunction {
+ *     // Returns f(x, y) for any given positive integers x and y.
+ *     // Note that f(x, y) is increasing with respect to both x and y.
+ *     // i.e. f(x, y) < f(x + 1, y), f(x, y) < f(x, y + 1)
+ *     public int f(int x, int y);
+ * };
+ */
 interface CustomFunction {
 
 	public int f(int x, int y);
