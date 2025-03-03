@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class PartitionArrayAccordingToGivenPivot {
 
-	// https://leetcode.com/problems/partition-array-according-to-given-pivot/submissions/1560870779/
+	// https://leetcode.com/problems/partition-array-according-to-given-pivot/submissions/1560875880/
 	public static void main(String[] args) {
 		PartitionArrayAccordingToGivenPivot test = new PartitionArrayAccordingToGivenPivot();
 		PrintUtil.print(test.pivotArray(new int[] { 9, 12, 5, 10, 14, 3, 10 }, 10));
@@ -25,13 +25,13 @@ public class PartitionArrayAccordingToGivenPivot {
 				}
 			}
 		}
-		for (int l = 0; l < length; l++) {
-			if (nums[l] < pivot) {
-				result[i++] = nums[l];
-			} else if (nums[l] > pivot) {
-				result[k++] = nums[l];
+		for (int num : nums) {
+			if (num < pivot) {
+				result[i++] = num;
+			} else if (num > pivot) {
+				result[k++] = num;
 			} else {
-				result[j++] = nums[l];
+				result[j++] = num;
 			}
 		}
 		return result;
