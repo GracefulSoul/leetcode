@@ -4,7 +4,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class FindMissingAndRepeatedValues {
 
-	// https://leetcode.com/problems/find-missing-and-repeated-values/submissions/1564678616/
+	// https://leetcode.com/problems/find-missing-and-repeated-values/submissions/1564688432/
 	public static void main(String[] args) {
 		FindMissingAndRepeatedValues test = new FindMissingAndRepeatedValues();
 		PrintUtil.print(test.findMissingAndRepeatedValues(new int[][] {
@@ -38,7 +38,7 @@ public class FindMissingAndRepeatedValues {
 			}
 		}
 		if (result[1] == 0) {
-			result[1] = length + 1;
+			result[1] = counts.length;
 		}
 		return result;
 	}
