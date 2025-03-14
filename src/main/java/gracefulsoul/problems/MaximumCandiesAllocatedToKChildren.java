@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumCandiesAllocatedToKChildren {
 
-	// https://leetcode.com/problems/maximum-candies-allocated-to-k-children/submissions/1573347732/?envType=daily-question&envId=2025-03-14
+	// https://leetcode.com/problems/maximum-candies-allocated-to-k-children/submissions/1573347732/
 	public static void main(String[] args) {
 		MaximumCandiesAllocatedToKChildren test = new MaximumCandiesAllocatedToKChildren();
 		System.out.println(test.maximumCandies(new int[] { 5, 8, 6 }, 3));
