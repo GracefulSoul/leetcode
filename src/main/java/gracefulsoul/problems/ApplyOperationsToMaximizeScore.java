@@ -42,9 +42,10 @@ public class ApplyOperationsToMaximizeScore {
 			greaterThanRight[n - i - 1] = right;
 		}
 		for (int i = 0; i < n; i++) {
-			int size = greaterThanRight[i] - greaterThanLeft[i] - 1, leftSz = i - greaterThanLeft[i] - 1,
-					rightSz = greaterThanRight[i] - i - 1;
-			long subarrays = ((size * (size + 1L)) / 2 - (leftSz * (leftSz + 1L)) / 2 - (rightSz * (rightSz + 1L)) / 2);
+			int size = greaterThanRight[i] - greaterThanLeft[i] - 1;
+			int left = i - greaterThanLeft[i] - 1;
+			int right = greaterThanRight[i] - i - 1;
+			long subarrays = ((size * (size + 1L)) / 2 - (left * (left + 1L)) / 2 - (right * (right + 1L)) / 2);
 			multiplierCnt[arr[i]] = (int) Math.min(k, multiplierCnt[arr[i]] + subarrays);
 		}
 
@@ -96,24 +97,28 @@ public class ApplyOperationsToMaximizeScore {
 			}
 			stopPostItr = i * i > lim;
 			for (int j = i * i; j <= lim; j += 2 * i) {
-				if (spf[j] == 0)
+				if (spf[j] == 0) {
 					spf[j] = i;
+				}
 			}
 		}
-		if (lim % 2 == 0)
+		if (lim % 2 == 0) {
 			spf[lim] = 2;
+		}
 		return spf;
 	}
 
 	private static long modExp(int base, int exp) {
-		long multiplier = base, res = 1;
+		long multiplier = base;
+		long result = 1;
 		while (exp > 0) {
-			if ((exp & 1) == 1)
-				res = (res * multiplier) % MOD;
+			if ((exp & 1) == 1) {
+				result = (result * multiplier) % MOD;
+			}
 			multiplier = (multiplier * multiplier) % MOD;
 			exp >>= 1;
 		}
-		return res;
+		return result;
 	}
 
 }
