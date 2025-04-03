@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumValueOfAnOrderedTripletII {
 
-	// https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/submissions/1595376618/
+	// https://leetcode.com/problems/maximum-value-of-an-ordered-triplet-ii/submissions/1595383632/
 	public static void main(String[] args) {
 		MaximumValueOfAnOrderedTripletII test = new MaximumValueOfAnOrderedTripletII();
 		System.out.println(test.maximumTripletValue(new int[] { 12, 6, 1, 2, 7 }));
@@ -15,7 +15,7 @@ public class MaximumValueOfAnOrderedTripletII {
 		long diff = 0;
 		long max = 0;
 		for (int num : nums) {
-			result = Math.max(result, 1L * diff * num);
+			result = Math.max(result, diff * num);
 			diff = Math.max(diff, max - num);
 			max = Math.max(max, num);
 		}
