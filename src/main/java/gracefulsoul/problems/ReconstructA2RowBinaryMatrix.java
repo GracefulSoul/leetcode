@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ReconstructA2RowBinaryMatrix {
 
-	// https://leetcode.com/problems/reconstruct-a-2-row-binary-matrix/submissions/1598017969/
+	// https://leetcode.com/problems/reconstruct-a-2-row-binary-matrix/submissions/1598028767/
 	public static void main(String[] args) {
 		ReconstructA2RowBinaryMatrix test = new ReconstructA2RowBinaryMatrix();
 		System.out.println(test.reconstructMatrix(2, 1, new int[] { 1, 1, 1 }));
@@ -36,7 +36,7 @@ public class ReconstructA2RowBinaryMatrix {
 				upper -= result[0][i];
 				lower -= result[1][i];
 			}
-			return lower == 0 && upper == 0 ? new ArrayList(Arrays.asList(result[0], result[1])) : new ArrayList<>();
+			return upper == 0 && lower == 0 ? new ArrayList(Arrays.asList(result[0], result[1])) : new ArrayList<>();
 		}
 	}
 
