@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountTheNumberOfPowerfulIntegers {
 
-	// https://leetcode.com/problems/count-the-number-of-powerful-integers/submissions/1602546439/
+	// https://leetcode.com/problems/count-the-number-of-powerful-integers/submissions/1602617642/
 	public static void main(String[] args) {
 		CountTheNumberOfPowerfulIntegers test = new CountTheNumberOfPowerfulIntegers();
 		System.out.println(test.numberOfPowerfulInt(1, 6000, 4, "124"));
@@ -29,7 +29,7 @@ public class CountTheNumberOfPowerfulIntegers {
 				if (curr <= limit) {
 					dp[i][1] = (curr * dp[i + 1][0]) + dp[i + 1][1];
 				} else {
-					dp[i][1] = (limit + 1) * dp[i + 1][0];
+					dp[i][1] = dp[i][0];
 				}
 			}
 			return dp[0][1];
