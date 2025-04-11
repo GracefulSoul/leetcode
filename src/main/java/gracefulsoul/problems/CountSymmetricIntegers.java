@@ -14,9 +14,9 @@ public class CountSymmetricIntegers {
 		for (int i = low; i <= high; i++) {
 			String s = Integer.toString(i);
 			int length = s.length();
-            if (length % 2 != 0) {
-                continue;
-            }
+			if (length % 2 != 0) {
+				continue;
+			}
 			int diff = 0;
 			for (int j = 0; j < length / 2; j++) {
 				diff += s.charAt(j) - s.charAt(length - j - 1);
