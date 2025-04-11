@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class CountSymmetricIntegers {
 
-	// https://leetcode.com/problems/count-symmetric-integers/submissions/1603633988/
+	// https://leetcode.com/problems/count-symmetric-integers/submissions/1603643539/
 	public static void main(String[] args) {
 		CountSymmetricIntegers test = new CountSymmetricIntegers();
 		System.out.println(test.countSymmetricIntegers(1, 100));
@@ -14,11 +14,14 @@ public class CountSymmetricIntegers {
 		for (int i = low; i <= high; i++) {
 			String s = Integer.toString(i);
 			int length = s.length();
+            if (length % 2 != 0) {
+                continue;
+            }
 			int diff = 0;
 			for (int j = 0; j < length / 2; j++) {
 				diff += s.charAt(j) - s.charAt(length - j - 1);
 			}
-			if (length % 2 == 0 && diff == 0) {
+			if (diff == 0) {
 				result++;
 			}
 		}
