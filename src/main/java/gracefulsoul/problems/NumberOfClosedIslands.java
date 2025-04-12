@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class NumberOfClosedIslands {
 
-	// https://leetcode.com/problems/number-of-closed-islands/submissions/1604553742/
+	// https://leetcode.com/problems/number-of-closed-islands/submissions/1604573858/
 	public static void main(String[] args) {
 		NumberOfClosedIslands test = new NumberOfClosedIslands();
 		System.out.println(test.closedIsland(new int[][] {
@@ -40,10 +40,10 @@ public class NumberOfClosedIslands {
 			return true;
 		} else {
 			grid[i][j] = 1;
-			boolean left = dfs(grid, row, col, i, j - 1);
-			boolean right = dfs(grid, row, col, i, j + 1);
-			boolean up = dfs(grid, row, col, i - 1, j);
-			boolean down = dfs(grid, row, col, i + 1, j);
+			boolean left = this.dfs(grid, row, col, i, j - 1);
+			boolean right = this.dfs(grid, row, col, i, j + 1);
+			boolean up = this.dfs(grid, row, col, i - 1, j);
+			boolean down = this.dfs(grid, row, col, i + 1, j);
 			return left && right && up && down;
 		}
 	}
