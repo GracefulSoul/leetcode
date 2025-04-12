@@ -22,15 +22,15 @@ public class NumberOfClosedIslands {
 	public int closedIsland(int[][] grid) {
 		int row = grid.length;
 		int col = grid[0].length;
-		int count = 0;
+		int result = 0;
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (grid[i][j] == 0 && this.dfs(grid, row, col, i, j)) {
-					count++;
+					result++;
 				}
 			}
 		}
-		return count;
+		return result;
 	}
 
 	private boolean dfs(int[][] grid, int row, int col, int i, int j) {
