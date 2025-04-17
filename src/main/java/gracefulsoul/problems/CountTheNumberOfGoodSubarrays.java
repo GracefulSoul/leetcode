@@ -21,7 +21,7 @@ public class CountTheNumberOfGoodSubarrays {
 			map.put(nums[j], num + 1);
 			while (k <= 0) {
 				map.put(nums[i], map.get(nums[i]) - 1);
-				k += map.get(nums[i++]);
+				k += map.get(nums[i]);
 			}
 			result += i;
 		}
