@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 public class CountTheNumberOfIdealArrays {
 
-	// https://leetcode.com/problems/count-the-number-of-ideal-arrays/submissions/1614510916/
+	// https://leetcode.com/problems/count-the-number-of-ideal-arrays/submissions/1614519797/
 	public static void main(String[] args) {
 		CountTheNumberOfIdealArrays test = new CountTheNumberOfIdealArrays();
 		System.out.println(test.idealArrays(2, 5));
@@ -25,14 +25,14 @@ public class CountTheNumberOfIdealArrays {
 				}
 			}
 		}
-		int maxPow = (int) (Math.log(maxValue) / Math.log(2));
-		int[] binCoeff = new int[maxPow + 1];
+		int max = (int) (Math.log(maxValue) / Math.log(2));
+		int[] dp = new int[max + 1];
 		BigInteger bi = BigInteger.ONE;
 		BigInteger biMod = BigInteger.valueOf(MOD);
-		for (int i = 1; i <= maxPow; i++) {
+		for (int i = 1; i <= max; i++) {
 			bi = bi.multiply(BigInteger.valueOf(n + i - 1));
 			bi = bi.divide(BigInteger.valueOf(i));
-			binCoeff[i] = bi.mod(biMod).intValue();
+			dp[i] = bi.mod(biMod).intValue();
 		}
 		int result = 0;
 		for (int i = 1; i <= maxValue; i++) {
@@ -45,7 +45,7 @@ public class CountTheNumberOfIdealArrays {
 					count++;
 					index /= curr;
 				}
-				temp = (temp * binCoeff[count]) % MOD;
+				temp = (temp * dp[count]) % MOD;
 			}
 			result = (result + (int) temp) % MOD;
 		}
