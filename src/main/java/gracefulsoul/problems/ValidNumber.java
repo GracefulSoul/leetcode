@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class ValidNumber {
 
-	// https://leetcode.com/problems/valid-number/submissions/1623482976/
+	// https://leetcode.com/problems/valid-number/submissions/1623502311/
 	public static void main(String[] args) {
 		ValidNumber test = new ValidNumber();
 		System.out.println(test.isNumber("0"));
@@ -15,7 +15,7 @@ public class ValidNumber {
 		boolean seenNumber = false;
 		boolean seenExponent = false;
 		boolean seenDot = false;
-		for (int i = 0; i < s.length(); i++) {
+		for (int i = 0; i < charArray.length; i++) {
 			switch (charArray[i]) {
 				case '.':
 					if (seenDot || seenExponent) {
