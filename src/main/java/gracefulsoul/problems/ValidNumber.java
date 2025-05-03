@@ -46,7 +46,6 @@ public class ValidNumber {
 						seenNumber = true;
 					}
 			}
-
 		}
 		return seenNumber;
 	}
