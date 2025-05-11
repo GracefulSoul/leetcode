@@ -22,10 +22,10 @@ public class NextPermutation {
 		int length = nums.length;
 		if (1 < length) {
 			int i = length - 2;
-			while (0 <= i && nums[i] >= nums[i + 1]) {
+			while (0 <= i && nums[i + 1] <= nums[i]) {
 				i--;
 			}
-			if (i >= 0) {
+			if (0 <= i) {
 				int j = length - 1;
 				while (nums[j] <= nums[i]) {
 					j--;
