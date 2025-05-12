@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class Finding3DigitEvenNumbers {
 
-	// https://leetcode.com/problems/finding-3-digit-even-numbers/submissions/1631770977/
+	// https://leetcode.com/problems/finding-3-digit-even-numbers/submissions/1631775997/
 	public static void main(String[] args) {
 		Finding3DigitEvenNumbers test = new Finding3DigitEvenNumbers();
 		PrintUtil.print(test.findEvenNumbers(new int[] { 2, 1, 3, 0 }));
@@ -27,8 +27,8 @@ public class Finding3DigitEvenNumbers {
 				for (int j = 0; j < 10; j++) {
 					if (0 < counts[j]) {
 						counts[j]--;
-						for (int k = 0; k < 10; k++) {
-							if (0 < counts[k] && k % 2 == 0) {
+						for (int k = 0; k < 10; k += 2) {
+							if (0 < counts[k]) {
 								list.add(i * 100 + j * 10 + k);
 							}
 						}
