@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MaximumCandiesYouCanGetFromBoxes {
 
-	// https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes/submissions/1652198818/
+	// https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes/submissions/1652199880/
 	public static void main(String[] args) {
 		MaximumCandiesYouCanGetFromBoxes test = new MaximumCandiesYouCanGetFromBoxes();
 		System.out.println(test.maxCandies(new int[] { 1, 0, 1, 0 }, new int[] { 7, 5, 4, 100 }, new int[][] {
@@ -40,12 +40,13 @@ public class MaximumCandiesYouCanGetFromBoxes {
 		int result = 0;
 		Queue<Integer> queue = new LinkedList<>();
 		boolean[] closed = new boolean[status.length];
-		for (int initialBox : initialBoxes)
+		for (int initialBox : initialBoxes) {
 			if (status[initialBox] == 1) {
 				queue.add(initialBox);
 			} else {
 				closed[initialBox] = true;
 			}
+		}
 		while (!queue.isEmpty()) {
 			int curr = queue.poll();
 			result += candies[curr];
