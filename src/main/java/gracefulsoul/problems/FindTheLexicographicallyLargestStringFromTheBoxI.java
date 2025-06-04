@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindTheLexicographicallyLargestStringFromTheBoxI {
 
-	// https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i/submissions/1653574980/
+	// https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i/submissions/1653582548/
 	public static void main(String[] args) {
 		FindTheLexicographicallyLargestStringFromTheBoxI test = new FindTheLexicographicallyLargestStringFromTheBoxI();
 		System.out.println(test.answerString("dbca", 2));
@@ -12,18 +12,19 @@ public class FindTheLexicographicallyLargestStringFromTheBoxI {
 	public String answerString(String word, int numFriends) {
 		if (numFriends == 1) {
 			return word;
-		}
-		int length = word.length();
-		int start = length - numFriends + 1;
-		String result = "";
-		String curr;
-		for (int i = 0; i < length; i++) {
-			curr = word.substring(i, Math.min(start + i, length));
-			if (result.compareTo(curr) < 0) {
-				result = curr;
+		} else {
+			int length = word.length();
+			int start = length - numFriends + 1;
+			String result = "";
+			String curr;
+			for (int i = 0; i < length; i++) {
+				curr = word.substring(i, Math.min(start + i, length));
+				if (result.compareTo(curr) < 0) {
+					result = curr;
+				}
 			}
+			return result;
 		}
-		return result;
 	}
 
 }
