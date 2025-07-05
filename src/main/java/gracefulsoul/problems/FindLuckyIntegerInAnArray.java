@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindLuckyIntegerInAnArray {
 
-	// https://leetcode.com/problems/find-lucky-integer-in-an-array/submissions/1687732241/
+	// https://leetcode.com/problems/find-lucky-integer-in-an-array/submissions/1687734521/
 	public static void main(String[] args) {
 		FindLuckyIntegerInAnArray test = new FindLuckyIntegerInAnArray();
 		System.out.println(test.findLucky(new int[] { 2, 2, 3, 4 }));
@@ -15,7 +15,7 @@ public class FindLuckyIntegerInAnArray {
 		for (int num : arr) {
 			counts[num]++;
 		}
-		for (int i = 500; i > 0; i--) {
+		for (int i = arr.length; i > 0; i--) {
 			if (i == counts[i]) {
 				return i;
 			}
