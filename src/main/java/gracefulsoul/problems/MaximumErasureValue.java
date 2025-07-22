@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class MaximumErasureValue {
 
-	// https://leetcode.com/problems/maximum-erasure-value/submissions/1707094326/
+	// https://leetcode.com/problems/maximum-erasure-value/submissions/1707115469/
 	public static void main(String[] args) {
 		MaximumErasureValue test = new MaximumErasureValue();
 		System.out.println(test.maximumUniqueSubarray(new int[] { 4, 2, 4, 5, 6 }));
@@ -15,7 +15,7 @@ public class MaximumErasureValue {
 		int result = 0;
 		int[] index = new int[10001];
 		for (int left = 0, right = 0; right < length; right++) {
-			while (index[nums[right]] > left) {
+			while (left < index[nums[right]]) {
 				sum -= nums[left++];
 			}
 			sum += nums[right];
