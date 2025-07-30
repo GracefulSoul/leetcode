@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class LongestSubarrayWithMaximumBitwiseAND {
 
-	// https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/submissions/1716979312/
+	// https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/submissions/1717022012/
 	public static void main(String[] args) {
 		LongestSubarrayWithMaximumBitwiseAND test = new LongestSubarrayWithMaximumBitwiseAND();
 		System.out.println(test.longestSubarray(new int[] { 1, 2, 3, 3, 2, 2 }));
@@ -24,8 +24,7 @@ public class LongestSubarrayWithMaximumBitwiseAND {
 				temp = 0;
 			}
 		}
-		result = Math.max(result, temp);
-		return result;
+		return Math.max(result, temp);
 	}
 
 }
