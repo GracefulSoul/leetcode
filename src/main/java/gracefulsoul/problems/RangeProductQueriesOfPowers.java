@@ -7,7 +7,7 @@ import gracefulsoul.util.PrintUtil;
 
 public class RangeProductQueriesOfPowers {
 
-	// https://leetcode.com/problems/range-product-queries-of-powers/submissions/1731082104/?envType=daily-question&envId=2025-08-11
+	// https://leetcode.com/problems/range-product-queries-of-powers/submissions/1731082104/
 	public static void main(String[] args) {
 		RangeProductQueriesOfPowers test = new RangeProductQueriesOfPowers();
 		PrintUtil.print(test.productQueries(15, new int[][] {
