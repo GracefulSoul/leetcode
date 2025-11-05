@@ -142,6 +142,10 @@ public class PrintUtil {
 		System.out.println(Arrays.toString(array));
 	}
 
+	public static void print(long[] array) {
+		System.out.println(Arrays.toString(array));
+	}
+
 	public static void print(double[] array) {
 		System.out.println(Arrays.toString(array));
 	}
