@@ -6,7 +6,7 @@ import java.util.List;
 
 public class MinimumAbsoluteDifference {
 
-	// https://leetcode.com/problems/minimum-absolute-difference/submissions/1404415550/
+	// https://leetcode.com/problems/minimum-absolute-difference/submissions/1897423404/
 	public static void main(String[] args) {
 		MinimumAbsoluteDifference test = new MinimumAbsoluteDifference();
 		System.out.println(test.minimumAbsDifference(new int[] { 4, 2, 1, 3 }));
@@ -15,16 +15,15 @@ public class MinimumAbsoluteDifference {
 	}
 
 	public List<List<Integer>> minimumAbsDifference(int[] arr) {
-		List<List<Integer>> result = new ArrayList<>();
-		int min = Integer.MAX_VALUE;
 		Arrays.sort(arr);
+		int min = Integer.MAX_VALUE;
+		for (int i = 1; i < arr.length; i++) {
+			min = Math.min(min, arr[i] - arr[i - 1]);
+		}
+		List<List<Integer>> result = new ArrayList<>();
 		for (int i = 1; i < arr.length; i++) {
 			int diff = arr[i] - arr[i - 1];
-			if (diff < min) {
-				min = diff;
-				result.clear();
-			}
-			if (diff == min) {
+			if (min == diff) {
 				result.add(Arrays.asList(arr[i - 1], arr[i]));
 			}
 		}
