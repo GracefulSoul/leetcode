@@ -2,7 +2,7 @@ package gracefulsoul.problems;
 
 public class FindAllPossibleStableBinaryArraysI {
 
-	// https://leetcode.com/problems/find-all-possible-stable-binary-arrays-i/submissions/1942806470/
+	// https://leetcode.com/problems/find-all-possible-stable-binary-arrays-i/submissions/1942814562/
 	public static void main(String[] args) {
 		FindAllPossibleStableBinaryArraysI test = new FindAllPossibleStableBinaryArraysI();
 		System.out.println(test.numberOfStableArrays(1, 1, 2));
@@ -21,9 +21,6 @@ public class FindAllPossibleStableBinaryArraysI {
 		}
 		for (int i = 1; i <= one; i++) {
 			for (int j = 1; j <= zero; j++) {
-				if (i == 0 && j == 0) {
-					continue;
-				}
 				dp[i][j][0] = dp[i][j - 1][1];
 				dp[i][j][0] = (dp[i][j][0] + dp[i][j - 1][0]) % mod;
 				if (j - limit - 1 >= 0) {
