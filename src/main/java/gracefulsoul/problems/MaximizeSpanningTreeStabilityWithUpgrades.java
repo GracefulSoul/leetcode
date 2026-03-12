@@ -6,6 +6,7 @@ import java.util.List;
 
 public class MaximizeSpanningTreeStabilityWithUpgrades {
 
+	// https://leetcode.com/problems/maximize-spanning-tree-stability-with-upgrades/submissions/1945960827/
 	public static void main(String[] args) {
 		MaximizeSpanningTreeStabilityWithUpgrades test = new MaximizeSpanningTreeStabilityWithUpgrades();
 		System.out.println(test.maxStability(3, new int[][] {
