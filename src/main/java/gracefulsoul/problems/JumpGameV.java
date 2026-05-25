@@ -25,11 +25,11 @@ public class JumpGameV {
 			return dp[i];
 		}
 		int max = 1;
-		for (int j = i + 1; j <= Math.min(i + d, length - 1) && arr[j] < arr[i]; ++j) {
-			max = Math.max(max, 1 + dfs(arr, d, length, dp, j));
+		for (int j = i + 1; j <= Math.min(i + d, length - 1) && arr[j] < arr[i]; j++) {
+			max = Math.max(max, 1 + this.dfs(arr, d, length, dp, j));
 		}
-		for (int j = i - 1; j >= Math.max(i - d, 0) && arr[j] < arr[i]; --j) {
-			max = Math.max(max, 1 + dfs(arr, d, length, dp, j));
+		for (int j = i - 1; Math.max(i - d, 0) <= j && arr[j] < arr[i]; j--) {
+			max = Math.max(max, 1 + this.dfs(arr, d, length, dp, j));
 		}
 		return dp[i] = max;
 	}
